@@ -32,7 +32,7 @@ if ($code !== 0) {
     exit($code);
 }
 
-$tables = (int) Illuminate\Support\Facades\DB::selectOne('SELECT COUNT(*) AS n FROM information_schema.tables WHERE table_schema = DATABASE()')->n;
+$tables = (int) Illuminate\Support\Facades\DB::selectOne("SELECT COUNT(*) AS n FROM information_schema.tables WHERE table_schema = DATABASE() AND table_type = 'BASE TABLE'")->n;
 $dumped = (int) trim((string) shell_exec('gunzip -c ' . escapeshellarg($output) . ' | grep -c "^CREATE TABLE"'));
 
 if ($tables !== $dumped) {

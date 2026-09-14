@@ -21,12 +21,24 @@ else
   pass "seed, migrate, update_currency, clear-cache are not public routes"
 fi
 
+require_middleware() {
+  uri="$1"; mw="$2"; label="$3"
+  rows="$(echo "$ROUTES" | grep -E "\| $uri +\|")"
+  if [ -z "$rows" ]; then
+    fail "$label"
+  elif echo "$rows" | grep -qv "$mw"; then
+    fail "$label"
+  else
+    pass "$label"
+  fi
+}
+
 for uri in admin/attachments/store admin/attachments/delete admin/tinymce/uploader admin/update-currency admin/clear-cache; do
-  if echo "$ROUTES" | grep -E "\| $uri +\|" | grep -q staff; then pass "$uri requires staff"; else fail "$uri requires staff"; fi
+  require_middleware "$uri" staff "$uri requires staff"
 done
 
 for uri in contact-us/store contact-us/store-inner contact-us/subscribe; do
-  if echo "$ROUTES" | grep -E "\| $uri +\|" | grep -q contact.guard; then pass "$uri is guarded"; else fail "$uri is guarded"; fi
+  require_middleware "$uri" contact.guard "$uri is guarded"
 done
 
 for path in /en /ar /en/contact-us /ar/contact-us /en/articles; do

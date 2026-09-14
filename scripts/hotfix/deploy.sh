@@ -14,7 +14,16 @@ APP="domains/aldar-emlak.com/public_html"
 PHP="/opt/alt/php74/usr/bin/php"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 WORK="$(mktemp -d)"
-trap 'rm -rf "$WORK"' EXIT
+BACKED_UP=0
+HINT_PRINTED=0
+cleanup() {
+  code=$?
+  rm -rf "$WORK"
+  if [ "$code" -ne 0 ] && [ "$BACKED_UP" -eq 1 ] && [ "$HINT_PRINTED" -eq 0 ]; then
+    echo "Deploy FAILED after backup. Roll back with: scripts/hotfix/rollback.sh $STAMP" >&2
+  fi
+}
+trap cleanup EXIT
 
 PATHSPEC=(-- . ':!tests' ':!docs' ':!scripts' ':!docker' ':!docker-compose.yml' ':!.gitignore' ':!phpunit.xml')
 ROOT_COMMIT="$(git rev-list --max-parents=0 "$REF")"
@@ -62,6 +71,7 @@ ssh -n "$REMOTE" "mkdir -p ~/aldar-backup && chmod 700 ~/aldar-backup"
 scp -q scripts/server/db-dump.php "$REMOTE:aldar-backup/db-dump.php"
 ssh "$REMOTE" "cd $APP && tar --ignore-failed-read -czf ~/aldar-backup/hotfix-$STAMP.tar.gz -T - 2>/dev/null" < "$WORK/files.txt"
 ssh "$REMOTE" "cat > ~/aldar-backup/hotfix-$STAMP.added" < "$WORK/added.txt"
+BACKED_UP=1
 ssh -n "$REMOTE" "$PHP ~/aldar-backup/db-dump.php ~/$APP ~/aldar-backup/hotfix-$STAMP.sql.gz"
 
 echo "Uploading..."
@@ -72,6 +82,7 @@ ssh -n "$REMOTE" "cd $APP && $PHP artisan view:clear && $PHP artisan route:clear
 
 echo "Verifying..."
 if ! scripts/hotfix/verify-production.sh "https://aldar-emlak.com"; then
+  HINT_PRINTED=1
   echo "Verification FAILED. Roll back with: scripts/hotfix/rollback.sh $STAMP" >&2
   exit 1
 fi
