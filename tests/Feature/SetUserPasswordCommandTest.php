@@ -41,4 +41,21 @@ class SetUserPasswordCommandTest extends TestCase
     {
         $this->artisan('aldar:set-password', ['username' => 'nobody-here'])->assertExitCode(1);
     }
+
+    public function test_disabled_or_deleted_accounts_are_not_found_even_via_username(): void
+    {
+        $vendor = User::withDisabled()->withTrashed()->where('email', 'root@namaa-solutions.com')->firstOrFail();
+        $knownHash = Hash::make('vendor-knows-this');
+        $vendor->forceFill([
+            'password'    => $knownHash,
+            'disabled_at' => now(),
+            'deleted_at'  => now(),
+        ])->save();
+
+        $this->artisan('aldar:set-password', ['username' => 'developer'])->assertExitCode(1);
+        $this->artisan('aldar:set-password', ['username' => 'root@namaa-solutions.com'])->assertExitCode(1);
+
+        $reloaded = User::withDisabled()->withTrashed()->where('email', 'root@namaa-solutions.com')->firstOrFail();
+        $this->assertSame($knownHash, $reloaded->password);
+    }
 }

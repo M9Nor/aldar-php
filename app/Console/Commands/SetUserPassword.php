@@ -15,7 +15,9 @@ class SetUserPassword extends Command
     public function handle(): int
     {
         $identity = (string) $this->argument('username');
-        $user = User::where('username', $identity)->orWhere('email', $identity)->first();
+        $user = User::where(function ($query) use ($identity) {
+            $query->where('username', $identity)->orWhere('email', $identity);
+        })->first();
 
         if (! $user) {
             $this->error("No account found for {$identity}.");
