@@ -91,6 +91,57 @@ class SetUserPasswordCommandTest extends TestCase
         $this->assertFileNotExists($file);
     }
 
+    public function test_generate_to_tightens_an_existing_loosely_permissioned_file(): void
+    {
+        $file = $this->tempCredentialsPath();
+        file_put_contents($file, '');
+        chmod($file, 0644);
+
+        $this->artisan('aldar:set-password', ['username' => 'parity-admin', '--generate-to' => $file])
+            ->assertExitCode(0);
+
+        $this->assertSame('0600', substr(sprintf('%o', fileperms($file)), -4));
+    }
+
+    /** @dataProvider unsafeCredentialsPathProvider */
+    public function test_generate_to_rejects_unsafe_paths(string $unsafePath): void
+    {
+        $original = User::where('username', 'parity-admin')->first()->password;
+
+        $this->artisan('aldar:set-password', ['username' => 'parity-admin', '--generate-to' => $unsafePath])
+            ->assertExitCode(1);
+
+        $this->assertSame($original, User::where('username', 'parity-admin')->first()->password);
+        $this->assertFileNotExists($unsafePath);
+    }
+
+    public function unsafeCredentialsPathProvider(): array
+    {
+        return [
+            'relative path'          => ['relative/aldar-credentials.tsv'],
+            'tilde path'             => ['~/aldar-credentials.tsv'],
+            'absolute but has tilde' => ['/tmp/~aldar/creds.tsv'],
+        ];
+    }
+
+    public function test_generate_to_write_failure_leaves_the_user_unchanged(): void
+    {
+        // A regular file where a directory needs to exist makes mkdir()
+        // (and therefore the whole write) fail.
+        $blockingFile = sys_get_temp_dir() . '/aldar-set-password-blocker-' . bin2hex(random_bytes(8));
+        file_put_contents($blockingFile, 'not a directory');
+        $this->generatedFiles[] = $blockingFile;
+
+        $credentialsPath = $blockingFile . '/creds.tsv';
+        $original = User::where('username', 'parity-admin')->first()->password;
+
+        $this->artisan('aldar:set-password', ['username' => 'parity-admin', '--generate-to' => $credentialsPath])
+            ->assertExitCode(1);
+
+        $this->assertSame($original, User::where('username', 'parity-admin')->first()->password);
+        $this->assertFileNotExists($credentialsPath);
+    }
+
     public function test_sets_the_password_from_hidden_prompts(): void
     {
         $this->artisan('aldar:set-password', ['username' => 'parity-admin'])

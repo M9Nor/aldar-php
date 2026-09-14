@@ -53,28 +53,50 @@ class SetUserPassword extends Command
 
     private function generateToFile(User $user, string $file): int
     {
-        $password = Str::random(32);
-
-        if (! $this->ensureCredentialsFile($file)) {
-            $this->error("Could not prepare the credentials file {$file}.");
+        if (! $this->isSafeCredentialsPath($file)) {
+            $this->error("The --generate-to path must be an absolute path containing no '~': {$file}");
             return 1;
         }
 
-        $line = sprintf("%s\t%s\t%s\n", gmdate('Y-m-d\TH:i:s\Z'), $user->username, $password);
+        $previousUmask = umask(0077);
 
-        if (! $this->appendLocked($file, $line)) {
-            $this->error("Could not write to the credentials file {$file}.");
-            return 1;
+        try {
+            $password = Str::random(32);
+
+            if (! $this->ensureCredentialsFile($file)) {
+                $this->error("Could not prepare the credentials file {$file}.");
+                return 1;
+            }
+
+            $line = sprintf("%s\t%s\t%s\n", gmdate('Y-m-d\TH:i:s\Z'), $user->username, $password);
+
+            if (! $this->appendLocked($file, $line)) {
+                $this->error("Could not write to the credentials file {$file}.");
+                return 1;
+            }
+
+            $user->forceFill([
+                'password'       => Hash::make($password),
+                'remember_token' => null,
+            ])->save();
+
+            $this->info("Password for #{$user->id} {$user->username} written to {$file}.");
+
+            return 0;
+        } finally {
+            umask($previousUmask);
         }
+    }
 
-        $user->forceFill([
-            'password'       => Hash::make($password),
-            'remember_token' => null,
-        ])->save();
-
-        $this->info("Password for #{$user->id} {$user->username} written to {$file}.");
-
-        return 0;
+    /**
+     * Reject anything that isn't an absolute path, and anything containing
+     * "~" (the shell does not reliably expand "~" after "--generate-to=" or
+     * inside a fully-quoted argument, so a literal "~" would silently create
+     * a "./~" directory instead of the operator's home directory).
+     */
+    private function isSafeCredentialsPath(string $file): bool
+    {
+        return $file !== '' && $file[0] === '/' && strpos($file, '~') === false;
     }
 
     /**
@@ -111,7 +133,10 @@ class SetUserPassword extends Command
 
         $written = false;
         if (flock($handle, LOCK_EX)) {
-            $written = fwrite($handle, $line) !== false;
+            $bytes = fwrite($handle, $line);
+            if ($bytes === strlen($line) && fflush($handle)) {
+                $written = true;
+            }
             flock($handle, LOCK_UN);
         }
         fclose($handle);
