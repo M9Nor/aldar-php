@@ -261,7 +261,7 @@ return [
         'type'              => 'ROOT',
         'verification_code' => 'VERIFIED',
         'status'            => 'ACTIVE',
-        'password'          => \Hash::make("9Ph?\^~/U}kGn74B"),
+        'password'          => \Hash::make(env('CMS_ROOT_SEED_PASSWORD', '')),
     ],
     'superadmin' => [
         'email'             => 'superadmin@namaa-solutions.com',
@@ -269,6 +269,6 @@ return [
         'type'              => 'ROOT',
         'verification_code' => 'VERIFIED',
         'status'            => 'ACTIVE',
-        'password'          => \Hash::make(")N[Lb&aESP{XW{8j"),
+        'password'          => \Hash::make(env('CMS_SUPERADMIN_SEED_PASSWORD', '')),
     ],
 ];
