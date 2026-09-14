@@ -22,6 +22,10 @@ class UsersTableSeeder extends Seeder
 
     public function createRootUser()
     {
+        if (empty(config('cms.root.email'))) {
+            return;
+        }
+
         $user                       = User::firstOrNew([
             'email' => config('cms.root.email')
         ]);
