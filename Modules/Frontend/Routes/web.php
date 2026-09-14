@@ -17,8 +17,6 @@ Route::group([
     'prefix'        => LaravelLocalization::setLocale(),
     'middleware'    => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function() {
-    Route::get('/clear-cache', 'HomeController@clearCache')->name('cache.clear');
-
     Route::get('/', function() {
         return view('frontend::soon');
     })->name('temp');
