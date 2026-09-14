@@ -46,13 +46,14 @@
 | `app/Console/Commands/SetUserPassword.php` | `aldar:set-password` |
 | `config/image_sizes.php` | Allowed Glide sizes |
 | `public/graph/.htaccess` | Block script execution in the TinyMCE upload tree |
+| `public/modules/.htaccess` | Block the template mail scripts and any other PHP under `public/modules` (H9, final review) |
 | `Modules/Frontend/Resources/views/partials/honeypot.blade.php` | Hidden spam-trap field |
 | `tests/Unit/ImageSizesConfigTest.php`, `tests/Unit/FirebaseTlsTest.php` | Source-level regression guards |
 | `tests/Feature/VendorOffboardingTest.php`, `tests/Feature/SetUserPasswordCommandTest.php` | Command tests |
 | `scripts/server/db-dump.php` | Server-side DB dump using Laravel's own config |
 | `scripts/hotfix/deploy.sh`, `rollback.sh`, `verify-production.sh`, `probe-client-ip.sh`, `known-baseline-edits.txt` | Production patching toolkit |
 
-Existing files modified: `app/Http/Kernel.php`, `routes/web.php`, `Modules/Cms/Routes/web.php`, `Modules/Frontend/Routes/web.php`, `Modules/Cms/Http/Controllers/Admin/{DashboardController,AttachmentController,TinymceController}.php`, `Modules/Cms/Http/Controllers/ImageController.php`, `Modules/Cms/Http/Controllers/Auth/LoginController.php`, `Modules/Cms/Resources/views/dashboard.blade.php`, the six Blade views holding contact forms, `Modules/Frontend/Resources/lang/{ar,en}/main.php`, `Modules/Notification/Entities/FirebaseNotification.php`, `public/service-worker.js`, `public/firebase-messaging-sw.js`, `Modules/Cms/Config/config.php`, `Modules/Cms/Database/Seeders/UsersTableSeeder.php`.
+Existing files modified: `app/Http/Kernel.php`, `routes/web.php`, `Modules/Cms/Routes/web.php`, `Modules/Frontend/Routes/web.php`, `Modules/Cms/Http/Controllers/Admin/{DashboardController,AttachmentController,TinymceController}.php`, `Modules/Cms/Http/Controllers/ImageController.php`, `Modules/Cms/Resources/views/dashboard.blade.php`, the six Blade views holding contact forms, `Modules/Frontend/Resources/lang/{ar,en}/main.php`, `Modules/Notification/Entities/FirebaseNotification.php`, `public/service-worker.js`, `public/firebase-messaging-sw.js`, `Modules/Cms/Config/config.php`, `Modules/Cms/Database/Seeders/UsersTableSeeder.php`.
 
 **How to run things locally (used throughout):**
 
@@ -1479,6 +1480,8 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 
 ### Task 8: Vendor offboarding and password tooling (N1, N2, N5)
 
+> As implemented, the `LoginController::credentials()` override was dropped (ruling R5): login already refuses disabled and deleted accounts through `SoftDeletes` and the `Disabable` global scope. The e2e login test stays as a regression guard. `SetUserPassword` groups its username/email lookup so the scopes guard both branches (ruling R6, one extra test).
+
 **Files:**
 - Create: `app/Console/Commands/OffboardVendor.php`, `app/Console/Commands/SetUserPassword.php`
 - Modify: `Modules/Cms/Http/Controllers/Auth/LoginController.php` (add `credentials()`)
@@ -1846,6 +1849,8 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 
 ### Task 9: Production patching toolkit
 
+> The committed scripts supersede the listings in this task. Later review fixes changed them: the rollback hint on any failure after the backup (c878a9b), and in the final review wave a SHA-pinned deploy, `rollback.sh --reopens-public-seed <stamp>`, 403 probes for the `.htaccess` deny blocks, a random unknown image size, and `ROUTES_FILE` for local runs of `verify-production.sh`.
+
 **Files:**
 - Create: `scripts/server/db-dump.php`
 - Create: `scripts/hotfix/deploy.sh`, `scripts/hotfix/rollback.sh`, `scripts/hotfix/verify-production.sh`, `scripts/hotfix/probe-client-ip.sh`, `scripts/hotfix/known-baseline-edits.txt`
@@ -1853,7 +1858,7 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 **Interfaces:**
 - Produces:
   - `scripts/hotfix/deploy.sh [--dry-run] <git-ref>`. It prints the file list and a drift report; without `--dry-run` it also prints a backup stamp (`YYYYmmdd-HHMMSS`).
-  - `scripts/hotfix/rollback.sh <stamp>`.
+  - `scripts/hotfix/rollback.sh --reopens-public-seed <stamp>` (refuses to run without the flag).
   - `scripts/hotfix/verify-production.sh [base-url]`, which exits non-zero on any failed check.
   - `scripts/hotfix/probe-client-ip.sh`.
   - `php scripts/server/db-dump.php <app-dir> <output.sql.gz>`, which prints `ok tables=<n> file=<path>`.
@@ -2141,14 +2146,18 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 
 - [ ] **Step 1: Run the whole suite twice in a row**
 
+PHPUnit 8.5 takes one path per invocation, so run the two directories separately:
+
 ```bash
-docker compose exec -T app php vendor/phpunit/phpunit/phpunit tests/Unit tests/Feature
+docker compose exec -T app php vendor/phpunit/phpunit/phpunit tests/Unit
+docker compose exec -T app php vendor/phpunit/phpunit/phpunit tests/Feature
 (cd tests/e2e && npx playwright test) && (cd tests/e2e && npx playwright test)
 ```
 
 Expected:
-- PHPUnit: `OK (9 tests, …)` (ImageSizesConfig 1, FirebaseTls 1, VendorOffboarding 3, SetUserPasswordCommand 3, Unit ExampleTest 1).
-- Playwright: every spec passes on both runs (smoke 11, security 24).
+- PHPUnit `tests/Unit`: `OK (3 tests, …)` (ImageSizesConfig 1, FirebaseTls 1, ExampleTest 1).
+- PHPUnit `tests/Feature`: `OK (7 tests, …)` (VendorOffboarding 3, SetUserPasswordCommand 4). 10 tests in total.
+- Playwright: every spec passes on both runs (smoke 11, security 36; 47 in total).
 
 - [ ] **Step 2: Check the diff for anything outside Phase H**
 
@@ -2167,19 +2176,22 @@ Implements Phase H of docs/superpowers/specs/2026-09-14-aldar-security-hotfix-an
 - H8: unauthenticated attachment upload and delete
 - H1: TinyMCE uploader could write executable PHP under public/graph
 - H2, H3: public currency refresh and cache flush
-- H4: unbounded image variant generation
-- H5: link spam on the contact forms (honeypot + per-IP limit)
+- H4: unbounded image variant generation, including path aliases (`%2e` segments, `//`, backslashes, double-encoded escapes, `.cache/…` files, `?path=`) that each minted a new cache entry
+- H5: link spam on the contact forms (honeypot + per-IP limit; drops and refusals are logged with route and IP only)
 - H6: FCM TLS verification
-- N1, N2, N6: vendor offboarding command, login refuses disabled accounts, vendor service workers retired
+- H9: unauthenticated mail header-injection scripts under public/modules (PHP there now returns 403)
+- N1, N2, N6: vendor offboarding command, vendor seeder credentials out of config, vendor service workers retired
 
 **Intentional output changes**
 - Dashboard "update currency" is a POST form, styled the same.
 - Contact forms gain a hidden honeypot field.
 - Unknown image sizes return 404 unless already cached.
+- Non-canonical image paths return 404.
+- Any PHP file under /modules returns 403.
 
 **Tests**
-- Playwright: smoke (11) and security (24) specs, green twice in a row locally.
-- PHPUnit: command and source-guard tests.
+- Playwright: smoke (11) and security (36) specs, green twice in a row locally.
+- PHPUnit: 10 command and source-guard tests.
 
 **Rollout** follows Task 11 of docs/superpowers/plans/2026-09-14-phase-h-security-hotfix.md and needs owner approval at each production step.
 
@@ -2192,11 +2204,13 @@ EOF
 
 ### Task 11: Production rollout (owner approval required at every step)
 
-**Files:** possibly `app/Http/Middleware/TrustProxies.php` (Step 2).
+**Files:** possibly `app/Http/Middleware/TrustProxies.php` (Step 2). Local only, never committed: the user snapshots from Steps 3 and 9 (they contain emails).
+
+All commands run from the repo root.
 
 - [ ] **Step 1: Get explicit approval to touch production**
 
-Ask the owner in chat: "Ready to deploy the hotfix to aldar-emlak.com now: probe the client IP, back up, patch, verify, then offboard the vendor. Go?" Do not continue without a clear yes.
+Ask the owner in chat: "Ready to roll out the hotfix to aldar-emlak.com now: probe the client IP, snapshot users and roles, back up, deploy the PR head, verify, offboard the vendor straight away, then rotate the admin passwords, the DB password and APP_KEY. Go?" Do not continue without a clear yes.
 
 - [ ] **Step 2: Probe how the client IP reaches PHP**
 
@@ -2204,73 +2218,168 @@ Run: `scripts/hotfix/probe-client-ip.sh`
 
 Decide from the output:
 - **`REMOTE_ADDR` equals "This machine's public IP":** no change; go to Step 3.
-- **`REMOTE_ADDR` differs and `HTTP_X_FORWARDED_FOR` starts with this machine's IP:** PHP sees the CDN.
-  1. Replace the `$proxies` property in `app/Http/Middleware/TrustProxies.php` with:
+- **`REMOTE_ADDR` differs and `HTTP_X_FORWARDED_FOR` starts with this machine's IP:** PHP sees the CDN. Trust `X-Forwarded-For` only: `X-Forwarded-Host`, `-Proto` and `-Port` feed `RedirectToHttps` and the locale redirects, the origin is reachable without the CDN, and only the client IP is needed.
+  1. Replace the `$proxies` and `$headers` properties in `app/Http/Middleware/TrustProxies.php` (the file already imports `Illuminate\Http\Request`) with:
 
      ```php
          /**
           * Production sits behind Hostinger's CDN, which forwards the visitor address
           * in X-Forwarded-For; without this every visitor shares one rate-limit key.
+          *
+          * @var array|string
           */
          protected $proxies = '*';
+
+         /**
+          * Only the client address is taken from the proxy. Forwarded host, scheme and
+          * port stay untrusted: clients can set them, and the origin is reachable directly.
+          *
+          * @var int
+          */
+         protected $headers = Request::HEADER_X_FORWARDED_FOR;
      ```
 
-  2. Run `(cd tests/e2e && npx playwright test)`. All must pass.
-  3. Commit with message `Trust Hostinger's CDN as a proxy for client IPs` and push to the PR branch.
+  2. Run `docker compose exec -T app php -l app/Http/Middleware/TrustProxies.php`, then `(cd tests/e2e && npx playwright test)`. All must pass.
+  3. Commit with message `Trust only X-Forwarded-For from Hostinger's CDN` (ending with the `Co-Authored-By` trailer), push to the PR branch, and wait for the PR to show the new head.
 - **Anything else:** stop and report the output to the owner. Do not deploy H5 with an unknown client address.
 
-- [ ] **Step 3: Dry run, then deploy**
+- [ ] **Step 3: Snapshot users and role assignments (read-only)**
+
+The output contains emails (PII). It goes to `.superpowers/`, which `.git/info/exclude` keeps out of git; never commit or paste it.
 
 ```bash
-scripts/hotfix/deploy.sh --dry-run hotfix/security
-scripts/hotfix/deploy.sh hotfix/security
+SNAP=.superpowers/sdd/2026-09-14-phase-h-security-hotfix
+cat > "$SNAP/snapshot.php" <<'PHP'
+foreach (DB::table('users')->orderBy('id')->get() as $u) { echo "user | $u->id | $u->username | $u->email | $u->status | disabled_at=" . ($u->disabled_at ?: '-') . " | deleted_at=" . ($u->deleted_at ?: '-') . PHP_EOL; }
+foreach (DB::table('perms_assigned_roles')->join('perms_roles', 'perms_roles.id', '=', 'perms_assigned_roles.role_id')->orderBy('perms_assigned_roles.id')->get(['perms_assigned_roles.id', 'perms_roles.name', 'entity_type', 'entity_id']) as $a) { echo "role | $a->id | $a->name | $a->entity_type #$a->entity_id" . PHP_EOL; }
+PHP
+ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role) \|' > "$SNAP/users-before-deploy.txt"
+grep -c '^user ' "$SNAP/users-before-deploy.txt"; grep -c '^role ' "$SNAP/users-before-deploy.txt"
+```
+
+Expected: two non-zero counts. `DB::table` bypasses the SoftDeletes and Disabable scopes, so disabled and deleted accounts are listed too.
+
+- [ ] **Step 4: Dry run, then deploy the PR head SHA, then verify**
+
+```bash
+git fetch origin
+SHA="$(gh pr view hotfix/security --json headRefOid -q .headRefOid)"
+test "$SHA" = "$(git rev-parse origin/hotfix/security)" && echo "PR head $SHA"
+scripts/hotfix/deploy.sh --dry-run "$SHA"
+scripts/hotfix/deploy.sh "$SHA"
 ```
 
 Expected:
-- the dry run reports `no drift`;
-- the deploy ends with `Deployed hotfix/security. Rollback: scripts/hotfix/rollback.sh <stamp>`, and every check prints `ok`.
+- the dry run prints `Deploying <sha> at <sha>`, a file list that includes `public/modules/.htaccess`, and `no drift`;
+- the deploy ends with `Deployed <sha> (<sha>). Backup stamp: <stamp>`, and every check prints `ok`, including `PHP under /graph/uploads/original/tinymce refused (403)` and `PHP under /modules refused (403)`.
 
 Record the stamp. If a service-worker check fails with the CDN hint, ask the owner to purge the CDN cache in hPanel (Websites → aldar-emlak.com → CDN → Purge cache), then re-run `scripts/hotfix/verify-production.sh`.
 
-**If verification fails for any other reason,** run `scripts/hotfix/rollback.sh <stamp>` and report.
+**If verification fails for any other reason,** stop and report to the owner. This is the only point where a rollback is safe, because the vendor has not been offboarded yet; with the owner's explicit decision run `scripts/hotfix/rollback.sh --reopens-public-seed <stamp>`.
 
-- [ ] **Step 4: Owner smoke test on production**
+- [ ] **Step 5: Offboard the vendor immediately**
 
-Ask the owner to:
-1. log in at https://aldar-emlak.com/en/admin;
-2. upload an image in a TinyMCE editor and in a project's media dropzone;
-3. submit one contact form on the site.
+Run straight after Step 4 passes, before any smoke test, so the vendor's ROOT account cannot create new admin users in the meantime:
 
-Wait for confirmation.
+```bash
+ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:offboard-vendor'
+```
 
-- [ ] **Step 5: Offboard the vendor (after approval)**
-
-Run: `ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:offboard-vendor'`
 Expected: `Disabled #1 developer <root@namaa-solutions.com>`.
 
-- [ ] **Step 6: Rotate secrets (owner runs the secret-entry parts)**
+**From this point, fix forward.** Never run `rollback.sh` without an explicit owner decision: it needs `--reopens-public-seed`, because it restores the public `/seed` route and the vendor's seeder password.
 
-1. **DB password (owner).**
-   - In hPanel → Databases, change the password of user `u859703690_claaal`. Use letters, digits and `-_.!@%^*` only, with no quotes, `$`, `#`, `\` or spaces, so `.env` needs no escaping.
-   - Immediately edit `public_html/.env` in hPanel File Manager and set `DB_PASSWORD=` to the new value.
-   - Tell Claude when done. Then run `scripts/hotfix/verify-production.sh`; all checks must print `ok`.
-2. **APP_KEY (Claude, after approval):**
+- [ ] **Step 6: Owners set the admin passwords (N5)**
+
+For each of `aldar`, `aldar-emlak` and `growth`, the account holder runs in their own terminal:
+
+```bash
+ssh -t codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:set-password aldar'
+```
+
+Replace `aldar` with the account name each time. Each run prints `Password updated for #<id> <username>.` The owner confirms they can log in with each new password.
+
+- [ ] **Step 7: Rotate the DB password (N4)**
+
+1. **Back up `.env` first (Claude, after approval).** The copy holds secrets; it stays in the private backup folder:
 
    ```bash
-   ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan key:generate --force && rm -f storage/framework/sessions/* .env.bak-20260914-* && /opt/alt/php74/usr/bin/php artisan config:clear'
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && mkdir -p ~/aldar-backup && chmod 700 ~/aldar-backup && STAMP=$(date +%Y%m%d-%H%M%S) && cp .env ~/aldar-backup/env-before-rotation-$STAMP && chmod 600 ~/aldar-backup/env-before-rotation-$STAMP && ls -l ~/aldar-backup/env-before-rotation-$STAMP'
+   ```
+
+   Expected: one `-rw-------` file.
+2. **Owner.** In hPanel → Databases, change the password of user `u859703690_claaal`. Use letters, digits and `-_.!@%^*` only, with no quotes, `$`, `#`, `\` or spaces, so `.env` needs no escaping. Immediately edit `public_html/.env` in hPanel File Manager and set `DB_PASSWORD=` to the new value. Tell Claude when done.
+3. **Verify.** Run `scripts/hotfix/verify-production.sh`; all checks must print `ok` (the pages only render with a working DB connection).
+
+- [ ] **Step 8: Rotate APP_KEY (N3), wipe sessions, remove stale `.env` copies**
+
+Claude runs each command after approval. Only hashes are printed, never the key.
+
+1. Record the hash of the current key line:
+
+   ```bash
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && grep "^APP_KEY=" .env | sha256sum'
+   ```
+
+2. Generate a new key:
+
+   ```bash
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan key:generate --force'
    ```
 
    Expected: `Application key set successfully.`
-3. **Admin passwords (owner).** For each of `aldar`, `aldar-emlak` and `growth`, the account holder runs in their own terminal:
+3. Re-run the command from item 1. The hash **must differ**. `key:generate` prints success even when it could not rewrite the line; if the hash is unchanged, stop and report.
+4. Wipe every session (a `*` glob can exceed the argument limit):
 
    ```bash
-   ssh -t codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:set-password aldar'
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && find storage/framework/sessions -type f ! -name .gitignore -delete && find storage/framework/sessions -type f ! -name .gitignore | wc -l'
    ```
 
-   Replace `aldar` with the account name each time.
-4. Run `scripts/hotfix/verify-production.sh` again; all `ok`. The owner confirms they can log in with the new password.
+   Expected: `0`.
+5. List every stale `.env` copy, then delete exactly that list. Everything except `.env` itself goes, including `.env.bak-*` and any `.env.production`:
 
-- [ ] **Step 7: Merge the PR**
+   ```bash
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && ls -la .env* && find . -maxdepth 1 -name ".env*" ! -name .env -print'
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && find . -maxdepth 1 -name ".env*" ! -name .env -print -delete && ls -la .env*'
+   ```
+
+   Expected: the final listing shows only `.env`.
+6. Clear the config cache:
+
+   ```bash
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan config:clear'
+   ```
+
+7. Run `scripts/hotfix/verify-production.sh`; all `ok`.
+
+- [ ] **Step 9: Audit users and role assignments against the snapshot**
+
+```bash
+SNAP=.superpowers/sdd/2026-09-14-phase-h-security-hotfix
+ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role) \|' > "$SNAP/users-after-rotation.txt"
+diff "$SNAP/users-before-deploy.txt" "$SNAP/users-after-rotation.txt"
+```
+
+Expected: the only differences are the `@namaa-solutions.com` rows (now `DISABLED` with `disabled_at` and `deleted_at` set) and the removal of their role assignments. Any new `user` id or new `role` row is a finding: stop and report it to the owner before the smoke test.
+
+- [ ] **Step 10: Owner smoke test on production**
+
+Ask the owner to:
+1. log in at https://aldar-emlak.com/en/admin with their new password;
+2. upload an image in a TinyMCE editor;
+3. upload an image in a project's media dropzone;
+4. upload an attachment on a content type that has one;
+5. click the dashboard "update currency" button;
+6. submit one contact form on the site (`contact-us/store`);
+7. subscribe with the footer form (`contact-us/subscribe`).
+
+Wait for confirmation. Contact-form drops and limiter refusals are logged as `Contact form submission dropped by the honeypot` / `refused by the rate limiter` in `storage/logs/laravel-<date>.log`; check them for false positives:
+
+```bash
+ssh codecamb 'cd domains/aldar-emlak.com/public_html && grep -h "Contact form submission" storage/logs/laravel-*.log | tail -n 20'
+```
+
+- [ ] **Step 11: Merge the PR**
 
 After the owner confirms production works:
 
@@ -2278,10 +2387,17 @@ After the owner confirms production works:
 gh pr merge hotfix/security --merge --delete-branch
 ```
 
-- [ ] **Step 8: Hand over the owner-only items**
+- [ ] **Step 12: Hand over the owner-only items**
 
 Report these to the owner as still open:
-- N8: git history rewrite (command in the spec's Open items).
-- N7: confirm the two near-duplicate SSH keys and enable hPanel 2FA.
-- Check the hPanel cron list for `schedule:run` so scheduled currency updates keep working.
-- Backups kept on the server: `~/aldar-backup/hotfix-<stamp>.{tar.gz,sql.gz,added}`.
+- **N8: git history rewrite.** Run it only now, after the deploy (command in the spec's Open items). `deploy.sh` drift-checks the server against the root commit, so it must not be rewritten before the hotfix is live.
+- **N7:** confirm the two near-duplicate SSH keys and enable hPanel 2FA.
+- **Other access paths the spec does not cover:**
+  - Hostinger FTP accounts (`.ftpquota` sits in the web root);
+  - hPanel account sharing and collaborators;
+  - the hPanel cron job list (also confirm `schedule:run` is there, so scheduled currency updates keep working);
+  - Remote MySQL allowed hosts;
+  - the domain registrar and DNS;
+  - control of the Gmail mailboxes behind admin accounts 8, 27 and 29, since password-reset mails go there.
+- **Backup retention.** The server keeps `~/aldar-backup/hotfix-<stamp>.{tar.gz,sql.gz,added}` and `~/aldar-backup/env-before-rotation-*`. The `.sql.gz` dumps contain PII and the `env-before-rotation-*` copies contain the old secrets: delete both once the rollback window closes.
+- Delete the local snapshots `.superpowers/sdd/2026-09-14-phase-h-security-hotfix/users-*.txt` after the audit is accepted.

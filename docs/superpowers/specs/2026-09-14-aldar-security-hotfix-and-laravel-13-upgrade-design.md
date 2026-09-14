@@ -68,24 +68,25 @@ aldar-emlak.com is a bilingual (ar/en) real-estate site built by Namaa Solutions
 | H1 | **Arbitrary file upload leading to remote code execution.** `Modules/Cms/Http/Controllers/Admin/TinymceController.php` `uploader()` writes base64 content, under a client-supplied filename, to the `graph` disk. That disk is rooted at `public/graph/uploads/original` (`CmsServiceProvider::boot`), so it is web-accessible. A `.php` filename would execute. The permission check is commented out, and the ability it references (`TINYMCE_UPLOADER`) does not exist in the DB. All 133 existing files are images, and the server holds no non-image files there, so there is no sign of exploitation. | Decode the base64 and accept only JPEG, PNG, GIF or WebP, verified by `finfo` MIME detection plus `getimagesizefromstring`. Keep the existing size limit. Generate the filename on the server (random plus an extension derived from the detected MIME) and ignore the client filename. Allow only users passing the `staff` middleware (see H8); do not restore the check against the missing ability. Defence in depth: add `public/graph/.htaccess` denying `.php`, `.phtml` and `.phar`. |
 | H2 | **`GET /update_currency` is public** (`routes/web.php:14`) and runs `Artisan::call('update_currency')`, which calls an external currency API. | Move the route into the authenticated admin group as a POST with CSRF. The dashboard button (`Modules/Cms/Resources/views/dashboard.blade.php:23`, currently an `<a target="_blank">` hard-coded to `https://aldar-emlak.com/update_currency`) becomes a small form posting to `route(...)`, with the same classes and label so it looks identical. The schedule in `app/Console/Kernel.php` stays, and a Hostinger cron runs `schedule:run`; check the hPanel cron list first. |
 | H3 | **`GET /clear-cache` is public** (`Modules/Frontend/Routes/web.php:20`). It calls `Cache::flush()`. | Move it into the authenticated admin group. |
-| H4 | **Unbounded image generation.** `Modules/Cms/Http/Controllers/ImageController.php` `show()` accepts any `{size}`, and `quality`, `extension` and `mark` query parameters, then writes a cached variant per combination (the cache is at 11,788 files, 727 MB). Visitors can fill the disk. | Allow only the 59 size literals that appear in PHP/Blade code (entity `$imageOptions['dimensions']`, `getImage('…')`, `route('image', ['size' => …])`; no JavaScript builds `/img/` URLs), stored in `config/image_sizes.php`, plus `original`. As a 1:1 safety net, a size outside the list is still served when Glide already holds a cached variant for it; otherwise it returns 404. Ignore `quality`, `extension` and `mark`, which no view uses. |
+| H4 | **Unbounded image generation.** `Modules/Cms/Http/Controllers/ImageController.php` `show()` accepts any `{size}`, and `quality`, `extension` and `mark` query parameters, then writes a cached variant per combination (the cache is at 11,788 files, 727 MB). Visitors can fill the disk. | Allow only the 59 size literals that appear in PHP/Blade code (entity `$imageOptions['dimensions']`, `getImage('…')`, `route('image', ['size' => …])`; no JavaScript builds `/img/` URLs), stored in `config/image_sizes.php`, plus `original`. As a 1:1 safety net, a size outside the list is still served when Glide already holds a cached variant for it; otherwise it returns 404. Ignore `quality`, `extension` and `mark`, which no view uses. **Serve only canonical paths.** Glide hashes the path it is given into the cache key, while Flysystem normalises it on read and write, so every alias of a real file would get its own cache entry. Read `size` and `path` from the route parameters (never query input), and return 404 before Glide runs unless the path equals `League\Flysystem\Util::normalizePath($path)`, contains no backslash, no segment starting with `.` (this covers `.cache/…`), and no percent-escape (Glide `rawurldecode()`s the path, so `%252e` and `%252F` are aliases too). |
 | H5 | **Spam on the contact forms.** 1,780 of 3,700 leads contain URLs, and 20 contain HTML tags. There is no rate limit on `contact-us/store`, `store-inner` or `subscribe`. | Add a hidden honeypot field to the seven form instances that post to these endpoints. A filled honeypot gets the normal success JSON but nothing is stored. Allow 5 successful submissions per 10 minutes per IP per endpoint. Once over the limit, return HTTP **200** with `{"success": false, "message": <translated text>}`, because `submitFroms()` has an empty `error` callback and would otherwise show nothing. **Before enabling the limit in production,** probe how the client IP reaches PHP behind Hostinger's CDN (`server: hcdn`). If PHP sees CDN addresses, configure `TrustProxies` first; otherwise every visitor would share one quota. Humans see no change. |
 | H6 | **TLS verification disabled** for the FCM call (`Modules/Notification/Entities/FirebaseNotification.php`: `CURLOPT_SSL_VERIFYHOST 0`, `CURLOPT_SSL_VERIFYPEER 0`). | Set `CURLOPT_SSL_VERIFYHOST 2` and `CURLOPT_SSL_VERIFYPEER true`. |
 | H7 | **Public `GET /seed` and `GET /migrate`** (`Modules/Cms/Routes/web.php:15-35`), confirmed in the production route list. `/seed` runs `db:seed` and `module:seed`, which calls `UsersTableSeeder::createRootUser()`: it re-activates `root@namaa-solutions.com` and resets its password to `config('cms.root.password')`, a literal in the production config. Anyone can re-open the vendor's ROOT account at will, even after N1. | Delete both routes. They must ship in the same deploy as the other fixes and before N1 runs. Test: both return 404. |
-| H8 | **Unauthenticated attachment upload and deletion.** `Modules/Cms/Http/Controllers/Admin/AttachmentController.php` has no `auth` middleware (confirmed in the production route list). `store()` takes its validation rules from the request (`validation_rules`), the sub-folder (`sub_folder`) and the client's filename. The file is written before the request fails on `auth()->user()->id`, so anyone can add files or overwrite existing images (for example `sub_folder=../projects`). `destroy()` deletes any attachment row and image by id. | Add the `staff` middleware (authenticated, not disabled or deleted, role SUPERADMIN, ADMIN or Editor) to both actions. Accept `validation_rules` only if it exactly matches one of the four rule strings the admin views send; otherwise use `required|file|max:2048|mimes:jpeg,jpg,png,pdf`. Reduce `sub_folder` to one `[a-z0-9_-]` segment, falling back to `general`. Store under a random server-generated name with the guessed extension. Keep the client filename in the `filename` column only. `dropzoneFront.blade.php` is not included anywhere, so no public page uses these endpoints. |
+| H8 | **Unauthenticated attachment upload and deletion.** `Modules/Cms/Http/Controllers/Admin/AttachmentController.php` has no `auth` middleware (confirmed in the production route list). `store()` takes its validation rules from the request (`validation_rules`), the sub-folder (`sub_folder`) and the client's filename. The file is written before the request fails on `auth()->user()->id`, so anyone can add files or overwrite existing images (for example `sub_folder=../projects`). `destroy()` deletes any attachment row and image by id. | Add the `staff` middleware (authenticated, not disabled or deleted, role SUPERADMIN, ADMIN or Editor) to both actions. Accept `validation_rules` only if it exactly matches one of the five rule strings the admin views send; otherwise use `required|file|max:2048|mimes:jpeg,jpg,png,pdf`. Reduce `sub_folder` to one `[a-z0-9_-]` segment, falling back to `general`. Store under a random server-generated name with the guessed extension. Keep the client filename in the `filename` column only. `dropzoneFront.blade.php` is not included anywhere, so no public page uses these endpoints. |
+| H9 | **Unauthenticated mail header-injection scripts under `public/modules`.** `public/modules/frontend/form/process-contact.php`, `form/quote-contact.php`, `landingpage/libs/contact-form-process.php` and `landingpage/libs/quote-form-process.php` are template leftovers that pass `$_REQUEST['email']` straight into `mail()` headers, so a CRLF adds `Bcc:` recipients. Nothing in the app reaches them: the only references are relative AJAX URLs in template JS that resolve under the page URL, from forms no rendered view contains. On a shared account hosting 16 sites, spam abuse risks a Hostinger suspension. | The hotfix deploy cannot delete files, so add `public/modules/.htaccess` with the same PHP deny block as `public/graph/.htaccess`. Test: `GET /modules/frontend/form/process-contact.php` and a random `.php` name under `/modules/` return 403, and a static CSS file under `/modules/` still returns 200. |
 
 ### H.2 Removing vendor access
 
 | ID | Access path | Action |
 |---|---|---|
-| N1 | Active ROOT account `developer` (`root@namaa-solutions.com`, id 1). Its seeder password was a literal in `Modules/Cms/Config/config.php`. `App\User` has no `SoftDeletes` trait, and the login flow checks neither `disabled_at` nor `deleted_at`. | A new idempotent command, `aldar:offboard-vendor`, handles every user with an `@namaa-solutions.com` email: revoke all roles, set a random 64-character password (never stored or shown), set status `DISABLED`, set `disabled_at` and `deleted_at`, and clear `remember_token`. `LoginController::credentials()` adds `disabled_at => null` and `deleted_at => null`, so disabled accounts cannot log in. A test proves the login is rejected even with the old password. Run it only after H7 is live. |
+| N1 | Active ROOT account `developer` (`root@namaa-solutions.com`, id 1). Its seeder password was a literal in `Modules/Cms/Config/config.php`. Login already refuses disabled or deleted accounts: `App\User` uses `SoftDeletes` plus the `Disabable` global scope, so the user provider never finds such rows. | A new idempotent command, `aldar:offboard-vendor`, handles every user with an `@namaa-solutions.com` email: revoke all roles, set a random 64-character password (never stored or shown), set status `DISABLED`, set `disabled_at` and `deleted_at`, and clear `remember_token`. No `LoginController::credentials()` override is needed (it was dropped as redundant, ruling R5); the command queries users with `withDisabled()->withTrashed()` so reruns and already-disabled vendor rows are handled. A regression test proves the login is rejected even with the old password. Run it only after H7 is live, straight after the deploy is verified. |
 | N2 | Literal seeder passwords for `root@`/`superadmin@namaa-solutions.com` in config (a literal `Hash::make` call). | Done in commit `afe3e63` (read from env). The hotfix also removes the vendor emails from the `root`/`superadmin` seeder config (`PermissionsDatabaseSeeder` reads `config('cms.root.*')`). Values come from env, with no vendor defaults. |
-| N3 | `APP_KEY` was created by the vendor, and it is also in the leftover `.env.bak-20260914-*` files in `public_html`. | Rotate `APP_KEY` (`php artisan key:generate --force` with `/opt/alt/php74/usr/bin/php`). The DB contains no encrypted data (no `Crypt`/`encrypt`/`encrypted` usage found). Impact: all sessions are logged out once. Delete the `.env.bak-*` files. |
+| N3 | `APP_KEY` was created by the vendor, and it is also in the leftover `.env.bak-20260914-*` files in `public_html`. | Rotate `APP_KEY` (`php artisan key:generate --force` with `/opt/alt/php74/usr/bin/php`). The DB contains no encrypted data (no `Crypt`/`encrypt`/`encrypted` usage found). Impact: all sessions are logged out once. Delete every stale `.env*` copy except `.env` itself (`.env.bak-*`, any `.env.production`). |
 | N4 | The DB password may be known to people who handled the migration. | Rotate it in hPanel and update `.env` in the same step. |
 | N5 | Admin accounts 8 (`aldar`), 27 (`aldar-emlak`) and 29 (`growth`) were created during the vendor era, so the vendor may know their passwords. | Owners set new passwords with a new artisan command, `aldar:set-password {username}`, which prompts with hidden input. The owner runs it over SSH; Claude never sees the values. |
 | N6 | Service workers in `public/service-worker.js` and `public/firebase-messaging-sw.js` are configured for the vendor's Firebase project `binaa-prod`. 359 browsers subscribed historically. Public pages no longer register them. | Replace both files with self-unregistering workers that call `self.registration.unregister()` and hold no Firebase config. Browsers that check for updates drop the subscription. The Notification module code stays, per the 1:1 constraint. |
 | N7 | SSH keys on the Hostinger account. Five keys exist and none belong to the vendor. | **Owner action:** confirm the two keys whose comments are near-identical spellings of the same personal Gmail address. Recommended: enable 2FA on hPanel, because the account hosts 16 sites. |
-| N8 | Git history: the baseline commit `0edf5d6` on GitHub still contains the literal seeder passwords. | **Owner action:** rewrite history. The owner approved it, but Claude Code's safety classifier blocks force-pushes. The command is in "Open items" below. N1 makes the passwords useless either way. |
+| N8 | Git history: the baseline commit `0edf5d6` on GitHub still contains the literal seeder passwords. | **Owner action:** rewrite history, **after** the hotfix deploy. The owner approved it, but Claude Code's safety classifier blocks force-pushes. The command is in "Open items" below. N1 makes the passwords useless either way. The deploy's drift check compares the server against the root commit, so rewriting the root first would break it. |
 
 Vendor branding (the footer "Powered by Namaa" link and `twitter:site @namaa_solutions`) is not an access path. It stays untouched in this project.
 
@@ -95,10 +96,11 @@ Vendor branding (the footer "Powered by Namaa" link and `twitter:site @namaa_sol
 - **Security tests.** Each finding gets a test that fails on the current code and passes after the fix:
   - H1: uploading `shell.php` or a PHP payload disguised as `image.jpg` is rejected, and a real JPEG is accepted with a server-generated name.
   - H2, H3: the old public URLs return 404, the new admin routes send anonymous users to login, and the dashboard button still works.
-  - H4: an unknown size returns 404, every size on the key pages returns 200, and `quality` does not create new cache files.
+  - H4: an unknown size returns 404, every size on the key pages returns 200, and `quality` does not create new cache files. Non-canonical paths (`%2e` and `%2e%2e` segments, `//`, `%5C`, `%252F`, `.cache/…`, `?path=`) return 404 and leave the cache file count unchanged; the test sends the raw path over a socket so no client normalises it first.
   - H5: a filled honeypot stores no row, and the sixth successful submission within 10 minutes is refused with `success: false`.
   - H7: `/seed` and `/migrate` return 404.
   - H8: anonymous upload and delete requests leave storage and the DB unchanged.
+  - H9: PHP under `/modules/` returns 403 while static assets there return 200.
   - N1: the `developer` login is rejected.
 - Tests that write data refuse to run unless `BASE_URL` is the local Docker stack.
 - **Smoke tests for the flows that must keep working:**
@@ -112,29 +114,31 @@ Vendor branding (the footer "Powered by Namaa" link and `twitter:site @namaa_sol
 
 The release-based structure does not exist yet (Phase 3), so the hotfix patches the current `public_html` in place. `scripts/hotfix/deploy.sh <git-ref>` does the following:
 
-1. Resolve the application files that differ between the root commit (the server snapshot) and `<git-ref>`, additions and modifications only, excluding `tests/`, `docs/`, `scripts/` and `docker/`.
+1. Resolve `<git-ref>` to one commit SHA and use that SHA for every later step. Resolve the application files that differ between the root commit (the server snapshot) and that SHA, additions and modifications only, excluding `tests/`, `docs/`, `scripts/` and `docker/`.
 2. **Drift check.** For each file, compare the server copy (CR stripped) with the root-commit version. Abort on any mismatch, except for files listed in `scripts/hotfix/known-baseline-edits.txt`, which were deliberately changed in the baseline commit.
 3. On the server, back up those paths into `~/aldar-backup/hotfix-<timestamp>.tar.gz`, record newly added files in `hotfix-<timestamp>.added`, and dump the DB with `scripts/server/db-dump.php`, which uses Laravel's own config.
-4. Stream the files from `git archive <git-ref>` into `public_html`.
+4. Stream the files from `git archive <sha>` into `public_html`.
 5. Run `view:clear`, `route:clear`, `config:clear` and `cache:clear` with `/opt/alt/php74/usr/bin/php`.
 6. Run `scripts/hotfix/verify-production.sh`, which is read-only:
    - public pages return 200 in ar/en;
-   - `/seed`, `/migrate`, `/update_currency` and `/clear-cache` return 404;
-   - anonymous attachment upload is refused;
-   - an unknown image size returns 404;
-   - `/service-worker.js` is the unregistering worker.
+   - `/seed`, `/migrate`, `/update_currency` and `/clear-cache` are no longer public routes, and the admin replacements, attachment and TinyMCE routes carry the `staff` middleware (read from the server's route list);
+   - the contact endpoints carry `contact.guard`;
+   - an unknown image size, randomised on every run, returns 404;
+   - `/service-worker.js` and `/firebase-messaging-sw.js` are the unregistering workers;
+   - a request for a random `.php` name under `/graph/uploads/original/tinymce/` and under `/modules/` returns 403. This is the only production proof that LiteSpeed honours the `.htaccess` deny blocks: without them the request falls through to Laravel.
 
 `--dry-run` stops after step 2.
 
-`scripts/hotfix/rollback.sh <timestamp>` restores the tarball and clears caches.
+`scripts/hotfix/rollback.sh --reopens-public-seed <timestamp>` restores the tarball and clears caches. It refuses to run without that flag, because restoring the old route files brings back the public `/seed` route and the vendor's seeder password. Use it only before `aldar:offboard-vendor` has run; after that, fix forward.
 
-**Secret rotation runbook.** Run in a short window, after the code deploy is verified:
+**Rollout order after the deploy is verified** (the exact commands are in Task 11 of the Phase H plan). `AuthenticateSession` is not enabled, so sessions must be wiped only after every credential has changed, and the vendor's ROOT account must not stay active during the owner's smoke test:
 
-1. Change the DB password in hPanel and update `.env` straight away. Expect seconds of DB errors.
-2. Rotate `APP_KEY` and delete `.env.bak-*`.
-3. Disable the `developer` account (N1).
-4. Owners set new admin passwords (N5).
-5. Re-run the post-deploy check.
+1. Offboard the vendor (N1) immediately. From here on, fix forward.
+2. Owners set new admin passwords (N5).
+3. Back up `.env` on the server, then change the DB password in hPanel and update `.env` straight away (N4). Expect seconds of DB errors.
+4. Rotate `APP_KEY` (N3), confirm the key changed, wipe the sessions with `find storage/framework/sessions -type f -delete`, delete every stale `.env*` copy, and clear the config cache.
+5. Audit users and role assignments against a snapshot taken before the deploy.
+6. Owner smoke test, then re-run the post-deploy check.
 
 ---
 
@@ -252,6 +256,9 @@ The release-based structure does not exist yet (Phase 3), so the hotfix patches 
 | S3 | Security headers on every response: HSTS, `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`. The CSP is **Report-Only**, allowing the CDNs in use: amcharts, jsdelivr, unpkg, cdnjs, bootstrapcdn, ampproject. |
 | S4 | `composer audit` must report zero known vulnerabilities before any deploy. Front-end libraries are listed in a report only. |
 | S5 | Review the 165 unescaped `{!! !!}` outputs. Visitor-supplied data must never be printed raw. Admin-authored CMS HTML stays as it is. |
+| S6 | `POST admin/notification/postWebToken` is public: anonymous visitors can write `notif_tokens` rows, and a failure returns the exception message and code in the JSON body. Validate and rate-limit the endpoint, and never return exception detail to the client. |
+| S7 | CSRF on `GET admin/clear-cache`: a staff member visiting a hostile page flushes the cache. Make it a POST with CSRF, like `admin/update-currency`. |
+| S8 | `EnsureStaff` answers JSON callers with a plain-text 403. Return a JSON error body when the request expects JSON. |
 
 Each item gets a test added to the suite.
 
@@ -306,12 +313,12 @@ domains/aldar-emlak.com/
 
 | Item | Owner | Status |
 |---|---|---|
-| Rewrite git history to drop commit `0edf5d6`'s literal passwords (N8) | Owner | Approved. Blocked by the Claude Code classifier, so the owner runs it (see below). |
+| Rewrite git history to drop commit `0edf5d6`'s literal passwords (N8) | Owner | Approved. Blocked by the Claude Code classifier, so the owner runs it (see below). Run it only **after** the hotfix deploy: `deploy.sh` drift-checks the server against the root commit. |
 | Confirm both near-duplicate SSH keys (N7) and enable hPanel 2FA | Owner | Pending |
 | Check hPanel cron for `schedule:run` (H2) | Implementation | Pending |
 | Confirm Hostinger symlink and `.htaccess` PHP-handler behaviour (Phase 3) | Implementation on staging | Pending |
 
-**N8 history rewrite** (run by the owner from the repo root). It folds `afe3e63` into the root commit and replays every later commit unchanged:
+**N8 history rewrite** (run by the owner from the repo root, after the hotfix deploy is verified). It folds `afe3e63` into the root commit and replays every later commit unchanged:
 
 ```bash
 GIT_SEQUENCE_EDITOR="sed -i '' '2s/^pick/fixup/'" git rebase -i --root && git push --force-with-lease origin main
