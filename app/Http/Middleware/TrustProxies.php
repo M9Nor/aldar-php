@@ -19,5 +19,15 @@ class TrustProxies extends Middleware
      *
      * @var int
      */
-    protected $headers = Request::HEADER_X_FORWARDED_ALL;
+    protected $headers = Request::HEADER_X_FORWARDED_FOR;
+
+    /**
+     * Only the client address is taken from proxy headers. Forwarded host, scheme and
+     * port stay untrusted even when $proxies is set, so clients cannot spoof them past
+     * the CDN. (fideloper/proxy's default maps HEADER_X_FORWARDED_FOR to X_FORWARDED_ALL.)
+     */
+    protected function getTrustedHeaderNames()
+    {
+        return Request::HEADER_X_FORWARDED_FOR;
+    }
 }
