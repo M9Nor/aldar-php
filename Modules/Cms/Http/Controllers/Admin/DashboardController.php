@@ -25,7 +25,10 @@ class DashboardController extends CmsController
     public function __construct()
     {
         // app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
-        $this->middleware('auth')->except([]);
+        // updateCurrency is gated by the route's own 'staff' middleware, which already requires
+        // an authenticated request and returns a JSON-aware 401 to anonymous AJAX callers; the
+        // blanket 'auth' middleware here would otherwise intercept it first and always redirect.
+        $this->middleware('auth')->except(['updateCurrency']);
     }
 
     /**
@@ -38,5 +41,15 @@ class DashboardController extends CmsController
         $this->data['total_roles'] = Role::count();
         $this->data['total_permissions'] = Ability::count();
         return view('cms::dashboard', $this->data);
+    }
+
+    /**
+     * Refresh currency rates on demand (the same command the scheduler runs).
+     */
+    public function updateCurrency()
+    {
+        \Artisan::call('update_currency');
+
+        return redirect()->route('DashboardController@index');
     }
 }

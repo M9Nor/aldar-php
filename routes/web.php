@@ -10,9 +10,3 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('update_currency' , function(){
-    \Artisan::call('update_currency');
-});
-
-

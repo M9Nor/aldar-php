@@ -7,31 +7,6 @@ Route::get('img/{size}/{path}', 'ImageController@show')
     ])
     ->name('image');
 
-// Route::get('migrate_refresh' , function(){
-//     ini_set('memory_limit','1024M');
-//     \Artisan::call('migrate:refresh');
-// });
-
-Route::get('migrate' , function(){
-    // ini_set('memory_limit','1024M');
-    // try{
-    //     \Artisan::call('migrate --force');
-    // }catch(\Exception $e){
-    //     // dd($e->getMessage());
-    // }
-});
-
-Route::get('seed' , function(){
-    ini_set('memory_limit','1024M');
-    try{
-        \Artisan::call('db:seed');
-        \Artisan::call('module:seed');
-    }catch(\Exception $e){
-        dd($e->getMessage());
-        // dd($e->getMessage());
-    }
-});
-
 Route::group([
     'prefix'        => LaravelLocalization::setLocale(),
     'middleware'    => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
@@ -46,6 +21,8 @@ Route::group([
         'namespace' => 'Admin'
     ], function() {
         Route::get('/',                                 'DashboardController@index')->name('DashboardController@index');
+        Route::post('update-currency',                  'DashboardController@updateCurrency')->middleware('staff')->name('DashboardController@updateCurrency');
+        Route::get('clear-cache',                       '\Modules\Frontend\Http\Controllers\HomeController@clearCache')->middleware('staff')->name('cache.clear');
 
         Route::group(['prefix' => 'users'], function() {
             Route::get('/',                             'UserController@index')->name('UserController@index');
@@ -194,11 +171,11 @@ Route::group([
             Route::post('mass_restore',                'CountryController@massRestore')->name('CountryController@massRestore');
             Route::post('delete-attachemnt',           'CountryController@deleteAttachment')->name('CountryController@deleteAttachment');
         });
-        Route::group([ 'prefix' => 'attachments' ], function() {
+        Route::group([ 'prefix' => 'attachments', 'middleware' => 'staff' ], function() {
             Route::post('/store',                      'AttachmentController@store')->name('AttachmentController@store');
             Route::post('delete',                      'AttachmentController@destroy')->name('AttachmentController@destroy');
         });
-        Route::group(['prefix' => 'tinymce'], function (){
+        Route::group(['prefix' => 'tinymce', 'middleware' => 'staff'], function (){
             Route::post('uploader',                    'TinymceController@uploader')->name('TinymceController@uploader');
         });
     });

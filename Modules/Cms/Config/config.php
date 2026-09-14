@@ -256,7 +256,7 @@ return [
      * Note: make sure to delete the existing root user in case you changed the below email.
      */
     'root' => [
-        'email'             => 'root@namaa-solutions.com',
+        'email'             => env('CMS_ROOT_SEED_EMAIL'),
         'username'          => 'developer',
         'type'              => 'ROOT',
         'verification_code' => 'VERIFIED',
@@ -264,7 +264,7 @@ return [
         'password'          => \Hash::make(env('CMS_ROOT_SEED_PASSWORD', '')),
     ],
     'superadmin' => [
-        'email'             => 'superadmin@namaa-solutions.com',
+        'email'             => env('CMS_SUPERADMIN_SEED_EMAIL'),
         'username'          => 'superadmin',
         'type'              => 'ROOT',
         'verification_code' => 'VERIFIED',

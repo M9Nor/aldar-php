@@ -107,6 +107,7 @@
                         <div class="recent-post">
                             <div class="contact-form">
                                 <form method="POST" onsubmit="submitFroms(event);" action="{{route('ContactController@store')}}" name="contact_form">
+                                    @include('frontend::partials.honeypot', ['id' => 'home'])
                                     @csrf
                                     <div class="form-group">
                                         <input class="form-control" onchange="isValid('fullname')" type="text" name="fullname" placeholder="{{__('frontend::main.contact_form.name')}} *">

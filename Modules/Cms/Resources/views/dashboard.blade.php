@@ -20,9 +20,12 @@
                 <div class="kt-widget1__info">
                     <h3 class="kt-widget1__title">{{ __('cms::dashboard.update_currency') }}</h3>
                     <span class="kt-widget1__desc">
-                        <a target="_blank" href="https://aldar-emlak.com/update_currency" class="submit_form btn btn-success btn-bold">
-                            {{ __('cms::dashboard.update') }}
-                        </a>
+                        <form method="POST" action="{{ route('DashboardController@updateCurrency') }}" target="_blank" class="d-inline">
+                            @csrf
+                            <button type="submit" class="submit_form btn btn-success btn-bold">
+                                {{ __('cms::dashboard.update') }}
+                            </button>
+                        </form>
                     </span>
                 </div>
             </div>

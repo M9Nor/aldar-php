@@ -2,6 +2,7 @@
     <h5 class="font-weight-bold mb-4 widget-boxed-header">{{__('frontend::main.contact_form.title')}}</h5>
     <div class="contact-form">
         <form method="POST" onsubmit="submitFroms(event);" action="{{route('ContactController@store')}}" name="contact_form">
+            @include('frontend::partials.honeypot', ['id' => 'side'])
             @csrf
             <div class="form-group">
                 <input class="form-control" onchange="isValid('fullname')" type="text" name="fullname" placeholder="{{__('frontend::main.contact_form.name')}} *">

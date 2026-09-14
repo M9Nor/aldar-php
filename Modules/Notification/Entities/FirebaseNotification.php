@@ -178,8 +178,8 @@ class FirebaseNotification extends Model
         $CH        = curl_init();
         curl_setopt( $CH, CURLOPT_HTTPHEADER     , $HEADERS );
         curl_setopt( $CH, CURLOPT_URL            , 'https://fcm.googleapis.com/fcm/send');
-        curl_setopt( $CH, CURLOPT_SSL_VERIFYHOST , 0 );
-        curl_setopt( $CH, CURLOPT_SSL_VERIFYPEER , 0 );
+        curl_setopt( $CH, CURLOPT_SSL_VERIFYHOST , 2 );
+        curl_setopt( $CH, CURLOPT_SSL_VERIFYPEER , true );
         curl_setopt( $CH, CURLOPT_RETURNTRANSFER , true );
         curl_setopt( $CH, CURLOPT_POSTFIELDS     , $POST_DATA );
         $RESPONSE = curl_exec($CH);
