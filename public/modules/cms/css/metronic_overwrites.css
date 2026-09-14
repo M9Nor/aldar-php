@@ -1,0 +1,242 @@
+/* General */
+.kt-user-card-v2 .kt-user-card-v2__details {
+    line-height: unset;
+}
+
+.kt-user-card-v2 .kt-user-card-v2__details .kt-user-card-v2__name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+}
+
+.kt-user-card-v2 .kt-user-card-v2__pic.custom img {
+    border-radius: 10%;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) {
+    margin-right: -1px !important;
+}
+
+/* Auth */
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-valid + .valid-feedback, .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-invalid + .invalid-feedback {
+    font-weight: 400;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control {
+    height: 40px;
+    margin-top: 1.25rem;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__logo {
+    text-align: center;
+    margin: 0 auto 2rem auto;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper {
+    padding: 0 2rem;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__logo img {
+    height: 150px
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-secondary, .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-primary {
+    height: 45px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/* Subheader */
+@media (min-width: 1025px) {
+    .kt-header--fixed.kt-subheader--fixed .kt-wrapper {
+        padding-top: 119px;
+    }
+}
+
+.kt-subheader .kt-subheader__main {
+    padding: 0;
+}
+.kt-subheader .kt-subheader__main .kt-subheader__title {
+    align-self: stretch;
+    margin: 0 1rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+[direction="rtl"] .kt-subheader .kt-subheader__main .kt-subheader__title {
+    border-right: unset;
+    margin: 0 0 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .kt-subheader .kt-subheader__main .kt-subheader__title {
+        border-right: 1px solid #eff0f6;
+    }
+    [direction="rtl"] .kt-subheader .kt-subheader__main .kt-subheader__title {
+        border-left: 1px solid #eff0f6;
+    }
+}
+
+/* Toastr */
+.toast-top-center {
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal .modal-content {
+    border: unset !important;
+    border-radius: .4rem !important;
+}
+
+.modal .modal-content .modal-header {
+    padding: 0.75rem 1.25rem !important;
+    border-top-right-radius: .4rem !important;
+    border-top-left-radius: .4rem !important;
+    background-color: #646c9a !important;
+}
+
+.modal .modal-content .modal-header .close {
+    color: #fff !important;
+}
+
+.modal .modal-content .modal-header .modal-title {
+    color: #fff !important;
+}
+
+.modal .modal-content .modal-footer {
+    padding: 0.75rem 1.25rem !important;
+}
+
+/* Datatables */
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before {
+    content: "\f167";
+}
+
+[direction="rtl"] .dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before {
+    content: "\f166";
+}
+
+.dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before {
+    content: "\f165";
+}
+
+.datatable-custom-tools {
+    margin: 0 !important;
+}
+
+table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
+    background-color: #f0f4fc !important;
+}
+
+.dataTables_wrapper .dataTable .selected th, .dataTables_wrapper .dataTable .selected td {
+    background-color: #eef4ff;
+}
+
+.table-bordered {
+    border-radius: 4px;
+    border: 0.1px solid #ebedf2 !important;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+    box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+}
+.table-bordered th, .table-bordered td {
+    border: 0.1px solid #ebedf2 !important;
+}
+
+table.dataTable thead th {
+    font-weight: 600;
+    color: #5867dd !important;
+}
+
+.dataTables_wrapper .child .dtr-details > li .dtr-title,
+.dataTables_wrapper .child .dtr-details > li .dtr-title {
+    vertical-align: middle;
+}
+
+/* Bootstrap Switch */
+.bootstrap-switch .bootstrap-switch-handle-on, .bootstrap-switch .bootstrap-switch-handle-off, .bootstrap-switch .bootstrap-switch-label {
+    letter-spacing: unset;
+}
+
+/* Dropdown */
+.dropdown-menu > li > a > i:before, .dropdown-menu > .dropdown-item > i:before {
+    vertical-align: sub !important;
+}
+@media (min-width: 1025px) {
+    .kt-header-menu .kt-menu__nav > .kt-menu__item .kt-menu__custom-width {
+        width: 180px;
+    }
+
+    [direction="rtl"] .kt-header-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__hor-arrow:before {
+        content: "\f110" !important;
+    }
+}
+
+.kt-notification .kt-notification__item:after {
+    content: "\f112" !important;
+}
+
+[direction="rtl"] .kt-notification .kt-notification__item:after {
+    content: "\f111" !important;
+}
+
+/* FontAwesome */
+.fa-lg {
+    font-size: 1.3em !important;
+}
+
+/* Dual Listbox */
+.dual-listbox .dual-listbox__container .dual-listbox__title {
+    color: #5867dd;
+    font-weight: 600;
+}
+
+.dual-listbox__container > div:first-child,
+.dual-listbox__container > div:last-child {
+    width: 42%;
+}
+
+.dual-listbox .dual-listbox__container .dual-listbox__selected, .dual-listbox .dual-listbox__container .dual-listbox__available {
+    width: 100%;
+    height: 365px;
+}
+
+/* Accordion */
+.accordion .card .card-header .card-title.collapsed > span {
+    color: #74788d;
+}
+
+.accordion .card .card-header .card-title > span {
+    font-weight: 600;
+    color: #5d78ff;
+}
+
+.accordion.accordion-panel .card .card-body {
+    padding-top: 0.5rem !important;
+}
+
+/* Spinners */
+.kt-spinner.kt-spinner--input.kt-spinner--right:before {
+    z-index: 4;
+}
+
+/* Aside */
+.aside-menu-brand-logo {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+}
+
+.aside-menu-brand-logo img {
+    width: 50%;
+}
+

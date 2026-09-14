@@ -1,0 +1,30 @@
+.date-timeline{
+    right: 0;
+    left: unset;
+}
+.timeline-img-header h2{
+    left: 20px;
+    right: unset;
+}
+.timeline-card .a-timeline {
+    margin-left: 20px;
+    margin-right: unset;
+}
+.timeline-img {
+    right: 48%;
+}
+.timeline-item:nth-child(even) .timeline-content .date-timeline{
+    left: auto;
+    right: 0;
+}
+.contact-now{
+    right: 44%;
+}
+@media(max-width: 767px){
+    .whatsapp-call,.arrow-up-1{
+        left: 20px;
+    }
+    .arrow-up-1{
+        right: 20px;
+    }
+}

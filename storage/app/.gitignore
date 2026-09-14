@@ -1,0 +1,9 @@
+*
+!public/
+public/*
+!public/uploads/
+public/uploads/*
+!public/uploads/defaults/
+!public/uploads/defaults/*
+!.gitignore
+!modules_statuses.json

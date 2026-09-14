@@ -1,0 +1,30 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.vscode
+/.vscode/*
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Production secrets and server-side copies of .env (never commit)
+.env.*
+!.env.example
+
+# Local database dumps (contain customer data)
+/_db-backup/
+
+# Runtime output
+/storage/logs/*
+/storage/framework/sessions/*
+/storage/framework/cache/data/*
+
+# Hosting and OS artifacts
+.ftpquota
+.DS_Store

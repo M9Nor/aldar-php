@@ -1,0 +1,936 @@
+@php
+    use Modules\Cms\Entities\Content;
+@endphp
+@extends('cms::layouts.master')
+@section('title', __('cms::cruds.contents.contents'))
+
+@push('styles')
+    @if(LaravelLocalization::getCurrentLocaleDirection() == 'rtl')
+        <link href="{{ Module::asset('cms:metronic/css/pages/wizard/wizard-4.rtl.css') }}" rel="stylesheet" type="text/css">
+    @else
+        <link href="{{ Module::asset('cms:metronic/css/pages/wizard/wizard-4.css') }}" rel="stylesheet" type="text/css">
+    @endif
+    <style>
+        .repeater-table-head,.repeater-table-body,.repeater-table-body-edit{
+            width: 100%;
+        }
+        .repeater-table-head thead{
+            font-size: 16px;
+        }
+        .repeater-table-head tbody tr:nth-child(even) {
+            background-color: #eee;
+        }
+        .repeater-table-head thead tr th,.repeater-table-body tbody tr td,.repeater-table-body-edit tbody tr td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        #tags_en + span , #tags_tr + span{
+            width: 100% !important
+        }
+        #currency_icon div {
+            width: 160px !important;
+            height: 100px !important;
+        }
+    </style>
+@endpush
+
+@section('subheader')
+    @component('cms::includes.subheader', [
+        'options' => [
+            'title' =>  __('cms::cruds.contents.update'),
+            'items' => [
+                [
+                    'label' => Content::getTypeTitle($type),
+                    'link'  => route('ContentController@index',['type' => $model->type])
+                ], [
+                    'label' => __('cms::cruds.contents.update'),
+                    'link'  => 'javascript:;'
+                ]
+            ]
+        ]
+    ])
+        @slot('main')
+        @endslot
+        @slot('toolbar')
+            <a href="{{ url()->previous() }}" class="btn btn-default btn-bold">
+                {{ __('cms::global.back') }}
+            </a>
+            <div class="btn-group">
+                <a href="javascript:;" data-redirect-url="javascript:;" class="submit_form btn btn-success btn-bold">
+                    {{ __('cms::global.submit') }}
+                </a>
+                <button type="button" class="btn btn-success btn-bold dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-{{ $langDirection == 'rtl' ? 'left' : 'right' }}">
+                    <ul class="kt-nav">
+                        <li class="kt-nav__item">
+                            <a href="javascript:;" data-redirect-url="javascript:;" class="submit_form kt-nav__link">
+                                <i class="kt-nav__link-icon flaticon2-writing"></i>
+                                <span class="kt-nav__link-text">{{ __('cms::global.save_and_continue') }}</span> <!-- Save &amp; continue -->
+                            </a>
+                        </li>
+                        <li class="kt-nav__item">
+                            <a href="javascript:;" data-redirect-url="{{ route('ContentController@create',['type' => $type]) }}" class="submit_form kt-nav__link">
+                                <i class="kt-nav__link-icon flaticon2-add-square"></i>
+                                <span class="kt-nav__link-text">{{ __('cms::global.save_and_add_new') }}</span> <!-- Save &amp; add new -->
+                            </a>
+                        </li>
+                        <li class="kt-nav__item">
+                            <a href="javascript:;" data-redirect-url="{{ route('ContentController@index',['type' => $type]) }}" class="submit_form kt-nav__link">
+                                <i class="kt-nav__link-icon flaticon2-indent-dots"></i>
+                                <span class="kt-nav__link-text">{{ __('cms::global.save_and_exit') }}</span> <!-- Save &amp; exit -->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        @endslot
+    @endcomponent
+@endsection
+
+@section('content')
+    <form onsubmit="onFormSubmit(event);" class="kt-form kt-form--label-right" id="addNewForm" action="{{ route('ContentController@update',['model'=>$model->id , 'type' => $model->type]) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" id="redirectUrl" name="redirect_url" value="save_and_exit">
+        <input type="hidden" name="type" value="{{$type}}">
+        <div class="row">
+            <div class="col-xl-8 offset-xl-2">
+                @component('cms::components.partials.portlet', ['portletClass' => 'kt-portlet--height-fluid'])
+                    <div class="kt-section">
+                        <h4 class="kt-section__title kt-section__title-sm kt-font-bolder">
+                            {{  Content::getTypeTitle($type, false) }}
+                        </h4>
+                        <div class="row">
+                            @if(Content::typeHasField($type, 'sort_order'))
+                                <div class="col-sm-12">
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'sort_order',
+                                            'name'          => 'sort_order',
+                                            'type'          => 'number',
+                                            'label'         => Content::getFieldLabel($type, 'sort_order'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'sort_order'),
+                                            'help'          => Content::getFieldHelp($type, 'sort_order'),
+                                            'value'         => old('sort_order', $model->sort_order),
+                                            'required'      => Content::isFieldRequired($type, 'sort_order'),
+                                        ]
+                                    ])
+                                </div>
+                            @endif
+                            @if(Content::typeHasField($type, 'views'))
+                                <div class="col-sm-12">
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'views',
+                                            'name'          => 'views',
+                                            'type'          => 'number',
+                                            'label'         => Content::getFieldLabel($type, 'views'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'views'),
+                                            'help'          => Content::getFieldHelp($type, 'views'),
+                                            'value'         => old('views', round($model->views)),
+                                            'required'      => Content::isFieldRequired($type, 'views'),
+                                        ]
+                                    ])
+                                </div>
+                            @endif
+                            @if(Content::getTypeCustomFields($type,'custom_fields'))
+                                @if($model->CustomFields->isNotEmpty())
+                                    @foreach($model->CustomFields as $CustomFields)
+                                        <div class="col-sm-12">
+                                            @php
+                                                $keysArray[] = $CustomFields->key;
+                                            @endphp
+                                            @include('cms::components.inputs.text', [
+                                                'options' => [
+                                                    'id'            => $CustomFields->key,
+                                                    'name'          => $CustomFields->key,
+                                                    'type'          => $CustomFields->type,
+                                                    'label'         => __('backend::contents.custom_fields.'.$CustomFields->key.'.label'),
+                                                    'placeholder'   => __('backend::contents.custom_fields.'.$CustomFields->key.'.placeholder'),
+                                                    'help'          => __('backend::contents.custom_fields.'.$CustomFields->key.'.help'),
+                                                    'value'         => old($CustomFields->key,$CustomFields->value),
+                                                    'required'      => Content::getTypeCustomFields($type,'custom_fields')[$CustomFields->key]['required'],
+                                                ]
+                                            ])
+                                        </div>
+                                    @endforeach
+                                    @foreach(Content::getTypeCustomFields($type,'custom_fields') as $key => $val)
+                                        @if(!in_array($key, $keysArray))
+                                            <div class="col-sm-12">
+                                                @include('cms::components.inputs.text', [
+                                                    'options' => [
+                                                        'id'            => $key,
+                                                        'name'          => $key,
+                                                        'type'          => $val['type'],
+                                                        'label'         => __('backend::contents.custom_fields.'.$key.'.label'),
+                                                        'placeholder'   => __('backend::contents.custom_fields.'.$key.'.placeholder'),
+                                                        'help'          => __('backend::contents.custom_fields.'.$key.'.help'),
+                                                        'value'         => old($key),
+                                                        'required'      => $val['required'],
+                                                    ]
+                                                ])
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    @foreach(Content::getTypeCustomFields($type,'custom_fields') as $key => $val)
+                                        <div class="col-sm-12">
+                                            @include('cms::components.inputs.text', [
+                                                'options' => [
+                                                    'id'            => $key,
+                                                    'name'          => $key,
+                                                    'type'          => $val['type'],
+                                                    'label'         => __('backend::contents.custom_fields.'.$key.'.label'),
+                                                    'placeholder'   => __('backend::contents.custom_fields.'.$key.'.placeholder'),
+                                                    'help'          => __('backend::contents.custom_fields.'.$key.'.help'),
+                                                    'value'         => old($key),
+                                                    'required'      => $val['required'],
+                                                ]
+                                            ])
+                                        </div>
+                                    @endforeach
+                                @endif
+                            @endif
+                            @if($type == 'filters')
+                                @if(Content::typeHasField($type, 'categories'))
+                                    <div class="col-sm-12">
+                                        @include('cms::components.inputs.select2', [
+                                            'options' => [
+                                                'id'                => 'categories_ids',
+                                                'name'              => 'categories_ids[]',
+                                                'label'             => Content::getFieldLabel($type, 'categories'),
+                                                'placeholder'       => Content::getFieldPlaceholder($type, 'categories'),
+                                                'help'              => Content::getFieldHelp($type, 'categories'),
+                                                'selected'          => $model->categories->map(function($item) {
+                                                    return $item->formAjaxArray();
+                                                }),
+                                                'multiple'          => true,
+                                                'clear_button'      => true,
+                                                'url'               => route('CategoryController@getCategoriesSelect2',['type' => 'filters']),
+                                                'items_per_page'    => 20,
+                                                'dir'               => 'rtl',
+                                                'required'          => Content::isFieldRequired($type, 'categories'),
+                                            ]
+                                        ])
+                                    </div>
+                                @endif
+                            @else
+                                @if(Content::typeHasField($type, 'categories'))
+                                    <div class="col-sm-12">
+                                        @include('cms::components.inputs.select2', [
+                                            'options' => [
+                                                'id'                => 'categories_ids',
+                                                'name'              => 'categories_ids[]',
+                                                'label'             => Content::getFieldLabel($type, 'categories'),
+                                                'placeholder'       => Content::getFieldPlaceholder($type, 'categories'),
+                                                'help'              => Content::getFieldHelp($type, 'categories'),
+                                                'selected'          => $model->categories->map(function($item) {
+                                                    return $item->formAjaxArray();
+                                                }),
+                                                'multiple'          => true,
+                                                'clear_button'      => true,
+                                                'url'               => route('CategoryController@getCategoriesSelect2',['type' => $type]),
+                                                'items_per_page'    => 20,
+                                                'dir'               => 'rtl',
+                                                'required'          => Content::isFieldRequired($type, 'categories'),
+                                            ]
+                                        ])
+                                    </div>
+                                @endif
+                            @endif
+
+                            @if(Content::typeHasField($type, 'slug'))
+                                <div class="col-sm-12">
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'slug',
+                                            'name'          => 'slug',
+                                            'label'         => Content::getFieldLabel($type, 'slug'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'slug'),
+                                            'help'          => Content::getFieldHelp($type, 'slug'),
+                                            'value'         => old('slug', $model->slug),
+                                            'required'      => Content::isFieldRequired($type, 'slug'),
+                                            'readonly'      => $type == 'pages' ? true : false
+                                        ]
+                                    ])
+                                </div>
+                            @endif
+                        </div>
+                        <div class="kt-section__content">
+                            <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-danger" role="tablist">
+                                @foreach($supportedLangs as $locale => $properties)
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="tab" hreflang="{{ $locale }}" href="#tab_{{ $locale }}" role="tab">
+                                            <img width="25" height="18" src="{{ Module::asset('cms:flags/' . $locale . '.svg') }}" alt="" /> {{ $properties['native'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="tab-content">
+                                @foreach($supportedLangs as $locale => $properties)
+                                    <div class="tab-pane {{ $loop->first ? 'active' : '' }}" id="tab_{{ $locale }}" role="tabpanel">
+                                        <div class="row">
+                                            @if(Content::typeHasField($type, 'image'))
+                                                @php
+                                                    $previewSize = ['150', '150'];
+                                                    if(isset(Content::imageDimensionsByType($type)['preview']))
+                                                    $previewSize = preg_split('/x/', Content::imageDimensionsByType($type)['preview']);
+                                                @endphp
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.image', [
+                                                        'options' => [
+                                                            'id'            => 'image_'.$locale,
+                                                            'name'          => 'image_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'image'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'image'),
+                                                            // 'help'          => Content::getFieldHelp($type, 'image', [
+                                                            //     'prefered_dimensions' => implode(' | ', Content::imageDimensionsByType($type)->toArray()),
+                                                            //     'mimes'               => 'png | jpeg'
+                                                            // ]),
+                                                            'help'          => Content::getFieldHelp($type, 'image', [
+                                                                'prefered_dimensions' => Content::imageDimensionsByType($type)->last(),
+                                                                'mimes'               => 'png | jpeg'
+                                                            ]),
+                                                            'default'       => old('image_'.$locale, $model->translate($locale) == NULL ? Content::getImage(new Content, $previewSize[0].'x'.$previewSize[1], $type) : Content::getImage($model->translate($locale), $previewSize[0].'x'.$previewSize[1], $type)),
+                                                            'required'      => Content::isFieldRequired($type, 'image'),
+                                                            'browse'        => __('cms::cruds.contents.image.add_text'),
+                                                            'remove'        => __('cms::cruds.contents.image.remove_text'),
+                                                            'width'         => $previewSize[0].'px',
+                                                            'height'        => $previewSize[1].'px',
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="row">
+                                            @if(Content::typeHasField($type, 'title'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.text', [
+                                                        'options' => [
+                                                            'id'            => 'title_'.$locale,
+                                                            'name'          => 'title_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'title'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'title'),
+                                                            'help'          => Content::getFieldHelp($type, 'title'),
+                                                            'value'         => old('title_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->title),
+                                                            'required'      => Content::isFieldRequired($type, 'title'),
+                                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            @if(Content::typeHasField($type, 'link_trans'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.text', [
+                                                        'options' => [
+                                                            'id'            => 'link_trans_'.$locale,
+                                                            'name'          => 'link_trans_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'link_trans'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'link_trans'),
+                                                            'help'          => Content::getFieldHelp($type, 'link_trans'),
+                                                            'value'         => old('link_trans_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->link_trans),
+                                                            'required'      => Content::isFieldRequired($type, 'link_trans'),
+                                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            
+                                            @if(Content::typeHasField($type, 'brief'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.textarea', [
+                                                        'options' => [
+                                                            'id'            => 'brief_'.$locale,
+                                                            'name'          => 'brief_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'brief'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'brief'),
+                                                            'help'          => Content::getFieldHelp($type, 'brief'),
+                                                            'value'         => old('brief_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->brief),
+                                                            'required'      => Content::isFieldRequired($type, 'brief'),
+                                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            @if(Content::typeHasField($type,'about'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.textarea', [
+                                                        'options' => [
+                                                            'id'            => 'about_'.$locale,
+                                                            'name'          => 'about_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'about'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'about'),
+                                                            'help'          => Content::getFieldHelp($type, 'about'),
+                                                            'value'         => old('about_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->about),
+                                                            'required'      => Content::isFieldRequired($type, 'about'),
+                                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            @if(Content::typeHasField($type,'keywords'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.textarea', [
+                                                        'options' => [
+                                                            'id'            => 'keywords_'.$locale,
+                                                            'name'          => 'keywords_'.$locale,
+                                                            'type'          => 'text',
+                                                            'label'         => Content::getFieldLabel($type, 'keywords'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'keywords'),
+                                                            'help'          => Content::getFieldHelp($type, 'keywords'),
+                                                            'value'         => old('keywords',$model->translate($locale) == NULL ? NULL : $model->translate($locale)->keywords),
+                                                            'required'      => Content::isFieldRequired($type, 'keywords'),
+                                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            @if(Content::typeHasField($type, 'description'))
+                                                <div class="col-sm-12">
+                                                    @php
+                                                        if($loop->first){
+                                                            $baseScript = true;
+                                                        }else{
+                                                            $baseScript = false;
+                                                        }
+                                                    @endphp
+                                                    @include('cms::components.inputs.tinymce', [
+                                                        'options' => [
+                                                            'id'            => 'description_'.$locale,
+                                                            'name'          => 'description_'.$locale,
+                                                            'label'         => Content::getFieldLabel($type, 'description'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'description'),
+                                                            'help'          => Content::getFieldHelp($type, 'description'),
+                                                            'value'         => old('description_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->description),
+                                                            'base_script'   => $baseScript,
+                                                            'required'      => Content::isFieldRequired($type, 'description')
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                            @if(Content::typeHasField($type, 'seo_description'))
+                                                <div class="col-sm-12">
+                                                    @include('cms::components.inputs.textarea', [
+                                                        'options' => [
+                                                            'id'            => 'seo_description_'.$locale,
+                                                            'name'          => 'seo_description_'.$locale,
+                                                            'label'         => Content::getFieldLabel($type, 'seo_description'),
+                                                            'placeholder'   => Content::getFieldPlaceholder($type, 'seo_description'),
+                                                            'help'          => Content::getFieldHelp($type, 'seo_description'),
+                                                            'rows'          => 6,
+                                                            'value'         => old('seo_description_'.$locale,$model->translate($locale) == NULL ? NULL : $model->translate($locale)->seo_description),
+                                                            'base_script'   => false,
+                                                            'required'      => Content::isFieldRequired($type, 'seo_description'),
+                                                        ]
+                                                    ])
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @if(Content::typeHasField($type, 'tags'))
+                                                    @include('cms::components.inputs.taggable', [
+                                                        'options' => [
+                                                            'id'            => 'tags_'.$locale,
+                                                            'name'          => 'tags_'.$locale.'[]',
+                                                            'label'         => __('backend::projects.fields.tags.label'),
+                                                            'placeholder'   => __('backend::projects.fields.tags.placeholder'),
+                                                            'help'          => __('backend::projects.fields.tags.help'),
+                                                            'locale'        => $locale,
+                                                            'data'          => $model->tags->filter(function($item) use ($locale) {
+                                                                return $item->translations->pluck('locale')->contains($locale);
+                                                            }),
+                                                            'selected'      => $model->tags->filter(function($item) use ($locale) {
+                                                                return $item->translations->pluck('locale')->contains($locale);
+                                                            })->pluck('id')->toArray(),
+                                                            'value'         => function($data, $key, $value){ return $value->id; },
+                                                            'text'          => function($data, $key, $value ) use ($locale) { return $value->translate($locale)->text; },
+                                                            'select'        => function($data, $selected, $key, $value){ return in_array($value->id, $selected); },
+                                                        ]
+                                                    ])
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                @if(Content::typeHasField($type, 'link'))
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'link',
+                                            'name'          => 'link',
+                                            'type'          => 'text',
+                                            'label'         => Content::getFieldLabel($type, 'link'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'link'),
+                                            'help'          => Content::getFieldHelp($type, 'link'),
+                                            'value'         => old('link',$model->link),
+                                            'required'      => Content::isFieldRequired($type, 'link'),
+                                            'direction'     => $locale == 'ar' ? 'rtl' : 'ltr'
+                                        ]
+                                    ])
+                                @endif
+                                @if(Content::typeHasField($type, 'currency_value'))
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'currency_value',
+                                            'name'          => 'currency_value',
+                                            'label'         => Content::getFieldLabel($type, 'currency_value'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'currency_value'),
+                                            'help'          => Content::getFieldHelp($type, 'currency_value'),
+                                            'value'         => old('currency_value',$model->currency_value),
+                                            'required'      => Content::isFieldRequired($type, 'currency_value'),
+                                            'type'          => 'number',
+                                            'step'          => 'any',
+                                        ]
+                                    ])
+                                @endif
+                                @if(Content::typeHasField($type, 'currency_code'))
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'currency_code',
+                                            'name'          => 'currency_code',
+                                            'label'         => Content::getFieldLabel($type, 'currency_code'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'currency_code'),
+                                            'help'          => Content::getFieldHelp($type, 'currency_code'),
+                                            'value'         => old('currency_code',$model->currency_code),
+                                            'required'      => Content::isFieldRequired($type, 'currency_code'),
+                                            'readonly'      => $model->currency_code == 'TRY' ? true : false
+                                        ]
+                                    ])
+                                @endif
+                                @if(Content::typeHasField($type, 'currency_symbol'))
+                                    @include('cms::components.inputs.text', [
+                                        'options' => [
+                                            'id'            => 'currency_symbol',
+                                            'name'          => 'currency_symbol',
+                                            'label'         => Content::getFieldLabel($type, 'currency_symbol'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'currency_symbol'),
+                                            'help'          => Content::getFieldHelp($type, 'currency_symbol'),
+                                            'value'         => old('currency_symbol',$model->currency_symbol),
+                                            'required'      => Content::isFieldRequired($type, 'currency_symbol'),
+                                        ]
+                                    ])
+                                @endif
+                                @if(Content::typeHasField($type, 'currency_icon'))
+                                        @php
+                                            $previewSize = ['150', '150'];
+                                            if(isset(Content::imageDimensionsByType($type)['preview']))
+                                            $previewSize = preg_split('/x/', Content::imageDimensionsByType($type)['preview']);
+                                        @endphp
+                                    @include('cms::components.inputs.image', [
+                                        'options' => [
+                                            'id'            => 'currency_icon',
+                                            'name'          => 'currency_icon',
+                                            'type'          => 'text',
+                                            'label'         => Content::getFieldLabel($type, 'currency_icon'),
+                                            'placeholder'   => Content::getFieldPlaceholder($type, 'currency_icon'),
+                                            'help'          => Content::getFieldHelp($type, 'currency_icon', [
+                                                'prefered_dimensions' => implode(' | ', Content::imageDimensionsByType($type)->toArray()),
+                                                'mimes'               => 'png | jpeg'
+                                            ]),
+                                            'default'       => old('image_'.$locale, $model->currency_icon == NULL ? Content::getIconImage(new Content, $previewSize[0].'x'.$previewSize[1], $type) : Content::getIconImage($model, $previewSize[0].'x'.$previewSize[1], $type)),
+                                            'required'      => Content::isFieldRequired($type, 'currency_icon'),
+                                            // 'inline'        => '3:9',
+                                            'browse'        => __('cms::cruds.contents.currency_icon.add_text'),
+                                            'remove'        => __('cms::cruds.contents.currency_icon.remove_text'),
+                                            'width'         => $previewSize[0].'px',
+                                            'height'        => $previewSize[1].'px',
+                                        ]
+                                    ])
+                                @endif
+                            </div>
+                            <div class="row">
+                                {{-- @if(Content::typeHasField($type, 'tags'))
+                                    <div class="col-sm-12">
+                                        @include('cms::components.inputs.taggable', [
+                                            'options' => [
+                                                'id'            => 'tags',
+                                                'name'          => 'tags[]',
+                                                'label'         => Content::getFieldLabel($type, 'tags'),
+                                                'placeholder'   => Content::getFieldPlaceholder($type, 'tags'),
+                                                'help'          => Content::getFieldHelp($type, 'tags'),
+                                                'data'          => $model->tags,
+                                                'selected'      => $model->tags->pluck('id')->toArray(),
+                                                'value'         => function($data, $key, $value){ return $value->id; },
+                                                'text'          => function($data, $key, $value) { return $value->translate()->text; },
+                                                'select'        => function($data, $selected, $key, $value){ return in_array($value->id, $selected); },
+                                            ]
+                                        ])
+                                    </div>
+                                @endif --}}
+                                @if(Content::typeHasField($type, 'attachments'))
+                                    <div class="col-sm-12">
+                                        @include('cms::components.inputs.dropzone', [
+                                            'options' => [
+                                                'id'                => 'attachments',
+                                                'name'              => 'attachments',
+                                                'label'             => Content::getFieldLabel($type, 'attachments'),
+                                                'placeholder'       => Content::getFieldPlaceholder($type, 'attachments'),
+                                                'help'              => Content::getFieldHelp($type, 'attachments'),
+                                                'required'          => Content::isFieldRequired($type, 'attachments'),
+                                                'inline'            => false,
+                                                'attachments'       => $model->attachments->where('input_name', 'attachments')->map(function($item) {
+                                                    $item->thumbnail = $item->getThumbnail('120x120');
+                                                    return $item;
+                                                }),
+                                                'validation_rules'  => Content::getTypeAttachmentValidationRules($type, 'attachments'),
+                                                'sub_folder'        => $type,
+                                            ]
+                                        ])
+                                    </div>
+                                @endif
+                            </div>
+                            @if(Content::typeHasField($type, 'attachments'))
+                                <hr>
+                                <div id="kt_repeater_1">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <strong class="text-focus mb-2">{{__('cms::cruds.contents.external_attachments.attachments')}}</strong>
+                                            <table class="repeater-table-head">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="20%">{{__('cms::cruds.contents.external_attachments.type.label')}}</th>
+                                                        <th width="25%">{{__('cms::cruds.contents.external_attachments.name.label')}}</th>
+                                                        <th width="25%">{{__('cms::cruds.contents.external_attachments.description.label')}}</th>
+                                                        <th width="20%">{{__('cms::cruds.contents.external_attachments.link.label')}}</th>
+                                                        <th width="10%">{{__('cms::cruds.contents.external_attachments.delete')}}</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            @foreach($model->externalAttachments as $attachment)
+                                                <table class="repeater-table-body-edit" id="for_remove_{{$attachment->id}}">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="20%">
+                                                                {{-- @include('cms::components.inputs.select', [
+                                                                    'options' => [
+                                                                        'id'            => 'attachment',
+                                                                        'name'          => 'attachment',
+                                                                        'type'          => 'text',
+                                                                        'input_class'   => 'adwawdawd',
+                                                                        'label'         => __('cms::cruds.contents.external_attachments.type'),
+                                                                        // 'placeholder'   => __('cms::cruds.config.validations.placeholder'),
+                                                                        // 'help'          => __('cms::cruds.config.validations.help'),
+                                                                        'data'          => [
+                                                                            [
+                                                                                'text'      => 'file',
+                                                                                'value'     => 'file',
+
+                                                                            ],
+                                                                            [
+                                                                                'text'      => 'video',
+                                                                                'value'     => 'video',
+                                                                            ],
+                                                                            [
+                                                                                'text'      => 'image',
+                                                                                'value'     => 'image',
+                                                                            ],
+                                                                        ],
+                                                                        'selected'      => old('attachment','file'),
+                                                                        'value'         => function($data, $key, $value){ return $value['value']; },
+                                                                        'text'          => function($data, $key, $value){ return $value['text']; },
+                                                                        'select'        => function($data, $selected, $key, $value){ return $selected == $value['value']; },
+                                                                        'required'      => true,
+                                                                        'searchable'    => false,
+                                                                        'multiple'      => false,
+                                                                    ]
+                                                                ]) --}}
+                                                                <div class="form-group kt-form__group">
+                                                                    <label for="name" class="">
+                                                                        <strong class="text-focus">{{__('cms::cruds.contents.external_attachments.type.label')}} <span class="text-danger">*</span></strong>
+                                                                    </label>
+                                                                    <select class="form-control" name="external_attachments[{{$attachment->id}}][att_type]" id="">
+                                                                        <option value="video" {{$attachment->type == 'video' ? 'selected' : ''}}>Video</option>
+                                                                        <option value="file"  {{$attachment->type == 'file' ? 'selected' : ''}}>File</option>
+                                                                        <option value="image" {{$attachment->type == 'image' ? 'selected' : ''}}>Image</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                            <td width="25%">
+                                                                @include('cms::components.inputs.text', [
+                                                                    'options' => [
+                                                                        'id'                => "name",
+                                                                        'name'              => "external_attachments[{$attachment->id}][att_name]",
+                                                                        'type'              => 'text',
+                                                                        'label'             => __('cms::cruds.contents.external_attachments.name.label'),
+                                                                        'placeholder'       => __('cms::cruds.contents.external_attachments.name.placeholder'),
+                                                                        'value'             => old('name',$attachment->name),
+                                                                        'required'          => true,
+                                                                        'inline'            => false,
+                                                                        'maxlength'         => 191,
+                                                                        'direction'         => 'ltr',
+                                                                        'status_removal'    => false
+                                                                    ]
+                                                                ])
+                                                            </td>
+                                                            <td width="25%">
+                                                                @include('cms::components.inputs.text', [
+                                                                    'options' => [
+                                                                        'id'                => 'description',
+                                                                        'name'              => "external_attachments[{$attachment->id}][att_description]",
+                                                                        'type'              => 'text',
+                                                                        'label'             => __('cms::cruds.contents.external_attachments.description.label'),
+                                                                        'placeholder'       => __('cms::cruds.contents.external_attachments.description.placeholder'),
+                                                                        'value'             => old('description',$attachment->description),
+                                                                        'required'          => false,
+                                                                        'inline'            => false,
+                                                                        'maxlength'         => 100,
+                                                                        'direction'         => 'ltr',
+                                                                        'status_removal'    => false
+                                                                    ]
+                                                                ])
+                                                            </td>
+                                                            <td width="20%">
+                                                                @include('cms::components.inputs.text', [
+                                                                    'options' => [
+                                                                        'id'                => 'link',
+                                                                        'name'              => "external_attachments[{$attachment->id}][att_link]",
+                                                                        'type'              => 'text',
+                                                                        'label'             => __('cms::cruds.contents.external_attachments.link.label'),
+                                                                        'placeholder'       => __('cms::cruds.contents.external_attachments.link.placeholder'),
+                                                                        'value'             => old('link',$attachment->link),
+                                                                        'required'          => true,
+                                                                        'inline'            => false,
+                                                                        'maxlength'         => 100,
+                                                                        'direction'         => 'ltr',
+                                                                        'status_removal'    => false
+                                                                    ]
+                                                                ])
+                                                            </td>
+                                                            <td width="10%">
+                                                                <a data-attachmentId="{{$attachment->id}}"  href="javascript:;" class="btn-sm btn btn-label-danger btn-bold delete-attachment">
+                                                                    <i class="la la-trash-o"></i>
+                                                                    {{__('cms::cruds.contents.external_attachments.delete')}}
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            @endforeach
+                                            <div data-repeater-list="external_attachments_new">
+                                                <div data-repeater-item >
+                                                    <table class="repeater-table-body">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="20%">
+                                                                    {{-- @include('cms::components.inputs.select', [
+                                                                        'options' => [
+                                                                            'id'            => 'attachment',
+                                                                            'name'          => 'attachment',
+                                                                            'type'          => 'text',
+                                                                            'input_class'   => 'adwawdawd',
+                                                                            'label'         => __('cms::cruds.contents.external_attachments.type'),
+                                                                            // 'placeholder'   => __('cms::cruds.config.validations.placeholder'),
+                                                                            // 'help'          => __('cms::cruds.config.validations.help'),
+                                                                            'data'          => [
+                                                                                [
+                                                                                    'text'      => 'file',
+                                                                                    'value'     => 'file',
+
+                                                                                ],
+                                                                                [
+                                                                                    'text'      => 'video',
+                                                                                    'value'     => 'video',
+                                                                                ],
+                                                                                [
+                                                                                    'text'      => 'image',
+                                                                                    'value'     => 'image',
+                                                                                ],
+                                                                            ],
+                                                                            'selected'      => old('attachment','file'),
+                                                                            'value'         => function($data, $key, $value){ return $value['value']; },
+                                                                            'text'          => function($data, $key, $value){ return $value['text']; },
+                                                                            'select'        => function($data, $selected, $key, $value){ return $selected == $value['value']; },
+                                                                            'required'      => true,
+                                                                            'searchable'    => false,
+                                                                            'multiple'      => false,
+                                                                        ]
+                                                                    ]) --}}
+                                                                    <div class="form-group kt-form__group">
+                                                                        <label for="name" class="">
+                                                                            <strong class="text-focus">{{__('cms::cruds.contents.external_attachments.type.label')}} <span class="text-danger">*</span></strong>
+                                                                        </label>
+                                                                        <select class="form-control" name="type" id="">
+                                                                            <option value="video" selected>Video</option>
+                                                                            <option value="file">File</option>
+                                                                            <option value="image">Image</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </td>
+                                                                <td width="25%">
+                                                                    @include('cms::components.inputs.text', [
+                                                                        'options' => [
+                                                                            'id'                => 'name',
+                                                                            'name'              => 'name',
+                                                                            'type'              => 'text',
+                                                                            'label'             => __('cms::cruds.contents.external_attachments.name.label'),
+                                                                            'placeholder'       => __('cms::cruds.contents.external_attachments.name.placeholder'),
+                                                                            'value'             => old('name'),
+                                                                            'required'          => true,
+                                                                            'inline'            => false,
+                                                                            'maxlength'         => 191,
+                                                                            'direction'         => 'ltr',
+                                                                            'status_removal'    => false
+                                                                        ]
+                                                                    ])
+                                                                </td>
+                                                                <td width="25%">
+                                                                    @include('cms::components.inputs.text', [
+                                                                        'options' => [
+                                                                            'id'                => 'description',
+                                                                            'name'              => 'description',
+                                                                            'type'              => 'text',
+                                                                            'label'             => __('cms::cruds.contents.external_attachments.description.label'),
+                                                                            'placeholder'       => __('cms::cruds.contents.external_attachments.description.placeholder'),
+                                                                            'value'             => old('description'),
+                                                                            'required'          => false,
+                                                                            'inline'            => false,
+                                                                            'maxlength'         => 191,
+                                                                            'direction'         => 'ltr',
+                                                                            'status_removal'    => false
+                                                                        ]
+                                                                    ])
+                                                                </td>
+                                                                <td width="20%">
+                                                                    @include('cms::components.inputs.text', [
+                                                                        'options' => [
+                                                                            'id'                => 'link',
+                                                                            'name'              => 'link',
+                                                                            'type'              => 'text',
+                                                                            'label'             => __('cms::cruds.contents.external_attachments.link.label'),
+                                                                            'placeholder'       => __('cms::cruds.contents.external_attachments.link.placeholder'),
+                                                                            'value'             => old('link'),
+                                                                            'required'          => true,
+                                                                            'inline'            => false,
+                                                                            'maxlength'         => 191,
+                                                                            'direction'         => 'ltr',
+                                                                            'status_removal'    => false
+                                                                        ]
+                                                                    ])
+                                                                </td>
+                                                                <td width="10%">
+                                                                    <a href="javascript:;" data-repeater-delete="" class="btn-sm btn btn-label-danger btn-bold">
+                                                                        <i class="la la-trash-o"></i>
+                                                                        {{__('cms::cruds.contents.external_attachments.delete')}}
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:20px">
+                                        <div class="col-md-4">
+                                            <a href="javascript:;" data-repeater-create="" class="btn btn-label-success btn-bold">
+                                                <i class="la la-plus"></i>{{__('backend::projects.fields.pay.add')}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                @endcomponent
+            </div>
+        </div>
+    </form>
+@endsection
+@push('scripts')
+    <script>
+        // Class definition
+        var KTFormRepeater = function() {
+        // Private functions
+        var demo1 = function() {
+            $('#kt_repeater_1').repeater({
+                initEmpty: true,
+                // defaultValues: {
+                //     'text-input': 'foo'
+                // },
+                show: function () {
+                    $(this).slideDown();
+                    // $(this).find('.kt-bootstrap-select').selectpicker();
+                    // $('.kt-bootstrap-select').selectpicker('refresh');
+                },
+                hide: function (deleteElement) {
+                    $(this).slideUp(deleteElement);
+                }
+            });
+        }
+        return {
+            // public functions
+            init: function() {
+                demo1();
+            }
+        };
+        }();
+            jQuery(document).ready(function() {
+            KTFormRepeater.init();
+        });
+    </script>
+    <script>
+        $(".delete-attachment").click(function() {
+            var attachment_id = $(this).data('attachmentid');
+            // console.log(attachment_id);
+            swal.fire({
+                title: '{!! __('cms::confirmations.confirm.delete.title') !!}',
+                text: '{!! __('cms::confirmations.confirm.delete.text') !!}',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '{!! __('cms::confirmations.yes') !!}',
+                cancelButtonText: '{!! __('cms::confirmations.cancel') !!}',
+                reverseButtons: true
+            }).then(function(result){
+                if (result.value) {
+                    $.ajax({
+                        url: "{{ route('ContentController@deleteAttachment')}}",
+                        type: "POST",
+                        data: {
+                            attachment_id : attachment_id,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(response) {
+                            if(response.success){
+                                $('#for_remove_'+ attachment_id).remove();
+                                show_toastr(
+                                    response.type,
+                                    response.title,
+                                    response.description
+                                );
+                            }
+                            else{
+                                show_toastr(
+                                    response.type,
+                                    response.title,
+                                    response.description
+                                );
+                            }
+                        }
+                    })
+                } else if (result.dismiss === 'cancel') {
+                    swal.fire(
+                        '{{ __('cms::confirmations.confirm.delete.canceled.title') }}',
+                        '{{ __('cms::confirmations.confirm.delete.canceled.text') }}',
+                        'error'
+                    );
+                }
+            });
+        });
+    </script>
+    <script>
+        // Submits the form whenever a button with the class .submit_form is clicked.
+        $('.submit_form').click(function() {
+            $('#redirectUrl').val($(this).data('redirectUrl'));
+            $('#addNewForm').submit();
+        });
+        $('.nav-link').click(function() {
+            KTUtil.scrollTop();
+        });
+    </script>
+@endpush
+
+

@@ -1,0 +1,7 @@
+{
+    "Cms": true,
+    "Permissions": true,
+    "Backend": true,
+    "Frontend": true,
+    "Notification": true
+}

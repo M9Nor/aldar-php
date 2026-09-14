@@ -1,0 +1,15 @@
+{
+    "name": "Permissions",
+    "alias": "perms",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Permissions\\Providers\\PermissionsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

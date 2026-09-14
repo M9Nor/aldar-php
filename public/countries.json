@@ -1,0 +1,1237 @@
+[
+    {
+        "sortname": "AF",
+        "name": "Afghanistan",
+        "code": "+92"
+    },
+    {
+        "sortname": "AL",
+        "name": "Albania",
+        "code": "+355"
+    },
+    {
+        "sortname": "DZ",
+        "name": "Algeria",
+        "code": "+213"
+    },
+    {
+        "sortname": "AS",
+        "name": "American Samoa",
+        "code": "+1"
+    },
+    {
+        "sortname": "AD",
+        "name": "Andorra",
+        "code": "+376"
+    },
+    {
+        "sortname": "AO",
+        "name": "Angola",
+        "code": "+244"
+    },
+    {
+        "sortname": "AI",
+        "name": "Anguilla",
+        "code": "+1"
+    },
+    {
+        "sortname": "AQ",
+        "name": "Antarctica",
+        "code": ""
+    },
+    {
+        "sortname": "AG",
+        "name": "Antigua And Barbuda",
+        "code": "+1"
+    },
+    {
+        "sortname": "AR",
+        "name": "Argentina",
+        "code": "+54"
+    },
+    {
+        "sortname": "AM",
+        "name": "Armenia",
+        "code": "+374"
+    },
+    {
+        "sortname": "AW",
+        "name": "Aruba",
+        "code": "+297"
+    },
+    {
+        "sortname": "AU",
+        "name": "Australia",
+        "code": "+61"
+    },
+    {
+        "sortname": "AT",
+        "name": "Austria",
+        "code": "+43"
+    },
+    {
+        "sortname": "AZ",
+        "name": "Azerbaijan",
+        "code": "+994"
+    },
+    {
+        "sortname": "BS",
+        "name": "Bahamas The",
+        "code": "+1"
+    },
+    {
+        "sortname": "BH",
+        "name": "Bahrain",
+        "code": "+973"
+    },
+    {
+        "sortname": "BD",
+        "name": "Bangladesh",
+        "code": "+880"
+    },
+    {
+        "sortname": "BB",
+        "name": "Barbados",
+        "code": "+1"
+    },
+    {
+        "sortname": "BY",
+        "name": "Belarus",
+        "code": "+375"
+    },
+    {
+        "sortname": "BE",
+        "name": "Belgium",
+        "code": "+32"
+    },
+    {
+        "sortname": "BZ",
+        "name": "Belize",
+        "code": "+501"
+    },
+    {
+        "sortname": "BJ",
+        "name": "Benin",
+        "code": "+229"
+    },
+    {
+        "sortname": "BM",
+        "name": "Bermuda",
+        "code": "+1"
+    },
+    {
+        "sortname": "BT",
+        "name": "Bhutan",
+        "code": "+975"
+    },
+    {
+        "sortname": "BO",
+        "name": "Bolivia",
+        "code": "+591"
+    },
+    {
+        "sortname": "BA",
+        "name": "Bosnia and Herzegovina",
+        "code": "+387"
+    },
+    {
+        "sortname": "BW",
+        "name": "Botswana",
+        "code": "+267"
+    },
+    {
+        "sortname": "BV",
+        "name": "Bouvet Island",
+        "code": ""
+    },
+    {
+        "sortname": "BR",
+        "name": "Brazil",
+        "code": "+55"
+    },
+    {
+        "sortname": "IO",
+        "name": "British Indian Ocean Territory",
+        "code": "+246"
+    },
+    {
+        "sortname": "BN",
+        "name": "Brunei",
+        "code": "+673"
+    },
+    {
+        "sortname": "BG",
+        "name": "Bulgaria",
+        "code": "+359"
+    },
+    {
+        "sortname": "BF",
+        "name": "Burkina Faso",
+        "code": "+226"
+    },
+    {
+        "sortname": "BI",
+        "name": "Burundi",
+        "code": "+257"
+    },
+    {
+        "sortname": "KH",
+        "name": "Cambodia",
+        "code": "+855"
+    },
+    {
+        "sortname": "CM",
+        "name": "Cameroon",
+        "code": "+237"
+    },
+    {
+        "sortname": "CA",
+        "name": "Canada",
+        "code": "+1"
+    },
+    {
+        "sortname": "CV",
+        "name": "Cape Verde",
+        "code": "+238"
+    },
+    {
+        "sortname": "KY",
+        "name": "Cayman Islands",
+        "code": "+1"
+    },
+    {
+        "sortname": "CF",
+        "name": "Central African Republic",
+        "code": "+236"
+    },
+    {
+        "sortname": "TD",
+        "name": "Chad",
+        "code": "+235"
+    },
+    {
+        "sortname": "CL",
+        "name": "Chile",
+        "code": "+56"
+    },
+    {
+        "sortname": "CN",
+        "name": "China",
+        "code": "+86"
+    },
+    {
+        "sortname": "CX",
+        "name": "Christmas Island",
+        "code": "+61"
+    },
+    {
+        "sortname": "CC",
+        "name": "Cocos (Keeling) Islands",
+        "code": "+61"
+    },
+    {
+        "sortname": "CO",
+        "name": "Colombia",
+        "code": "+57"
+    },
+    {
+        "sortname": "KM",
+        "name": "Comoros",
+        "code": "+269"
+    },
+    {
+        "sortname": "CG",
+        "name": "Congo",
+        "code": "+242"
+    },
+    {
+        "sortname": "CD",
+        "name": "Congo The Democratic Republic Of The",
+        "code": "+243"
+    },
+    {
+        "sortname": "CK",
+        "name": "Cook Islands",
+        "code": "+682"
+    },
+    {
+        "sortname": "CR",
+        "name": "Costa Rica",
+        "code": "+506"
+    },
+    {
+        "sortname": "CI",
+        "name": "Cote D'Ivoire (Ivory Coast)",
+        "code": "+225"
+    },
+    {
+        "sortname": "HR",
+        "name": "Croatia (Hrvatska)",
+        "code": "+385"
+    },
+    {
+        "sortname": "CU",
+        "name": "Cuba",
+        "code": "+53"
+    },
+    {
+        "sortname": "CY",
+        "name": "Cyprus",
+        "code": "+357"
+    },
+    {
+        "sortname": "CZ",
+        "name": "Czech Republic",
+        "code": "+420"
+    },
+    {
+        "sortname": "DK",
+        "name": "Denmark",
+        "code": "+45"
+    },
+    {
+        "sortname": "DJ",
+        "name": "Djibouti",
+        "code": "+253"
+    },
+    {
+        "sortname": "DM",
+        "name": "Dominica",
+        "code": "+1"
+    },
+    {
+        "sortname": "DO",
+        "name": "Dominican Republic",
+        "code": "+1"
+    },
+    {
+        "sortname": "TP",
+        "name": "East Timor",
+        "code": "+670"
+    },
+    {
+        "sortname": "EC",
+        "name": "Ecuador",
+        "code": "+593"
+    },
+    {
+        "sortname": "EG",
+        "name": "Egypt",
+        "code": "+20"
+    },
+    {
+        "sortname": "SV",
+        "name": "El Salvador",
+        "code": "+503"
+    },
+    {
+        "sortname": "GQ",
+        "name": "Equatorial Guinea",
+        "code": "+240"
+    },
+    {
+        "sortname": "ER",
+        "name": "Eritrea",
+        "code": "+291"
+    },
+    {
+        "sortname": "EE",
+        "name": "Estonia",
+        "code": "+372"
+    },
+    {
+        "sortname": "ET",
+        "name": "Ethiopia",
+        "code": "+251"
+    },
+    {
+        "sortname": "XA",
+        "name": "External Territories of Australia",
+        "code": ""
+    },
+    {
+        "sortname": "FK",
+        "name": "Falkland Islands",
+        "code": "+500"
+    },
+    {
+        "sortname": "FO",
+        "name": "Faroe Islands",
+        "code": "+298"
+    },
+    {
+        "sortname": "FJ",
+        "name": "Fiji Islands",
+        "code": "+679"
+    },
+    {
+        "sortname": "FI",
+        "name": "Finland",
+        "code": "+358"
+    },
+    {
+        "sortname": "FR",
+        "name": "France",
+        "code": "+33"
+    },
+    {
+        "sortname": "GF",
+        "name": "French Guiana",
+        "code": "+594"
+    },
+    {
+        "sortname": "PF",
+        "name": "French Polynesia",
+        "code": "+689"
+    },
+    {
+        "sortname": "TF",
+        "name": "French Southern Territories",
+        "code": ""
+    },
+    {
+        "sortname": "GA",
+        "name": "Gabon",
+        "code": "+241"
+    },
+    {
+        "sortname": "GM",
+        "name": "Gambia The",
+        "code": "+220"
+    },
+    {
+        "sortname": "GE",
+        "name": "Georgia",
+        "code": "+995"
+    },
+    {
+        "sortname": "DE",
+        "name": "Germany",
+        "code": "+49"
+    },
+    {
+        "sortname": "GH",
+        "name": "Ghana",
+        "code": "+233"
+    },
+    {
+        "sortname": "GI",
+        "name": "Gibraltar",
+        "code": "+350"
+    },
+    {
+        "sortname": "GR",
+        "name": "Greece",
+        "code": "+30"
+    },
+    {
+        "sortname": "GL",
+        "name": "Greenland",
+        "code": "+299"
+    },
+    {
+        "sortname": "GD",
+        "name": "Grenada",
+        "code": "+1"
+    },
+    {
+        "sortname": "GP",
+        "name": "Guadeloupe",
+        "code": "+590"
+    },
+    {
+        "sortname": "GU",
+        "name": "Guam",
+        "code": "+1"
+    },
+    {
+        "sortname": "GT",
+        "name": "Guatemala",
+        "code": "+502"
+    },
+    {
+        "sortname": "XU",
+        "name": "Guernsey and Alderney",
+        "code": ""
+    },
+    {
+        "sortname": "GN",
+        "name": "Guinea",
+        "code": "+224"
+    },
+    {
+        "sortname": "GW",
+        "name": "Guinea-Bissau",
+        "code": "+245"
+    },
+    {
+        "sortname": "GY",
+        "name": "Guyana",
+        "code": "+592"
+    },
+    {
+        "sortname": "HT",
+        "name": "Haiti",
+        "code": "+509"
+    },
+    {
+        "sortname": "HM",
+        "name": "Heard and McDonald Islands",
+        "code": "+379"
+    },
+    {
+        "sortname": "HN",
+        "name": "Honduras",
+        "code": "+504"
+    },
+    {
+        "sortname": "HK",
+        "name": "Hong Kong S.A.R.",
+        "code": "+852"
+    },
+    {
+        "sortname": "HU",
+        "name": "Hungary",
+        "code": "+36"
+    },
+    {
+        "sortname": "IS",
+        "name": "Iceland",
+        "code": "+354"
+    },
+    {
+        "sortname": "IN",
+        "name": "India",
+        "code": "+91"
+    },
+    {
+        "sortname": "ID",
+        "name": "Indonesia",
+        "code": "+62"
+    },
+    {
+        "sortname": "IR",
+        "name": "Iran",
+        "code": "+98"
+    },
+    {
+        "sortname": "IQ",
+        "name": "Iraq",
+        "code": "+964"
+    },
+    {
+        "sortname": "IE",
+        "name": "Ireland",
+        "code": "+353"
+    },
+    {
+        "sortname": "IL",
+        "name": "Israel",
+        "code": "+972"
+    },
+    {
+        "sortname": "IT",
+        "name": "Italy",
+        "code": "+39"
+    },
+    {
+        "sortname": "JM",
+        "name": "Jamaica",
+        "code": "+1"
+    },
+    {
+        "sortname": "JP",
+        "name": "Japan",
+        "code": "+81"
+    },
+    {
+        "sortname": "XJ",
+        "name": "Jersey",
+        "code": ""
+    },
+    {
+        "sortname": "JO",
+        "name": "Jordan",
+        "code": "+962"
+    },
+    {
+        "sortname": "KZ",
+        "name": "Kazakhstan",
+        "code": "+7"
+    },
+    {
+        "sortname": "KE",
+        "name": "Kenya",
+        "code": "+254"
+    },
+    {
+        "sortname": "KI",
+        "name": "Kiribati",
+        "code": "+686"
+    },
+    {
+        "sortname": "KP",
+        "name": "Korea North",
+        "code": "+850"
+    },
+    {
+        "sortname": "KR",
+        "name": "Korea South",
+        "code": "+82"
+    },
+    {
+        "sortname": "KW",
+        "name": "Kuwait",
+        "code": "+965"
+    },
+    {
+        "sortname": "KG",
+        "name": "Kyrgyzstan",
+        "code": "+996"
+    },
+    {
+        "sortname": "LA",
+        "name": "Laos",
+        "code": "+856"
+    },
+    {
+        "sortname": "LV",
+        "name": "Latvia",
+        "code": "+371"
+    },
+    {
+        "sortname": "LB",
+        "name": "Lebanon",
+        "code": "+961"
+    },
+    {
+        "sortname": "LS",
+        "name": "Lesotho",
+        "code": "+266"
+    },
+    {
+        "sortname": "LR",
+        "name": "Liberia",
+        "code": "+231"
+    },
+    {
+        "sortname": "LY",
+        "name": "Libya",
+        "code": "+218"
+    },
+    {
+        "sortname": "LI",
+        "name": "Liechtenstein",
+        "code": "+423"
+    },
+    {
+        "sortname": "LT",
+        "name": "Lithuania",
+        "code": "+370"
+    },
+    {
+        "sortname": "LU",
+        "name": "Luxembourg",
+        "code": "+352"
+    },
+    {
+        "sortname": "MO",
+        "name": "Macau S.A.R.",
+        "code": "+853"
+    },
+    {
+        "sortname": "MK",
+        "name": "Macedonia",
+        "code": "+389"
+    },
+    {
+        "sortname": "MG",
+        "name": "Madagascar",
+        "code": "+261"
+    },
+    {
+        "sortname": "MW",
+        "name": "Malawi",
+        "code": "+265"
+    },
+    {
+        "sortname": "MY",
+        "name": "Malaysia",
+        "code": "+60"
+    },
+    {
+        "sortname": "MV",
+        "name": "Maldives",
+        "code": "+960"
+    },
+    {
+        "sortname": "ML",
+        "name": "Mali",
+        "code": "+223"
+    },
+    {
+        "sortname": "MT",
+        "name": "Malta",
+        "code": "+356"
+    },
+    {
+        "sortname": "XM",
+        "name": "Man (Isle of)",
+        "code": ""
+    },
+    {
+        "sortname": "MH",
+        "name": "Marshall Islands",
+        "code": "+692"
+    },
+    {
+        "sortname": "MQ",
+        "name": "Martinique",
+        "code": "+596"
+    },
+    {
+        "sortname": "MR",
+        "name": "Mauritania",
+        "code": "+222"
+    },
+    {
+        "sortname": "MU",
+        "name": "Mauritius",
+        "code": "+230"
+    },
+    {
+        "sortname": "YT",
+        "name": "Mayotte",
+        "code": "+262"
+    },
+    {
+        "sortname": "MX",
+        "name": "Mexico",
+        "code": "+52"
+    },
+    {
+        "sortname": "FM",
+        "name": "Micronesia",
+        "code": "+691"
+    },
+    {
+        "sortname": "MD",
+        "name": "Moldova",
+        "code": "+373"
+    },
+    {
+        "sortname": "MC",
+        "name": "Monaco",
+        "code": "+377"
+    },
+    {
+        "sortname": "MN",
+        "name": "Mongolia",
+        "code": "+976"
+    },
+    {
+        "sortname": "MS",
+        "name": "Montserrat",
+        "code": "+1"
+    },
+    {
+        "sortname": "MA",
+        "name": "Morocco",
+        "code": "+212"
+    },
+    {
+        "sortname": "MZ",
+        "name": "Mozambique",
+        "code": "+258"
+    },
+    {
+        "sortname": "MM",
+        "name": "Myanmar",
+        "code": "+95"
+    },
+    {
+        "sortname": "NA",
+        "name": "Namibia",
+        "code": "+264"
+    },
+    {
+        "sortname": "NR",
+        "name": "Nauru",
+        "code": "+674"
+    },
+    {
+        "sortname": "NP",
+        "name": "Nepal",
+        "code": "+977"
+    },
+    {
+        "sortname": "AN",
+        "name": "Netherlands Antilles",
+        "code": "+31"
+    },
+    {
+        "sortname": "NL",
+        "name": "Netherlands The",
+        "code": "+599"
+    },
+    {
+        "sortname": "NC",
+        "name": "New Caledonia",
+        "code": "+687"
+    },
+    {
+        "sortname": "NZ",
+        "name": "New Zealand",
+        "code": "+64"
+    },
+    {
+        "sortname": "NI",
+        "name": "Nicaragua",
+        "code": "+505"
+    },
+    {
+        "sortname": "NE",
+        "name": "Niger",
+        "code": "+227"
+    },
+    {
+        "sortname": "NG",
+        "name": "Nigeria",
+        "code": "+234"
+    },
+    {
+        "sortname": "NU",
+        "name": "Niue",
+        "code": "+683"
+    },
+    {
+        "sortname": "NF",
+        "name": "Norfolk Island",
+        "code": "+672"
+    },
+    {
+        "sortname": "MP",
+        "name": "Northern Mariana Islands",
+        "code": "+1"
+    },
+    {
+        "sortname": "NO",
+        "name": "Norway",
+        "code": "+47"
+    },
+    {
+        "sortname": "OM",
+        "name": "Oman",
+        "code": "+968"
+    },
+    {
+        "sortname": "PK",
+        "name": "Pakistan",
+        "code": "+92"
+    },
+    {
+        "sortname": "PW",
+        "name": "Palau",
+        "code": "+680"
+    },
+    {
+        "sortname": "PS",
+        "name": "Palestine",
+        "code": "+970"
+    },
+    {
+        "sortname": "PA",
+        "name": "Panama",
+        "code": "+507"
+    },
+    {
+        "sortname": "PG",
+        "name": "Papua new Guinea",
+        "code": "+675"
+    },
+    {
+        "sortname": "PY",
+        "name": "Paraguay",
+        "code": "+595"
+    },
+    {
+        "sortname": "PE",
+        "name": "Peru",
+        "code": "+51"
+    },
+    {
+        "sortname": "PH",
+        "name": "Philippines",
+        "code": "+63"
+    },
+    {
+        "sortname": "PN",
+        "name": "Pitcairn Island",
+        "code": "+870"
+    },
+    {
+        "sortname": "PL",
+        "name": "Poland",
+        "code": "+48"
+    },
+    {
+        "sortname": "PT",
+        "name": "Portugal",
+        "code": "+351"
+    },
+    {
+        "sortname": "PR",
+        "name": "Puerto Rico",
+        "code": "+1"
+    },
+    {
+        "sortname": "QA",
+        "name": "Qatar",
+        "code": "+974"
+    },
+    {
+        "sortname": "RE",
+        "name": "Reunion",
+        "code": "+262"
+    },
+    {
+        "sortname": "RO",
+        "name": "Romania",
+        "code": "+40"
+    },
+    {
+        "sortname": "RU",
+        "name": "Russia",
+        "code": "+7"
+    },
+    {
+        "sortname": "RW",
+        "name": "Rwanda",
+        "code": "+250"
+    },
+    {
+        "sortname": "SH",
+        "name": "Saint Helena",
+        "code": "+290"
+    },
+    {
+        "sortname": "KN",
+        "name": "Saint Kitts And Nevis",
+        "code": "+1"
+    },
+    {
+        "sortname": "LC",
+        "name": "Saint Lucia",
+        "code": "+1"
+    },
+    {
+        "sortname": "PM",
+        "name": "Saint Pierre and Miquelon",
+        "code": "+508"
+    },
+    {
+        "sortname": "VC",
+        "name": "Saint Vincent And The Grenadines",
+        "code": "+1"
+    },
+    {
+        "sortname": "WS",
+        "name": "Samoa",
+        "code": "+685"
+    },
+    {
+        "sortname": "SM",
+        "name": "San Marino",
+        "code": "+378"
+    },
+    {
+        "sortname": "ST",
+        "name": "Sao Tome and Principe",
+        "code": "+239"
+    },
+    {
+        "sortname": "SA",
+        "name": "Saudi Arabia",
+        "code": "+966"
+    },
+    {
+        "sortname": "SN",
+        "name": "Senegal",
+        "code": "+221"
+    },
+    {
+        "sortname": "RS",
+        "name": "Serbia",
+        "code": "+381"
+    },
+    {
+        "sortname": "SC",
+        "name": "Seychelles",
+        "code": "+248"
+    },
+    {
+        "sortname": "SL",
+        "name": "Sierra Leone",
+        "code": "+232"
+    },
+    {
+        "sortname": "SG",
+        "name": "Singapore",
+        "code": "+65"
+    },
+    {
+        "sortname": "SK",
+        "name": "Slovakia",
+        "code": "+421"
+    },
+    {
+        "sortname": "SI",
+        "name": "Slovenia",
+        "code": "+386"
+    },
+    {
+        "sortname": "XG",
+        "name": "Smaller Territories of the UK",
+        "code": ""
+    },
+    {
+        "sortname": "SB",
+        "name": "Solomon Islands",
+        "code": "+677"
+    },
+    {
+        "sortname": "SO",
+        "name": "Somalia",
+        "code": "+252"
+    },
+    {
+        "sortname": "ZA",
+        "name": "South Africa",
+        "code": "+27"
+    },
+    {
+        "sortname": "GS",
+        "name": "South Georgia",
+        "code": ""
+    },
+    {
+        "sortname": "SS",
+        "name": "South Sudan",
+        "code": ""
+    },
+    {
+        "sortname": "ES",
+        "name": "Spain",
+        "code": "+34"
+    },
+    {
+        "sortname": "LK",
+        "name": "Sri Lanka",
+        "code": "+94"
+    },
+    {
+        "sortname": "SD",
+        "name": "Sudan",
+        "code": "+249"
+    },
+    {
+        "sortname": "SR",
+        "name": "Suriname",
+        "code": "+597"
+    },
+    {
+        "sortname": "SJ",
+        "name": "Svalbard And Jan Mayen Islands",
+        "code": "+47"
+    },
+    {
+        "sortname": "SZ",
+        "name": "Swaziland",
+        "code": "+268"
+    },
+    {
+        "sortname": "SE",
+        "name": "Sweden",
+        "code": "+46"
+    },
+    {
+        "sortname": "CH",
+        "name": "Switzerland",
+        "code": "+41"
+    },
+    {
+        "sortname": "SY",
+        "name": "Syria",
+        "code": "+963"
+    },
+    {
+        "sortname": "TW",
+        "name": "Taiwan",
+        "code": "+886"
+    },
+    {
+        "sortname": "TJ",
+        "name": "Tajikistan",
+        "code": "+992"
+    },
+    {
+        "sortname": "TZ",
+        "name": "Tanzania",
+        "code": "+255"
+    },
+    {
+        "sortname": "TH",
+        "name": "Thailand",
+        "code": "+66"
+    },
+    {
+        "sortname": "TG",
+        "name": "Togo",
+        "code": "+228"
+    },
+    {
+        "sortname": "TK",
+        "name": "Tokelau",
+        "code": "+690"
+    },
+    {
+        "sortname": "TO",
+        "name": "Tonga",
+        "code": "+676"
+    },
+    {
+        "sortname": "TT",
+        "name": "Trinidad And Tobago",
+        "code": "+1"
+    },
+    {
+        "sortname": "TN",
+        "name": "Tunisia",
+        "code": "+216"
+    },
+    {
+        "sortname": "TR",
+        "name": "Turkey",
+        "code": "+90"
+    },
+    {
+        "sortname": "TM",
+        "name": "Turkmenistan",
+        "code": "+993"
+    },
+    {
+        "sortname": "TC",
+        "name": "Turks And Caicos Islands",
+        "code": "+1"
+    },
+    {
+        "sortname": "TV",
+        "name": "Tuvalu",
+        "code": "+688"
+    },
+    {
+        "sortname": "UG",
+        "name": "Uganda",
+        "code": "+256"
+    },
+    {
+        "sortname": "UA",
+        "name": "Ukraine",
+        "code": "+380"
+    },
+    {
+        "sortname": "AE",
+        "name": "United Arab Emirates",
+        "code": "+971"
+    },
+    {
+        "sortname": "GB",
+        "name": "United Kingdom",
+        "code": "+44"
+    },
+    {
+        "sortname": "US",
+        "name": "United States",
+        "code": "+1"
+    },
+    {
+        "sortname": "UM",
+        "name": "United States Minor Outlying Islands",
+        "code": ""
+    },
+    {
+        "sortname": "UY",
+        "name": "Uruguay",
+        "code": "+598"
+    },
+    {
+        "sortname": "UZ",
+        "name": "Uzbekistan",
+        "code": "+998"
+    },
+    {
+        "sortname": "VU",
+        "name": "Vanuatu",
+        "code": "+678"
+    },
+    {
+        "sortname": "VA",
+        "name": "Vatican City State (Holy See)",
+        "code": ""
+    },
+    {
+        "sortname": "VE",
+        "name": "Venezuela",
+        "code": "+58"
+    },
+    {
+        "sortname": "VN",
+        "name": "Vietnam",
+        "code": "+84"
+    },
+    {
+        "sortname": "VG",
+        "name": "Virgin Islands (British)",
+        "code": "+1"
+    },
+    {
+        "sortname": "VI",
+        "name": "Virgin Islands (US)",
+        "code": "+1"
+    },
+    {
+        "sortname": "WF",
+        "name": "Wallis And Futuna Islands",
+        "code": "+681"
+    },
+    {
+        "sortname": "EH",
+        "name": "Western Sahara",
+        "code": "+212"
+    },
+    {
+        "sortname": "YE",
+        "name": "Yemen",
+        "code": "+967"
+    },
+    {
+        "sortname": "YU",
+        "name": "Yugoslavia",
+        "code": ""
+    },
+    {
+        "sortname": "ZM",
+        "name": "Zambia",
+        "code": "+260"
+    },
+    {
+        "sortname": "ZW",
+        "name": "Zimbabwe",
+        "code": "+263"
+    },
+    {
+        "sortname": "OT",
+        "name": "Other",
+        "code": "+000"
+    }
+]

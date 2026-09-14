@@ -1,0 +1,42 @@
+<?php
+
+namespace Modules\Cms\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+use App\User;
+use Modules\Permissions\Entities\Role;
+use Modules\Permissions\Entities\Ability;
+use Modules\Cms\Http\Controllers\CmsController;
+
+use Illuminate\Support\Str;
+use Modules\Cms\Entities\Category;
+use Modules\Cms\Entities\Content;
+use Modules\Permissions\Entities\AbilityGroup;
+
+class DashboardController extends CmsController
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
+        $this->middleware('auth')->except([]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function index()
+    {
+        $this->data['total_users'] = User::count();
+        $this->data['total_roles'] = Role::count();
+        $this->data['total_permissions'] = Ability::count();
+        return view('cms::dashboard', $this->data);
+    }
+}

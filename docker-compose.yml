@@ -1,0 +1,51 @@
+# Local development stack for aldar-emlak.com
+#   Site:     http://localhost:8080/en
+#   Mailpit:  http://localhost:8025   (catches all outgoing mail)
+#   Database: 127.0.0.1:3307  db=aldar user=aldar pass=aldar
+name: aldar
+
+services:
+  app:
+    build: ./docker/php
+    image: aldar-php74
+    container_name: aldar-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    # Same engine and version as production (MariaDB 11.8).
+    image: mariadb:11.8
+    container_name: aldar-db
+    environment:
+      MARIADB_DATABASE: aldar
+      MARIADB_USER: aldar
+      MARIADB_PASSWORD: aldar
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      # Imported only on first start, while the db-data volume is empty.
+      - ./_db-backup/aldar-db-20260914-1704.sql.gz:/docker-entrypoint-initdb.d/01-aldar.sql.gz:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+    restart: unless-stopped
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: aldar-mailpit
+    ports:
+      - "8025:8025"
+    restart: unless-stopped
+
+volumes:
+  db-data:
