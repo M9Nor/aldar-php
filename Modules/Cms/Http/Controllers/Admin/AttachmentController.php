@@ -16,6 +16,20 @@ use DB;
 class AttachmentController extends Controller
 {
     /**
+     * Rule strings the admin views send (dropzone components, Content, projects and
+     * opportunities media). Anything else from the client falls back to DEFAULT_RULES.
+     */
+    public const ALLOWED_RULES = [
+        'required|file|max:2048|mimes:jpeg,jpg,png,pdf',
+        'required|file|max:2048|mimes:jpeg,jpg,png',
+        'required|file|max:1024|mimes:jpeg,jpg,png,pdf',
+        'required|image|max:1024|mimes:jpeg,jpg,png',
+        'bail|required|image|max:2048|mimes:jpeg,jpg,png|dimensions:min_width=250,min_height=500,max_width=1000,max_height=2000',
+    ];
+
+    public const DEFAULT_RULES = 'required|file|max:2048|mimes:jpeg,jpg,png,pdf';
+
+    /**
      * Store a newly created resource in storage.
      * @param Request $request
      * @return Response
@@ -27,7 +41,7 @@ class AttachmentController extends Controller
         ];
 
         $rules = [
-            'attachment'        => $request->validation_rules ?? 'required',
+            'attachment'        => in_array($request->validation_rules, self::ALLOWED_RULES, true) ? $request->validation_rules : self::DEFAULT_RULES,
             'attachable_id'     => 'nullable',
             'attachable_type'   => 'nullable|string|max:191'
         ];
@@ -47,12 +61,9 @@ class AttachmentController extends Controller
 
         try {
             DB::transaction(function() use ($request) {
-                $subFolder = $request->sub_folder ?? 'general';
-                if(!empty($subFolder))
-                {
-                    $subFolder = !Str::startsWith($subFolder, '/') ? "/{$subFolder}" : $subFolder;
-                }
-                if($attachmentUid = $request->attachment->storeAs('attachments'.$subFolder, $request->attachment->getClientOriginalName()))
+                $subFolder = preg_match('/^[a-z0-9_-]+$/i', (string) $request->sub_folder) ? $request->sub_folder : 'general';
+                $storedName = Str::random(40) . '.' . ($request->attachment->guessExtension() ?: 'bin');
+                if($attachmentUid = $request->attachment->storeAs("attachments/{$subFolder}", $storedName))
                 {
                     $toAttach = [
                         'type'              => 'TEMP',

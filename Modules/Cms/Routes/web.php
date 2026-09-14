@@ -171,7 +171,7 @@ Route::group([
             Route::post('mass_restore',                'CountryController@massRestore')->name('CountryController@massRestore');
             Route::post('delete-attachemnt',           'CountryController@deleteAttachment')->name('CountryController@deleteAttachment');
         });
-        Route::group([ 'prefix' => 'attachments' ], function() {
+        Route::group([ 'prefix' => 'attachments', 'middleware' => 'staff' ], function() {
             Route::post('/store',                      'AttachmentController@store')->name('AttachmentController@store');
             Route::post('delete',                      'AttachmentController@destroy')->name('AttachmentController@destroy');
         });
