@@ -2289,8 +2289,10 @@ Claude generates the new passwords server-side and never reads, prints or types 
 
 ```bash
 STAMP=$(date +%Y%m%d-%H%M%S)
-ssh codecamb "cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:set-password aldar --generate-to=~/aldar-credentials/${STAMP}.txt"
+ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan aldar:set-password aldar --generate-to=$HOME/aldar-credentials/'"$STAMP"'.txt'
 ```
+
+(The `--generate-to=` value uses `$HOME` inside the single-quoted remote command, expanded by the *remote* shell once ssh delivers it — Bash does not expand a bare `~` embedded after `--generate-to=`, which would otherwise create a literal `./~` directory instead of the operator's home directory. `$STAMP` is spliced in from the local shell via the adjacent double-quoted segment.)
 
 Replace `aldar` with the account name each time (same `$STAMP`, so all three land in one file); each run prints `Password for #<id> <username> written to <file>.` — never the password itself. The owner reads the file themselves over SSH, e.g. `ssh codecamb "cat ~/aldar-credentials/${STAMP}.txt"`, and confirms they can log in with each new password.
 
@@ -2304,14 +2306,17 @@ Claude runs `scripts/server/rotate-db-password.php`, which generates the new pas
    ssh -n codecamb 'mkdir -p ~/aldar-backup ~/aldar-credentials && chmod 700 ~/aldar-backup ~/aldar-credentials'
    scp -q scripts/server/rotate-db-password.php codecamb:aldar-backup/rotate-db-password.php
    STAMP=$(date +%Y%m%d-%H%M%S)
-   ssh codecamb "cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php ~/aldar-backup/rotate-db-password.php \"\$(pwd)\" ~/aldar-credentials/${STAMP}.txt"; echo "exit: $?"
+   ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php ~/aldar-backup/rotate-db-password.php "$(pwd)" $HOME/aldar-credentials/'"$STAMP"'.txt'; echo "exit: $?"
    ```
 
+   (Same `$HOME`-inside-single-quotes reasoning as Step 6: the credentials-file argument must be an absolute path with no literal `~`, and `$HOME` is left for the *remote* shell to expand. `"$(pwd)"` is likewise passed through literally so the remote shell expands it to `public_html`'s real, non-symlinked path — the script refuses to run if the app directory it resolves doesn't match this argument.)
+
 2. Act on the exit code:
-   - **0 (success).** One confirmation line was printed naming no secret; `.env` and the database password now match, and the pre-rotation `.env` is backed up under `~/aldar-backup/env-before-db-rotation-*`. Go to item 3.
-   - **1 (refused, nothing changed).** Either the host refused `SET PASSWORD` or an earlier check failed; `.env` and the DB password are still the originals. This is not a blocking failure: add "Rotate the DB password (N4)" to the Step 12 hand-over list and continue to Step 8.
+   - **0 (success).** One confirmation line was printed naming no secret; `.env` and the database password now match (the script itself re-verifies this — both the live `.env` content and a fresh DB connection — before printing it), and the pre-rotation `.env` is backed up under `~/aldar-backup/env-before-db-rotation-*`. Go to item 3.
+   - **1 (refused, nothing changed).** Either the host refused `SET PASSWORD`, or a safety check failed before anything was touched (wrong working directory, cached config, an environment variable overriding `.env`, or a malformed `.env`); `.env` and the DB password are still the originals. This is not a blocking failure: add "Rotate the DB password (N4)" to the Step 12 hand-over list and continue to Step 8.
    - **2 (partial rotation — needs a human now).** The DB password changed but `.env` could not be rewritten to match, so the site is broken. Stop immediately and report to the owner; do not continue the rollout.
    - **3 (new password unverifiable).** Stop and report to the owner, pointing at `~/aldar-backup/env-before-db-rotation-*` and `~/aldar-credentials/${STAMP}.txt` so they can recover manually.
+   - **4 (unknown state — needs a human now).** The `SET PASSWORD` reply was lost (e.g. the connection dropped) and neither the old nor the new password currently works. Stop immediately; the new password is the last line of the credentials file and the script deliberately left `.env.rotating` in place next to `.env` as the only remaining record of what `.env` should say. Report both paths to the owner.
 3. **Verify.** Run `scripts/hotfix/verify-production.sh`; all checks must print `ok` (the pages only render with a working DB connection).
 
 - [ ] **Step 8: Rotate APP_KEY (N3), wipe sessions, remove stale `.env` copies**
