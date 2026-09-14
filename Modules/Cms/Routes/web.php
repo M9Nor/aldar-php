@@ -175,7 +175,7 @@ Route::group([
             Route::post('/store',                      'AttachmentController@store')->name('AttachmentController@store');
             Route::post('delete',                      'AttachmentController@destroy')->name('AttachmentController@destroy');
         });
-        Route::group(['prefix' => 'tinymce'], function (){
+        Route::group(['prefix' => 'tinymce', 'middleware' => 'staff'], function (){
             Route::post('uploader',                    'TinymceController@uploader')->name('TinymceController@uploader');
         });
     });
