@@ -8,6 +8,9 @@ cd "$(git rev-parse --show-toplevel)"
 DRY_RUN=0
 if [ "${1:-}" = "--dry-run" ]; then DRY_RUN=1; shift; fi
 REF="${1:?usage: scripts/hotfix/deploy.sh [--dry-run] <git-ref>}"
+# Resolve the ref once, so a branch that moves mid-deploy cannot change what is uploaded.
+SHA="$(git rev-parse --verify --quiet "$REF^{commit}")" || { echo "Unknown git ref: $REF" >&2; exit 1; }
+echo "Deploying $REF at $SHA"
 
 REMOTE="${REMOTE:-codecamb}"
 APP="domains/aldar-emlak.com/public_html"
@@ -20,21 +23,21 @@ cleanup() {
   code=$?
   rm -rf "$WORK"
   if [ "$code" -ne 0 ] && [ "$BACKED_UP" -eq 1 ] && [ "$HINT_PRINTED" -eq 0 ]; then
-    echo "Deploy FAILED after backup. Roll back with: scripts/hotfix/rollback.sh $STAMP" >&2
+    echo "Deploy FAILED after backup. Roll back with: scripts/hotfix/rollback.sh --reopens-public-seed $STAMP" >&2
   fi
 }
 trap cleanup EXIT
 
 PATHSPEC=(-- . ':!tests' ':!docs' ':!scripts' ':!docker' ':!docker-compose.yml' ':!.gitignore' ':!phpunit.xml')
-ROOT_COMMIT="$(git rev-list --max-parents=0 "$REF")"
+ROOT_COMMIT="$(git rev-list --max-parents=0 "$SHA")"
 
-if git diff --name-only --diff-filter=DR "$ROOT_COMMIT" "$REF" "${PATHSPEC[@]}" | grep -q .; then
+if git diff --name-only --diff-filter=DR "$ROOT_COMMIT" "$SHA" "${PATHSPEC[@]}" | grep -q .; then
   echo "Deleted or renamed application files are not supported by the hotfix deploy:" >&2
-  git diff --name-status --diff-filter=DR "$ROOT_COMMIT" "$REF" "${PATHSPEC[@]}" >&2
+  git diff --name-status --diff-filter=DR "$ROOT_COMMIT" "$SHA" "${PATHSPEC[@]}" >&2
   exit 1
 fi
 
-git diff --name-only --diff-filter=AM "$ROOT_COMMIT" "$REF" "${PATHSPEC[@]}" > "$WORK/files.txt"
+git diff --name-only --diff-filter=AM "$ROOT_COMMIT" "$SHA" "${PATHSPEC[@]}" > "$WORK/files.txt"
 [ -s "$WORK/files.txt" ] || { echo "Nothing to deploy."; exit 0; }
 echo "Files to deploy ($(wc -l < "$WORK/files.txt" | tr -d ' ')):"
 sed 's/^/  /' "$WORK/files.txt"
@@ -75,7 +78,7 @@ BACKED_UP=1
 ssh -n "$REMOTE" "$PHP ~/aldar-backup/db-dump.php ~/$APP ~/aldar-backup/hotfix-$STAMP.sql.gz"
 
 echo "Uploading..."
-tr '\n' '\0' < "$WORK/files.txt" | xargs -0 git archive --format=tar "$REF" -- | ssh "$REMOTE" "tar -xif - -C $APP"
+tr '\n' '\0' < "$WORK/files.txt" | xargs -0 git archive --format=tar "$SHA" -- | ssh "$REMOTE" "tar -xif - -C $APP"
 
 echo "Clearing caches..."
 ssh -n "$REMOTE" "cd $APP && $PHP artisan view:clear && $PHP artisan route:clear && $PHP artisan config:clear && $PHP artisan cache:clear"
@@ -83,7 +86,8 @@ ssh -n "$REMOTE" "cd $APP && $PHP artisan view:clear && $PHP artisan route:clear
 echo "Verifying..."
 if ! scripts/hotfix/verify-production.sh "https://aldar-emlak.com"; then
   HINT_PRINTED=1
-  echo "Verification FAILED. Roll back with: scripts/hotfix/rollback.sh $STAMP" >&2
+  echo "Verification FAILED. Roll back with: scripts/hotfix/rollback.sh --reopens-public-seed $STAMP" >&2
   exit 1
 fi
-echo "Deployed $REF. Rollback: scripts/hotfix/rollback.sh $STAMP"
+echo "Deployed $SHA ($REF). Backup stamp: $STAMP"
+echo "Rollback reopens the public /seed route; only before aldar:offboard-vendor runs: scripts/hotfix/rollback.sh --reopens-public-seed $STAMP"

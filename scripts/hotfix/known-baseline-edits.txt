@@ -2,5 +2,4 @@
 # deploy.sh skips the drift check for these paths.
 .gitignore
 app/Http/Middleware/RedirectToHttps.php
-Modules/Cms/Config/config.php
 Modules/Notification/Config/config.php

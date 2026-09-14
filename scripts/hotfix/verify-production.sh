@@ -2,6 +2,8 @@
 # Read-only checks that the hotfix is live on production.
 # It never requests /seed or /migrate: on unpatched code those URLs run commands.
 # Usage: scripts/hotfix/verify-production.sh [base-url]
+# ROUTES_FILE=<file> reads the route list (artisan route:list --columns=method,uri,middleware)
+# from a file instead of the server, so the HTTP checks can run against a local stack.
 set -uo pipefail
 BASE="${1:-https://aldar-emlak.com}"
 REMOTE="${REMOTE:-codecamb}"
@@ -13,7 +15,12 @@ pass() { echo "ok    $1"; }
 fail() { echo "FAIL  $1"; FAIL=1; }
 status() { curl -s -o /dev/null -w '%{http_code}' -L --max-redirs 5 "$1"; }
 
-ROUTES="$(ssh -n "$REMOTE" "cd $APP && $PHP artisan route:list --columns=method,uri,middleware" 2>&1)" || { echo "cannot read route list"; exit 1; }
+if [ -n "${ROUTES_FILE:-}" ]; then
+  echo "note  route list read from $ROUTES_FILE, not from the server"
+  ROUTES="$(cat "$ROUTES_FILE")" || { echo "cannot read route list"; exit 1; }
+else
+  ROUTES="$(ssh -n "$REMOTE" "cd $APP && $PHP artisan route:list --columns=method,uri,middleware" 2>&1)" || { echo "cannot read route list"; exit 1; }
+fi
 
 if echo "$ROUTES" | grep -qE '\| (seed|migrate|update_currency|clear-cache) +\|'; then
   fail "public maintenance routes are still registered"
@@ -26,7 +33,7 @@ require_middleware() {
   rows="$(echo "$ROUTES" | grep -E "\| $uri +\|")"
   if [ -z "$rows" ]; then
     fail "$label"
-  elif echo "$rows" | grep -qv "$mw"; then
+  elif echo "$rows" | grep -qvF -- "$mw"; then
     fail "$label"
   else
     pass "$label"
@@ -46,7 +53,9 @@ for path in /en /ar /en/contact-us /ar/contact-us /en/articles; do
 done
 
 code="$(status "$BASE/img/85x85/defaults/base.png")"; [ "$code" = 200 ] && pass "allowed image size 200" || fail "allowed image size ($code)"
-code="$(status "$BASE/img/1234x987/defaults/base.png")"; [ "$code" = 404 ] && pass "unknown image size 404" || fail "unknown image size ($code)"
+# A fresh unknown size per run: a fixed one would fail forever once anything cached it.
+UNKNOWN_SIZE="$((1100 + RANDOM % 800))x$((1100 + RANDOM % 800))"
+code="$(status "$BASE/img/$UNKNOWN_SIZE/defaults/base.png")"; [ "$code" = 404 ] && pass "unknown image size $UNKNOWN_SIZE 404" || fail "unknown image size $UNKNOWN_SIZE ($code)"
 
 for worker in /service-worker.js /firebase-messaging-sw.js; do
   body="$(curl -s "$BASE$worker")"
@@ -57,6 +66,12 @@ for worker in /service-worker.js /firebase-messaging-sw.js; do
   esac
 done
 
-code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/graph/.htaccess")"; [ "$code" != 200 ] && pass "graph/.htaccess not readable" || fail "graph/.htaccess is readable"
+# The .htaccess deny blocks are only proven live by a refused request for a PHP name that
+# does not exist: without them the request falls through to Laravel (404 or a redirect).
+PROBE="verify-$(openssl rand -hex 8).php"
+for dir in graph/uploads/original/tinymce modules; do
+  code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/$dir/$PROBE")"
+  [ "$code" = 403 ] && pass "PHP under /$dir refused (403)" || fail "PHP under /$dir not refused ($code)"
+done
 
 exit $FAIL

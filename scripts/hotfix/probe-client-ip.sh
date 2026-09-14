@@ -6,6 +6,9 @@ REMOTE="${REMOTE:-codecamb}"
 APP="domains/aldar-emlak.com/public_html"
 NAME="ip-probe-$(openssl rand -hex 16).php"
 
+# Set before the upload, so an interrupted or failed upload still removes the file.
+trap 'ssh -n "$REMOTE" "rm -f $APP/public/$NAME"' EXIT
+
 ssh "$REMOTE" "cat > $APP/public/$NAME" <<'PHP'
 <?php
 header('Content-Type: text/plain');
@@ -13,7 +16,6 @@ foreach (['REMOTE_ADDR', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_REAL_IP', 'HTTP_CF_CONN
     echo $key, '=', $_SERVER[$key] ?? '', "\n";
 }
 PHP
-trap 'ssh -n "$REMOTE" "rm -f $APP/public/$NAME"' EXIT
 
 echo "This machine's public IP: $(curl -s https://api.ipify.org)"
 curl -s "https://aldar-emlak.com/$NAME"
