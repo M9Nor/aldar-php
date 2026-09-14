@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Spam protection for the public contact endpoints.
@@ -29,7 +30,12 @@ class ProtectContactForms
 
     public function handle(Request $request, Closure $next)
     {
+        $route = optional($request->route())->getName();
+
         if (filled($request->input(self::HONEYPOT_FIELD))) {
+            // Route and IP only, never the form body: this log is for spotting false positives.
+            Log::info('Contact form submission dropped by the honeypot', ['route' => $route, 'ip' => $request->ip()]);
+
             return response()->json([
                 'success'  => true,
                 'disabled' => true,
@@ -37,9 +43,11 @@ class ProtectContactForms
             ]);
         }
 
-        $key = 'contact-forms:' . optional($request->route())->getName() . ':' . $request->ip();
+        $key = 'contact-forms:' . $route . ':' . $request->ip();
 
         if ($this->limiter->tooManyAttempts($key, self::MAX_SUBMISSIONS)) {
+            Log::info('Contact form submission refused by the rate limiter', ['route' => $route, 'ip' => $request->ip()]);
+
             return response()->json([
                 'success' => false,
                 'message' => trans('frontend::main.too_many_submissions'),
