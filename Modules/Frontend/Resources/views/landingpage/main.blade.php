@@ -33,6 +33,7 @@
                                 <div class="alert alert-danger"></div>
                             </div>
                             <form id="form_contact" onsubmit="submitFroms(event);" action="{{route('ContactController@store')}}" method="POST" class="sign-up-form">
+                                @include('frontend::partials.honeypot', ['id' => 'landing-top'])
                                 @csrf
                                 <div class="form-group input-group">
                                     <input required onchange="isValid('fullname')" type="text" name="fullname" class="form-control input-form" placeholder="{{__('frontend::main.contact_form.name')}} *">
@@ -121,6 +122,7 @@
                                 <div class="alert alert-danger"></div>
                             </div>
                             <form id="form_contact" onsubmit="submitFroms(event);" action="{{route('ContactController@store')}}" method="POST" class="sign-up-form">
+                                @include('frontend::partials.honeypot', ['id' => 'landing-bottom'])
                                 @csrf
                                 <div class="form-group input-group">
                                     <input required onchange="isValid('fullname')" type="text" name="fullname" class="form-control input-form" placeholder="{{__('frontend::main.contact_form.name')}} *">

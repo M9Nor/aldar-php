@@ -125,6 +125,7 @@ return [
     ],
     'sendded'                   => 'Sent successfully',
     'some_errors_occurred'      => 'Some errors occurred',
+    'too_many_submissions'      => 'You have sent several requests. Please try again in a few minutes.',
     'saving'                    => 'Saving',
     'worng_inputs'              => ' Check the data you have entered',
     'cookies'                   => ' We use cookies to improve your experience on our website',

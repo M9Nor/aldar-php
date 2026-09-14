@@ -188,6 +188,7 @@
                         <p>{{__("frontend::main.newsletters_desc")}}</p>
                     </div>
                     <form class="bloq-email" onsubmit="submitFromsEmails(event);" method="POST" action="{{route('ContactController@subscribe')}}">
+                        @include('frontend::partials.honeypot', ['id' => 'footer'])
                         @csrf
                         <label for="subscribeEmail" class="error"></label>
                         <div class="email">

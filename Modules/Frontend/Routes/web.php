@@ -48,10 +48,10 @@ Route::group([
 
     Route::group(['prefix' => 'contact-us', 'as' => 'ContactController@'], function () {
         Route::get('/'              , 'ContactController@index')->name('index');
-        Route::post('/store'        , 'ContactController@store')->name('store');
+        Route::post('/store'        , 'ContactController@store')->name('store')->middleware('contact.guard');
         Route::post('/store-visit'  , 'ContactController@storeVisit')->name('storeVisit');
-        Route::post('/subscribe'    , 'ContactController@subscribe')->name('subscribe');
-        Route::post('/store-inner'  , 'ContactController@storeInner')->name('storeInner');
+        Route::post('/subscribe'    , 'ContactController@subscribe')->name('subscribe')->middleware('contact.guard');
+        Route::post('/store-inner'  , 'ContactController@storeInner')->name('storeInner')->middleware('contact.guard');
     });
 
     Route::get('listing/regions-by-city-id/{id}', 'ListingController@getRegionsByCityId')->name('ListingController@regions');
