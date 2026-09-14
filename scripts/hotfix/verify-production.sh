@@ -60,18 +60,41 @@ code="$(status "$BASE/img/$UNKNOWN_SIZE/defaults/base.png")"; [ "$code" = 404 ] 
 for worker in /service-worker.js /firebase-messaging-sw.js; do
   body="$(curl -s "$BASE$worker")"
   case "$body" in
-    *binaa-prod*) fail "$worker still has the vendor Firebase config (purge the Hostinger CDN cache if the file on disk is new)" ;;
+    *binaa-prod*)
+      # The CDN may be caching a stale copy of the file LiteSpeed serves from
+      # disk; a cache-buster query string bypasses it and hits the origin.
+      body2="$(curl -s "$BASE$worker?v=$RANDOM")"
+      case "$body2" in
+        *"registration.unregister()"*)
+          fail "$worker (CDN stale: origin copy is new, purge the Hostinger CDN cache)" ;;
+        *binaa-prod*)
+          fail "$worker still has the vendor Firebase config (CDN may be serving a stale copy; the cache-busted request is stale too, so the origin file itself is still old)" ;;
+        *)
+          fail "$worker still has the vendor Firebase config (CDN may be serving a stale copy; cache-busted request returned unexpected content)" ;;
+      esac
+      ;;
     *"registration.unregister()"*) pass "$worker unregisters itself" ;;
     *) fail "$worker unexpected content" ;;
   esac
 done
 
-# The .htaccess deny blocks are only proven live by a refused request for a PHP name that
-# does not exist: without them the request falls through to Laravel (404 or a redirect).
-PROBE="verify-$(openssl rand -hex 8).php"
-for dir in graph/uploads/original/tinymce modules; do
-  code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/$dir/$PROBE")"
-  [ "$code" = 403 ] && pass "PHP under /$dir refused (403)" || fail "PHP under /$dir not refused ($code)"
-done
+# The .htaccess deny blocks can only be proven live against an EXISTING PHP file: a
+# missing name falls through to Laravel's front controller on LiteSpeed (404 or a
+# redirect), even when the deny block works. process-contact.php is harmless to
+# request because its $to is empty. graph/.htaccess is byte-identical to
+# modules/.htaccess, so this single probe stands in for both directories.
+code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/modules/frontend/form/process-contact.php")"
+LABEL="PHP under /modules and /graph refused (403, existing-file probe; graph/.htaccess is identical)"
+[ "$code" = 403 ] && pass "$LABEL" || fail "$LABEL ($code)"
+
+if [ -n "${ROUTES_FILE:-}" ]; then
+  echo "skip  graph/.htaccess and modules/.htaccess are identical (ROUTES_FILE set, no ssh)"
+else
+  if ssh -n "$REMOTE" "cd $APP/public && cmp -s graph/.htaccess modules/.htaccess"; then
+    pass "graph/.htaccess and modules/.htaccess are identical"
+  else
+    fail "graph/.htaccess and modules/.htaccess differ (or the ssh check failed)"
+  fi
+fi
 
 exit $FAIL

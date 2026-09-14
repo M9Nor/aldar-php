@@ -17,5 +17,14 @@ foreach (['REMOTE_ADDR', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_REAL_IP', 'HTTP_CF_CONN
 }
 PHP
 
-echo "This machine's public IP: $(curl -s https://api.ipify.org)"
-curl -s "https://aldar-emlak.com/$NAME"
+LOCAL_IP="$(curl -s https://api64.ipify.org)"
+echo "This machine's public IP: $LOCAL_IP"
+RESULT="$(curl -s "https://aldar-emlak.com/$NAME")"
+echo "$RESULT"
+REMOTE_ADDR_LINE="$(echo "$RESULT" | grep '^REMOTE_ADDR=' || true)"
+REMOTE_ADDR_VALUE="${REMOTE_ADDR_LINE#REMOTE_ADDR=}"
+if [ "$REMOTE_ADDR_VALUE" = "$LOCAL_IP" ]; then
+  echo "REMOTE_ADDR equals this machine's public IP: yes"
+else
+  echo "REMOTE_ADDR equals this machine's public IP: no"
+fi

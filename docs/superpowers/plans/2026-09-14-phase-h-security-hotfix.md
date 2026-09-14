@@ -2218,9 +2218,11 @@ Ask the owner in chat: "Ready to roll out the hotfix to aldar-emlak.com now: pro
 
 Run: `scripts/hotfix/probe-client-ip.sh`
 
+The script's "This machine's public IP" line now reads from `api64.ipify.org`, which returns whichever address family curl actually used — the site is reached over IPv6, so an IPv6 address here is normal, not a sign the probe is broken. The script also prints its own `REMOTE_ADDR equals this machine's public IP: yes/no` line; use that instead of eyeballing the two addresses (an `api.ipify.org`-style IPv4-only comparison would wrongly look like a mismatch for an IPv6 client that is in fact the real one).
+
 Decide from the output:
-- **`REMOTE_ADDR` equals "This machine's public IP":** no change; go to Step 3.
-- **`REMOTE_ADDR` differs and `HTTP_X_FORWARDED_FOR` starts with this machine's IP:** PHP sees the CDN. Only the client IP is needed; the forwarded-header restriction (Task 10b) is already committed and proven by `tests/Unit/TrustProxiesTest.php` — even with `$proxies` set, `X-Forwarded-Host`, `-Proto` and `-Port` stay untrusted, so this step only turns proxy trust on for the CDN's IP.
+- **`REMOTE_ADDR equals this machine's public IP: yes`:** no change; go to Step 3.
+- **`REMOTE_ADDR equals this machine's public IP: no` and `HTTP_X_FORWARDED_FOR` starts with this machine's IP:** PHP sees the CDN. Only the client IP is needed; the forwarded-header restriction (Task 10b) is already committed and proven by `tests/Unit/TrustProxiesTest.php` — even with `$proxies` set, `X-Forwarded-Host`, `-Proto` and `-Port` stay untrusted, so this step only turns proxy trust on for the CDN's IP.
   1. In `app/Http/Middleware/TrustProxies.php`, change:
 
      ```php
@@ -2235,6 +2237,8 @@ Decide from the output:
 
 The output contains emails (PII). It goes to `.superpowers/`, which `.git/info/exclude` keeps out of git; never commit or paste it.
 
+Plain `artisan tinker` fails on Hostinger with "Unable to create PsySH runtime directory … /run/user/<uid>"; pointing `XDG_RUNTIME_DIR` at a directory the account can write to (created with `mkdir -p` and locked down with `chmod 700`) fixes it.
+
 ```bash
 SNAP=.superpowers/sdd/2026-09-14-phase-h-security-hotfix
 cat > "$SNAP/snapshot.php" <<'PHP'
@@ -2245,7 +2249,7 @@ echo "permissions | " . $permRows->count() . " | " . hash('sha256', $permRows->t
 echo "abilities | " . DB::table('perms_abilities')->count() . PHP_EOL;
 echo "roles | " . DB::table('perms_roles')->count() . PHP_EOL;
 PHP
-ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role|permissions|abilities|roles) \|' > "$SNAP/users-before-deploy.txt"
+ssh codecamb 'mkdir -p $HOME/.psysh-runtime && chmod 700 $HOME/.psysh-runtime && cd domains/aldar-emlak.com/public_html && XDG_RUNTIME_DIR=$HOME/.psysh-runtime /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role|permissions|abilities|roles) \|' > "$SNAP/users-before-deploy.txt"
 grep -c '^user ' "$SNAP/users-before-deploy.txt"; grep -c '^role ' "$SNAP/users-before-deploy.txt"
 grep '^permissions \|^abilities \|^roles ' "$SNAP/users-before-deploy.txt"
 ```
@@ -2265,9 +2269,9 @@ scripts/hotfix/deploy.sh "$SHA"
 
 Expected:
 - the dry run prints `Deploying <sha> at <sha>`, a file list that includes `public/modules/.htaccess`, and `no drift`;
-- the deploy ends with `Deployed <sha> (<sha>). Backup stamp: <stamp>`, and every check prints `ok`, including `PHP under /graph/uploads/original/tinymce refused (403)` and `PHP under /modules refused (403)`.
+- the deploy ends with `Deployed <sha> (<sha>). Backup stamp: <stamp>`, and every check prints `ok`, including `PHP under /modules and /graph refused (403, existing-file probe; graph/.htaccess is identical)` and `graph/.htaccess and modules/.htaccess are identical`.
 
-Record the stamp. If a service-worker check fails with the CDN hint, ask the owner to purge the CDN cache in hPanel (Websites → aldar-emlak.com → CDN → Purge cache), then re-run `scripts/hotfix/verify-production.sh`.
+Record the stamp. If a service-worker check reports `FAIL (CDN stale: origin copy is new, purge the Hostinger CDN cache)`, purge the CDN cache in hPanel (Websites → aldar-emlak.com → CDN → Purge/Flush cache), then re-run `scripts/hotfix/verify-production.sh`.
 
 **If verification fails for any other reason,** stop and report to the owner. This is the only point where a rollback is safe, because the vendor has not been offboarded yet; with the owner's explicit decision run `scripts/hotfix/rollback.sh --reopens-public-seed <stamp>`.
 
@@ -2312,10 +2316,10 @@ Claude runs `scripts/server/rotate-db-password.php`, which generates the new pas
    (Same `$HOME`-inside-single-quotes reasoning as Step 6: the credentials-file argument must be an absolute path with no literal `~`, and `$HOME` is left for the *remote* shell to expand. `"$(pwd)"` is likewise passed through literally so the remote shell expands it to `public_html`'s real, non-symlinked path — the script refuses to run if the app directory it resolves doesn't match this argument.)
 
 2. Act on the exit code:
-   - **0 (success).** One confirmation line was printed naming no secret; `.env` and the database password now match (the script itself re-verifies this — both the live `.env` content and a fresh DB connection — before printing it), and the pre-rotation `.env` is backed up under `~/aldar-backup/env-before-db-rotation-*`. Go to item 3.
-   - **1 (refused, nothing changed).** Either the host refused `SET PASSWORD`, or a safety check failed before anything was touched (wrong working directory, cached config, an environment variable overriding `.env`, or a malformed `.env`); `.env` and the DB password are still the originals. This is not a blocking failure: add "Rotate the DB password (N4)" to the Step 12 hand-over list and continue to Step 8.
+   - **0 (success).** One confirmation line was printed naming no secret; `.env` and the database password now match (the script itself re-verifies this — both the live `.env` content and a fresh DB connection — before printing it), and the pre-rotation `.env` is backed up next to the credentials file, under `~/aldar-credentials/env-before-db-rotation-*` (not `~/aldar-backup/`). Go to item 3.
+   - **1 (refused, nothing changed).** Either the host refused `SET PASSWORD`, or a safety check failed before anything was touched (wrong working directory, cached config, an environment variable overriding `.env`, or a malformed `.env`); `.env` and the DB password are still the originals. This is not a blocking failure: add "Rotate the DB password (N4)" to the Step 12 hand-over list and continue to Step 8. (A safety check failing this early runs before the script writes its `.env` backup, so — unlike exit codes 0 and 2-4 below — there may be no `env-before-db-rotation-*` file to point the owner at.)
    - **2 (partial rotation — needs a human now).** The DB password changed but `.env` could not be rewritten to match, so the site is broken. Stop immediately and report to the owner; do not continue the rollout.
-   - **3 (new password unverifiable).** Stop and report to the owner, pointing at `~/aldar-backup/env-before-db-rotation-*` and `~/aldar-credentials/${STAMP}.txt` so they can recover manually.
+   - **3 (new password unverifiable).** Stop and report to the owner, pointing at `~/aldar-credentials/env-before-db-rotation-*` and `~/aldar-credentials/${STAMP}.txt` so they can recover manually.
    - **4 (unknown state — needs a human now).** The `SET PASSWORD` reply was lost (e.g. the connection dropped) and neither the old nor the new password currently works. Stop immediately; the new password is the last line of the credentials file and the script deliberately left `.env.rotating` in place next to `.env` as the only remaining record of what `.env` should say. Report both paths to the owner.
 3. **Verify.** Run `scripts/hotfix/verify-production.sh`; all checks must print `ok` (the pages only render with a working DB connection).
 
@@ -2364,7 +2368,7 @@ Claude runs each command after approval. Only hashes are printed, never the key.
 
 ```bash
 SNAP=.superpowers/sdd/2026-09-14-phase-h-security-hotfix
-ssh codecamb 'cd domains/aldar-emlak.com/public_html && /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role|permissions|abilities|roles) \|' > "$SNAP/users-after-rotation.txt"
+ssh codecamb 'mkdir -p $HOME/.psysh-runtime && chmod 700 $HOME/.psysh-runtime && cd domains/aldar-emlak.com/public_html && XDG_RUNTIME_DIR=$HOME/.psysh-runtime /opt/alt/php74/usr/bin/php artisan tinker' < "$SNAP/snapshot.php" | grep -E '^(user|role|permissions|abilities|roles) \|' > "$SNAP/users-after-rotation.txt"
 diff "$SNAP/users-before-deploy.txt" "$SNAP/users-after-rotation.txt"
 ```
 
@@ -2412,6 +2416,20 @@ Report these to the owner as still open:
   - Remote MySQL allowed hosts;
   - the domain registrar and DNS;
   - control of the Gmail mailboxes behind admin accounts 8, 27 and 29, since password-reset mails go there.
-- **Backup retention.** The server keeps `~/aldar-backup/hotfix-<stamp>.{tar.gz,sql.gz,added}` and, if Step 7's script ran (exit 0, 2 or 3), `~/aldar-backup/env-before-db-rotation-*`. The `.sql.gz` dumps contain PII and the `env-before-db-rotation-*` copies contain the old secrets: delete both once the rollback window closes. Also delete `~/aldar-credentials/*.txt` once every new password has been read and confirmed.
+- **Backup retention.** The server keeps `~/aldar-backup/hotfix-<stamp>.{tar.gz,sql.gz,added}` and, whenever `scripts/server/rotate-db-password.php` reached its `.env`-backup step before exiting — exit 0, exit 1 *after* the backup step (the `SET PASSWORD` failure case, as opposed to an earlier exit 1 that ran before any backup was written), 2, 3, 4, or 255 (an uncaught error) — `~/aldar-credentials/env-before-db-rotation-*` (next to the credentials file, not under `~/aldar-backup/`). Check with `ls ~/aldar-credentials/`. The `.sql.gz` dumps contain PII and the `env-before-db-rotation-*` copies contain the old secrets: delete both once the rollback window closes. Also delete `~/aldar-credentials/*.txt` once every new password has been read and confirmed.
 - If Step 7 hit exit 1, **rotate the DB password (N4)** manually: in hPanel → Databases, change the password of user `u859703690_claaal` (letters, digits and `-_.!@%^*` only, no quotes, `$`, `#`, `\` or spaces), then set `DB_PASSWORD=` in `public_html/.env` to match via hPanel File Manager.
 - Delete the local snapshots `.superpowers/sdd/2026-09-14-phase-h-security-hotfix/users-*.txt` after the audit is accepted.
+
+### Rollout record (2026-09-15)
+
+Facts only, no secrets:
+
+- Deploy SHA `73cb9a1`, run by the owner from their own terminal, because Claude Code's auto-mode classifier blocks production deploys.
+- Backup stamp `20260915-023119`.
+- The vendor was offboarded.
+- Admin and DB passwords were generated server-side into `~/aldar-credentials/20260915-*.txt`.
+- `APP_KEY` was rotated and sessions were wiped.
+- Stale `.env.bak-*` copies were deleted.
+- The Step 9 audit showed only the expected vendor diff.
+- PR #1 was merged as `c0efd8d`.
+- The CDN was purged by the owner.
