@@ -2004,7 +2004,7 @@ class ProjectController extends CmsController
             return $actions;
         });
         $rawColumns = [];
-        $rawColumns[] = 'breef';
+        // 'breef' is the visitor's message: it is never raw, so the DataProcessor escapes it (S5).
         $rawColumns[] = 'actions';
         return $datatables
         ->rawColumns($rawColumns)

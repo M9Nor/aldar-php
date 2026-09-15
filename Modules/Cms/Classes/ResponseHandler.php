@@ -33,7 +33,8 @@ class ResponseHandler implements Responsable
     {
         if($request->ajax())
         {
-            return response()->json($this->data, $this->code);
+            // Invalid UTF-8 in stored leads becomes U+FFFD instead of a 500 (S12).
+            return response()->json($this->data, $this->code, [], JSON_INVALID_UTF8_SUBSTITUTE);
         }
 
         if(isset($this->data['redirect_url']))

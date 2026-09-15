@@ -1901,10 +1901,8 @@ class OpportunityController extends CmsController
                 });
             }
         })
-        ->addColumn('link', function($model){
-            $category = $model->category;
-            return route('OpportunityController@single', ['type' => (!is_null($category) ? $category->slug : 'unknown'), 'slug' => $model->slug]);
-        })
+        // No computed 'link' column: contact_us has no slug or category, so route() threw on every page (P1-R39).
+        // Each row keeps its own contact_us.link, as in ProjectController::data_requests.
         ->addColumn('breef', function($model){
             return $model->description;
         })// Adds an incremental first row.
@@ -1927,7 +1925,7 @@ class OpportunityController extends CmsController
             return $actions;
         });
         $rawColumns = [];
-        $rawColumns[] = 'breef';
+        // 'breef' is the visitor's message: it is never raw, so the DataProcessor escapes it (S5).
         $rawColumns[] = 'actions';
         return $datatables
         ->rawColumns($rawColumns)

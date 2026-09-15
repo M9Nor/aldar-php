@@ -117,7 +117,9 @@ return [
      */
     'json'           => [
         'header'  => [],
-        'options' => 0,
+        // Spam leads hold invalid UTF-8: substitute U+FFFD instead of failing the whole page (S12).
+        // Valid UTF-8 encodes byte for byte as it did with 0.
+        'options' => JSON_INVALID_UTF8_SUBSTITUTE,
     ],
 
 ];
