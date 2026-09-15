@@ -255,20 +255,6 @@
     },
     {
         "methods": [
-            "GET"
-        ],
-        "uri": "admin/categories/asdwadwadwdaw",
-        "name": "CategoryController@addCategoriesAndFilters",
-        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@addCategoriesAndFilters",
-        "middleware": [
-            "web",
-            "localeSessionRedirect",
-            "localizationRedirect",
-            "localeViewPath"
-        ]
-    },
-    {
-        "methods": [
             "POST"
         ],
         "uri": "admin/categories/destroy/{model}",
@@ -633,7 +619,7 @@
     },
     {
         "methods": [
-            "GET"
+            "POST"
         ],
         "uri": "admin/clear-cache",
         "name": "cache.clear",
@@ -2233,20 +2219,6 @@
         "methods": [
             "GET"
         ],
-        "uri": "admin/projects/update_prices",
-        "name": "ProjectController@updatePrices",
-        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@updatePrices",
-        "middleware": [
-            "web",
-            "localeSessionRedirect",
-            "localizationRedirect",
-            "localeViewPath"
-        ]
-    },
-    {
-        "methods": [
-            "GET"
-        ],
         "uri": "admin/projects/{model?}/edit",
         "name": "ProjectController@edit",
         "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@edit",
@@ -2779,7 +2751,7 @@
     },
     {
         "methods": [
-            "GET"
+            "POST"
         ],
         "uri": "admin/users/login_as/{model}",
         "name": "UserController@loginAs",
