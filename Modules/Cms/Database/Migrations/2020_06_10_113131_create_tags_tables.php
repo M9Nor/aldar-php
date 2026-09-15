@@ -25,7 +25,7 @@ class CreateTagsTables extends Migration
 
             $table->foreign('added_by')
             ->references('id')->on('users')
-            ->onDelete(\DB::raw('SET NULL'));
+            ->onDelete('set null');
         });
         Schema::create('cms_tag_translations', function (Blueprint $table) {
             $table->increments('id');
