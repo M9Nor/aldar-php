@@ -49,4 +49,18 @@ return [
         'time' => 2,
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Rehash On Login
+    |--------------------------------------------------------------------------
+    |
+    | Laravel 7 never rewrote a stored password hash on login. Laravel 11+
+    | rehashes by default whenever needsRehash() is true, which holds for the
+    | legacy "$2a$" (cost 12) hashes in the users table. Keep it off so a
+    | successful login leaves existing hashes untouched, as on Laravel 7.
+    |
+    */
+
+    'rehash_on_login' => false,
+
 ];
