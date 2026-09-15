@@ -9,6 +9,7 @@ const DEBUG_ONLY_KEYS = new Set(['input', 'queries']);
 
 interface DataTableJson {
   recordsTotal: number;
+  recordsFiltered: number;
   data: Array<Record<string, unknown> & { actions?: { icons?: Array<{ action: string }>; dropdown?: Array<{ action: string }> } }>;
   [key: string]: unknown;
 }
@@ -39,6 +40,25 @@ for (const section of ADMIN_SECTIONS) {
       const table = await tableResponse;
       const json = (await table.json()) as DataTableJson;
       const rows = json.data;
+
+      if (table.request().method() !== 'GET') {
+        throw new Error(`Expected the DataTables request for ${section.name} to be GET, got ${table.request().method()}`);
+      }
+      // Row keys and action kinds come from every row: page 1 of an unordered query is not a
+      // stable sample. A single length=-1 (skip-paging) request is not safe against this app:
+      // it exhausts the web SAPI's 128M memory_limit for larger tables (verified on `projects`,
+      // 198 rows). Walk the same endpoint page by page instead, at its own page size.
+      const pageLength = Number(new URL(table.url()).searchParams.get('length')) || rows.length || 1;
+      const everyRow: DataTableJson['data'] = [];
+      for (let start = 0; everyRow.length < json.recordsFiltered; start += pageLength) {
+        const pageUrl = new URL(table.url());
+        pageUrl.searchParams.set('start', String(start));
+        pageUrl.searchParams.set('length', String(pageLength));
+        const pageJson = (await (await page.request.get(pageUrl.toString(), { headers: AJAX_HEADERS })).json()) as DataTableJson;
+        if (pageJson.data.length === 0) break;
+        everyRow.push(...pageJson.data);
+      }
+
       shape.columns = (await page.locator('#datatable thead th').allInnerTexts()).map(text => text.replace(/\s+/g, ' ').trim());
       shape.table = {
         endpoint: new URL(table.url()).pathname,
@@ -46,8 +66,8 @@ for (const section of ADMIN_SECTIONS) {
         status: table.status(),
         keys: Object.keys(json).filter(key => !DEBUG_ONLY_KEYS.has(key)).sort(),
         ...(section.structureOnly ? {} : { recordsTotal: json.recordsTotal, rows: rows.length }),
-        rowKeys: [...new Set(rows.flatMap(row => Object.keys(row)))].sort(),
-        actions: [...new Set(rows.flatMap(row => [...(row.actions?.icons ?? []), ...(row.actions?.dropdown ?? [])].map(a => a.action)))].sort(),
+        rowKeys: [...new Set(everyRow.flatMap(row => Object.keys(row)))].sort(),
+        actions: [...new Set(everyRow.flatMap(row => [...(row.actions?.icons ?? []), ...(row.actions?.dropdown ?? [])].map(a => a.action)))].sort(),
       };
     }
 
