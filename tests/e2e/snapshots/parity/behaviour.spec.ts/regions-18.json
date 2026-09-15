@@ -1,0 +1,93 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 99,
+      "city_id": 18,
+      "native_name": "kepez",
+      "zip_code": null,
+      "lat": null,
+      "lng": null,
+      "description": null,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null,
+      "name": "Kepez",
+      "image": null,
+      "about": null,
+      "short_description": null,
+      "keywords": null,
+      "details": null,
+      "translations": [
+        {
+          "id": 346,
+          "area_id": 99,
+          "locale": "en",
+          "name": "Kepez",
+          "description": null,
+          "image": null,
+          "about": null,
+          "short_description": null,
+          "details": null,
+          "keywords": null
+        },
+        {
+          "id": 347,
+          "area_id": 99,
+          "locale": "ar",
+          "name": "كيبيز",
+          "description": null,
+          "image": null,
+          "about": null,
+          "short_description": null,
+          "details": null,
+          "keywords": null
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "city_id": 18,
+      "native_name": "muratpasa",
+      "zip_code": null,
+      "lat": null,
+      "lng": null,
+      "description": null,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null,
+      "name": "Muratpasa",
+      "image": null,
+      "about": null,
+      "short_description": null,
+      "keywords": null,
+      "details": null,
+      "translations": [
+        {
+          "id": 348,
+          "area_id": 100,
+          "locale": "en",
+          "name": "Muratpasa",
+          "description": null,
+          "image": null,
+          "about": null,
+          "short_description": null,
+          "details": null,
+          "keywords": null
+        },
+        {
+          "id": 349,
+          "area_id": 100,
+          "locale": "ar",
+          "name": "مراد باشا",
+          "description": null,
+          "image": null,
+          "about": null,
+          "short_description": null,
+          "details": null,
+          "keywords": null
+        }
+      ]
+    }
+  ]
+}

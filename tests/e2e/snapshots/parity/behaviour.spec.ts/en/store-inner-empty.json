@@ -1,0 +1,10 @@
+{
+  "fullname": "The fullname field is required.",
+  "phone": "The phone field is required.",
+  "email": "The email field is required.",
+  "description": "The description field is required.",
+  "country_code": "The country code field is required.",
+  "language": "The language field is required.",
+  "time_from": "The time from field is required.",
+  "time_to": "The time to field is required."
+}
