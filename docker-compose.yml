@@ -7,7 +7,7 @@ name: aldar
 services:
   app:
     build: ./docker/php
-    image: aldar-php74
+    image: aldar-php84
     container_name: aldar-app
     ports:
       - "8080:80"
