@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class SetUserPasswordCommandTest extends TestCase
@@ -88,7 +89,7 @@ class SetUserPasswordCommandTest extends TestCase
         $this->artisan('aldar:set-password', ['username' => 'nobody-here', '--generate-to' => $file])
             ->assertExitCode(1);
 
-        $this->assertFileNotExists($file);
+        $this->assertFileDoesNotExist($file);
     }
 
     public function test_generate_to_tightens_an_existing_loosely_permissioned_file(): void
@@ -103,7 +104,7 @@ class SetUserPasswordCommandTest extends TestCase
         $this->assertSame('0600', substr(sprintf('%o', fileperms($file)), -4));
     }
 
-    /** @dataProvider unsafeCredentialsPathProvider */
+    #[DataProvider('unsafeCredentialsPathProvider')]
     public function test_generate_to_rejects_unsafe_paths(string $unsafePath): void
     {
         $original = User::where('username', 'parity-admin')->first()->password;
@@ -112,10 +113,10 @@ class SetUserPasswordCommandTest extends TestCase
             ->assertExitCode(1);
 
         $this->assertSame($original, User::where('username', 'parity-admin')->first()->password);
-        $this->assertFileNotExists($unsafePath);
+        $this->assertFileDoesNotExist($unsafePath);
     }
 
-    public function unsafeCredentialsPathProvider(): array
+    public static function unsafeCredentialsPathProvider(): array
     {
         return [
             'relative path'          => ['relative/aldar-credentials.tsv'],
@@ -139,7 +140,7 @@ class SetUserPasswordCommandTest extends TestCase
             ->assertExitCode(1);
 
         $this->assertSame($original, User::where('username', 'parity-admin')->first()->password);
-        $this->assertFileNotExists($credentialsPath);
+        $this->assertFileDoesNotExist($credentialsPath);
     }
 
     public function test_sets_the_password_from_hidden_prompts(): void
