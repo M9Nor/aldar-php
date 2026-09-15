@@ -129,7 +129,7 @@ These are baseline facts, not bugs to fix inside a parity change:
 - `/landing-page/new` returns 404 because the row is soft-deleted; the lifecycle spec restores it for one test.
 - Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show` and `opportunity/show`. `projects/data` without DataTables parameters also answered 500 on Laravel 7; on Laravel 13 it answers 200 for staff (accepted difference P1-R19, recorded in the matrix baseline).
 - `POST contact-us/store-visit` answers 500: the controller method is commented out.
-- `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config (Phase 2 candidate).
+- `GET admin/notification/config` answered 200 to anonymous visitors on Laravel 7 and 13. Since Phase 2 (S9) it carries the `staff` middleware: anonymous visitors are sent to login (the matrix records "302 login"), and staff still get the Firebase web client config.
 - The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows. On Laravel 7 and 13, pages whose window held spam submissions with invalid UTF-8 answered a DataTables `Malformed UTF-8` error (4 of the 74 pages per list at the page's 50-row length). Since Phase 2 (S12) the lists and the lead summary substitute U+FFFD for invalid bytes, so every lead stays reachable; `specs/security/lead-lists.spec.ts` plants such a lead.
 - `admin/opportunity/properties` loads its table from the projects endpoint `admin/projects/data_properties`.
 - The `store-inner` behaviour test leaves one synthetic `contact_us` row (`parity-inner@aldar.test`) until the next DB reset.

@@ -19,7 +19,7 @@ Route::group([
         Route::prefix('notification')->group(function() {
             Route::get('/'               ,'NotificationController@index')->name('NotificationsController@index');
             Route::post('/'              ,'NotificationController@postIndex')->name('NotificationsController@postIndex');
-            Route::get('config'          ,'NotificationController@getConfig')->name('NotificationsController@getConfig');
+            Route::get('config'          ,'NotificationController@getConfig')->middleware('staff')->name('NotificationsController@getConfig');
             Route::post('postWebToken'   ,'NotificationController@postWebToken')->name('NotificationsController@postWebToken');
             Route::post('getList'        ,'NotificationController@getList')->name('NotificationsController@getList');
             Route::get('create'          ,'NotificationController@create')->name('NotificationsController@create');
