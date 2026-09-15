@@ -25,6 +25,10 @@ switch ($argv[1] ?? '') {
     case 'routes':
         $out = [];
         foreach ($app['router']->getRoutes() as $route) {
+            // Dev-only package routes (debugbar), absent with `composer install --no-dev`.
+            if (strpos($route->uri(), '_debugbar') === 0) {
+                continue;
+            }
             $out[] = [
                 'methods'    => array_values(array_diff($route->methods(), ['HEAD'])),
                 'uri'        => $route->uri(),
