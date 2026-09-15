@@ -60,18 +60,47 @@ code="$(status "$BASE/img/$UNKNOWN_SIZE/defaults/base.png")"; [ "$code" = 404 ] 
 for worker in /service-worker.js /firebase-messaging-sw.js; do
   body="$(curl -s "$BASE$worker")"
   case "$body" in
-    *binaa-prod*) fail "$worker still has the vendor Firebase config (purge the Hostinger CDN cache if the file on disk is new)" ;;
+    *binaa-prod*)
+      # A CDN may ignore query strings in its cache key, so a cache-busted
+      # request does not prove whether the origin file itself is stale.
+      # Check the origin file directly over ssh (read-only) instead.
+      if [ -n "${ROUTES_FILE:-}" ]; then
+        echo "skip  $worker origin check (ROUTES_FILE set, no ssh)"
+        fail "$worker still has the vendor Firebase config (origin not checked; ROUTES_FILE set)"
+      else
+        origin_count="$(ssh -n "$REMOTE" "grep -c binaa-prod $APP/public$worker" 2>/dev/null)"
+        case "$origin_count" in
+          0)
+            fail "$worker (CDN stale: origin copy is new, purge the Hostinger CDN cache)" ;;
+          ''|*[!0-9]*)
+            fail "$worker vendor Firebase config detected via the CDN, but the origin check failed (ssh/grep did not return a count)" ;;
+          *)
+            fail "$worker (origin copy still has the vendor Firebase config — the deploy did not update it)" ;;
+        esac
+      fi
+      ;;
     *"registration.unregister()"*) pass "$worker unregisters itself" ;;
     *) fail "$worker unexpected content" ;;
   esac
 done
 
-# The .htaccess deny blocks are only proven live by a refused request for a PHP name that
-# does not exist: without them the request falls through to Laravel (404 or a redirect).
-PROBE="verify-$(openssl rand -hex 8).php"
-for dir in graph/uploads/original/tinymce modules; do
-  code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/$dir/$PROBE")"
-  [ "$code" = 403 ] && pass "PHP under /$dir refused (403)" || fail "PHP under /$dir not refused ($code)"
-done
+# The .htaccess deny blocks can only be proven live against an EXISTING PHP file: a
+# missing name falls through to Laravel's front controller on LiteSpeed (404 or a
+# redirect), even when the deny block works. process-contact.php is harmless to
+# request because its $to is empty. graph/.htaccess is byte-identical to
+# modules/.htaccess, so this single probe stands in for both directories.
+code="$(curl -s -o /dev/null -w '%{http_code}' "$BASE/modules/frontend/form/process-contact.php")"
+LABEL="PHP under /modules and /graph refused (403, existing-file probe; graph/.htaccess is identical)"
+[ "$code" = 403 ] && pass "$LABEL" || fail "$LABEL ($code)"
+
+if [ -n "${ROUTES_FILE:-}" ]; then
+  echo "skip  graph/.htaccess and modules/.htaccess are identical (ROUTES_FILE set, no ssh)"
+else
+  if ssh -n "$REMOTE" "cd $APP/public && cmp -s graph/.htaccess modules/.htaccess"; then
+    pass "graph/.htaccess and modules/.htaccess are identical"
+  else
+    fail "graph/.htaccess and modules/.htaccess differ (or the ssh check failed)"
+  fi
+fi
 
 exit $FAIL
