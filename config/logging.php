@@ -19,6 +19,11 @@ return [
 
     'default' => env('LOG_CHANNEL', 'stack'),
 
+    'deprecations' => [
+        'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
+        'trace' => env('LOG_DEPRECATIONS_TRACE', false),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Log Channels
@@ -94,6 +99,12 @@ return [
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
+        ],
+
+        'deprecations' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/deprecations.log'),
+            'level' => 'debug',
         ],
     ],
 

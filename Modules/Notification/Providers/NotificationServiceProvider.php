@@ -149,6 +149,10 @@ class NotificationServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
+        if (! class_exists(Factory::class)) {
+            return; // Laravel 8 removed the legacy factory loader; these modules define no class-based factories.
+        }
+
         if (! app()->environment('production') && $this->app->runningInConsole()) {
             app(Factory::class)->load(module_path($this->moduleName, 'Database/factories'));
         }

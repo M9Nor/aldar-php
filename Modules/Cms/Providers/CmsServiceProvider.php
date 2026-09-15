@@ -44,11 +44,15 @@ class CmsServiceProvider extends ServiceProvider
             return new \Modules\Cms\Classes\Core;
         });
 
-        View::share('currentLang', LaravelLocalization::getCurrentLocale());
-        View::share('supportedLangs', LaravelLocalization::getLocalesOrder());
-        View::share('currentLangName', LaravelLocalization::getCurrentLocaleName());
-        View::share('currentLangNative', LaravelLocalization::getCurrentLocaleNative());
-        View::share('langDirection', LaravelLocalization::getCurrentLocaleDirection());
+        // laravel-modules 13 registers module providers in the register phase (v7 did it while booting),
+        // before deferred services such as the translator that LaravelLocalization needs exist.
+        $this->app->booting(function () {
+            View::share('currentLang', LaravelLocalization::getCurrentLocale());
+            View::share('supportedLangs', LaravelLocalization::getLocalesOrder());
+            View::share('currentLangName', LaravelLocalization::getCurrentLocaleName());
+            View::share('currentLangNative', LaravelLocalization::getCurrentLocaleNative());
+            View::share('langDirection', LaravelLocalization::getCurrentLocaleDirection());
+        });
     }
 
     /**
@@ -109,6 +113,10 @@ class CmsServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
+        if (! class_exists(Factory::class)) {
+            return; // Laravel 8 removed the legacy factory loader; these modules define no class-based factories.
+        }
+
         if (! app()->environment('production') && $this->app->runningInConsole()) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }

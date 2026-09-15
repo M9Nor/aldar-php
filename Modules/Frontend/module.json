@@ -4,6 +4,7 @@
     "description": "",
     "keywords": [],
     "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Frontend\\Providers\\FrontendServiceProvider"
     ],

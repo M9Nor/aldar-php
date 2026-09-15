@@ -12,7 +12,7 @@ class Server extends MainServer
      * @param  array                    $params Image manipulation params.
      * @throws InvalidArgumentException
      */
-    public function outputImage($path, array $params)
+    public function outputImage($path, array $params): void
     {
         $path = $this->makeImage($path, $params);
 

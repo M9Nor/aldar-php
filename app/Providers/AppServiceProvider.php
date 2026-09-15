@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Carbon\Carbon;
 
@@ -26,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrapFour();
         Carbon::setLocale(app()->getLocale());
         setlocale(LC_TIME,'ar_BH');
-        Carbon::setUTF8(true);
         Schema::defaultStringLength(191);
 
         if(in_array(request()->ip(), $this->ipAddresses))

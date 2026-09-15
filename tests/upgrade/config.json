@@ -28,7 +28,7 @@
     "session.path": "/",
     "session.same_site": null,
     "session.secure": false,
-    "session.serialization": null,
+    "session.serialization": "php",
     "translatable.fallback_locale": "en",
     "translatable.locales": [
         "ar",
