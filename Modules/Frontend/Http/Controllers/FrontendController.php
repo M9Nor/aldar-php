@@ -20,7 +20,6 @@ class FrontendController extends Controller
 {
     public $data = [];
     public $locale;
-    protected $apiKey = 'f0e0c4ba069d43af6200';
     
     public function __construct()
     {
@@ -86,14 +85,30 @@ class FrontendController extends Controller
         return $response;
     }
 
+    /**
+     * The currconv.com API key from config/services.php (CURRCONV_API_KEY), or null when it is not set (S14).
+     */
+    protected function currconvKey(): ?string
+    {
+        $key = config('services.currconv.key');
+
+        return is_string($key) && $key !== '' ? $key : null;
+    }
+
     public function getCurrencyPrice($currency, $defaultCurrency = 'TRY')
     {
-        $url = "https://free.currconv.com/api/v7/convert?q=" . $defaultCurrency . "_" . $currency . "&compact=ultra&apiKey=" . $this->apiKey;
+        $url = "https://free.currconv.com/api/v7/convert?q=" . $defaultCurrency . "_" . $currency . "&compact=ultra&apiKey=" . $this->currconvKey();
         return json_decode(self::currencyApi($url), true)[$defaultCurrency . "_" . $currency];
     }
 
     public  function storeCurrencies() {
-        $url = 'https://free.currconv.com/api/v7/currencies?apiKey=' . $this->apiKey;
+        // Without a key there is nothing to ask: keep the stored rates and say why (S14).
+        if ($this->currconvKey() === null) {
+            \Log::warning('Currency rates not refreshed: CURRCONV_API_KEY is not set.');
+
+            return;
+        }
+        $url = 'https://free.currconv.com/api/v7/currencies?apiKey=' . $this->currconvKey();
         $websiteCurrencies = Content::where('type', 'currencies')->where('slug', '!=', null)->get();
         $currencies = json_decode(self::currencyApi($url), true);
         try {

@@ -284,7 +284,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('create', CrudModel::class);
 
-        \Log::debug($request->all());
         $rules = [
             'username'      => 'required|string|max:191|unique:users,username',
             'first_name'    => 'nullable|string|max:20',
@@ -414,7 +413,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('update', $this->data['model']);
 
-        \Log::debug($request->all());
 
         $rules = [
             'username'      => 'nullable|string|max:191',
@@ -496,7 +494,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('update', $this->data['model']);
 
-        \Log::debug($request->all());
         $rules = [
             'username'      => 'nullable|string|max:191',
             'first_name'    => 'nullable|string|max:20',
