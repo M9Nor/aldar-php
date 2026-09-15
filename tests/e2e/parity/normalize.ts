@@ -83,7 +83,8 @@ function canonicalizeInBrowser(arg: { html: string; rules: BrowserRule[] }): str
         }
       }
       children
-        .map(el => ({ el, key: el.outerHTML.replace(/\s+/g, ' ') }))
+        // The key must ignore inter-tag whitespace, like the output does, so a whitespace-only Blade change can't reorder ties.
+        .map(el => ({ el, key: el.outerHTML.replace(/\s+/g, ' ').replace(/\s*(<[^>]+>)\s*/g, '$1').trim() }))
         .sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0))
         .forEach(({ el }) => container.appendChild(el));
     }

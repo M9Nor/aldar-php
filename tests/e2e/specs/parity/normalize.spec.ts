@@ -46,6 +46,12 @@ test.describe('normalizeHtml', () => {
     expect(out).toContain('href="#{n}"');
   });
 
+  test('ignores whitespace between tags when computing the sort key', async ({ page }) => {
+    const a = '<div class="nav-footer"><ul><li> <a href="/b">B</a></li><li><a href="/a">A</a></li></ul></div>';
+    const b = '<div class="nav-footer"><ul><li><a href="/b">B</a></li><li> <a href="/a">A</a></li></ul></div>';
+    expect(await normalizeHtml(page, a, 'static', BASE)).toBe(await normalizeHtml(page, b, 'static', BASE));
+  });
+
   test('reduces article-category cards to a count, and only on article-category pages', async ({ page }) => {
     const html = '<div class="blog-section"><div class="row"><div class="col-lg-8"><div class="row"><div>A</div><div>B</div></div><div class="row">pages</div></div></div></div>';
     expect(await normalizeHtml(page, html, 'article-category', BASE)).toContain('<!-- parity: 2 x div -->');
