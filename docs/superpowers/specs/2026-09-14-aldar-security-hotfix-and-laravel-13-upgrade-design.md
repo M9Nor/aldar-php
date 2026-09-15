@@ -257,7 +257,9 @@ The release-based structure does not exist yet (Phase 3), so the hotfix patches 
 | S4 | `composer audit` must report zero known vulnerabilities before any deploy. Front-end libraries are listed in a report only. |
 | S5 | Review the 165 unescaped `{!! !!}` outputs. Visitor-supplied data must never be printed raw. Admin-authored CMS HTML stays as it is. |
 | S6 | `POST admin/notification/postWebToken` is public: anonymous visitors can write `notif_tokens` rows, and a failure returns the exception message and code in the JSON body. Validate and rate-limit the endpoint, and never return exception detail to the client. |
-| S7 | CSRF on `GET admin/clear-cache`: a staff member visiting a hostile page flushes the cache. Make it a POST with CSRF, like `admin/update-currency`. |
+| S7 | CSRF on `GET admin/clear-cache`: a staff member visiting a hostile page flushes the cache. Make it a POST with CSRF, like `admin/update-currency`. Also:
+<br>• Align the route's authorization with the menu item, which only `tags.requests` holders see; today any staff member can call the route.
+<br>• Check in a browser whether the dashboard "Update currency" button (H2) works. A global jQuery handler cancels submit-button forms, so it may be inert. If it is, fire the form with a native `form.submit()`, as the logout form does. (Phase 2 research.) |
 | S8 | `EnsureStaff` answers JSON callers with a plain-text 403. Return a JSON error body when the request expects JSON. |
 | S9 | `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config. If no public page's JavaScript reads it, put it behind `staff`; otherwise document that it is public by design. (Found by the Phase 0 permissions matrix.) |
 | S10 | State-changing admin GET routes: `admin/projects/update_prices` rewrites prices, `admin/categories/asdwadwadwdaw` creates categories and filter pages, and `admin/users/login_as/{model}` switches the session. Move them to POST with CSRF, as in S7. Remove the `asdwadwadwdaw` seeding route if nothing in the admin UI calls it. |
@@ -270,6 +272,8 @@ The release-based structure does not exist yet (Phase 3), so the hotfix patches 
 | S17 | Flysystem 3 returns `false` instead of throwing when a write fails, so uploads such as the TinyMCE image upload report success on a failed write. Make failed writes raise, or check the return value at each call site. (Found in Phase 1, P1-R51.) |
 | S18 | Guard the Laravel 7 behaviour restorations (paginator window, DataTables escaping, Glide encoder quality, laravel/ui overrides) so a package update inside the composer constraints fails loudly instead of silently dropping a restoration: `#[\Override]` on class-method overrides, and a PHPUnit reflection test for trait-method overrides, where `#[\Override]` would be a fatal error. (Found in Phase 1, P1-R51.) |
 | S19 | Make the `specs/security/images.spec.ts` raw-socket test "an empty segment returns 404 and caches nothing" deterministic. It failed once with a socket hang-up. A flaky security gate erodes trust in the suite. (Found in Phase 1, P1-R51.) |
+| S20 | **Plaintext passwords can reach the logs.** `Modules/Cms/Http/Controllers/Admin/UserController.php` `store`, `update` and `updateProfile` call `\Log::debug($request->all())`, and the log channels write at `debug`. Stop logging request bodies there, and never log password fields anywhere. The owner checks the production `storage/logs` for logged request bodies and deletes those lines or files. (Phase 2 research.) |
+| S21 | **Admin endpoints that authorize nothing.**<br>• The lead data endpoints (`{projects,opportunity}/data_requests`, `data_properties`, `request_summary`, `properties_summary`, `show_details`) return every lead to any staff account, while the lead list pages require `tags.requests`.<br>• Admin POST routes with no ability check: `contents/delete-attachemnt`, `landing_pages/delete-timeline`, `{projects,opportunity}/delete-{payment,price}`, `tags/save`, and notification `/` and `getList`.<br>Enforce the same ability the corresponding admin page already requires, so SUPERADMIN flows stay unchanged. (Phase 2 research.) |
 
 Each item gets a test added to the suite.
 
@@ -360,3 +364,7 @@ Afterwards, `git log -p --all -- Modules/Cms/Config/config.php | grep -c 'Hash::
   - The project and opportunity request lists read the same unfiltered `contact_us` rows.
   - `admin/opportunity/properties` loads its table from the projects endpoint.
   - These are functional bugs, outside the technical-and-security scope, and are reported to the owner.
+- Found by Phase 2 research:
+  - 17 admin POST routes point to controller methods that do not exist, so they answer 500. Examples: the `areas`, `cities`, `countries` and `tags` `disable`/`enable`/`destroyTranslation` buttons.
+  - This is a functional bug, reported to the owner and not fixed.
+  - The S13 write probes record these routes as they are.
