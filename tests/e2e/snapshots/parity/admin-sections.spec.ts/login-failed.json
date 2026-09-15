@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "type": "validation_error",
+  "title": "cms::messages.login_failed.title",
+  "description": "cms::messages.login_failed.description",
+  "errors": []
+}

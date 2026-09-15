@@ -1,0 +1,48 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "Region",
+    "Tools"
+  ],
+  "table": {
+    "endpoint": "/en/admin/areas/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 57,
+    "rows": 50,
+    "rowKeys": [
+      "DT_RowIndex",
+      "about",
+      "actions",
+      "city_id",
+      "created_at",
+      "deleted_at",
+      "description",
+      "details",
+      "id",
+      "image",
+      "keywords",
+      "lat",
+      "lng",
+      "name",
+      "native_name",
+      "new_title",
+      "short_description",
+      "translated_name",
+      "translations",
+      "updated_at",
+      "zip_code"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

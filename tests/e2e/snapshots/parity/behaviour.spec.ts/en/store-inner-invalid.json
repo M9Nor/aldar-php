@@ -1,0 +1,9 @@
+{
+  "fullname": "The fullname must be at least 3 characters.",
+  "phone": "The phone must be between 1 and 15 digits.",
+  "email": "The email must be a valid email address.",
+  "description": "The description must be at least 3 characters.",
+  "language": "The language field is required.",
+  "time_from": "The time from field is required.",
+  "time_to": "The time to field is required."
+}

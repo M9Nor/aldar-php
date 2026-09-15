@@ -1,0 +1,46 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "City",
+    "Tools"
+  ],
+  "table": {
+    "endpoint": "/en/admin/cities/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 10,
+    "rows": 10,
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "country_id",
+      "created_at",
+      "deleted_at",
+      "description",
+      "id",
+      "image",
+      "lat",
+      "link",
+      "lng",
+      "name",
+      "native_name",
+      "new_title",
+      "sort_order",
+      "translated_name",
+      "translations",
+      "updated_at",
+      "zip_code"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

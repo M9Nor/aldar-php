@@ -1,0 +1,852 @@
+{
+  "/en/admin": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users/summary?model=31": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "302 back"
+  },
+  "/en/admin/users/show": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/users/myprofile": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users/31/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/users/identity/validate?name=username&keyword=parity-probe": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "302 back"
+  },
+  "/en/admin/users/identity/validate_?name=username&keyword=parity-probe": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/users/get-user-select2": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/sliders": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/sliders/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/sliders/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/stories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/stories/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/stories/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/articles": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/articles/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/articles/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/faqs": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/faqs/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/faqs/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/playlist_videos": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/playlist_videos/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/playlist_videos/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/agents": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/agents/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/agents/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/testimonials": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/testimonials/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/testimonials/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/services": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/services/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/services/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/achievements": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/achievements/data": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/achievements/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/pages": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/pages/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/pages/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/offices": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/offices/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/offices/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/filters": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/filters/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/filters/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/advertisements": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/advertisements/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/advertisements/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/currencies": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/currencies/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/currencies/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/first_banners": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/first_banners/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/first_banners/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/second_banners": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/second_banners/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/second_banners/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/balance": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/balance/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/balance/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/contents/articles/251/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/articles": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/articles/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/articles/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/articles/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/agents": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/agents/data": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/agents/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/agents/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/faqs": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/faqs/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/faqs/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/faqs/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/filters": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/filters/data": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/filters/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/filters/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/playlist_videos": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/playlist_videos/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/playlist_videos/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/playlist_videos/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/contracts": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/contracts/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/contracts/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/contracts/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_classifications": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_classifications/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_classifications/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_classifications/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/opportunity_classifications": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/opportunity_classifications/data": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/opportunity_classifications/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/opportunity_classifications/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_status": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_status/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_status/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_status/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_features": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_features/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_features/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/property_features/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/facilities": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/facilities/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/facilities/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/facilities/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/payments": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/payments/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/payments/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/payments/get-categories": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/categories/contracts/318/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/landing_pages": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/landing_pages/data": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/landing_pages/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/landing_pages/11/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/tags/list": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/tags": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/tags/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/tags/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/tags/145/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/areas": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/areas/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/areas/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/areas/98/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/cities": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/cities/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/cities/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/cities/12/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/countries": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/countries/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/countries/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/countries/2/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/configs": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/configs/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/configs/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/configs/49/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "302 back"
+  },
+  "/en/admin/configs/49/edit-config": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/data": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/projects/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/133/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/show": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/projects/requests": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/data_requests": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/request_summary": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/projects/properties": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/data_properties": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/projects/properties_summary": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/projects/show_details/0": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/opportunity": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/320/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/show": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/opportunity/requests": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/data_requests": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/request_summary": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/opportunity/properties": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/data_properties": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/opportunity/properties_summary": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/opportunity/show_details/0": {
+    "anonymous": "302 login",
+    "parity-admin": "404",
+    "parity-superadmin": "404"
+  },
+  "/en/admin/roles": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/roles/data": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/roles/create": {
+    "anonymous": "302 login",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/roles/show": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/roles/3/edit": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/notification": {
+    "anonymous": "302 login",
+    "parity-admin": "500",
+    "parity-superadmin": "500"
+  },
+  "/en/admin/notification/config": {
+    "anonymous": "200",
+    "parity-admin": "200",
+    "parity-superadmin": "200"
+  },
+  "/en/admin/notification/create": {
+    "anonymous": "302 login",
+    "parity-admin": "302 back",
+    "parity-superadmin": "200"
+  }
+}

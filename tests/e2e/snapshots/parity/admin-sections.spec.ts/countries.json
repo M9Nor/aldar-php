@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "Country",
+    "Tools"
+  ],
+  "table": {
+    "endpoint": "/en/admin/countries/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 1,
+    "rows": 1,
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "created_at",
+      "deleted_at",
+      "description",
+      "dial_code",
+      "id",
+      "latitude",
+      "longitude",
+      "name",
+      "new_title",
+      "translated_name",
+      "translations",
+      "updated_at"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

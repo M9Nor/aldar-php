@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "cms::cruds.categories.title.label",
+    "cms::cruds.categories.languages",
+    "cms::cruds.categories.sort_order.label",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/categories/playlist_videos/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 0,
+    "rows": 0,
+    "rowKeys": [],
+    "actions": []
+  }
+}

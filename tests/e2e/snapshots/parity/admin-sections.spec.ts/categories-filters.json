@@ -1,0 +1,54 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "cms::cruds.categories.title.label",
+    "cms::cruds.categories.parent.label",
+    "cms::cruds.categories.languages",
+    "cms::cruds.categories.sort_order.label",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/categories/filters/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 4,
+    "rows": 4,
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "brief",
+      "created_at",
+      "deleted_at",
+      "description",
+      "disabled_at",
+      "icon",
+      "icon_image",
+      "id",
+      "image",
+      "keywords",
+      "languages",
+      "new_title",
+      "parent_categories",
+      "parent_id",
+      "seo_description",
+      "slug",
+      "sort_order",
+      "title",
+      "translated_name",
+      "translations",
+      "type",
+      "updated_at"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "Tags",
+    "AR",
+    "EN",
+    "FA",
+    "Tools"
+  ],
+  "table": {
+    "endpoint": "/en/admin/tags/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 231,
+    "rows": 50,
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "added_by",
+      "arabic",
+      "created_at",
+      "deleted_at",
+      "description",
+      "disabled_at",
+      "english",
+      "id",
+      "image",
+      "keywords",
+      "new_title",
+      "persian",
+      "text",
+      "translated_name",
+      "translations",
+      "type",
+      "updated_at",
+      "views"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

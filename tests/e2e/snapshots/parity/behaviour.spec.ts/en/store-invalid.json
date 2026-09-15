@@ -1,0 +1,6 @@
+{
+  "fullname": "The fullname must be at least 3 characters.",
+  "phone": "The phone must be between 1 and 15 digits.",
+  "email": "The email must be a valid email address.",
+  "description": "The description must be at least 3 characters."
+}

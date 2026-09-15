@@ -1,0 +1,43 @@
+{
+  "status": 200,
+  "columns": [
+    "cms::users.datatable.id",
+    "cms::users.datatable.user",
+    "cms::users.datatable.email",
+    "cms::users.datatable.status",
+    "cms::users.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/users/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "created_at",
+      "deleted_at",
+      "email",
+      "full_name",
+      "id",
+      "image",
+      "online",
+      "roles_array",
+      "status",
+      "updated_at",
+      "user",
+      "user_image",
+      "user_status",
+      "username"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}
