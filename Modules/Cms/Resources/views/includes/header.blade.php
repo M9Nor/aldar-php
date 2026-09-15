@@ -173,7 +173,10 @@
                     <a href="javascript:;" onclick="getElementById('logoutForm').submit();" class="btn btn-label btn-label-brand btn-sm btn-bold">{{ __('cms::header.sign-out') }}</a>
 
                     @if(session()->get('temporaryLoginUser'))
-                        <a href="{{ route('UserController@loginAs', ['model' => auth()->user()->id]) }}" class="btn btn-clean btn-sm btn-bold">{{ __('cms::header.login_back_as_root') }}</a>
+                        <form id="loginBackForm" action="{{ route('UserController@loginAs', ['model' => auth()->user()->id]) }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a href="javascript:;" onclick="getElementById('loginBackForm').submit();" class="btn btn-clean btn-sm btn-bold">{{ __('cms::header.login_back_as_root') }}</a>
                     @endif
                 </div>
             </div>

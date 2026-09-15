@@ -94,7 +94,7 @@
                         </li>
                     @endif
                     <li class="kt-menu__item {!! ($menu_item['is_active'] && $menu_item['items']) ? 'kt-menu__item--open kt-menu__item--expanded' : '' !!}{!! ($menu_item['is_active']) ? ' kt-menu__item--active' : '' !!}{!! ( $menu_item['items'] ) ? ' kt-menu__item--submenu' : '' !!}" aria-haspopup="true"{!! ( $menu_item['items'] ) ? ' kt-menu-submenu-toggle="hover"' : '' !!}>
-                        <a href="{!! $menu_item['link'] !!}" class="kt-menu__link {{ ($menu_item['items']) ? 'kt-menu__toggle' : '' }}">
+                        <a href="{!! $menu_item['link'] !!}" class="kt-menu__link {{ ($menu_item['items']) ? 'kt-menu__toggle' : '' }}"@if(!empty($menu_item['form_id'])) onclick="document.getElementById('{{ $menu_item['form_id'] }}').submit();"@endif>
                             <span class="kt-menu__link-icon">{!! $menu_item['icon'] !!}</span>
                             <span class="kt-menu__link-text">{{ $menu_item['label'] }}</span>
                             @if( $menu_item['badge_count'] > 0 )
@@ -106,6 +106,12 @@
                                 <i class="kt-menu__ver-arrow la la-angle-right"></i>
                             @endif
                         </a>
+                        @if(!empty($menu_item['form_id']))
+                            {{-- Native form.submit() bypasses the global jQuery submit blocker, like #logoutForm (S7). --}}
+                            <form id="{{ $menu_item['form_id'] }}" action="{{ $menu_item['form'] }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endif
                         @if($menu_item['items'])
                             <div class="kt-menu__submenu">
                                 <span class="kt-menu__arrow"></span>

@@ -585,7 +585,10 @@ view()->composer('cms::includes.aside', function($view) {
         app()->make('Cms')->asideMenu([
 
             'label'     => __('cms::includes.aside.clear_cache'),
-            'link'      => route('cache.clear'),
+            // A POST with CSRF (S7): aside.blade.php renders a hidden form and submits it natively.
+            'link'      => 'javascript:;',
+            'form'      => route('cache.clear'),
+            'form_id'   => 'clearCacheForm',
             'icon'      => '
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

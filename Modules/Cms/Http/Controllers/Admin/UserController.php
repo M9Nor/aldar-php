@@ -199,6 +199,9 @@ class UserController extends CmsController
                     'url'       => route('UserController@loginAs', ['model' => $model->id]),
                     'id'        => 'login_as_' . $model->id,
                     'action'    => 'loginAs',
+                    // login_as is now a CSRF POST (S10, P2-R14): the dropdown renders a hidden form and submits it
+                    // natively, like the header's login-back link, instead of the plain GET link 'default' renders.
+                    'type'      => 'post',
                     'divider'   => true
                 ];
             }
