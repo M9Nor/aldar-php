@@ -7,10 +7,28 @@ Black-box checks that the site behaves the same before and after an upgrade. Bas
 ```bash
 docker compose up -d
 cd tests/e2e
-npm run parity            # resets the local DB, then 313 tests, about 7 minutes
+npm run parity            # resets the local DB, then 317 tests, about 7 minutes
 ```
 
-`npm test` runs the parity project first and then the Phase H smoke and security specs.
+**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
+
+## Environment the baselines assume
+
+The baselines depend on local `.env` settings that are not in `.env.example`. A fresh `.env`, or a Phase 1 config merge, can silently break them:
+
+- `DEBUGBAR_ENABLED=false`. `.env.example` has no `DEBUGBAR_ENABLED` key and `APP_DEBUG=true`; barryvdh/laravel-debugbar (`config/debugbar.php:17`) enables itself whenever debug is true and would inject markup into every HTML response, failing about 228 snapshots with no pointer to the cause. Global setup fails fast on this — see "Guards" below.
+- `CACHE_DRIVER=file`. The `cache:clear` limiter reset and the file-cache warm-up both rely on the file driver. Laravel 11+ renamed this setting `CACHE_STORE`; a config merge that only renames the key without preserving the `file` value changes caching behaviour.
+- `APP_URL=http://localhost:8080`. `.env.example` has `http://localhost` (no port).
+- `SESSION_DRIVER=file`.
+- The Docker services must stay named `app` and `db`: `scripts/e2e/db-reset.sh` execs into both by name. The `app` image needs the PHP CLI and the GD extension: `support/fixtures.ts`'s `pngFixture`/`jpegFixture` (used by `content-lifecycle.spec.ts` and the security attachment specs) shell into it to render real images with GD.
+
+No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever printed by the suite.
+
+## Guards
+
+- Global setup refuses to run against anything but `localhost`/`127.0.0.1` (any port), unless `PARITY_ALLOWED_HOST` names the host exactly — an explicit opt-in reserved for a future read-only staging run in Phase 3. `aldar-emlak.com` (and subdomains, and a trailing-dot FQDN) gets its own "live site" message; anything else unlisted gets a generic refusal.
+- Specs that write data or sign in with the local parity accounts (behaviour, admin sections, lifecycle, matrix) additionally call `requireLocal` and refuse to run unless `BASE_URL` is exactly the local Docker stack — `PARITY_ALLOWED_HOST` does not open those up, since a staging run must stay read-only.
+- After a DB reset, on a local run, global setup fetches `${BASE_URL}/en` and fails if the response contains `phpdebugbar` (see "Environment the baselines assume" above).
 
 ## Layers
 
@@ -23,7 +41,7 @@ npm run parity            # resets the local DB, then 313 tests, about 7 minutes
 | `specs/parity/permissions-matrix.spec.ts` | 170 admin GET routes × anonymous, ADMIN, SUPERADMIN |
 | `specs/parity/visual.spec.ts` | 8 pages × ar/en × desktop/mobile screenshots (`maxDiffPixelRatio` 0.01) |
 
-Specs that write data or sign in with the local parity accounts (behaviour, admin sections, lifecycle, matrix) refuse to run unless `BASE_URL` is the local Docker stack. Global setup refuses any `aldar-emlak.com` URL.
+Only the `contact endpoints` `describe` block in `behaviour.spec.ts` calls `requireLocal` (it clears the cache limiter and writes leads), so it refuses to run unless `BASE_URL` is the local Docker stack — as do all of `admin-sections.spec.ts`, `content-lifecycle.spec.ts` and `permissions-matrix.spec.ts`, which sign in with the local parity accounts. `behaviour.spec.ts`'s `set_currency`, `/cookies`, regions/installments JSON and redirect tests are not gated: they only set cookies and can run against any host the guards in "Guards" above allow. See "Guards" above for the live-site and allowlist checks that apply to every spec.
 
 ## When a parity test fails after a change
 
@@ -42,14 +60,14 @@ Never edit a snapshot by hand and never widen the normaliser to hide a real diff
 - Laravel Mix `?id=` hashes;
 - the landing-page footer year.
 
-The Mix-hash, year and csrf-token meta masks match nothing on today's pages (assets use literal `?v=` versions and the footer year is literal); they stay in place for future templates.
+The Mix-hash and csrf-token meta masks match nothing on today's pages (assets use literal `?v=` versions); they stay in place for future templates. The year mask is not dormant: `content-lifecycle.spec.ts`'s `[locale, 'landing-page-new.html']` snapshot contains `&copy; {year}`, sourced from `date('Y')` in `Modules/Frontend/Resources/views/landingpage/footer.blade.php:41`.
 
 **Formatting:** the HTML is parsed by the browser's `DOMParser` (no scripts run), serialised, and whitespace-collapsed to one tag or text run per line.
 
-**Order rules.** MariaDB returns rows with equal `sort_order` in a plan-dependent order, so these regions change between requests even on Laravel 7. They are reordered, never removed:
-- footer and header menus: sorted;
+**Order rules.** MariaDB returns rows with equal `sort_order` in a plan-dependent order, so these regions change between requests even on Laravel 7. Each rule is scoped to only the elements whose order actually comes from such a tied query — never a list whose order the template fixes:
+- header submenus (`#responsive > li > ul`: the buy-properties and opportunity submenus) and footer menus (`.col-lg-4 .nav-footer ul`: the `footer_menu_items` list): sorted. The top-level `#responsive` list and the footer's `.col-lg-2` "Pages" list are template-ordered, not tied, and are left alone.
 - FAQ panels: sorted, with position ids renumbered;
-- article-category card grids: replaced by a count, because even the set shown changes.
+- article-category card grids: replaced by a count, not reordered, because even the set of cards shown changes between requests.
 - Sort keys ignore whitespace between tags, like the output, so whitespace-only template changes never reorder tied items.
 
 **Adding an order rule** is allowed only with evidence:
@@ -68,6 +86,18 @@ scripts/e2e/db-reset.sh
 (cd tests/e2e && npm run parity:inventory && UPDATE_PARITY=1 npx playwright test specs/parity/golden-master.spec.ts)
 ```
 
+## When the dump changes
+
+Regenerating the inventory (above) only replaces `url-inventory.json` and re-records the golden master. It does not touch these other hardcoded ids and slugs, which name specific rows in `_db-backup/aldar-db-20260914-1704.sql.gz` and will start naming the wrong thing, or a now-missing thing, if the dump changes:
+
+- `parity/admin-urls.ts`: model ids `31` (a user), `251` (an article), `318` (a contract category), `11` (a landing page), `145` (a tag), `98` (an area), `12` (a city), `2` (a country), `49` (a config), `133` (a project), `320` (an opportunity), `3` (a role).
+- `specs/parity/behaviour.spec.ts`: city id `18` (Antalya) and its area `count: 57`; payment category ids `518`/`519`.
+- `specs/parity/visual.spec.ts`: the `rose-marine-butik` property slug, the `istanbul` city slug, and the `realestate-index` article slug.
+- `specs/parity/content-lifecycle.spec.ts`: the "Turkish Citizenship" category picked in the article-create select2.
+- the `new` landing-page slug (soft-deleted; restored for one test).
+
+After a dump change, re-verify each one still resolves (the admin ids and the behaviour ids/counts against the new dump; the visual and lifecycle slugs by loading their pages), update whichever no longer match, then regenerate the inventory and re-record. The orphan-snapshot test in `inventory.spec.ts` catches golden-master snapshots left behind by URLs the new inventory dropped, but it cannot catch a stale id or slug that still happens to resolve to a different record — that only shows up as an unexpected diff in the affected spec, or not at all if you don't look.
+
 ## Visual baselines
 
 Screenshots depend on the OS font renderer. They are stored per platform (`snapshots/parity/visual.spec.ts/<platform>/`); the committed set is `darwin`. On another platform, record that platform's set first: `UPDATE_PARITY=1 npx playwright test specs/parity/visual.spec.ts`. The pages load CDN assets, so the machine needs internet access.
@@ -84,3 +114,4 @@ These are baseline facts, not bugs to fix inside a parity change:
 - `admin/opportunity/properties` loads its table from the projects endpoint `admin/projects/data_properties`.
 - The `store-inner` behaviour test leaves one synthetic `contact_us` row (`parity-inner@aldar.test`) until the next DB reset.
 - Left out of the matrix because they change state on GET: `users/login_as/{model}`, `projects/update_prices`, `categories/asdwadwadwdaw`, `clear-cache` (see `MATRIX_EXCLUDED`).
+- Admin `/en` pages recorded as-is with untranslated module translation keys, for example `permissions::roles.datatable.id` in many admin sections' `columns` arrays and `cms::messages.login_failed.title` in `login-failed.json`. If a Phase 1 change alters how or when translations load, the diff on these keys is the signal to look at, not a snapshot to update blindly.
