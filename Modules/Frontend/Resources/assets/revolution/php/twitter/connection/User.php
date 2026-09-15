@@ -43,7 +43,7 @@ class User extends Base
      * @param $method
      * @return array
      */
-    protected function _buildHeaders($url,?array $parameters = null,$method)
+    protected function _buildHeaders($url,?array $parameters,$method)
     {
         $oauthHeaders = array(
             'oauth_version' => '1.0',
