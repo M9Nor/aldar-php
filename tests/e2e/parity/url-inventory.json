@@ -1,0 +1,778 @@
+[
+  {
+    "kind": "static",
+    "path": "/en"
+  },
+  {
+    "kind": "static",
+    "path": "/en/contact-us"
+  },
+  {
+    "kind": "static",
+    "path": "/en/articles"
+  },
+  {
+    "kind": "static",
+    "path": "/en/articles?page=2"
+  },
+  {
+    "kind": "static",
+    "path": "/en/services"
+  },
+  {
+    "kind": "static",
+    "path": "/en/faqs"
+  },
+  {
+    "kind": "search",
+    "path": "/en/search?q=istanbul"
+  },
+  {
+    "kind": "search",
+    "path": "/en/search?q=villa&type=projects"
+  },
+  {
+    "kind": "search",
+    "path": "/en/search?q=turkish&type=articles"
+  },
+  {
+    "kind": "opportunity",
+    "path": "/en/opportunities/lands/tekirdag-land"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/rose-marine-butik"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/inves"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/gtower"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/sky"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/aston-life"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/motivada"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/qarat"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/nivo-istanbul"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/flora-residence"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/investvadi"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/avrasya3"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments/asoy-bahcesehir"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments-bosphorus-view/rams-beyond"
+  },
+  {
+    "kind": "property",
+    "path": "/en/apartments-sea-view/palm-marin"
+  },
+  {
+    "kind": "property",
+    "path": "/en/duplex/therra-park"
+  },
+  {
+    "kind": "property",
+    "path": "/en/duplex/kosuyolu-koru"
+  },
+  {
+    "kind": "property",
+    "path": "/en/duplex/mostar-mahal"
+  },
+  {
+    "kind": "property",
+    "path": "/en/residence/premier-campus"
+  },
+  {
+    "kind": "property",
+    "path": "/en/villa/alya-bella"
+  },
+  {
+    "kind": "property",
+    "path": "/en/villa/4-mevsim-villas"
+  },
+  {
+    "kind": "property",
+    "path": "/en/villa/arsin-marin"
+  },
+  {
+    "kind": "property",
+    "path": "/en/villa/villablu"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/istanbul"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/sakarya"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/yalova-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/izmit-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/bursa-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/izmir-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/antalya-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/trabzon"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/ankara"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/tekirdag"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/apartments/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/apartments-bosphorus-view/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/apartments-sea-view/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/duplex/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/residence/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/villa/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/istanbul/beylikduzu"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/istanbul/buyukcekmce"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/for-sale/istanbul/kucukcekmece"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/all/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/all/turkey?sort=date_desc"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/properties/all/turkey?page=2"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/apartments/for-rent/istanbul"
+  },
+  {
+    "kind": "listing",
+    "path": "/en/opportunities/all_properties/all/turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/realestate-projects-turkey-guaranteed-return-on-investment"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/apartments-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/apartments-for-sale-in-turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/sea-view-apartments-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/properties-for-sale-in-turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/properities-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/shop"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/offices-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/villas-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/en/apartments-bosphorus-view-for-sale"
+  },
+  {
+    "kind": "service",
+    "path": "/en/turkish-nationality-service"
+  },
+  {
+    "kind": "service",
+    "path": "/en/real-estate-consultancy"
+  },
+  {
+    "kind": "service",
+    "path": "/en/after-sales-service"
+  },
+  {
+    "kind": "service",
+    "path": "/en/legal-services"
+  },
+  {
+    "kind": "page",
+    "path": "/en/who-we-are"
+  },
+  {
+    "kind": "story",
+    "path": "/en/special-hous"
+  },
+  {
+    "kind": "story",
+    "path": "/en/high-price-house"
+  },
+  {
+    "kind": "story",
+    "path": "/en/low-price-pouse"
+  },
+  {
+    "kind": "story",
+    "path": "/en/project-presentation"
+  },
+  {
+    "kind": "story",
+    "path": "/en/article-turkey"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/famous-cities-in-turkey"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/istanbul-canal"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/sales-in-4-month"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/realestate-index"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/types-realestate-inv"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/transportation-istanbul"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/cappadocia"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/march2023-sales"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/turkey-gulf"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/july-sales2023"
+  },
+  {
+    "kind": "article",
+    "path": "/en/articles/e-commerce-turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/turkish-citizenship"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/turkey-news"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/investment-turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/turkish-cities"
+  },
+  {
+    "kind": "article-category",
+    "path": "/en/articles/turkish-economy"
+  },
+  {
+    "kind": "landing-page",
+    "path": "/en/landing-page/new"
+  },
+  {
+    "kind": "not-found",
+    "path": "/en/parity-missing-page"
+  },
+  {
+    "kind": "not-found",
+    "path": "/en/articles/parity-missing-article"
+  },
+  {
+    "kind": "not-found",
+    "path": "/en/apartments/parity-missing-project"
+  },
+  {
+    "kind": "static",
+    "path": "/ar"
+  },
+  {
+    "kind": "static",
+    "path": "/ar/contact-us"
+  },
+  {
+    "kind": "static",
+    "path": "/ar/articles"
+  },
+  {
+    "kind": "static",
+    "path": "/ar/articles?page=2"
+  },
+  {
+    "kind": "static",
+    "path": "/ar/services"
+  },
+  {
+    "kind": "static",
+    "path": "/ar/faqs"
+  },
+  {
+    "kind": "search",
+    "path": "/ar/search?q=istanbul"
+  },
+  {
+    "kind": "search",
+    "path": "/ar/search?q=villa&type=projects"
+  },
+  {
+    "kind": "search",
+    "path": "/ar/search?q=turkish&type=articles"
+  },
+  {
+    "kind": "opportunity",
+    "path": "/ar/opportunities/lands/tekirdag-land"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/rose-marine-butik"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/inves"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/gtower"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/sky"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/aston-life"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/motivada"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/qarat"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/nivo-istanbul"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/flora-residence"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/investvadi"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/avrasya3"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments/asoy-bahcesehir"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments-bosphorus-view/rams-beyond"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/apartments-sea-view/palm-marin"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/duplex/therra-park"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/duplex/kosuyolu-koru"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/duplex/mostar-mahal"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/residence/premier-campus"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/villa/alya-bella"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/villa/4-mevsim-villas"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/villa/arsin-marin"
+  },
+  {
+    "kind": "property",
+    "path": "/ar/villa/villablu"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/istanbul"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/sakarya"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/yalova-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/izmit-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/bursa-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/izmir-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/antalya-turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/trabzon"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/ankara"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/tekirdag"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/apartments/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/apartments-bosphorus-view/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/apartments-sea-view/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/duplex/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/residence/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/villa/for-sale/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/istanbul/beylikduzu"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/istanbul/buyukcekmce"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/for-sale/istanbul/kucukcekmece"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/all/turkey"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/all/turkey?sort=date_desc"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/properties/all/turkey?page=2"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/apartments/for-rent/istanbul"
+  },
+  {
+    "kind": "listing",
+    "path": "/ar/opportunities/all_properties/all/turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/realestate-projects-turkey-guaranteed-return-on-investment"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/apartments-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/apartments-for-sale-in-turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/sea-view-apartments-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/properties-for-sale-in-turkey"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/properities-for-sale-in-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/shop"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/offices-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/villas-istanbul"
+  },
+  {
+    "kind": "filter-page",
+    "path": "/ar/apartments-bosphorus-view-for-sale"
+  },
+  {
+    "kind": "service",
+    "path": "/ar/turkish-nationality-service"
+  },
+  {
+    "kind": "service",
+    "path": "/ar/real-estate-consultancy"
+  },
+  {
+    "kind": "service",
+    "path": "/ar/after-sales-service"
+  },
+  {
+    "kind": "service",
+    "path": "/ar/legal-services"
+  },
+  {
+    "kind": "page",
+    "path": "/ar/who-we-are"
+  },
+  {
+    "kind": "story",
+    "path": "/ar/special-hous"
+  },
+  {
+    "kind": "story",
+    "path": "/ar/high-price-house"
+  },
+  {
+    "kind": "story",
+    "path": "/ar/low-price-pouse"
+  },
+  {
+    "kind": "story",
+    "path": "/ar/project-presentation"
+  },
+  {
+    "kind": "story",
+    "path": "/ar/article-turkey"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/famous-cities-in-turkey"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/istanbul-canal"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/sales-in-4-month"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/realestate-index"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/types-realestate-inv"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/transportation-istanbul"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/cappadocia"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/march2023-sales"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/turkey-gulf"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/july-sales2023"
+  },
+  {
+    "kind": "article",
+    "path": "/ar/articles/e-commerce-turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/turkish-citizenship"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/turkey-news"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/investment-turkey"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/turkish-cities"
+  },
+  {
+    "kind": "article-category",
+    "path": "/ar/articles/turkish-economy"
+  },
+  {
+    "kind": "landing-page",
+    "path": "/ar/landing-page/new"
+  },
+  {
+    "kind": "not-found",
+    "path": "/ar/parity-missing-page"
+  },
+  {
+    "kind": "not-found",
+    "path": "/ar/articles/parity-missing-article"
+  },
+  {
+    "kind": "not-found",
+    "path": "/ar/apartments/parity-missing-project"
+  }
+]

@@ -6,7 +6,10 @@
   "scripts": {
     "test": "playwright test",
     "test:security": "playwright test specs/security",
-    "test:smoke": "playwright test specs/smoke"
+    "test:smoke": "playwright test specs/smoke",
+    "parity": "playwright test --project=parity",
+    "parity:update": "UPDATE_PARITY=1 playwright test --project=parity",
+    "parity:inventory": "tsx parity/generate-inventory.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,7 @@
   "private": true,
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^22.20.2"
+    "@types/node": "^22.20.2",
+    "tsx": "^4.23.13"
   }
 }
