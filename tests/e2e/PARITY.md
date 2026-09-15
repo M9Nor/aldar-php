@@ -52,6 +52,17 @@ Only the `contact endpoints` `describe` block in `behaviour.spec.ts` calls `requ
 scripts/upgrade/check-structure.sh
 ```
 
+## Deprecation check
+
+The Phase 1 exit criterion "no PHP deprecation entries are logged during a full parity run" reads `storage/logs/deprecations.log`. It needs `LOG_DEPRECATIONS_CHANNEL=deprecations` in the local `.env` (not in `.env.example`). Without it, `config/logging.php` sends deprecations to the `null` channel, nothing is ever written, and an empty or missing log proves nothing. Check the key without printing `.env`, then run the gate from the repository root:
+
+```bash
+grep -q '^LOG_DEPRECATIONS_CHANNEL=deprecations' .env || echo 'add LOG_DEPRECATIONS_CHANNEL=deprecations to .env first'
+rm -f storage/logs/deprecations.log
+(cd tests/e2e && npm test)
+test ! -s storage/logs/deprecations.log && echo 'no deprecations'
+```
+
 ## When a parity test fails after a change
 
 1. Open the diff: Playwright prints it. The actual output is in `test-results/**/*-actual.*`, next to the expected file in `snapshots/`.
@@ -116,10 +127,10 @@ Screenshots depend on the OS font renderer. They are stored per platform (`snaps
 These are baseline facts, not bugs to fix inside a parity change:
 - `/{en,ar}/apartments-for-sale-in-turkey` and `/{en,ar}/shop` return 404: their filter link names a missing category.
 - `/landing-page/new` returns 404 because the row is soft-deleted; the lifecycle spec restores it for one test.
-- Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show`, `opportunity/show`, and `projects/data` without DataTables parameters.
+- Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show` and `opportunity/show`. `projects/data` without DataTables parameters also answered 500 on Laravel 7; on Laravel 13 it answers 200 for staff (accepted difference P1-R19, recorded in the matrix baseline).
 - `POST contact-us/store-visit` answers 500: the controller method is commented out.
 - `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config (Phase 2 candidate).
-- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows, and pages whose window holds spam submissions with invalid UTF-8 answer a DataTables `Malformed UTF-8` error, so staff cannot page past them.
+- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows, and pages whose window holds spam submissions with invalid UTF-8 answer a DataTables `Malformed UTF-8` error, so staff cannot page past them. Laravel 13 behaves the same: walking both lists as `parity-superadmin` at the page's own 50-row length, 4 of the 74 pages answer HTTP 200 with `Malformed UTF-8 characters, possibly incorrectly encoded`. Tracked as S12 for Phase 2.
 - `admin/opportunity/properties` loads its table from the projects endpoint `admin/projects/data_properties`.
 - The `store-inner` behaviour test leaves one synthetic `contact_us` row (`parity-inner@aldar.test`) until the next DB reset.
 - Left out of the matrix because they change state on GET: `users/login_as/{model}`, `projects/update_prices`, `categories/asdwadwadwdaw`, `clear-cache` (see `MATRIX_EXCLUDED`).
