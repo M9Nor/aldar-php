@@ -27,9 +27,14 @@ test('collapseWhitespace puts one tag or text run on each line', () => {
 
 test.describe('normalizeHtml', () => {
   test('sorts footer menu items so a tie-order swap gives the same output', async ({ page }) => {
-    const a = '<div class="nav-footer"><ul><li><a href="/b">B</a></li><li><a href="/a">A</a></li></ul></div>';
-    const b = '<div class="nav-footer"><ul><li><a href="/a">A</a></li><li><a href="/b">B</a></li></ul></div>';
+    const a = '<div class="col-lg-4"><div class="nav-footer"><ul><li><a href="/b">B</a></li><li><a href="/a">A</a></li></ul></div></div>';
+    const b = '<div class="col-lg-4"><div class="nav-footer"><ul><li><a href="/a">A</a></li><li><a href="/b">B</a></li></ul></div></div>';
     expect(await normalizeHtml(page, a, 'static', BASE)).toBe(await normalizeHtml(page, b, 'static', BASE));
+  });
+
+  test('does not sort the template-ordered "Pages" footer list outside .col-lg-4', async ({ page }) => {
+    const html = '<div class="col-lg-2"><div class="nav-footer"><ul><li>B</li><li>A</li></ul></div></div>';
+    expect(await normalizeHtml(page, html, 'static', BASE)).toContain('<li>\nB\n</li>\n<li>\nA\n</li>');
   });
 
   test('keeps the order of lists that are not tie-ordered', async ({ page }) => {
@@ -47,9 +52,20 @@ test.describe('normalizeHtml', () => {
   });
 
   test('ignores whitespace between tags when computing the sort key', async ({ page }) => {
-    const a = '<div class="nav-footer"><ul><li> <a href="/b">B</a></li><li><a href="/a">A</a></li></ul></div>';
-    const b = '<div class="nav-footer"><ul><li><a href="/b">B</a></li><li> <a href="/a">A</a></li></ul></div>';
+    const a = '<div class="col-lg-4"><div class="nav-footer"><ul><li> <a href="/b">B</a></li><li><a href="/a">A</a></li></ul></div></div>';
+    const b = '<div class="col-lg-4"><div class="nav-footer"><ul><li><a href="/b">B</a></li><li> <a href="/a">A</a></li></ul></div></div>';
     expect(await normalizeHtml(page, a, 'static', BASE)).toBe(await normalizeHtml(page, b, 'static', BASE));
+  });
+
+  test('sorts a submenu inside #responsive > li but not the top-level #responsive list', async ({ page }) => {
+    const nav = (order: string[]) =>
+      `<nav id="navigation"><ul id="responsive"><li>Home</li><li><a href="#">Buy</a><ul>${order.map(s => `<li>${s}</li>`).join('')}</ul></li></ul></nav>`;
+    expect(await normalizeHtml(page, nav(['B', 'A']), 'static', BASE)).toBe(await normalizeHtml(page, nav(['A', 'B']), 'static', BASE));
+  });
+
+  test('keeps the top-level #responsive order, which the template fixes, not a tied query', async ({ page }) => {
+    const html = '<nav id="navigation"><ul id="responsive"><li>B</li><li>A</li></ul></nav>';
+    expect(await normalizeHtml(page, html, 'static', BASE)).toContain('<li>\nB\n</li>\n<li>\nA\n</li>');
   });
 
   test('reduces article-category cards to a count, and only on article-category pages', async ({ page }) => {

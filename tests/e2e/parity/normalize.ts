@@ -20,14 +20,14 @@ export interface OrderRule {
 
 export const ORDER_RULES: OrderRule[] = [
   {
-    reason: 'Footer menus come from the cached footer_menu_items query (MenuComposer), ordered by sort_order with ties; the tie order changed in 1 of 5 cache-cleared rounds.',
-    container: '.nav-footer ul',
+    reason: "Footer menus (.col-lg-4 .nav-footer ul) come from MenuComposer's cached footer_menu_items query: the footerMenuItems groups' eager-loaded `contents`, ordered by tied sort_order; the tie order changed in 1 of 5 cache-cleared rounds. Scoped to the .col-lg-4 column (footer.blade.php:154-165) so it excludes the .col-lg-2 'Pages' list (footer.blade.php:168-184), which is built from `mainPages` with no tied ordering.",
+    container: '.col-lg-4 .nav-footer ul',
     child: 'li',
     mode: 'sort',
   },
   {
-    reason: 'Header submenus come from the same query shape as the footer (MenuComposer headerMenuItems: eager-loaded filter contents ordered by tied sort_order). Not seen flipping yet; kept because the footer did.',
-    container: '#navigation ul',
+    reason: "Header submenus (#responsive > li > ul) come from the same query shape as the footer: MenuComposer's headerMenuItems (buy-properties' eager-loaded `contents`, header.blade.php:187-193) and headerMenuItemsOpportunity (header.blade.php:201-207), both ordered by tied sort_order. Not seen flipping yet; kept because the footer did. Scoped below the top-level #responsive list (header.blade.php:179-218), whose <li> order is fixed by the template's @foreach/@if structure, not by either query.",
+    container: '#responsive > li > ul',
     child: 'li',
     mode: 'sort',
   },
