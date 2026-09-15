@@ -13,6 +13,7 @@
     "status": 200,
     "keys": [
       "data",
+      "disableOrdering",
       "draw",
       "recordsFiltered",
       "recordsTotal"
