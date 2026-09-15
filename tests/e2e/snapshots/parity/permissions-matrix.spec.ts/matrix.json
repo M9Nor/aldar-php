@@ -840,7 +840,7 @@
     "parity-superadmin": "500"
   },
   "/en/admin/notification/config": {
-    "anonymous": "200",
+    "anonymous": "302 login",
     "parity-admin": "200",
     "parity-superadmin": "200"
   },
