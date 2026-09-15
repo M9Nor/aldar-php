@@ -48,21 +48,30 @@ for (const section of ADMIN_SECTIONS) {
       // stable sample. A single length=-1 (skip-paging) request is not safe against this app:
       // it exhausts the web SAPI's 128M memory_limit for larger tables (verified on `projects`,
       // 198 rows). Walk the same endpoint page by page instead, at its own page size.
-      const pageLength = Number(new URL(table.url()).searchParams.get('length')) || rows.length || 1;
-      const everyRow: DataTableJson['data'] = [];
-      for (let start = 0; everyRow.length < json.recordsFiltered; start += pageLength) {
-        const pageUrl = new URL(table.url());
-        pageUrl.searchParams.set('start', String(start));
-        pageUrl.searchParams.set('length', String(pageLength));
-        const pageJson = (await (await page.request.get(pageUrl.toString(), { headers: AJAX_HEADERS })).json()) as DataTableJson;
-        if (pageJson.data.length === 0) break;
-        everyRow.push(...pageJson.data);
-      }
-      // An OFFSET walk over an unordered query can repeat or skip rows if the order shifts between pages; fail loudly rather than record a wrong union.
-      if (everyRow.every(row => 'id' in row)) {
-        const distinct = new Set(everyRow.map(row => String(row.id))).size;
-        if (distinct !== json.recordsFiltered) {
-          throw new Error(`Unstable DataTables walk for ${section.name}: ${distinct} distinct ids over ${everyRow.length} rows, expected ${json.recordsFiltered}`);
+      // structureOnly tables (leads, users, forms) have a model-fixed schema and no state-dependent actions; walking thousands of customer rows adds nothing.
+      let everyRow: DataTableJson['data'];
+      if (section.structureOnly) {
+        everyRow = rows;
+      } else {
+        const pageLength = Number(new URL(table.url()).searchParams.get('length')) || rows.length || 1;
+        everyRow = [];
+        for (let start = 0; everyRow.length < json.recordsFiltered; start += pageLength) {
+          const pageUrl = new URL(table.url());
+          pageUrl.searchParams.set('start', String(start));
+          pageUrl.searchParams.set('length', String(pageLength));
+          const pageJson = (await (await page.request.get(pageUrl.toString(), { headers: AJAX_HEADERS })).json()) as DataTableJson;
+          if ('error' in pageJson) {
+            throw new Error(`DataTables error while walking ${section.name} at start=${start}`);
+          }
+          if (pageJson.data.length === 0) break;
+          everyRow.push(...pageJson.data);
+        }
+        // An OFFSET walk over an unordered query can repeat or skip rows if the order shifts between pages; fail loudly rather than record a wrong union.
+        if (everyRow.every(row => 'id' in row)) {
+          const distinct = new Set(everyRow.map(row => String(row.id))).size;
+          if (distinct !== json.recordsFiltered) {
+            throw new Error(`Unstable DataTables walk for ${section.name}: ${distinct} distinct ids over ${everyRow.length} rows, expected ${json.recordsFiltered}`);
+          }
         }
       }
 
