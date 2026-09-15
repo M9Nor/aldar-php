@@ -1,0 +1,3600 @@
+[
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "/",
+        "name": "index",
+        "action": "Modules\\Frontend\\Http\\Controllers\\HomeController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "_debugbar/assets/javascript",
+        "name": "debugbar.assets.js",
+        "action": "Barryvdh\\Debugbar\\Controllers\\AssetController@js",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "_debugbar/assets/stylesheets",
+        "name": "debugbar.assets.css",
+        "action": "Barryvdh\\Debugbar\\Controllers\\AssetController@css",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "DELETE"
+        ],
+        "uri": "_debugbar/cache/{key}/{tags?}",
+        "name": "debugbar.cache.delete",
+        "action": "Barryvdh\\Debugbar\\Controllers\\CacheController@delete",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "_debugbar/clockwork/{id}",
+        "name": "debugbar.clockwork",
+        "action": "Barryvdh\\Debugbar\\Controllers\\OpenHandlerController@clockwork",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "_debugbar/open",
+        "name": "debugbar.openhandler",
+        "action": "Barryvdh\\Debugbar\\Controllers\\OpenHandlerController@handle",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "_debugbar/telescope/{id}",
+        "name": "debugbar.telescope",
+        "action": "Barryvdh\\Debugbar\\Controllers\\TelescopeController@show",
+        "middleware": [
+            "Barryvdh\\Debugbar\\Middleware\\DebugbarEnabled"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin",
+        "name": "DashboardController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\DashboardController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/areas",
+        "name": "AreaController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/areas/create",
+        "name": "AreaController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/areas/data",
+        "name": "AreaController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/delete-attachemnt",
+        "name": "AreaController@deleteAttachment",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@deleteAttachment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/destroy/{model}",
+        "name": "AreaController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/destroy/{model}/{locale}",
+        "name": "AreaController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/disable/{model}",
+        "name": "AreaController@disable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/enable/{model}",
+        "name": "AreaController@enable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/mass_destroy",
+        "name": "AreaController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/mass_restore",
+        "name": "AreaController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/restore",
+        "name": "AreaController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/store",
+        "name": "AreaController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/areas/{model}/edit",
+        "name": "AreaController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/areas/{model}/update",
+        "name": "AreaController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AreaController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/attachments/delete",
+        "name": "AttachmentController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AttachmentController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "staff"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/attachments/store",
+        "name": "AttachmentController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\AttachmentController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "staff"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/asdwadwadwdaw",
+        "name": "CategoryController@addCategoriesAndFilters",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@addCategoriesAndFilters",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/destroy/{model}",
+        "name": "CategoryController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/destroy/{model}/{locale}",
+        "name": "CategoryController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/mass_destroy",
+        "name": "CategoryController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/mass_restore",
+        "name": "CategoryController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/restore",
+        "name": "CategoryController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/{type}",
+        "name": "CategoryController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/{type}/create",
+        "name": "CategoryController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/{type}/data",
+        "name": "CategoryController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/{type}/get-categories",
+        "name": "CategoryController@getCategoriesSelect2",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@getCategoriesSelect2",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/{type}/store",
+        "name": "CategoryController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/categories/{type}/{model}/edit",
+        "name": "CategoryController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/categories/{type}/{model}/update",
+        "name": "CategoryController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CategoryController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/cities",
+        "name": "CityController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/cities/create",
+        "name": "CityController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/cities/data",
+        "name": "CityController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/delete-attachemnt",
+        "name": "CityController@deleteAttachment",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@deleteAttachment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/destroy/{model}",
+        "name": "CityController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/destroy/{model}/{locale}",
+        "name": "CityController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/disable/{model}",
+        "name": "CityController@disable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/enable/{model}",
+        "name": "CityController@enable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/mass_destroy",
+        "name": "CityController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/mass_restore",
+        "name": "CityController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/restore",
+        "name": "CityController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/store",
+        "name": "CityController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/cities/{model}/edit",
+        "name": "CityController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/cities/{model}/update",
+        "name": "CityController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CityController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/clear-cache",
+        "name": "cache.clear",
+        "action": "Modules\\Frontend\\Http\\Controllers\\HomeController@clearCache",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "staff"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/configs",
+        "name": "ConfigController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/configs/create",
+        "name": "ConfigController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/configs/data",
+        "name": "ConfigController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/destroy/{model}",
+        "name": "ConfigController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/mass_destroy",
+        "name": "ConfigController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/mass_restore",
+        "name": "ConfigController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/restore",
+        "name": "ConfigController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/store",
+        "name": "ConfigController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/configs/{model}/edit",
+        "name": "ConfigController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/configs/{model}/edit-config",
+        "name": "ConfigController@editConfig",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@editConfig",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/{model}/update",
+        "name": "ConfigController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/configs/{model}/update-config",
+        "name": "ConfigController@updateConfig",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ConfigController@updateConfig",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/delete-attachemnt",
+        "name": "ContentController@deleteAttachment",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@deleteAttachment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/destroy/{model}",
+        "name": "ContentController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/destroy/{model}/{locale}",
+        "name": "ContentController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/disable/{model}",
+        "name": "ContentController@disable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/enable/{model}",
+        "name": "ContentController@enable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/mass_destroy",
+        "name": "ContentController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/mass_restore",
+        "name": "ContentController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/restore",
+        "name": "ContentController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/contents/{type}",
+        "name": "ContentController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/contents/{type}/create",
+        "name": "ContentController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/contents/{type}/data",
+        "name": "ContentController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/{type}/store",
+        "name": "ContentController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/contents/{type}/{model}/edit",
+        "name": "ContentController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/contents/{type}/{model}/update",
+        "name": "ContentController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\ContentController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/countries",
+        "name": "CountryController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/countries/create",
+        "name": "CountryController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/countries/data",
+        "name": "CountryController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/delete-attachemnt",
+        "name": "CountryController@deleteAttachment",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@deleteAttachment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/destroy/{model}",
+        "name": "CountryController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/destroy/{model}/{locale}",
+        "name": "CountryController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/disable/{model}",
+        "name": "CountryController@disable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/enable/{model}",
+        "name": "CountryController@enable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/mass_destroy",
+        "name": "CountryController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/mass_restore",
+        "name": "CountryController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/restore",
+        "name": "CountryController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/store",
+        "name": "CountryController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/countries/{model}/edit",
+        "name": "CountryController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/countries/{model}/update",
+        "name": "CountryController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\CountryController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/landing_pages",
+        "name": "LandingPageController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/landing_pages/create",
+        "name": "LandingPageController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/landing_pages/data",
+        "name": "LandingPageController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/delete-timeline",
+        "name": "LandingPageController@deleteTimeline",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@deleteTimeline",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/destroy/{model}",
+        "name": "LandingPageController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/destroy/{model}/{locale}",
+        "name": "LandingPageController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/mass_destroy",
+        "name": "LandingPageController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/mass_restore",
+        "name": "LandingPageController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/restore",
+        "name": "LandingPageController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/store",
+        "name": "LandingPageController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/landing_pages/{model}/edit",
+        "name": "LandingPageController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/landing_pages/{model}/update",
+        "name": "LandingPageController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\LandingPageController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/notification",
+        "name": "NotificationsController@index",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/notification",
+        "name": "NotificationsController@postIndex",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@postIndex",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/notification/config",
+        "name": "NotificationsController@getConfig",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@getConfig",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/notification/create",
+        "name": "NotificationsController@create",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/notification/getList",
+        "name": "NotificationsController@getList",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@getList",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/notification/postCreate",
+        "name": "NotificationsController@postCreate",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@postCreate",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/notification/postWebToken",
+        "name": "NotificationsController@postWebToken",
+        "action": "Modules\\Notification\\Http\\Controllers\\NotificationController@postWebToken",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity",
+        "name": "OpportunityController@index",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/copy/{model}",
+        "name": "OpportunityController@copy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@copy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/create",
+        "name": "OpportunityController@create",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/data",
+        "name": "OpportunityController@data",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/data_properties",
+        "name": "OpportunityController@data_properties",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@data_properties",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/data_requests",
+        "name": "OpportunityController@data_requests",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@data_requests",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/delete-payment",
+        "name": "OpportunityController@deletePayment",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@deletePayment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/delete-price",
+        "name": "OpportunityController@deletePrice",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@deletePrice",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/destroy/{model}",
+        "name": "OpportunityController@destroy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/destroy/{model}/{locale}",
+        "name": "OpportunityController@destroyTranslation",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/disable/{model}",
+        "name": "OpportunityController@disable",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/enable/{model}",
+        "name": "OpportunityController@enable",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/mass_destroy",
+        "name": "OpportunityController@massDestroy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/mass_restore",
+        "name": "OpportunityController@massRestore",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/not_sold/{model}",
+        "name": "OpportunityController@notSold",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@notSold",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/not_special/{model}",
+        "name": "OpportunityController@notSpecial",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@notSpecial",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/properties",
+        "name": "OpportunityController@properties",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@properties",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/properties_summary",
+        "name": "OpportunityController@properties_summary",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@properties_summary",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/request_summary",
+        "name": "OpportunityController@request_summary",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@request_summary",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/requests",
+        "name": "OpportunityController@requests",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@requests",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/restore",
+        "name": "OpportunityController@restore",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/show",
+        "name": "OpportunityController@show",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@show",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/show_details/{model}",
+        "name": "OpportunityController@showDetails",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@showDetails",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/sold/{model}",
+        "name": "OpportunityController@sold",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@sold",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/special/{model}",
+        "name": "OpportunityController@special",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@special",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/store",
+        "name": "OpportunityController@store",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/opportunity/{model?}/edit",
+        "name": "OpportunityController@edit",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/opportunity/{model}/update",
+        "name": "OpportunityController@update",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\OpportunityController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects",
+        "name": "ProjectController@index",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/copy/{model}",
+        "name": "ProjectController@copy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@copy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/create",
+        "name": "ProjectController@create",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/data",
+        "name": "ProjectController@data",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/data_properties",
+        "name": "ProjectController@data_properties",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@data_properties",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/data_requests",
+        "name": "ProjectController@data_requests",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@data_requests",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/delete-payment",
+        "name": "ProjectController@deletePayment",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@deletePayment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/delete-price",
+        "name": "ProjectController@deletePrice",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@deletePrice",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/destroy/{model}",
+        "name": "ProjectController@destroy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/destroy/{model}/{locale}",
+        "name": "ProjectController@destroyTranslation",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/disable/{model}",
+        "name": "ProjectController@disable",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/enable/{model}",
+        "name": "ProjectController@enable",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/mass_destroy",
+        "name": "ProjectController@massDestroy",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/mass_restore",
+        "name": "ProjectController@massRestore",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/not_sold/{model}",
+        "name": "ProjectController@notSold",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@notSold",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/not_special/{model}",
+        "name": "ProjectController@notSpecial",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@notSpecial",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/properties",
+        "name": "ProjectController@properties",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@properties",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/properties_summary",
+        "name": "ProjectController@properties_summary",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@properties_summary",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/request_summary",
+        "name": "ProjectController@request_summary",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@request_summary",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/requests",
+        "name": "ProjectController@requests",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@requests",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/restore",
+        "name": "ProjectController@restore",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/show",
+        "name": "ProjectController@show",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@show",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/show_details/{model}",
+        "name": "ProjectController@showDetails",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@showDetails",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/sold/{model}",
+        "name": "ProjectController@sold",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@sold",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/special/{model}",
+        "name": "ProjectController@special",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@special",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/store",
+        "name": "ProjectController@store",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/update_prices",
+        "name": "ProjectController@updatePrices",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@updatePrices",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/projects/{model?}/edit",
+        "name": "ProjectController@edit",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/projects/{model}/update",
+        "name": "ProjectController@update",
+        "action": "Modules\\Backend\\Http\\Controllers\\Admin\\ProjectController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/roles",
+        "name": "RoleController@index",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/roles/create",
+        "name": "RoleController@create",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/roles/data",
+        "name": "RoleController@data",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/destroy/{model}",
+        "name": "RoleController@destroy",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/mass_destroy",
+        "name": "RoleController@massDestroy",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/mass_restore",
+        "name": "RoleController@massRestore",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/restore",
+        "name": "RoleController@restore",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/roles/show",
+        "name": "RoleController@show",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@show",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/store",
+        "name": "RoleController@store",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/roles/update",
+        "name": "RoleController@update",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/roles/{model}/edit",
+        "name": "RoleController@edit",
+        "action": "Modules\\Permissions\\Http\\Controllers\\Admin\\RoleController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/tags",
+        "name": "TagController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/tags/create",
+        "name": "TagController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/tags/data",
+        "name": "TagController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/delete-attachemnt",
+        "name": "TagController@deleteAttachment",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@deleteAttachment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/destroy/{model}",
+        "name": "TagController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/destroy/{model}/{locale}",
+        "name": "TagController@destroyTranslation",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@destroyTranslation",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/disable/{model}",
+        "name": "TagController@disable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@disable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/enable/{model}",
+        "name": "TagController@enable",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@enable",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/tags/list",
+        "name": "TagController@list",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@list",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/mass_destroy",
+        "name": "TagController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/mass_restore",
+        "name": "TagController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/restore",
+        "name": "TagController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/save",
+        "name": "TagController@save",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@save",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/store",
+        "name": "TagController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/tags/{model}/edit",
+        "name": "TagController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tags/{model}/update",
+        "name": "TagController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TagController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/tinymce/uploader",
+        "name": "TinymceController@uploader",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\TinymceController@uploader",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "staff"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/update-currency",
+        "name": "DashboardController@updateCurrency",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\DashboardController@updateCurrency",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "staff"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users",
+        "name": "UserController@index",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/create",
+        "name": "UserController@create",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@create",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/data",
+        "name": "UserController@data",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@data",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/destroy/{model}",
+        "name": "UserController@destroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@destroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/get-user-select2",
+        "name": "UserController@getUsersSelect2",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@getUsersSelect2",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/identity/validate",
+        "name": "UserController@validateIdentity",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@validateIdentity",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/identity/validate_",
+        "name": "UserController@validateIdentity_",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@validateIdentity_",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/login_as/{model}",
+        "name": "UserController@loginAs",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@loginAs",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/mass_destroy",
+        "name": "UserController@massDestroy",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@massDestroy",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/mass_restore",
+        "name": "UserController@massRestore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@massRestore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/myprofile",
+        "name": "UserController@myprofile",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@myprofile",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/restore",
+        "name": "UserController@restore",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@restore",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/show",
+        "name": "UserController@show",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@show",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/store",
+        "name": "UserController@store",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/summary",
+        "name": "UserController@summary",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@summary",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "admin/users/{model}/edit",
+        "name": "UserController@edit",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@edit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/{model}/update",
+        "name": "UserController@update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@update",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "admin/users/{model}/update_profile",
+        "name": "UserController@update_profile",
+        "action": "Modules\\Cms\\Http\\Controllers\\Admin\\UserController@updateProfile",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/backend",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/cms",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/frontend",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/notification",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/permissions",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "api/user",
+        "name": null,
+        "action": "Closure",
+        "middleware": [
+            "api",
+            "auth:api"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "articles/{slug?}",
+        "name": "ListingController@articles",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@articles",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/email/resend",
+        "name": "verification.resend",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\VerificationController@resend",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/email/verify",
+        "name": "verification.notice",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\VerificationController@show",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/email/verify/{id}/{hash}",
+        "name": "verification.verify",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\VerificationController@verify",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/login",
+        "name": "login",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\LoginController@showLoginForm",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/login",
+        "name": null,
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\LoginController@login",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/logout",
+        "name": "logout",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\LoginController@logout",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/password/confirm",
+        "name": "password.confirm",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ConfirmPasswordController@showConfirmForm",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/password/confirm",
+        "name": null,
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ConfirmPasswordController@confirm",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/password/email",
+        "name": "password.email",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/password/reset",
+        "name": "password.request",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "authenticate/password/reset",
+        "name": "password.update",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ResetPasswordController@reset",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "authenticate/password/reset/{token}",
+        "name": "password.reset",
+        "action": "Modules\\Cms\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "contact-us",
+        "name": "ContactController@index",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ContactController@index",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "contact-us/store",
+        "name": "ContactController@store",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ContactController@store",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "contact.guard"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "contact-us/store-inner",
+        "name": "ContactController@storeInner",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ContactController@storeInner",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "contact.guard"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "contact-us/store-visit",
+        "name": "ContactController@storeVisit",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ContactController@storeVisit",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "contact-us/subscribe",
+        "name": "ContactController@subscribe",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ContactController@subscribe",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath",
+            "contact.guard"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "cookies",
+        "name": "FrontendController@cookies",
+        "action": "Modules\\Frontend\\Http\\Controllers\\FrontendController@cookies",
+        "middleware": [
+            "web"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "faqs",
+        "name": "ListingController@faqs",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@faqs",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "get-areas",
+        "name": "CmsController@getAreas",
+        "action": "Modules\\Cms\\Http\\Controllers\\CmsController@getAreas",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "get-cities",
+        "name": "CmsController@getCities",
+        "action": "Modules\\Cms\\Http\\Controllers\\CmsController@getCities",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "get-contents",
+        "name": "CmsController@getContentsSelect2",
+        "action": "Modules\\Cms\\Http\\Controllers\\CmsController@getContentsSelect2",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "get-countries",
+        "name": "CmsController@getCountries",
+        "action": "Modules\\Cms\\Http\\Controllers\\CmsController@getCountries",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "img/{size}/{path}",
+        "name": "image",
+        "action": "Modules\\Cms\\Http\\Controllers\\ImageController@show",
+        "middleware": [
+            "web"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "installments-by-payments/{id}",
+        "name": "ListingController@installments",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@getInstallmentsByPayment",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "landing-page/{slug}",
+        "name": "LandingPageController@details",
+        "action": "Modules\\Frontend\\Http\\Controllers\\LandingPageController@details",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "listing/regions-by-city-id/{id}",
+        "name": "ListingController@regions",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@getRegionsByCityId",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "opportunities/process_filter",
+        "name": "OpportunityController@prepareFilter",
+        "action": "Modules\\Frontend\\Http\\Controllers\\OpportunityController@prepareFilter",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "opportunities/{opportunity_classification}/{contract}/{city}/{area?}",
+        "name": "OpportunityController@filter",
+        "action": "Modules\\Frontend\\Http\\Controllers\\OpportunityController@filter",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "opportunities/{type}/{slug}",
+        "name": "OpportunityController@single",
+        "action": "Modules\\Frontend\\Http\\Controllers\\OpportunityController@single",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "process_filter",
+        "name": "ListingController@prepareFilter",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@prepareFilter",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "search",
+        "name": "ListingController@search",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@search",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "services",
+        "name": "ListingController@services",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@services",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "POST"
+        ],
+        "uri": "set_currency",
+        "name": "FrontendController@setCurrency",
+        "action": "Modules\\Frontend\\Http\\Controllers\\FrontendController@setCurrency",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "{property_classification}/{contract}/{city}/{area?}",
+        "name": "ListingController@filter",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@filter",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "{slug}",
+        "name": "ListingController@getContentBySlug",
+        "action": "Modules\\Frontend\\Http\\Controllers\\ListingController@getContentBySlug",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    },
+    {
+        "methods": [
+            "GET"
+        ],
+        "uri": "{type}/{slug}",
+        "name": "PropertyController@single",
+        "action": "Modules\\Frontend\\Http\\Controllers\\PropertyController@single",
+        "middleware": [
+            "web",
+            "localeSessionRedirect",
+            "localizationRedirect",
+            "localeViewPath"
+        ]
+    }
+]

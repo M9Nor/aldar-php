@@ -1,0 +1,61 @@
+[
+  {
+    "id": "2",
+    "dial_code": null,
+    "latitude": null,
+    "longitude": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Turkey",
+    "name": "Turkey",
+    "description": null,
+    "translations": [
+      {
+        "id": "6",
+        "country_id": "2",
+        "locale": "ar",
+        "name": "تركيا",
+        "description": null
+      },
+      {
+        "id": "5",
+        "country_id": "2",
+        "locale": "en",
+        "name": "Turkey",
+        "description": null
+      },
+      {
+        "id": "7",
+        "country_id": "2",
+        "locale": "fa",
+        "name": "تركيه",
+        "description": null
+      }
+    ],
+    "translated_name": "Turkey",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/countries/2/edit",
+          "action": "edit",
+          "id": "edit_2"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/countries/destroy/2",
+          "action": "delete",
+          "id": "delete_2"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "1"
+  }
+]

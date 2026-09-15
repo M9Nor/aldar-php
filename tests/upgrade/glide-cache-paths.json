@@ -1,0 +1,25 @@
+[
+    {
+        "path": "articles/parity-sample.png",
+        "params": {
+            "w": "1000",
+            "h": "750"
+        },
+        "cachePath": ".cache/articles/parity-sample.png/233821f8dfba68cd2eb44c5af33df272"
+    },
+    {
+        "path": "articles/parity-sample.png",
+        "params": {
+            "h": "400"
+        },
+        "cachePath": ".cache/articles/parity-sample.png/f4d31d5b955c50c7d2845002a8cf688c"
+    },
+    {
+        "path": "projects/parity-sample.jpg",
+        "params": {
+            "w": "360",
+            "h": "240"
+        },
+        "cachePath": ".cache/projects/parity-sample.jpg/1978d44a139cee9c8bd057a17f714572"
+    }
+]

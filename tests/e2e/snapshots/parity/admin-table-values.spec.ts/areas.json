@@ -1,0 +1,4511 @@
+[
+  {
+    "id": "49",
+    "city_id": "12",
+    "native_name": "basaksehir",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Basaksehir",
+    "name": "Basaksehir",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "197",
+        "area_id": "49",
+        "locale": "en",
+        "name": "Basaksehir",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "198",
+        "area_id": "49",
+        "locale": "ar",
+        "name": "باشاك شهير",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "199",
+        "area_id": "49",
+        "locale": "fa",
+        "name": "باشاک شهیر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Basaksehir",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/49/edit",
+          "action": "edit",
+          "id": "edit_49"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/49",
+          "action": "delete",
+          "id": "delete_49"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "1"
+  },
+  {
+    "id": "50",
+    "city_id": "12",
+    "native_name": "bahcesehir",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Bahcesehir",
+    "name": "Bahcesehir",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "200",
+        "area_id": "50",
+        "locale": "en",
+        "name": "Bahcesehir",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "201",
+        "area_id": "50",
+        "locale": "ar",
+        "name": "بهجة شهير",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "202",
+        "area_id": "50",
+        "locale": "fa",
+        "name": "باغچه شهیر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Bahcesehir",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/50/edit",
+          "action": "edit",
+          "id": "edit_50"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/50",
+          "action": "delete",
+          "id": "delete_50"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "2"
+  },
+  {
+    "id": "51",
+    "city_id": "12",
+    "native_name": "ispartakule",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Ispartakule",
+    "name": "Ispartakule",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "203",
+        "area_id": "51",
+        "locale": "en",
+        "name": "Ispartakule",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "204",
+        "area_id": "51",
+        "locale": "ar",
+        "name": "اسبارطه كوله",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "205",
+        "area_id": "51",
+        "locale": "fa",
+        "name": "ایسپارتاکوله",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Ispartakule",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/51/edit",
+          "action": "edit",
+          "id": "edit_51"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/51",
+          "action": "delete",
+          "id": "delete_51"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "3"
+  },
+  {
+    "id": "52",
+    "city_id": "12",
+    "native_name": "bakirkoy",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Bakirkoy",
+    "name": "Bakirkoy",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "206",
+        "area_id": "52",
+        "locale": "en",
+        "name": "Bakirkoy",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "207",
+        "area_id": "52",
+        "locale": "ar",
+        "name": "بكر كوي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "208",
+        "area_id": "52",
+        "locale": "fa",
+        "name": "باکرکوی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Bakirkoy",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/52/edit",
+          "action": "edit",
+          "id": "edit_52"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/52",
+          "action": "delete",
+          "id": "delete_52"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "4"
+  },
+  {
+    "id": "53",
+    "city_id": "12",
+    "native_name": "basinexpress",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Basin express",
+    "name": "Basin express",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "209",
+        "area_id": "53",
+        "locale": "en",
+        "name": "Basin express",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "210",
+        "area_id": "53",
+        "locale": "ar",
+        "name": "باسين اكسبريس",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "211",
+        "area_id": "53",
+        "locale": "fa",
+        "name": "باسین اکسپرس",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Basin express",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/53/edit",
+          "action": "edit",
+          "id": "edit_53"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/53",
+          "action": "delete",
+          "id": "delete_53"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "5"
+  },
+  {
+    "id": "54",
+    "city_id": "12",
+    "native_name": "zeytunburnu",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Zeytinburnu",
+    "name": "Zeytinburnu",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "212",
+        "area_id": "54",
+        "locale": "en",
+        "name": "Zeytinburnu",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "213",
+        "area_id": "54",
+        "locale": "ar",
+        "name": "زيتون بورنو",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "214",
+        "area_id": "54",
+        "locale": "fa",
+        "name": "زیتونبورنو",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Zeytinburnu",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/54/edit",
+          "action": "edit",
+          "id": "edit_54"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/54",
+          "action": "delete",
+          "id": "delete_54"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "6"
+  },
+  {
+    "id": "55",
+    "city_id": "12",
+    "native_name": "sirinevler",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sirinevler",
+    "name": "Sirinevler",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "215",
+        "area_id": "55",
+        "locale": "en",
+        "name": "Sirinevler",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "216",
+        "area_id": "55",
+        "locale": "ar",
+        "name": "شيرين ايفلر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "217",
+        "area_id": "55",
+        "locale": "fa",
+        "name": "شیرین اولر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sirinevler",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/55/edit",
+          "action": "edit",
+          "id": "edit_55"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/55",
+          "action": "delete",
+          "id": "delete_55"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "7"
+  },
+  {
+    "id": "56",
+    "city_id": "12",
+    "native_name": "kagithane",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kagithane",
+    "name": "Kagithane",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "218",
+        "area_id": "56",
+        "locale": "en",
+        "name": "Kagithane",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "219",
+        "area_id": "56",
+        "locale": "ar",
+        "name": "كايت هانه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "220",
+        "area_id": "56",
+        "locale": "fa",
+        "name": "کاییتحانه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kagithane",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/56/edit",
+          "action": "edit",
+          "id": "edit_56"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/56",
+          "action": "delete",
+          "id": "delete_56"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "8"
+  },
+  {
+    "id": "57",
+    "city_id": "12",
+    "native_name": "esenyurt",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Esenyurt",
+    "name": "Esenyurt",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "221",
+        "area_id": "57",
+        "locale": "en",
+        "name": "Esenyurt",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "222",
+        "area_id": "57",
+        "locale": "ar",
+        "name": "اسنيورت",
+        "description": "&lt;h1&gt;منطقة اسنيورت السكنية&lt;/h1&gt;\r\n&lt;p&gt;الأكثر تفضيلاً في اسطنبول&lt;/p&gt;",
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "223",
+        "area_id": "57",
+        "locale": "fa",
+        "name": "اسنیورت",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Esenyurt",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/57/edit",
+          "action": "edit",
+          "id": "edit_57"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/57",
+          "action": "delete",
+          "id": "delete_57"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "9"
+  },
+  {
+    "id": "58",
+    "city_id": "12",
+    "native_name": "gaziosmanpasa",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Gaziosmanpasa",
+    "name": "Gaziosmanpasa",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "224",
+        "area_id": "58",
+        "locale": "en",
+        "name": "Gaziosmanpasa",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "225",
+        "area_id": "58",
+        "locale": "ar",
+        "name": "غازي عثمان باشا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "226",
+        "area_id": "58",
+        "locale": "fa",
+        "name": "قاضی عثمان پاشا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Gaziosmanpasa",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/58/edit",
+          "action": "edit",
+          "id": "edit_58"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/58",
+          "action": "delete",
+          "id": "delete_58"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "10"
+  },
+  {
+    "id": "59",
+    "city_id": "12",
+    "native_name": "kucukcekmece",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kucukcekmece",
+    "name": "Kucukcekmece",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "227",
+        "area_id": "59",
+        "locale": "en",
+        "name": "Kucukcekmece",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "228",
+        "area_id": "59",
+        "locale": "ar",
+        "name": "كوتشوك جكمجة",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "229",
+        "area_id": "59",
+        "locale": "fa",
+        "name": "کوچک چکمجه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kucukcekmece",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/59/edit",
+          "action": "edit",
+          "id": "edit_59"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/59",
+          "action": "delete",
+          "id": "delete_59"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "11"
+  },
+  {
+    "id": "60",
+    "city_id": "12",
+    "native_name": "buyukcekmce",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Buyukcekmce",
+    "name": "Buyukcekmce",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "230",
+        "area_id": "60",
+        "locale": "en",
+        "name": "Buyukcekmce",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "231",
+        "area_id": "60",
+        "locale": "ar",
+        "name": "بيوك جكمجة",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "232",
+        "area_id": "60",
+        "locale": "fa",
+        "name": "بویوک چکمجه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Buyukcekmce",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/60/edit",
+          "action": "edit",
+          "id": "edit_60"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/60",
+          "action": "delete",
+          "id": "delete_60"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "12"
+  },
+  {
+    "id": "61",
+    "city_id": "12",
+    "native_name": "bayrampasa",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Bayrampasa",
+    "name": "Bayrampasa",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "233",
+        "area_id": "61",
+        "locale": "en",
+        "name": "Bayrampasa",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "234",
+        "area_id": "61",
+        "locale": "ar",
+        "name": "بيرم باشا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "235",
+        "area_id": "61",
+        "locale": "fa",
+        "name": "بایرام پاشا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Bayrampasa",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/61/edit",
+          "action": "edit",
+          "id": "edit_61"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/61",
+          "action": "delete",
+          "id": "delete_61"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "13"
+  },
+  {
+    "id": "62",
+    "city_id": "12",
+    "native_name": "avcilar",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Avcilar",
+    "name": "Avcilar",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "236",
+        "area_id": "62",
+        "locale": "en",
+        "name": "Avcilar",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "237",
+        "area_id": "62",
+        "locale": "ar",
+        "name": "أفجلار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "238",
+        "area_id": "62",
+        "locale": "fa",
+        "name": "آوجیلار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Avcilar",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/62/edit",
+          "action": "edit",
+          "id": "edit_62"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/62",
+          "action": "delete",
+          "id": "delete_62"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "14"
+  },
+  {
+    "id": "63",
+    "city_id": "12",
+    "native_name": "bahcelieveler",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Bahcelieveler",
+    "name": "Bahcelieveler",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "239",
+        "area_id": "63",
+        "locale": "en",
+        "name": "Bahcelieveler",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "240",
+        "area_id": "63",
+        "locale": "ar",
+        "name": "بهجلي ايفلر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "241",
+        "area_id": "63",
+        "locale": "fa",
+        "name": "باغچلی اولر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Bahcelieveler",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/63/edit",
+          "action": "edit",
+          "id": "edit_63"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/63",
+          "action": "delete",
+          "id": "delete_63"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "15"
+  },
+  {
+    "id": "64",
+    "city_id": "12",
+    "native_name": "sisli",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sisli",
+    "name": "Sisli",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "242",
+        "area_id": "64",
+        "locale": "en",
+        "name": "Sisli",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "243",
+        "area_id": "64",
+        "locale": "ar",
+        "name": "شيشلي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "244",
+        "area_id": "64",
+        "locale": "fa",
+        "name": "شیشلی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sisli",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/64/edit",
+          "action": "edit",
+          "id": "edit_64"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/64",
+          "action": "delete",
+          "id": "delete_64"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "16"
+  },
+  {
+    "id": "65",
+    "city_id": "12",
+    "native_name": "eyup",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Eyup",
+    "name": "Eyup",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "245",
+        "area_id": "65",
+        "locale": "en",
+        "name": "Eyup",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "246",
+        "area_id": "65",
+        "locale": "ar",
+        "name": "أيوب",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "247",
+        "area_id": "65",
+        "locale": "fa",
+        "name": "ایوپ",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Eyup",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/65/edit",
+          "action": "edit",
+          "id": "edit_65"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/65",
+          "action": "delete",
+          "id": "delete_65"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "17"
+  },
+  {
+    "id": "66",
+    "city_id": "12",
+    "native_name": "fatih",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Fatih",
+    "name": "Fatih",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "248",
+        "area_id": "66",
+        "locale": "en",
+        "name": "Fatih",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "249",
+        "area_id": "66",
+        "locale": "ar",
+        "name": "الفاتح",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "250",
+        "area_id": "66",
+        "locale": "fa",
+        "name": "فاتیح",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Fatih",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/66/edit",
+          "action": "edit",
+          "id": "edit_66"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/66",
+          "action": "delete",
+          "id": "delete_66"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "18"
+  },
+  {
+    "id": "67",
+    "city_id": "12",
+    "native_name": "taksim",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Taksim",
+    "name": "Taksim",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "251",
+        "area_id": "67",
+        "locale": "en",
+        "name": "Taksim",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "252",
+        "area_id": "67",
+        "locale": "ar",
+        "name": "تقسيم",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "253",
+        "area_id": "67",
+        "locale": "fa",
+        "name": "تقسیم",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Taksim",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/67/edit",
+          "action": "edit",
+          "id": "edit_67"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/67",
+          "action": "delete",
+          "id": "delete_67"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "19"
+  },
+  {
+    "id": "68",
+    "city_id": "12",
+    "native_name": "sultangazi",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sultangazi",
+    "name": "Sultangazi",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "254",
+        "area_id": "68",
+        "locale": "en",
+        "name": "Sultangazi",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "255",
+        "area_id": "68",
+        "locale": "ar",
+        "name": "سلطان غازي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "256",
+        "area_id": "68",
+        "locale": "fa",
+        "name": "سلطان قاضی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sultangazi",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/68/edit",
+          "action": "edit",
+          "id": "edit_68"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/68",
+          "action": "delete",
+          "id": "delete_68"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "20"
+  },
+  {
+    "id": "69",
+    "city_id": "12",
+    "native_name": "sariyer",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": "<p><br data-mce-bogus=\"1\"></p>",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sarıyer",
+    "name": "Sarıyer",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "257",
+        "area_id": "69",
+        "locale": "en",
+        "name": "Sarıyer",
+        "description": "&lt;p&gt;&lt;br data-mce-bogus=&quot;1&quot;&gt;&lt;/p&gt;",
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "258",
+        "area_id": "69",
+        "locale": "ar",
+        "name": "ساريير",
+        "description": "&lt;p&gt;&lt;br data-mce-bogus=&quot;1&quot;&gt;&lt;/p&gt;",
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "259",
+        "area_id": "69",
+        "locale": "fa",
+        "name": "ساریر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sarıyer",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/69/edit",
+          "action": "edit",
+          "id": "edit_69"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/69",
+          "action": "delete",
+          "id": "delete_69"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "21"
+  },
+  {
+    "id": "70",
+    "city_id": "12",
+    "native_name": "bagcilar",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Bagcilar",
+    "name": "Bagcilar",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "260",
+        "area_id": "70",
+        "locale": "en",
+        "name": "Bagcilar",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "261",
+        "area_id": "70",
+        "locale": "ar",
+        "name": "باغجلار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "262",
+        "area_id": "70",
+        "locale": "fa",
+        "name": "باجیلار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Bagcilar",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/70/edit",
+          "action": "edit",
+          "id": "edit_70"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/70",
+          "action": "delete",
+          "id": "delete_70"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "22"
+  },
+  {
+    "id": "71",
+    "city_id": "12",
+    "native_name": "besiktas",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Besiktas",
+    "name": "Besiktas",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "263",
+        "area_id": "71",
+        "locale": "en",
+        "name": "Besiktas",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "264",
+        "area_id": "71",
+        "locale": "ar",
+        "name": "بشكتاش",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "265",
+        "area_id": "71",
+        "locale": "fa",
+        "name": "بشیکتاش",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Besiktas",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/71/edit",
+          "action": "edit",
+          "id": "edit_71"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/71",
+          "action": "delete",
+          "id": "delete_71"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "23"
+  },
+  {
+    "id": "72",
+    "city_id": "12",
+    "native_name": "beyoglu",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Beyoglu",
+    "name": "Beyoglu",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "266",
+        "area_id": "72",
+        "locale": "en",
+        "name": "Beyoglu",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "267",
+        "area_id": "72",
+        "locale": "ar",
+        "name": "بيه اوغلو",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "268",
+        "area_id": "72",
+        "locale": "fa",
+        "name": "بی اقلو",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Beyoglu",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/72/edit",
+          "action": "edit",
+          "id": "edit_72"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/72",
+          "action": "delete",
+          "id": "delete_72"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "24"
+  },
+  {
+    "id": "73",
+    "city_id": "12",
+    "native_name": "esenler",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Esenler",
+    "name": "Esenler",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "269",
+        "area_id": "73",
+        "locale": "en",
+        "name": "Esenler",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "270",
+        "area_id": "73",
+        "locale": "ar",
+        "name": "اسنلر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "271",
+        "area_id": "73",
+        "locale": "fa",
+        "name": "اسنلر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Esenler",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/73/edit",
+          "action": "edit",
+          "id": "edit_73"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/73",
+          "action": "delete",
+          "id": "delete_73"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "25"
+  },
+  {
+    "id": "74",
+    "city_id": "12",
+    "native_name": "gungoren",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Gungoren",
+    "name": "Gungoren",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "272",
+        "area_id": "74",
+        "locale": "en",
+        "name": "Gungoren",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "273",
+        "area_id": "74",
+        "locale": "ar",
+        "name": "غونغوران",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "274",
+        "area_id": "74",
+        "locale": "fa",
+        "name": "گونگورن",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Gungoren",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/74/edit",
+          "action": "edit",
+          "id": "edit_74"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/74",
+          "action": "delete",
+          "id": "delete_74"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "26"
+  },
+  {
+    "id": "75",
+    "city_id": "12",
+    "native_name": "arnavutkoy",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Arnavutkoy",
+    "name": "Arnavutkoy",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "275",
+        "area_id": "75",
+        "locale": "en",
+        "name": "Arnavutkoy",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "276",
+        "area_id": "75",
+        "locale": "ar",
+        "name": "أرناؤوط كوي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "277",
+        "area_id": "75",
+        "locale": "fa",
+        "name": "آرناووت کوی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Arnavutkoy",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/75/edit",
+          "action": "edit",
+          "id": "edit_75"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/75",
+          "action": "delete",
+          "id": "delete_75"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "27"
+  },
+  {
+    "id": "76",
+    "city_id": "12",
+    "native_name": "catalca",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Catalca",
+    "name": "Catalca",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "278",
+        "area_id": "76",
+        "locale": "en",
+        "name": "Catalca",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "279",
+        "area_id": "76",
+        "locale": "ar",
+        "name": "تشاتلجا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "280",
+        "area_id": "76",
+        "locale": "fa",
+        "name": "چاتالجا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Catalca",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/76/edit",
+          "action": "edit",
+          "id": "edit_76"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/76",
+          "action": "delete",
+          "id": "delete_76"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "28"
+  },
+  {
+    "id": "77",
+    "city_id": "12",
+    "native_name": "silvery",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Silvery",
+    "name": "Silvery",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "281",
+        "area_id": "77",
+        "locale": "en",
+        "name": "Silvery",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "282",
+        "area_id": "77",
+        "locale": "ar",
+        "name": "سيليفري",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "283",
+        "area_id": "77",
+        "locale": "fa",
+        "name": "سیلیوری",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Silvery",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/77/edit",
+          "action": "edit",
+          "id": "edit_77"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/77",
+          "action": "delete",
+          "id": "delete_77"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "29"
+  },
+  {
+    "id": "78",
+    "city_id": "12",
+    "native_name": "uskudar",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Uskudar",
+    "name": "Uskudar",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "284",
+        "area_id": "78",
+        "locale": "en",
+        "name": "Uskudar",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "285",
+        "area_id": "78",
+        "locale": "ar",
+        "name": "أوسكودار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "286",
+        "area_id": "78",
+        "locale": "fa",
+        "name": "اوسکودار",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Uskudar",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/78/edit",
+          "action": "edit",
+          "id": "edit_78"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/78",
+          "action": "delete",
+          "id": "delete_78"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "30"
+  },
+  {
+    "id": "79",
+    "city_id": "12",
+    "native_name": "umraniye",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Umraniye",
+    "name": "Umraniye",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "287",
+        "area_id": "79",
+        "locale": "en",
+        "name": "Umraniye",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "288",
+        "area_id": "79",
+        "locale": "ar",
+        "name": "عمرانية",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "289",
+        "area_id": "79",
+        "locale": "fa",
+        "name": "عمرانیه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Umraniye",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/79/edit",
+          "action": "edit",
+          "id": "edit_79"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/79",
+          "action": "delete",
+          "id": "delete_79"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "31"
+  },
+  {
+    "id": "80",
+    "city_id": "12",
+    "native_name": "atasehir",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Atasehir",
+    "name": "Atasehir",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "290",
+        "area_id": "80",
+        "locale": "en",
+        "name": "Atasehir",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "291",
+        "area_id": "80",
+        "locale": "ar",
+        "name": "أتا شهير",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "292",
+        "area_id": "80",
+        "locale": "fa",
+        "name": "اتا شهیر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Atasehir",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/80/edit",
+          "action": "edit",
+          "id": "edit_80"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/80",
+          "action": "delete",
+          "id": "delete_80"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "32"
+  },
+  {
+    "id": "81",
+    "city_id": "12",
+    "native_name": "pendik",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Pendik",
+    "name": "Pendik",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "293",
+        "area_id": "81",
+        "locale": "en",
+        "name": "Pendik",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "294",
+        "area_id": "81",
+        "locale": "ar",
+        "name": "بنديك",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "295",
+        "area_id": "81",
+        "locale": "fa",
+        "name": "پندیک",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Pendik",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/81/edit",
+          "action": "edit",
+          "id": "edit_81"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/81",
+          "action": "delete",
+          "id": "delete_81"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "33"
+  },
+  {
+    "id": "82",
+    "city_id": "12",
+    "native_name": "cekmekoy",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Cekmekoy",
+    "name": "Cekmekoy",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "296",
+        "area_id": "82",
+        "locale": "en",
+        "name": "Cekmekoy",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "297",
+        "area_id": "82",
+        "locale": "ar",
+        "name": "تشكمه كوي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "298",
+        "area_id": "82",
+        "locale": "fa",
+        "name": "چکمه کوی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Cekmekoy",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/82/edit",
+          "action": "edit",
+          "id": "edit_82"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/82",
+          "action": "delete",
+          "id": "delete_82"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "34"
+  },
+  {
+    "id": "83",
+    "city_id": "12",
+    "native_name": "tuzla",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Tuzla",
+    "name": "Tuzla",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "299",
+        "area_id": "83",
+        "locale": "en",
+        "name": "Tuzla",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "300",
+        "area_id": "83",
+        "locale": "ar",
+        "name": "توزلا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "301",
+        "area_id": "83",
+        "locale": "fa",
+        "name": "توزلا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Tuzla",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/83/edit",
+          "action": "edit",
+          "id": "edit_83"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/83",
+          "action": "delete",
+          "id": "delete_83"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "35"
+  },
+  {
+    "id": "84",
+    "city_id": "12",
+    "native_name": "kadikoy",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kadikoy",
+    "name": "Kadikoy",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "302",
+        "area_id": "84",
+        "locale": "en",
+        "name": "Kadikoy",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "303",
+        "area_id": "84",
+        "locale": "ar",
+        "name": "كادي كوي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "304",
+        "area_id": "84",
+        "locale": "fa",
+        "name": "کادیکوی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kadikoy",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/84/edit",
+          "action": "edit",
+          "id": "edit_84"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/84",
+          "action": "delete",
+          "id": "delete_84"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "36"
+  },
+  {
+    "id": "85",
+    "city_id": "12",
+    "native_name": "adalar",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Adalar",
+    "name": "Adalar",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "305",
+        "area_id": "85",
+        "locale": "en",
+        "name": "Adalar",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "306",
+        "area_id": "85",
+        "locale": "ar",
+        "name": "ادالار - جزر الأميرات",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "307",
+        "area_id": "85",
+        "locale": "fa",
+        "name": "ادالار - جزیره ها",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Adalar",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/85/edit",
+          "action": "edit",
+          "id": "edit_85"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/85",
+          "action": "delete",
+          "id": "delete_85"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "37"
+  },
+  {
+    "id": "86",
+    "city_id": "12",
+    "native_name": "sultanbeyli",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sultanbeyli",
+    "name": "Sultanbeyli",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "308",
+        "area_id": "86",
+        "locale": "en",
+        "name": "Sultanbeyli",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "309",
+        "area_id": "86",
+        "locale": "ar",
+        "name": "سلطان بيلي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "310",
+        "area_id": "86",
+        "locale": "fa",
+        "name": "سلطان بیلی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sultanbeyli",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/86/edit",
+          "action": "edit",
+          "id": "edit_86"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/86",
+          "action": "delete",
+          "id": "delete_86"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "38"
+  },
+  {
+    "id": "87",
+    "city_id": "12",
+    "native_name": "sile",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sile",
+    "name": "Sile",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "311",
+        "area_id": "87",
+        "locale": "en",
+        "name": "Sile",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "312",
+        "area_id": "87",
+        "locale": "ar",
+        "name": "شيلا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "313",
+        "area_id": "87",
+        "locale": "fa",
+        "name": "شیله",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sile",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/87/edit",
+          "action": "edit",
+          "id": "edit_87"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/87",
+          "action": "delete",
+          "id": "delete_87"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "39"
+  },
+  {
+    "id": "88",
+    "city_id": "12",
+    "native_name": "sancaktepe",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Sancaktepe",
+    "name": "Sancaktepe",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "314",
+        "area_id": "88",
+        "locale": "en",
+        "name": "Sancaktepe",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "315",
+        "area_id": "88",
+        "locale": "ar",
+        "name": "سنجق تبه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "316",
+        "area_id": "88",
+        "locale": "fa",
+        "name": "سانجاک تپه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Sancaktepe",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/88/edit",
+          "action": "edit",
+          "id": "edit_88"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/88",
+          "action": "delete",
+          "id": "delete_88"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "40"
+  },
+  {
+    "id": "89",
+    "city_id": "12",
+    "native_name": "kartal",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kartal",
+    "name": "Kartal",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "317",
+        "area_id": "89",
+        "locale": "en",
+        "name": "Kartal",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "318",
+        "area_id": "89",
+        "locale": "ar",
+        "name": "كارتال",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "319",
+        "area_id": "89",
+        "locale": "fa",
+        "name": "کارتال",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kartal",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/89/edit",
+          "action": "edit",
+          "id": "edit_89"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/89",
+          "action": "delete",
+          "id": "delete_89"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "41"
+  },
+  {
+    "id": "90",
+    "city_id": "12",
+    "native_name": "maltepe",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Maltepe",
+    "name": "Maltepe",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "320",
+        "area_id": "90",
+        "locale": "en",
+        "name": "Maltepe",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "321",
+        "area_id": "90",
+        "locale": "ar",
+        "name": "مالتبه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "322",
+        "area_id": "90",
+        "locale": "fa",
+        "name": "مالتپه",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Maltepe",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/90/edit",
+          "action": "edit",
+          "id": "edit_90"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/90",
+          "action": "delete",
+          "id": "delete_90"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "42"
+  },
+  {
+    "id": "91",
+    "city_id": "12",
+    "native_name": "beykoz",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Beykoz",
+    "name": "Beykoz",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "323",
+        "area_id": "91",
+        "locale": "en",
+        "name": "Beykoz",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "324",
+        "area_id": "91",
+        "locale": "ar",
+        "name": "بيكوز",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "325",
+        "area_id": "91",
+        "locale": "fa",
+        "name": "بیکوز",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Beykoz",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/91/edit",
+          "action": "edit",
+          "id": "edit_91"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/91",
+          "action": "delete",
+          "id": "delete_91"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "43"
+  },
+  {
+    "id": "92",
+    "city_id": "12",
+    "native_name": "europeanside",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "European Side",
+    "name": "European Side",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "326",
+        "area_id": "92",
+        "locale": "en",
+        "name": "European Side",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "327",
+        "area_id": "92",
+        "locale": "ar",
+        "name": "الجانب الاوروبي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "328",
+        "area_id": "92",
+        "locale": "fa",
+        "name": "سمت اروپایی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "European Side",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/92/edit",
+          "action": "edit",
+          "id": "edit_92"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/92",
+          "action": "delete",
+          "id": "delete_92"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "44"
+  },
+  {
+    "id": "93",
+    "city_id": "12",
+    "native_name": "asianside",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Asian Side",
+    "name": "Asian Side",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "329",
+        "area_id": "93",
+        "locale": "en",
+        "name": "Asian Side",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "330",
+        "area_id": "93",
+        "locale": "ar",
+        "name": "الجانب الاسيوي",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "331",
+        "area_id": "93",
+        "locale": "fa",
+        "name": "سمت اسیایی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Asian Side",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/93/edit",
+          "action": "edit",
+          "id": "edit_93"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/93",
+          "action": "delete",
+          "id": "delete_93"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "45"
+  },
+  {
+    "id": "94",
+    "city_id": "12",
+    "native_name": "yenibosnia",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Yeni Bosnia",
+    "name": "Yeni Bosnia",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "332",
+        "area_id": "94",
+        "locale": "en",
+        "name": "Yeni Bosnia",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "333",
+        "area_id": "94",
+        "locale": "ar",
+        "name": "يني بوسنة",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "334",
+        "area_id": "94",
+        "locale": "fa",
+        "name": "ینی بوسنی",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Yeni Bosnia",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/94/edit",
+          "action": "edit",
+          "id": "edit_94"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/94",
+          "action": "delete",
+          "id": "delete_94"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "46"
+  },
+  {
+    "id": "95",
+    "city_id": "12",
+    "native_name": "kayashahir",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kaya Shahir",
+    "name": "Kaya Shahir",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "335",
+        "area_id": "95",
+        "locale": "en",
+        "name": "Kaya Shahir",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "336",
+        "area_id": "95",
+        "locale": "ar",
+        "name": "كايا شهير",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "337",
+        "area_id": "95",
+        "locale": "fa",
+        "name": "کایا شهیر",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kaya Shahir",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/95/edit",
+          "action": "edit",
+          "id": "edit_95"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/95",
+          "action": "delete",
+          "id": "delete_95"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "47"
+  },
+  {
+    "id": "96",
+    "city_id": "12",
+    "native_name": "3esenyurt",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "ُsenyurt",
+    "name": "ُsenyurt",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "338",
+        "area_id": "96",
+        "locale": "en",
+        "name": "ُsenyurt",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "339",
+        "area_id": "96",
+        "locale": "ar",
+        "name": "اسنيورت",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "340",
+        "area_id": "96",
+        "locale": "fa",
+        "name": "اسنيورت",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "ُsenyurt",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/96/edit",
+          "action": "edit",
+          "id": "edit_96"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/96",
+          "action": "delete",
+          "id": "delete_96"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "48"
+  },
+  {
+    "id": "98",
+    "city_id": "12",
+    "native_name": "beylikduzu",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Beylikdüzü",
+    "name": "Beylikdüzü",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "344",
+        "area_id": "98",
+        "locale": "en",
+        "name": "Beylikdüzü",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "345",
+        "area_id": "98",
+        "locale": "ar",
+        "name": "بيليك دوزو",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Beylikdüzü",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/98/edit",
+          "action": "edit",
+          "id": "edit_98"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/98",
+          "action": "delete",
+          "id": "delete_98"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "49"
+  },
+  {
+    "id": "99",
+    "city_id": "18",
+    "native_name": "kepez",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Kepez",
+    "name": "Kepez",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "346",
+        "area_id": "99",
+        "locale": "en",
+        "name": "Kepez",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "347",
+        "area_id": "99",
+        "locale": "ar",
+        "name": "كيبيز",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Kepez",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/99/edit",
+          "action": "edit",
+          "id": "edit_99"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/99",
+          "action": "delete",
+          "id": "delete_99"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "50"
+  },
+  {
+    "id": "100",
+    "city_id": "18",
+    "native_name": "muratpasa",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Muratpasa",
+    "name": "Muratpasa",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "349",
+        "area_id": "100",
+        "locale": "ar",
+        "name": "مراد باشا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "348",
+        "area_id": "100",
+        "locale": "en",
+        "name": "Muratpasa",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Muratpasa",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/100/edit",
+          "action": "edit",
+          "id": "edit_100"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/100",
+          "action": "delete",
+          "id": "delete_100"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "51"
+  },
+  {
+    "id": "101",
+    "city_id": "19",
+    "native_name": "yomra",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Yomra",
+    "name": "Yomra",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "351",
+        "area_id": "101",
+        "locale": "ar",
+        "name": "يومرا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "350",
+        "area_id": "101",
+        "locale": "en",
+        "name": "Yomra",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Yomra",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/101/edit",
+          "action": "edit",
+          "id": "edit_101"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/101",
+          "action": "delete",
+          "id": "delete_101"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "52"
+  },
+  {
+    "id": "102",
+    "city_id": "19",
+    "native_name": "arsin",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Arsin",
+    "name": "Arsin",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "353",
+        "area_id": "102",
+        "locale": "ar",
+        "name": "أرسين",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "352",
+        "area_id": "102",
+        "locale": "en",
+        "name": "Arsin",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Arsin",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/102/edit",
+          "action": "edit",
+          "id": "edit_102"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/102",
+          "action": "delete",
+          "id": "delete_102"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "53"
+  },
+  {
+    "id": "103",
+    "city_id": "20",
+    "native_name": "cankaya",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Cankaya",
+    "name": "Cankaya",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "355",
+        "area_id": "103",
+        "locale": "ar",
+        "name": "تشانكايا",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "354",
+        "area_id": "103",
+        "locale": "en",
+        "name": "Cankaya",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Cankaya",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/103/edit",
+          "action": "edit",
+          "id": "edit_103"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/103",
+          "action": "delete",
+          "id": "delete_103"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "54"
+  },
+  {
+    "id": "104",
+    "city_id": "20",
+    "native_name": "etimesgut",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Etimesgut",
+    "name": "Etimesgut",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "357",
+        "area_id": "104",
+        "locale": "ar",
+        "name": "اتيمسجوت",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "356",
+        "area_id": "104",
+        "locale": "en",
+        "name": "Etimesgut",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Etimesgut",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/104/edit",
+          "action": "edit",
+          "id": "edit_104"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/104",
+          "action": "delete",
+          "id": "delete_104"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "55"
+  },
+  {
+    "id": "105",
+    "city_id": "12",
+    "native_name": "levent",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Levent",
+    "name": "Levent",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "359",
+        "area_id": "105",
+        "locale": "ar",
+        "name": "ليفنت",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "358",
+        "area_id": "105",
+        "locale": "en",
+        "name": "Levent",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Levent",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/105/edit",
+          "action": "edit",
+          "id": "edit_105"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/105",
+          "action": "delete",
+          "id": "delete_105"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "56"
+  },
+  {
+    "id": "106",
+    "city_id": "17",
+    "native_name": "konak",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "description": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "new_title": "Konak",
+    "name": "Konak",
+    "image": null,
+    "about": null,
+    "short_description": null,
+    "keywords": null,
+    "details": null,
+    "translations": [
+      {
+        "id": "361",
+        "area_id": "106",
+        "locale": "ar",
+        "name": "كوناك",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      },
+      {
+        "id": "360",
+        "area_id": "106",
+        "locale": "en",
+        "name": "Konak",
+        "description": null,
+        "image": null,
+        "about": null,
+        "short_description": null,
+        "details": null,
+        "keywords": null
+      }
+    ],
+    "translated_name": "Konak",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/areas/106/edit",
+          "action": "edit",
+          "id": "edit_106"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/areas/destroy/106",
+          "action": "delete",
+          "id": "delete_106"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "57"
+  }
+]
