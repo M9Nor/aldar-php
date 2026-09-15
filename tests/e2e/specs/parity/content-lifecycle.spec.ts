@@ -85,7 +85,12 @@ test('an article can be created with an image, edited and deleted through the ad
   expect(image.status()).toBe(200);
   expect(image.headers()['content-type']).toBe('image/jpeg'); // the image route re-encodes uploads as JPEG
 
-  // Edit.
+  // Edit. The store AJAX response makes the page navigate to the articles
+  // index (magic_ajax_function.blade.php sets window.location = redirect_url).
+  // Wait for that navigation to finish before requesting the edit page, or
+  // the index commit can abort this goto (net::ERR_ABORTED); it resolves at
+  // once if the redirect already completed.
+  await page.waitForURL(/\/admin\/contents\/articles$/);
   await page.goto(`/en/admin/contents/articles/${id}/edit`);
   await page.fill('#title_en', `${TITLE_EN} (edited)`);
   const updated = await submitContentForm(page);
