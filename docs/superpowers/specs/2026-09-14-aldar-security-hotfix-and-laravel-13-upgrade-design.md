@@ -259,6 +259,11 @@ The release-based structure does not exist yet (Phase 3), so the hotfix patches 
 | S6 | `POST admin/notification/postWebToken` is public: anonymous visitors can write `notif_tokens` rows, and a failure returns the exception message and code in the JSON body. Validate and rate-limit the endpoint, and never return exception detail to the client. |
 | S7 | CSRF on `GET admin/clear-cache`: a staff member visiting a hostile page flushes the cache. Make it a POST with CSRF, like `admin/update-currency`. |
 | S8 | `EnsureStaff` answers JSON callers with a plain-text 403. Return a JSON error body when the request expects JSON. |
+| S9 | `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config. If no public page's JavaScript reads it, put it behind `staff`; otherwise document that it is public by design. (Found by the Phase 0 permissions matrix.) |
+| S10 | State-changing admin GET routes: `admin/projects/update_prices` rewrites prices, `admin/categories/asdwadwadwdaw` creates categories and filter pages, and `admin/users/login_as/{model}` switches the session. Move them to POST with CSRF, as in S7. Remove the `asdwadwadwdaw` seeding route if nothing in the admin UI calls it. |
+| S11 | Eight admin GET routes answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show`, `opportunity/show`, and `projects/data` without DataTables parameters. Answer 404 or a validation error instead, without changing any working flow. |
+| S12 | The admin lead lists (`admin/{projects,opportunity}/data_requests`) fail with a DataTables "Malformed UTF-8" error on any page that contains a spam submission with invalid bytes, so staff cannot page past it. Encode the response with invalid-UTF-8 substitution so every lead stays reachable. Business-critical: leads. |
+| S13 | Permissions tests for writes. The Phase 0 matrix covers GET only, and nine rows carry no role signal (404 or "302 back" for both roles). Add ADMIN POST probes that change nothing, such as destroy on a nonexistent id, and use ids that answer 200 for SUPERADMIN. |
 
 Each item gets a test added to the suite.
 
@@ -330,3 +335,7 @@ Afterwards, `git log -p --all -- Modules/Cms/Config/config.php | grep -c 'Hash::
 
 - `Modules/Cms/Config/config.php` calls `Hash::make()` twice every time config loads. Without a config cache that means every request, which costs roughly 100 ms of bcrypt work. `config:cache` in Phase 3 removes this.
 - 48% of leads are spam, so lead counts in any report are inflated. H5 stops new spam; existing rows are untouched.
+- Found by the Phase 0 parity suite and recorded as-is:
+  - The project and opportunity request lists read the same unfiltered `contact_us` rows.
+  - `admin/opportunity/properties` loads its table from the projects endpoint.
+  - These are functional bugs, outside the technical-and-security scope, and are reported to the owner.
