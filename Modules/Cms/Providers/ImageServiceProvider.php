@@ -2,6 +2,7 @@
 
 namespace Modules\Cms\Providers;
 
+use App\Glide\Encoder;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Modules\Cms\Classes\ImageManipulator;
@@ -27,6 +28,8 @@ class ImageServiceProvider extends ServiceProvider
                 'cache'                     => $filesystem->getDriver(),
                 'cache_path_prefix'         => '.cache',
                 'driver'                    => 'gd',
+                // Glide 1.5's default quality (90) for images generated without q (see App\Glide\Encoder).
+                'encoder'                   => new Encoder(),
                 'defaults'                  =>  [
                     'fit'   => 'crop',
                     'fm'    => 'jpg',
