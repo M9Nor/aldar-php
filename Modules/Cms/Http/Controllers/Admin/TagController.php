@@ -29,6 +29,8 @@ use Illuminate\Support\Arr;
 
 class TagController extends CmsController
 {
+    public $attributeNames;
+
     /**
      * Get tags for user based on their input and return the input as well.
      * @param  Request $request
@@ -53,7 +55,7 @@ class TagController extends CmsController
     }
     public function list(Request $request)
     {
-        $term   = trim($request->q);
+        $term   = trim((string) $request->q);
         $tags   = CrudModel::with('translations')->when($request->locale, function($query, $locale) {
             $query->whereHas('translations', function($q) use ($locale) {
                 $q->where('locale', $locale);

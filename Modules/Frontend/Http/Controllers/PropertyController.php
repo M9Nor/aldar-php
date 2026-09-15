@@ -22,6 +22,8 @@ use Modules\Cms\Entities\Content;
 
 class PropertyController extends FrontendController
 {
+    public $attributeNames;
+
     /**
      * Display a listing of the resource.
      * @return Response

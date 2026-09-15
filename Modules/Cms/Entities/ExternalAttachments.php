@@ -4,7 +4,6 @@ namespace Modules\Cms\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\Cms\Entities\ExternalAttachments;
 use Illuminate\Support\Str;
 
 class ExternalAttachments extends Model

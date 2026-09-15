@@ -27,7 +27,7 @@
                             <img src="{{ $blog->getTranslatedImage('1000x750')}}" class="card-img-top position-relative" alt="blog">
                             <div class="card-body">
                                 <h3 class="h5 card-title"><a href="{{route($route , $variables)}}">{{$blog->translateOrFirst()->title}}</a></h3>
-                                <p class="card-text">{{\Illuminate\Support\Str::limit($blog->translateOrFirst()->brief, 160)}}</p>
+                                <p class="card-text">{{\Illuminate\Support\Str::limit((string) $blog->translateOrFirst()->brief, 160)}}</p>
                                 <a href="{{route($route , $variables)}}" class="detail-link">{!!trans('frontend::landing_page.read_more')!!}
                                     {{-- <span class="ti-arrow-right"></span> --}}
                                 </a>

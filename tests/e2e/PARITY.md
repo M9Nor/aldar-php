@@ -1,16 +1,16 @@
 # Parity suite
 
-Black-box checks that the site behaves the same before and after an upgrade. Baselines were recorded on Laravel 7.3 / PHP 7.4 from `_db-backup/aldar-db-20260914-1704.sql.gz`.
+Black-box checks that the site behaves the same before and after an upgrade. Baselines were recorded on Laravel 7.3 / PHP 7.4 from `_db-backup/aldar-db-20260914-1704.sql.gz`. The suite now runs against Laravel 13 / PHP 8.4; the baselines are still the Laravel 7.3 recordings, apart from the differences accepted in the Phase 1 upgrade PR.
 
 ## Run
 
 ```bash
 docker compose up -d
 cd tests/e2e
-npm run parity            # resets the local DB, then 317 tests, about 7 minutes
+npm run parity            # resets the local DB, then 321 tests, about 10 minutes
 ```
 
-**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
+**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 368 tests in all (321 parity + 47 chromium, about 14 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
 
 ## Environment the baselines assume
 
@@ -36,12 +36,21 @@ No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever pri
 |---|---|
 | `specs/parity/golden-master.spec.ts` | Normalised server HTML for the 194 URLs in `parity/url-inventory.json` |
 | `specs/parity/behaviour.spec.ts` | Contact validation JSON (ar/en), `store-inner` lead, `set_currency`, `/cookies`, regions and installments JSON, locale and trailing-slash redirects |
+| `specs/parity/admin-table-values.spec.ts` | Row values of four public admin tables (countries, cities, areas, FAQs), all pages, sorted by id |
 | `specs/parity/admin-sections.spec.ts` | Every admin section's status, columns and DataTables shape; failed login; logout; row keys and action kinds over every row of public tables (walked page by page; structureOnly lead, user and form tables use page 1 and record no counts) |
 | `specs/parity/content-lifecycle.spec.ts` | Article create (with image) → front end and `/img` → edit → delete; landing-page render |
 | `specs/parity/permissions-matrix.spec.ts` | 170 admin GET routes × anonymous, ADMIN, SUPERADMIN |
 | `specs/parity/visual.spec.ts` | 8 pages × ar/en × desktop/mobile screenshots (`maxDiffPixelRatio` 0.01) |
 
 Only the `contact endpoints` `describe` block in `behaviour.spec.ts` calls `requireLocal` (it clears the cache limiter and writes leads), so it refuses to run unless `BASE_URL` is the local Docker stack — as do all of `admin-sections.spec.ts`, `content-lifecycle.spec.ts` and `permissions-matrix.spec.ts`, which sign in with the local parity accounts. `behaviour.spec.ts`'s `set_currency`, `/cookies`, regions/installments JSON and redirect tests are not gated: they only set cookies and can run against any host the guards in "Guards" above allow. See "Guards" above for the live-site and allowlist checks that apply to every spec.
+
+## Structural checks
+
+`scripts/upgrade/check-structure.sh` compares routes, key config values and Glide cache paths with `tests/upgrade/*.json` (`routes.json`, `config.json`, `glide-cache-paths.json`), which were recorded on Laravel 7. It prints `structure matches tests/upgrade/` and exits 0 when all three match, and prints a diff and exits 1 otherwise. Run it from the repository root with the Docker stack up; it is not part of `npm test`.
+
+```bash
+scripts/upgrade/check-structure.sh
+```
 
 ## When a parity test fails after a change
 

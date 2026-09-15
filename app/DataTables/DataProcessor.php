@@ -11,6 +11,13 @@ use Yajra\DataTables\Processors\DataProcessor as BaseDataProcessor;
  * With `columns.escape` set to '*', yajra 9 passed every non-empty value through e(), so ints,
  * floats and `true` reached the JSON as strings ("id": "12", "DT_RowIndex": "1"). yajra 13 only
  * escapes strings and Htmlable values and leaves the rest as native types.
+ *
+ * Only App\DataTables\EloquentDataTable uses this processor. A future DataTables::of() on a Collection
+ * or a Query builder bypasses it and emits yajra 13 native value types.
+ *
+ * Removal condition: once the admin JSON consumers no longer need the Laravel 7 string value types and
+ * the admin-table-values parity baselines are re-accepted, delete this class together with
+ * EloquentDataTable and its config/datatables.php engine entry.
  */
 class DataProcessor extends BaseDataProcessor
 {

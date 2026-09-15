@@ -2,6 +2,7 @@
 #   Site:     http://localhost:8080/en
 #   Mailpit:  http://localhost:8025   (catches all outgoing mail)
 #   Database: 127.0.0.1:3307  db=aldar user=aldar pass=aldar
+#   PHP 8.4 / Laravel 13 (image aldar-php84)
 name: aldar
 
 services:

@@ -29,10 +29,10 @@
                             </div>
                         </a>
                         <div class="news-item-text">
-                            <span>{{\Modules\Cms\Entities\Traits\Helpers::parseDate($article->created_at, 'dS F Y')}}</span>
+                            <span>{{\Modules\Cms\Classes\DateHelper::parseDate($article->created_at, 'dS F Y')}}</span>
                             <a href="{{route($route , $variables)}}"><h3>{{ $article->translateOrFirst()->title }}</h3></a>
                             <div class="news-item-descr big-news">
-                                <p>{{\Illuminate\Support\Str::limit($article->translateOrFirst()->brief, 160)}}</p>
+                                <p>{{\Illuminate\Support\Str::limit((string) $article->translateOrFirst()->brief, 160)}}</p>
                             </div>
                             <div class="news-item-bottom">
                                 <a href="{{route($route , $variables)}}" class="news-link">{{__("frontend::main.read_more")}}</a>

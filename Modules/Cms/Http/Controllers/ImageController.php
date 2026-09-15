@@ -17,8 +17,8 @@ class ImageController extends Controller
 {
     /**
      * Cache an image and return it.
-     * @var Server
-     * @var Request
+     * @param Server $server
+     * @param Request $request
      * @return Response
      */
     public function show(Server $server, Request $request)

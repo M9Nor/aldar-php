@@ -122,6 +122,14 @@ class I18N_Arabic {
 	public $myFile;
 
 	/**
+	 * Alias of $myObject that load() sets as $this->{$library}. The app loads only the Date
+	 * library (Helpers::parseDate), so only $Date is declared: PHP 8.2 deprecates dynamic properties.
+	 *
+	 * @ignore
+	 */
+	public $Date;
+
+	/**
 	 * Load selected library/Arabic class you would like to use its functionality
 	 *
 	 * @param string  $library        [AutoSummarize|CharsetC|CharsetD|Date|Gender|

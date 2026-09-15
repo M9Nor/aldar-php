@@ -156,13 +156,13 @@
                                     <div class="tab-pane fade delete-a" id="brief-description" role="tabpanel"
                                         aria-labelledby="brief-description-tab">
                                         <div class="dynamic-description">
-                                            {!!str_replace('<p>&nbsp;</p>', '', $texts['overview'])!!}
+                                            {!!str_replace('<p>&nbsp;</p>', '', (string) $texts['overview'])!!}
                                         </div>
                                     </div>
                                     <div class="tab-pane fade delete-a" id="area-report" role="tabpanel"
                                     aria-labelledby="area-report-tab">
                                         <div class="dynamic-description">
-                                            {!!str_replace('<p>&nbsp;</p>', '', $texts['place_tab_description'])!!}
+                                            {!!str_replace('<p>&nbsp;</p>', '', (string) $texts['place_tab_description'])!!}
                                         </div>
                                     </div>
                                 </div>

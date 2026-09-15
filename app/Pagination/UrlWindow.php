@@ -6,19 +6,22 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator as PaginatorContract;
 
 /**
  * Laravel 7 pagination parity: a verbatim copy of Illuminate\Pagination\UrlWindow from
- * laravel/framework v7.3.0, with only the namespace changed.
+ * laravel/framework v7.3.0, with only the namespace changed, plus two docblock-only PHPStan
+ * annotations (@phpstan-consistent-constructor below and the $paginator @var type).
  *
  * Laravel 13's copy widens the slider (`$window = $onEachSide + 4` instead of `$onEachSide * 2`,
  * and lists every page below `$onEachSide * 2 + 8` pages instead of `+ 6`). With the default
  * onEachSide of 3, page 1 of a 27-page listing then links pages 1-10 instead of Laravel 7's 1-8.
  * App\Pagination\LengthAwarePaginator uses this class so `->links()` keeps the Laravel 7 markup.
+ *
+ * @phpstan-consistent-constructor
  */
 class UrlWindow
 {
     /**
      * The paginator implementation.
      *
-     * @var \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @var \Illuminate\Contracts\Pagination\LengthAwarePaginator&\Illuminate\Pagination\AbstractPaginator
      */
     protected $paginator;
 

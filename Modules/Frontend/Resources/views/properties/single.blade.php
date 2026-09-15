@@ -58,7 +58,7 @@
         // dd($model->prices->sortBy('lowest_price')[0]);
         $modelLink          = route('PropertyController@single', ['type' => (!is_null($category) ? $category->slug : 'properties'), 'slug' => $model->slug]);
         $addressDetails     = (!is_null($city = $model->city) ?  $city->translateOrFirst()->name : '') . ' / ' .  (!is_null($area = $model->area) ?  $area->translateOrFirst()->name : '');
-        $modelDescription   = Str::limit($model->translateOrFirst()->details, 100);
+        $modelDescription   = Str::limit((string) $model->translateOrFirst()->details, 100);
     @endphp
     <div class="inner-pages">
         <section class="single-proper blog details single-project">

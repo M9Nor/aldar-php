@@ -1986,7 +1986,7 @@ class ProjectController extends CmsController
             return $model->description;
         })// Adds an incremental first row.
         ->addColumn('date', function($model){
-            return \Modules\Cms\Entities\Traits\Helpers::parseDate($model->created_at);
+            return \Modules\Cms\Classes\DateHelper::parseDate($model->created_at);
         })
         ->addColumn('actions', function($model){
             $items = [];
@@ -2063,7 +2063,7 @@ class ProjectController extends CmsController
             return $model->property_explanation;
         })// Adds an incremental first row.
         ->addColumn('date', function($model){
-            return \Modules\Cms\Entities\Traits\Helpers::parseDate($model->created_at);
+            return \Modules\Cms\Classes\DateHelper::parseDate($model->created_at);
         })
         ->addColumn('actions', function($model){
             $items = [];

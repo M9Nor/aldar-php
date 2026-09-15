@@ -1,0 +1,4870 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: Modules/Backend/Database/Migrations/2020_06_27_113121_add_images_inputs_to_projects_tables.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_06_27_113121_add_images_inputs_to_projects_tables.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_translation$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_06_27_113121_add_images_inputs_to_projects_tables.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_01_113121_add_turkish_nationality_to_projects_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_01_113121_add_turkish_nationality_to_projects_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: Modules/Backend/Database/Migrations/2020_07_03_113121_add_keywords_to_projects_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_03_113121_add_keywords_to_projects_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_03_113121_add_keywords_to_projects_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 6
+			path: Modules/Backend/Database/Migrations/2020_07_10_113121_update_projects_and_project_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_10_113121_update_projects_and_project_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_pay$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_10_113121_update_projects_and_project_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_10_113121_update_projects_and_project_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: Modules/Backend/Database/Migrations/2020_07_13_113121_add_project_images_to_project_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_13_113121_add_project_images_to_project_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_15_113121_add_sort_order_to_projects_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_15_113121_add_sort_order_to_projects_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_20_113121_add_is_special_to_projects_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_07_20_113121_add_is_special_to_projects_table.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$keywords\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_12_25_103147_update_project_translations_table_add_keywords.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$trans_keywords\:ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_12_25_103147_update_project_translations_table_add_keywords.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Backend/Database/Migrations/2020_12_25_103147_update_project_translations_table_add_keywords.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Backend/Database/Migrations/2021_02_10_103147_update_attributes_table_add_polymorphic.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ContactUs\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ContactUs\:\:\$phone\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ContactUs\:\:\$sender\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:ar\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:en\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:ar\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:en\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$parent_id\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 262
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$input_type\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$key\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$label\:ar\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$label\:en\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 21
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:ar\.$#'
+			identifier: property.notFound
+			count: 30
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:en\.$#'
+			identifier: property.notFound
+			count: 30
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_code\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_symbol\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:ar\.$#'
+			identifier: property.notFound
+			count: 30
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:en\.$#'
+			identifier: property.notFound
+			count: 30
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 39
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 39
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:tr\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$icon\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Class Modules\\Backend\\Entities\\ContactUs referenced with incorrect case\: Modules\\Backend\\Entities\\ContactUS\.$#'
+			identifier: class.nameCase
+			count: 4
+			path: Modules/Backend/Database/Seeders/BackendDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$content\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/Price.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_symbol\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/Price.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Backend/Entities/Price.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Backend/Entities/Project.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/Project.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/Project.php
+
+		-
+			message: '#^Call to an undefined method I18N_Arabic\:\:setMode\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Backend/Entities/Project.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ProjectTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/ProjectTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ProjectTranslation\:\:\$project_image1\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/ProjectTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\ProjectTranslation\:\:\$project_image2\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Entities/ProjectTranslation.php
+
+		-
+			message: '#^Call to an undefined method I18N_Arabic\:\:setMode\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Backend/Entities/PropertyForm.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_fa\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$cat_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$discount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_fa\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$cat_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$discount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$airport\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$area_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_distance\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$code\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$country_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$disabled_at\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$hospital\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$keywords\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mall\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mosque\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$roi\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$school\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sea\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$turkish_nationality\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$university\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
+			identifier: property.notFound
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 14
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Backend\\Entities\\Project\>\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 11
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''areas'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\PropertyForm model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''payments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Variable \$update_payng in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Variable \$update_price in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_fa\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$cat_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$discount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$is_sold\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Content\>\|Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_fa\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$cat_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$discount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$airport\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$area_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_distance\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$code\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$country_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$disabled_at\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$hospital\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$is_featured\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$is_statistics\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$keywords\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mall\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mosque\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$school\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sea\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$turkish_nationality\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$university\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 14
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Backend\\Entities\\Project\>\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 11
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''areas'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\PropertyForm model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''payments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Variable \$update_payng in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Variable \$update_price in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_tr\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$bathes_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$airport\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$area_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_distance\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$country_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$disabled_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$hospital\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$keywords\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mall\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mosque\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$school\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sea\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$turkish_nationality\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$university\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 10
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Backend\\Entities\\Project\>\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 3
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Variable \$update_payng in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Variable \$update_price in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/test.php
+
+		-
+			message: '#^Method Modules\\Backend\\Http\\Controllers\\BackendController\:\:destroy\(\) should return Illuminate\\Http\\Response but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: Modules/Backend/Http/Controllers/BackendController.php
+
+		-
+			message: '#^Method Modules\\Backend\\Http\\Controllers\\BackendController\:\:store\(\) should return Illuminate\\Http\\Response but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: Modules/Backend/Http/Controllers/BackendController.php
+
+		-
+			message: '#^Method Modules\\Backend\\Http\\Controllers\\BackendController\:\:update\(\) should return Illuminate\\Http\\Response but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: Modules/Backend/Http/Controllers/BackendController.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$project$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Backend/Policies/ProjectPolicy.php
+
+		-
+			message: '#^Variable \$articlesItems might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/start.php
+
+		-
+			message: '#^Variable \$faqsItems might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/start.php
+
+		-
+			message: '#^Variable \$playListItems might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Backend/start.php
+
+		-
+			message: '#^Call to an undefined method I18N_Arabic\:\:setMode\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Classes/DateHelper.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 4
+			path: Modules/Cms/Config/config.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_06_30_180559_change_link_to_link_trans_in_content_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_06_30_180559_change_link_to_link_trans_in_content_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_180509_add_description_to_country_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_180509_add_description_to_country_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_180559_add_description_to_city_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_180559_add_description_to_city_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: Modules/Cms/Database/Migrations/2020_07_03_189559_update_content_and_content_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_189559_update_content_and_content_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 5
+			path: Modules/Cms/Database/Migrations/2020_07_03_189999_update_area_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_03_189999_update_area_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_06_180559_add_sort_order_to_city_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_06_180559_add_sort_order_to_city_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: Modules/Cms/Database/Migrations/2020_07_06_180959_update_category_and_category_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_06_180959_update_category_and_category_translations_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_06_180959_update_category_and_category_translations_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: Modules/Cms/Database/Migrations/2020_07_07_180559_add_link_to_city_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_07_180559_add_link_to_city_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_translation$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_07_180559_add_link_to_city_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: Modules/Cms/Database/Migrations/2020_07_07_189559_add_fields_to_contents_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_07_189559_add_fields_to_contents_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_13_189559_add_currency_value_to_contents_table.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_13_189559_add_currency_value_to_contents_table.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Schema\\Blueprint\:\:dropIfExists\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: Modules/Cms/Database/Migrations/2020_07_17_113131_update_tags_and_tag_translation_tables.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_17_113131_update_tags_and_tag_translation_tables.php
+
+		-
+			message: '#^Undefined variable\: \$set_schema_table_trans$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Database/Migrations/2020_07_17_113131_update_tags_and_tag_translation_tables.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$city_id\.$#'
+			identifier: property.notFound
+			count: 46
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$name\:ar\.$#'
+			identifier: property.notFound
+			count: 46
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$name\:en\.$#'
+			identifier: property.notFound
+			count: 46
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$country_id\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$name\:ar\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$name\:en\.$#'
+			identifier: property.notFound
+			count: 9
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Country\:\:\$name\:ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Country\:\:\$name\:en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/CmsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/UsersTableSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/UsersTableSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/UsersTableSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$verification_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Database/Seeders/UsersTableSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\AreaTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/AreaTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$uid\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Entities/Attachment.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$children\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Entities/Category.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 5
+			path: Modules/Cms/Entities/Category.php
+
+		-
+			message: '#^Relation ''children'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Entities/Category.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Entities/Category.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Entities/City.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\CityTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/CityTranslation.php
+
+		-
+			message: '#^Call to an undefined method League\\Flysystem\\FilesystemOperator\:\:getMimetype\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Entities/Classes/Server.php
+
+		-
+			message: '#^Call to an undefined method League\\Flysystem\\FilesystemOperator\:\:getSize\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Entities/Classes/Server.php
+
+		-
+			message: '#^PHPDoc tag @throws with type Modules\\Cms\\Entities\\Classes\\InvalidArgumentException is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 1
+			path: Modules/Cms/Entities/Classes/Server.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/Config.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\ConfigTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/ConfigTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Entities/Content.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''keywords'' \(''keywords'', ''keywords''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Entities/Content.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''path'' \(''path'', ''path''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Entities/Content.php
+
+		-
+			message: '#^Call to an undefined method I18N_Arabic\:\:setMode\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Entities/Content.php
+
+		-
+			message: '#^Static call to instance method Modules\\Cms\\Entities\\Category\:\:AllCategoryParents\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: Modules/Cms/Entities/Content.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\ContentTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/ContentTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Entities/LandingPage.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPageTranslation\:\:\$header_background\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/LandingPageTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPageTranslation\:\:\$header_logo\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/LandingPageTranslation.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPageTranslation\:\:\$meta_img\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/LandingPageTranslation.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getDisabledAtColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Cms/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getQualifiedDisabledAtColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: Modules/Cms/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\TagTranslation\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Entities/TagTranslation.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$city_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Relation ''customFields'' is not found in Modules\\Cms\\Entities\\Area model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Cms\\Entities\\Area model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/AttachmentController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/AttachmentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 7
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:ar\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:en\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:ar\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:en\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$icon_image\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$parent_id\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:ar\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:en\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:ar\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:en\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Category\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Undefined variable\: \$imageIconPath$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$country_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Call to an undefined method Modules\\Cms\\Entities\\City\:\:tags\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Relation ''customFields'' is not found in Modules\\Cms\\Entities\\City model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$has_additional_info\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$input_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$key\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$val\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$validations\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 3
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Variable \$validator might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Content\>\|Modules\\Cms\\Entities\\Content\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 8
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attributes\:\:\$value\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_icon\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_symbol\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$views\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 9
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Cms\\Entities\\Content\>\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Content\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 7
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Static method Modules\\Cms\\Entities\\Content\:\:getTypeCustomFields\(\) invoked with 2 parameters, 1 required\.$#'
+			identifier: arguments.count
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Undefined variable\: \$imageIconPath$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/CountryController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/CountryController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/CountryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$date\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$icon\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$landing_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$language\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 12
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$blogs\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$blogs_ids\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$footer_facebook\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$footer_instagram\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$footer_whatsapp\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$footer_youtube\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$form\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$form_direction\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$main_color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$projects\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$projects_ids\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$second_color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$services\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$services_ids\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$subject_text\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$subject_text2\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$subject_text2_background\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$subject_text_background\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$videos\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\LandingPage\:\:\$videos_link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$date\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$icon\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$landing_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$language\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Timeline\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 7
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Called ''pluck'' on Laravel collection, but could have been retrieved as a query\.$#'
+			identifier: larastan.noUnnecessaryCollectionCall
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Relation ''timeline'' is not found in Modules\\Cms\\Entities\\LandingPage model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$text\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Tag\:\:\$keywords\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Tag\:\:\$text\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Tag\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Cms\\Entities\\Tag\>\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Tag\:\:isFieldRequired\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 3
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$request$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/TagController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$address\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$first_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$last_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$phone\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$verification_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Http\\Controllers\\Admin\\UserController\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 3
+			path: Modules/Cms/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Call to static method user\(\) on an unknown class Modules\\Cms\\Http\\Controllers\\Auth\\Auth\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/ConfirmPasswordController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/LoginController.php
+
+		-
+			message: '#^Result of method Modules\\Cms\\Http\\Controllers\\Auth\\LoginController\:\:sendLockoutResponse\(\) \(void\) is used\.$#'
+			identifier: method.void
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/LoginController.php
+
+		-
+			message: '#^Call to static method user\(\) on an unknown class Modules\\Cms\\Http\\Controllers\\Auth\\Auth\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/RegisterController.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/ResetPasswordController.php
+
+		-
+			message: '#^Call to an undefined method Modules\\Cms\\Http\\Controllers\\Auth\\VerificationController\:\:notify\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/VerificationController.php
+
+		-
+			message: '#^Call to static method user\(\) on an unknown class Modules\\Cms\\Http\\Controllers\\Auth\\Auth\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Auth/VerificationController.php
+
+		-
+			message: '#^Cannot call method exec\(\) on resource\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Cannot call method set_charset\(\) on resource\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Function mysql_set_charset not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Method I18N_Arabic\:\:__call\(\) has invalid return type The\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Method I18N_Arabic\:\:autoload\(\) should return null but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Method I18N_Arabic\:\:load\(\) should return null but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: """
+				#^PHPDoc tag @method has invalid value \\(Call a method from loaded sub class and take care of needed\r
+				        character set conversion for both input and output values\\.\\)\\: Unexpected token "method", expected '\\(' at offset 350 on line 9$#
+			"""
+			identifier: phpDoc.parseError
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 10
+			path: Modules/Cms/Includes/date/I18N/Arabic.php
+
+		-
+			message: '#^Undefined variable\: \$style$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/AutoSummarize.php
+
+		-
+			message: '#^Variable \$minRank might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/AutoSummarize.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_CharsetC\:\:\$bug\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_CharsetC\:\:\$html\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_CharsetC\:\:\$iso88596\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_CharsetC\:\:\$utf8\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_CharsetC\:\:\$windows1256\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Variable \$code might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: Modules/Cms/Includes/date/I18N/Arabic/CharsetC.php
+
+		-
+			message: '#^Method I18N_Arabic_CompressStr\:\:bits2hex\(\) has invalid return type hexadecimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Method I18N_Arabic_CompressStr\:\:compress\(\) has invalid return type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Method I18N_Arabic_CompressStr\:\:hex2bits\(\) has invalid return type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Method I18N_Arabic_CompressStr\:\:str2bits\(\) has invalid return type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$bin of method I18N_Arabic_CompressStr\:\:decompress\(\) has invalid type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$bin of method I18N_Arabic_CompressStr\:\:length\(\) has invalid type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$bin of method I18N_Arabic_CompressStr\:\:search\(\) has invalid type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$bits of method I18N_Arabic_CompressStr\:\:bits2hex\(\) has invalid type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$bits of method I18N_Arabic_CompressStr\:\:bits2str\(\) has invalid type binary\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Parameter \$hex of method I18N_Arabic_CompressStr\:\:hex2bits\(\) has invalid type hexadecimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Variable \$code might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/CompressStr.php
+
+		-
+			message: '#^Binary operation "\*" between string and 3600 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Binary operation "\+" between \(float\|int\) and string results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Binary operation "\-" between string and 1420 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Undefined variable\: \$main$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Undefined variable\: \$outputCharset$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Variable \$hj_txt_month might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Variable \$outputCharset might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Date.php
+
+		-
+			message: '#^Binary operation "&" between string and 63 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 3
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Binary operation "\>\>" between string and 12 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Binary operation "\>\>" between string and 18 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Binary operation "\>\>" between string and 6 results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 3
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Variable \$chars might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Variable \$en_start in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Variable \$str might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Glyphs.php
+
+		-
+			message: '#^Call to method en2ar\(\) on an unknown class Transliteration\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Hiero.php
+
+		-
+			message: '#^Constant MAXH not found\.$#'
+			identifier: constant.notFound
+			count: 4
+			path: Modules/Cms/Includes/date/I18N/Arabic/Hiero.php
+
+		-
+			message: '#^Constant MAXW not found\.$#'
+			identifier: constant.notFound
+			count: 4
+			path: Modules/Cms/Includes/date/I18N/Arabic/Hiero.php
+
+		-
+			message: '#^Instantiated class Transliteration not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Hiero.php
+
+		-
+			message: '#^Variable \$current_y might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Hiero.php
+
+		-
+			message: '#^Parameter \$u of method I18N_Arabic_Normalise\:\:unichr\(\) has invalid type char\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Undefined variable\: \$simple_LAM_ALEPH$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Undefined variable\: \$simple_LAM_ALEPH_HAMZA_ABOVE$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Undefined variable\: \$simple_LAM_ALEPH_HAMZA_BELOW$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Undefined variable\: \$simple_LAM_ALEPH_MADDA_ABOVE$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Variable \$char_ar_names might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Variable \$char_groups might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Variable \$char_names might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Variable \$ligature_map might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Variable \$pos might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Normalise.php
+
+		-
+			message: '#^Default value of the parameter \#2 \$zero \(true\) of method I18N_Arabic_Numbers\:\:subInt2str\(\) is incompatible with type logical\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Numbers.php
+
+		-
+			message: '#^Parameter \$zero of method I18N_Arabic_Numbers\:\:subInt2str\(\) has invalid type logical\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Numbers.php
+
+		-
+			message: '#^Access to an undefined property \$this\(I18N_Arabic_Query\)\:\:\$mode\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Query.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_Query\:\:\$mode\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Query.php
+
+		-
+			message: '#^Access to an undefined property I18N_Arabic_Query\:\:\$wordCondition\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Cms/Includes/date/I18N/Arabic/Query.php
+
+		-
+			message: '#^Function mysql_escape_string not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Query.php
+
+		-
+			message: '#^Variable \$wordOrder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Query.php
+
+		-
+			message: '#^Comparison operation "\<\=" between \*NEVER\* and 180 results in an error\.$#'
+			identifier: smallerOrEqual.invalid
+			count: 5
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Comparison operation "\>\=" between \*NEVER\* and \-180 results in an error\.$#'
+			identifier: greaterOrEqual.invalid
+			count: 5
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Default value of the parameter \#1 \$l1 \(float\) of method I18N_Arabic_Salat\:\:setLocation\(\) is incompatible with type decimal\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Default value of the parameter \#2 \$l2 \(float\) of method I18N_Arabic_Salat\:\:setLocation\(\) is incompatible with type decimal\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Default value of the parameter \#2 \$sunriseArc \(float\) of method I18N_Arabic_Salat\:\:setConf\(\) is incompatible with type decimal\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Default value of the parameter \#3 \$ishaArc \(float\) of method I18N_Arabic_Salat\:\:setConf\(\) is incompatible with type decimal\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Default value of the parameter \#4 \$fajrArc \(float\) of method I18N_Arabic_Salat\:\:setConf\(\) is incompatible with type decimal\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Parameter \$fajrArc of method I18N_Arabic_Salat\:\:setConf\(\) has invalid type decimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Parameter \$ishaArc of method I18N_Arabic_Salat\:\:setConf\(\) has invalid type decimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Parameter \$l1 of method I18N_Arabic_Salat\:\:setLocation\(\) has invalid type decimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Parameter \$l2 of method I18N_Arabic_Salat\:\:setLocation\(\) has invalid type decimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Parameter \$sunriseArc of method I18N_Arabic_Salat\:\:setConf\(\) has invalid type decimal\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Cms/Includes/date/I18N/Arabic/Salat.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 59
+			path: Modules/Cms/Includes/date/I18N/Arabic/data/charset/_bug.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 59
+			path: Modules/Cms/Includes/date/I18N/Arabic/data/charset/_html.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 59
+			path: Modules/Cms/Includes/date/I18N/Arabic/data/charset/_iso88596.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 59
+			path: Modules/Cms/Includes/date/I18N/Arabic/data/charset/_utf8.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 59
+			path: Modules/Cms/Includes/date/I18N/Arabic/data/charset/_windows1256.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$area$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/AreaPolicy.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Cms/Policies/CategoryPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$category$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/CategoryPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$city$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/CityPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$config$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/ConfigPolicy.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 7
+			path: Modules/Cms/Policies/ContentPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$content$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/ContentPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$country$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/CountryPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$landing_page$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/LandingPagePolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$project$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/ProjectPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$tag$#'
+			identifier: parameter.notFound
+			count: 3
+			path: Modules/Cms/Policies/TagPolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$user$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Cms/Policies/UserPolicy.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Providers\\ImageServiceProvider\:\:\$cachePathPrefix\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Providers\\ImageServiceProvider\:\:\$cacheWithFileExtensions\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Providers\\ImageServiceProvider\:\:\$defaults\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Providers\\ImageServiceProvider\:\:\$groupCacheInFolders\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Providers\\ImageServiceProvider\:\:\$sourcePathPrefix\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Call to an undefined method Modules\\Cms\\Providers\\ImageServiceProvider\:\:getSourcePath\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Cms/Providers/ImageServiceProvider.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''tags'' \(''tags'', ''tags''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/ar/areas.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''category'' \(''category'', ''category''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/ar/cruds.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''preferences'' \(''preferences'', ''preferences''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/ar/includes.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''general_error'' \(''general_error'', ''general_error''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/ar/messages.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''tags'' \(''tags'', ''tags''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/en/areas.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''saving'' \(''saving'', ''saving''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/en/global.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''tags'' \(''tags'', ''tags''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Cms/Resources/lang/fa/areas.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$val\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/FrontendController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Config\:\:\$value\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Frontend/Http/Controllers/FrontendController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/FrontendController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/FrontendController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 5
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''city'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''contracts'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''propertyFeatures'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/HomeController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/LandingPageController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/LandingPageController.php
+
+		-
+			message: '#^Relation ''timeline'' is not found in Modules\\Cms\\Entities\\LandingPage model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/LandingPageController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$currency_value\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$views\.$#'
+			identifier: property.notFound
+			count: 6
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 10
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''children'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''city'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 9
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''contracts'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''externalAttachments'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''facilities'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''payCategory'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''payments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''price'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''propertyClassifications'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''propertyFeatures'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''propertyStatues'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''propertyType'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Undefined variable\: \$config$#'
+			identifier: variable.undefined
+			count: 8
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Undefined variable\: \$feature$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Undefined variable\: \$property_type$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Variable \$config in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 2
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Variable \$feature in empty\(\) is never defined\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Variable \$filterPageExists in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Variable \$property_type in empty\(\) is never defined\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/ListingController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Area\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\City\:\:\$native_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$link\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Frontend\\Http\\Controllers\\OpportunityController\:\:pageNotTranslated\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 8
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 7
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''areas'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''city'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 6
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''contracts'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 5
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''facilities'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''opportunityClassifications'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''payCategory'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''payments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''price'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 5
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''propertyFeatures'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''propertyStatues'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''propertyType'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Undefined variable\: \$config$#'
+			identifier: variable.undefined
+			count: 8
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Undefined variable\: \$feature$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Undefined variable\: \$property_type$#'
+			identifier: variable.undefined
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Variable \$config in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 2
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Variable \$feature in empty\(\) is never defined\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Variable \$filterPageExists in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Variable \$property_type in empty\(\) is never defined\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Frontend/Http/Controllers/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$advertisers_email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$advertisers_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$advertisers_phone\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$min_price\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$offers\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$property_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$property_city\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$property_classifications\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$property_explanation\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Backend\\Entities\\PropertyForm\:\:\$property_status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Call to static method translatedIn\(\) on an unknown class Modules\\Frontend\\Http\\Controllers\\Project\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''areas'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''categories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''city'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''contracts'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''payments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''tags'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/Controllers/PropertyController.php
+
+		-
+			message: '#^Relation ''projects'' is not found in Modules\\Cms\\Entities\\City model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Frontend/Http/ViewComposers/FilterComposer.php
+
+		-
+			message: '#^Used function foo\\func not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: Modules/Frontend/Http/ViewComposers/FilterComposer.php
+
+		-
+			message: '#^Relation ''contents'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 3
+			path: Modules/Frontend/Http/ViewComposers/MenuComposer.php
+
+		-
+			message: '#^Relation ''parent'' is not found in Modules\\Cms\\Entities\\Category model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Http/ViewComposers/MenuComposer.php
+
+		-
+			message: '#^Used function foo\\func not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: Modules/Frontend/Http/ViewComposers/MenuComposer.php
+
+		-
+			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 8
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^Relation ''area'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^Relation ''attachments'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 2
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^Relation ''city'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^Relation ''contracts'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^Relation ''prices'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Frontend/Providers/FrontendServiceProvider.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$item_count$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Frontend/Resources/assets/revolution/php/flickr/class-flickr.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$user_id$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Frontend/Resources/assets/revolution/php/instagram/class-instagram.php
+
+		-
+			message: '#^Instantiated class TwitterPhp\\TwitterRestApiException not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Frontend/Resources/assets/revolution/php/twitter/RestApi.php
+
+		-
+			message: '#^PHPDoc tag @throws with type TwitterPhp\\TwitterRestApiException is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 2
+			path: Modules/Frontend/Resources/assets/revolution/php/twitter/RestApi.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$api_key$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Frontend/Resources/assets/revolution/php/twitter/class-twitter.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$tweets$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Frontend/Resources/assets/revolution/php/twitter/class-twitter.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''cookies'' \(''cookies'', ''cookies''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/main.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''services'' \(''services'', ''services''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/main.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''featured_images'' \(''featured_images'', ''featured_images''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_external'' \(''image_external'', ''image_external''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_internal'' \(''image_internal'', ''image_internal''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_layouts'' \(''image_layouts'', ''image_layouts''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''property_status'' \(''property_status'', ''property_status''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''similar_properties'' \(''similar_properties'', ''similar_properties''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/ar/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''cookies'' \(''cookies'', ''cookies''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/main.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''services'' \(''services'', ''services''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/main.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_external'' \(''image_external'', ''image_external''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_internal'' \(''image_internal'', ''image_internal''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''image_layouts'' \(''image_layouts'', ''image_layouts''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''property_status'' \(''property_status'', ''property_status''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/properties.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''similar_properties'' \(''similar_properties'', ''similar_properties''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Frontend/Resources/lang/en/properties.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotification\:\:\$SmartTranslation\.$#'
+			identifier: property.notFound
+			count: 5
+			path: Modules/Notification/Entities/FirebaseNotification.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotification\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Notification/Entities/FirebaseNotification.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotification\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotification.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$Data\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Notification/Entities/FirebaseNotification.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$created_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotification.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$Data\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$ToTokens\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''Data'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''FromUser'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''Notification'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''ToTokens'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''User'' is not found in Modules\\Notification\\Entities\\FirebaseToken model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Relation ''roles'' is not found in Modules\\Notification\\Entities\\FirebaseToken model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Entities/FirebaseNotificationReceiver.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:withDisabled\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Notification/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getDisabledAtColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: Modules/Notification/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getQualifiedDisabledAtColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: Modules/Notification/Entities/Scopes/Disabable.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$from_user_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$group\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$notification_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$to_user_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Notification\\Entities\\FirebaseNotificationReceiver\:\:\$triggered_by\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Relation ''Data'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Relation ''FromUser'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Relation ''Notification'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Undefined variable\: \$e$#'
+			identifier: variable.undefined
+			count: 2
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^Variable \$BASE_ACTIONS in empty\(\) always exists and is always falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: Modules/Notification/Http/Controllers/NotificationController.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$notification$#'
+			identifier: parameter.notFound
+			count: 1
+			path: Modules/Notification/Policies/NotificationPolicy.php
+
+		-
+			message: '#^Access to property \$from_user_id on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Access to property \$notification_id on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Access to property \$status on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Access to property \$to_user_id on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Access to property \$triggered_by on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 2
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Call to method Data\(\) on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Call to method save\(\) on an unknown class Modules\\Notification\\Providers\\FirebaseNotificationReciver\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Instantiated class Modules\\Notification\\Providers\\FirebaseNotificationReciver not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Notification/Providers/NotificationServiceProvider.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''no_new_notifications'' \(''no_new_notifications'', ''no_new_notifications''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Notification/Resources/lang/ar/strings.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''notifications'' \(''notifications'', ''notifications''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Notification/Resources/lang/ar/strings.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''no_new_notifications'' \(''no_new_notifications'', ''no_new_notifications''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Notification/Resources/lang/en/strings.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''notifications'' \(''notifications'', ''notifications''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: Modules/Notification/Resources/lang/en/strings.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$verification_code\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$icon\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\AbilityGroup\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$color\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$title\:ar\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$title\:en\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Function factory not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: Modules/Permissions/Database/Seeders/PermissionsDatabaseSeeder.php
+
+		-
+			message: '#^Call to method define\(\) on an unknown class Illuminate\\Database\\Eloquent\\Factory\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Permissions/Database/factories/UserFactory.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$factory contains unknown class Illuminate\\Database\\Eloquent\\Factory\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Modules/Permissions/Database/factories/UserFactory.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Ability\:\:\$group\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Entities/Ability.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Anonymous function has an unused use \$request\.$#'
+			identifier: closure.unusedUse
+			count: 6
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:manageableRoles\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Relation ''abilities'' is not found in Modules\\Permissions\\Entities\\AbilityGroup model\.$#'
+			identifier: larastan.relationExistence
+			count: 4
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Relation ''group'' is not found in Modules\\Permissions\\Entities\\Ability model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Relation ''manageableRoles'' is not found in Modules\\Permissions\\Entities\\Role model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Relation ''roles'' is not found in Modules\\Permissions\\Entities\\Role model\.$#'
+			identifier: larastan.relationExistence
+			count: 1
+			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 3
+			path: Modules/Permissions/Policies/RolePolicy.php
+
+		-
+			message: '#^Access to an undefined property Modules\\Permissions\\Entities\\Role\:\:\$roles\.$#'
+			identifier: property.notFound
+			count: 4
+			path: Modules/Permissions/Policies/RolePolicy.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$role$#'
+			identifier: parameter.notFound
+			count: 2
+			path: Modules/Permissions/Policies/RolePolicy.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 1
+			path: Modules/Permissions/Providers/BouncerServiceProvider.php
+
+		-
+			message: '#^Call to an undefined static method App\\User\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Console/Commands/OffboardVendor.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Console/Commands/SetUserPassword.php
+
+		-
+			message: '#^Class Spatie\\Permission\\Exceptions\\UnauthorizedException not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Exceptions/Handler.php
+
+		-
+			message: '#^Result of method Illuminate\\Foundation\\Exceptions\\Handler\:\:report\(\) \(void\) is used\.$#'
+			identifier: staticMethod.void
+			count: 1
+			path: app/Exceptions/Handler.php
+
+		-
+			message: '#^Class Spatie\\Permission\\Middlewares\\PermissionMiddleware not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Kernel.php
+
+		-
+			message: '#^Class Spatie\\Permission\\Middlewares\\RoleMiddleware not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Kernel.php
+
+		-
+			message: '#^Class Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Http/Kernel.php
+
+		-
+			message: '#^Method App\\Http\\Middleware\\Authenticate\:\:redirectTo\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: app/Http/Middleware/Authenticate.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$deleted_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Middleware/EnsureStaff.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$disabled_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Middleware/EnsureStaff.php
+
+		-
+			message: '#^Call to an undefined static method App\\User\:\:withDisabled\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Http/Middleware/EnsureStaff.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$account_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Middleware/ScopeBouncer.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$created_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$deleted_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$image\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$online\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$updated_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property App\\User\:\:\$username\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/User.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:translateOrFirst\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Class Modules\\Cms\\Entities\\Traits\\Attachment not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/User.php
+
+		-
+			message: '#^Class Modules\\Cms\\Entities\\Traits\\City not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/User.php
