@@ -61,17 +61,23 @@ for worker in /service-worker.js /firebase-messaging-sw.js; do
   body="$(curl -s "$BASE$worker")"
   case "$body" in
     *binaa-prod*)
-      # The CDN may be caching a stale copy of the file LiteSpeed serves from
-      # disk; a cache-buster query string bypasses it and hits the origin.
-      body2="$(curl -s "$BASE$worker?v=$RANDOM")"
-      case "$body2" in
-        *"registration.unregister()"*)
-          fail "$worker (CDN stale: origin copy is new, purge the Hostinger CDN cache)" ;;
-        *binaa-prod*)
-          fail "$worker still has the vendor Firebase config (CDN may be serving a stale copy; the cache-busted request is stale too, so the origin file itself is still old)" ;;
-        *)
-          fail "$worker still has the vendor Firebase config (CDN may be serving a stale copy; cache-busted request returned unexpected content)" ;;
-      esac
+      # A CDN may ignore query strings in its cache key, so a cache-busted
+      # request does not prove whether the origin file itself is stale.
+      # Check the origin file directly over ssh (read-only) instead.
+      if [ -n "${ROUTES_FILE:-}" ]; then
+        echo "skip  $worker origin check (ROUTES_FILE set, no ssh)"
+        fail "$worker still has the vendor Firebase config (origin not checked; ROUTES_FILE set)"
+      else
+        origin_count="$(ssh -n "$REMOTE" "grep -c binaa-prod $APP/public$worker" 2>/dev/null)"
+        case "$origin_count" in
+          0)
+            fail "$worker (CDN stale: origin copy is new, purge the Hostinger CDN cache)" ;;
+          ''|*[!0-9]*)
+            fail "$worker vendor Firebase config detected via the CDN, but the origin check failed (ssh/grep did not return a count)" ;;
+          *)
+            fail "$worker (origin copy still has the vendor Firebase config — the deploy did not update it)" ;;
+        esac
+      fi
       ;;
     *"registration.unregister()"*) pass "$worker unregisters itself" ;;
     *) fail "$worker unexpected content" ;;
