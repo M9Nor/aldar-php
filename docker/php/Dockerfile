@@ -17,6 +17,6 @@ RUN a2enconf aldar
 
 COPY php.ini /usr/local/etc/php/conf.d/zz-aldar.ini
 
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.10.3 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html

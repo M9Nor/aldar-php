@@ -4,7 +4,6 @@ namespace Modules\Cms\Classes;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
-use League\Glide\Responses\LaravelResponseFactory;
 use League\Glide\ServerFactory;
 use League\Glide\Server;
 

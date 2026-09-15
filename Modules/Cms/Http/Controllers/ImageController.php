@@ -9,7 +9,6 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use League\Flysystem\FilesystemException;
 use League\Flysystem\WhitespacePathNormalizer;
-use League\Glide\Responses\LaravelResponseFactory;
 use League\Glide\ServerFactory;
 use League\Glide\Server;
 
