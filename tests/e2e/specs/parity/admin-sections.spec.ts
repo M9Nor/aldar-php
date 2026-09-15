@@ -58,6 +58,13 @@ for (const section of ADMIN_SECTIONS) {
         if (pageJson.data.length === 0) break;
         everyRow.push(...pageJson.data);
       }
+      // An OFFSET walk over an unordered query can repeat or skip rows if the order shifts between pages; fail loudly rather than record a wrong union.
+      if (everyRow.every(row => 'id' in row)) {
+        const distinct = new Set(everyRow.map(row => String(row.id))).size;
+        if (distinct !== json.recordsFiltered) {
+          throw new Error(`Unstable DataTables walk for ${section.name}: ${distinct} distinct ids over ${everyRow.length} rows, expected ${json.recordsFiltered}`);
+        }
+      }
 
       shape.columns = (await page.locator('#datatable thead th').allInnerTexts()).map(text => text.replace(/\s+/g, ' ').trim());
       shape.table = {
