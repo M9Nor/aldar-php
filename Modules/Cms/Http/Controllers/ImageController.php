@@ -7,7 +7,8 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
-use League\Flysystem\Util;
+use League\Flysystem\FilesystemException;
+use League\Flysystem\WhitespacePathNormalizer;
 use League\Glide\Responses\LaravelResponseFactory;
 use League\Glide\ServerFactory;
 use League\Glide\Server;
@@ -82,8 +83,9 @@ class ImageController extends Controller
         }
 
         try {
-            $canonical = Util::normalizePath($path) === $path;
-        } catch (\LogicException $e) {
+            $canonical = (new WhitespacePathNormalizer())->normalizePath($path) === $path;
+        } catch (FilesystemException $e) {
+            // Flysystem 3 throws PathTraversalDetected / CorruptedPathDetected where Flysystem 1 threw LogicException.
             $canonical = false;
         }
 
