@@ -261,9 +261,15 @@ The release-based structure does not exist yet (Phase 3), so the hotfix patches 
 | S8 | `EnsureStaff` answers JSON callers with a plain-text 403. Return a JSON error body when the request expects JSON. |
 | S9 | `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config. If no public page's JavaScript reads it, put it behind `staff`; otherwise document that it is public by design. (Found by the Phase 0 permissions matrix.) |
 | S10 | State-changing admin GET routes: `admin/projects/update_prices` rewrites prices, `admin/categories/asdwadwadwdaw` creates categories and filter pages, and `admin/users/login_as/{model}` switches the session. Move them to POST with CSRF, as in S7. Remove the `asdwadwadwdaw` seeding route if nothing in the admin UI calls it. |
-| S11 | Eight admin GET routes answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show`, `opportunity/show`, and `projects/data` without DataTables parameters. Answer 404 or a validation error instead, without changing any working flow. |
-| S12 | The admin lead lists (`admin/{projects,opportunity}/data_requests`) fail with a DataTables "Malformed UTF-8" error on any page that contains a spam submission with invalid bytes, so staff cannot page past it. Encode the response with invalid-UTF-8 substitution so every lead stays reachable. Business-critical: leads. |
+| S11 | Eight admin GET routes answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show`, `opportunity/show`, and `projects/data` without DataTables parameters. Answer 404 or a validation error instead, without changing any working flow. On Laravel 13, `projects/data` already answers 200 (Phase 1, P1-R19), which leaves seven. |
+| S12 | The admin lead lists (`admin/{projects,opportunity}/data_requests`) fail with a DataTables "Malformed UTF-8" error on any page that contains a spam submission with invalid bytes, so staff cannot page past it. Encode the response with invalid-UTF-8 substitution so every lead stays reachable. Business-critical: leads. Still true on Laravel 13: 4 of 74 pages per list fail (Phase 1). |
 | S13 | Permissions tests for writes. The Phase 0 matrix covers GET only, and nine rows carry no role signal (404 or "302 back" for both roles). Add ADMIN POST probes that change nothing, such as destroy on a nonexistent id, and use ids that answer 200 for SUPERADMIN. |
+| S14 | A hard-coded currconv API key in `Modules/Frontend/Http/Controllers/FrontendController.php` is in git history. Read it from config/`.env` (`services.currconv.key`) instead; the owner rotates the key, and the old value joins the N8 history-rewrite scope. (Found in Phase 1, P1-R40.) |
+| S15 | `app/Providers/AppServiceProvider.php` turns on `app.debug` and Debugbar for one hard-coded IP address. Remove it: it leaks debug output to whoever holds that address, and it answers 500 for that address once dev packages are absent (`--no-dev`). (Found in Phase 1, P1-R51.) |
+| S16 | Delete the dead contact-form scripts `{process,quote}-contact.php` under `Modules/Frontend/Resources/assets/form/` and their `public/modules` copies. They are the H9 mail header-injection scripts: Apache denies PHP under `/modules`, but `module:publish` would copy the lint-fixed, parseable sources back. Deleting PHP files is not a change to compiled CSS/JS. (Found in Phase 1, P1-R49.) |
+| S17 | Flysystem 3 returns `false` instead of throwing when a write fails, so uploads such as the TinyMCE image upload report success on a failed write. Make failed writes raise, or check the return value at each call site. (Found in Phase 1, P1-R51.) |
+| S18 | Guard the Laravel 7 behaviour restorations (paginator window, DataTables escaping, Glide encoder quality, laravel/ui overrides) so a package update inside the composer constraints fails loudly instead of silently dropping a restoration: `#[\Override]` on class-method overrides, and a PHPUnit reflection test for trait-method overrides, where `#[\Override]` would be a fatal error. (Found in Phase 1, P1-R51.) |
+| S19 | Make the `specs/security/images.spec.ts` raw-socket test "an empty segment returns 404 and caches nothing" deterministic. It failed once with a socket hang-up. A flaky security gate erodes trust in the suite. (Found in Phase 1, P1-R51.) |
 
 Each item gets a test added to the suite.
 
@@ -305,6 +311,21 @@ domains/aldar-emlak.com/
 
 - Hostinger serves a symlinked `public_html`. If not, fall back to a `public_html` holding only the front controller and assets.
 - The PHP version can be selected per release with an `.htaccess` handler, so PHP 7.4 → 8.4 switches atomically with `current`. If not, switch the PHP version in hPanel at cutover.
+
+**Found in Phase 1 (final review, P1-R51). Resolve on staging before the cutover:**
+
+- **Route caching.** `route:cache` bakes in the CLI locale prefix from `LaravelLocalization::setLocale()`, which is null, so the localized `/en` and `/ar` routes would 404. Use mcamara's `route:trans:cache` with `LoadsTranslatedCachedRoutes`, or skip route caching.
+- **Config caching.** Calls to `env()` outside `config/` return null once `config:cache` runs:
+  - `ENABLE_SUPERPOWERS` in `Modules/Permissions/Providers/BouncerServiceProvider.php`;
+  - 34 `env('APP_DEBUG')` calls in 16 controllers;
+  - `env('APP_ENV')` in `Modules/Cms/Resources/views/layouts/master.blade.php`.
+
+  Move them to config first, or leave config uncached.
+- **Hostinger preflight for `/opt/alt/php84`.**
+  - PHP 8.4.1 or later (`vendor/composer/platform_check.php`).
+  - Extensions: `fileinfo`, `gd` with JPEG/WebP/FreeType, `intl`, `mbstring`, `exif`, `zip`, `bcmath`, `pdo_mysql`.
+  - A writable `bootstrap/cache`: nwidart 13 writes `modules.php` there.
+- **SMTP.** Laravel 13 derives the SMTP scheme from the port and ignores `mail.encryption`. Send a real mail from staging before the cutover.
 
 **Production cutover:**
 
