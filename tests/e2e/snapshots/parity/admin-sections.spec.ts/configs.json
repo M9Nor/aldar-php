@@ -1,0 +1,55 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "cms::cruds.config.label.label",
+    "cms::cruds.config.key.label",
+    "cms::cruds.config.val.label",
+    "cms::cruds.config.languages",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/configs/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 21,
+    "rows": 21,
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "created_at",
+      "deleted_at",
+      "description",
+      "disabled_at",
+      "has_additional_info",
+      "help",
+      "icon",
+      "id",
+      "image",
+      "input_type",
+      "key",
+      "label",
+      "languages",
+      "new_title",
+      "placeholder",
+      "sort_order",
+      "title",
+      "translated_name",
+      "translations",
+      "updated_at",
+      "url_link",
+      "val",
+      "validations"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "columns": [
+    "backend::requests.datatable.id",
+    "Advertiser name",
+    "E-mail",
+    "Phone number",
+    "Property brief",
+    "backend::requests.datatable.date",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/projects/data_properties",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "rowKeys": [],
+    "actions": []
+  }
+}

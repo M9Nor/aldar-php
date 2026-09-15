@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "permissions::roles.datatable.title",
+    "permissions::roles.datatable.description",
+    "permissions::roles.datatable.abilities_count",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/roles/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 2,
+    "rows": 2,
+    "rowKeys": [
+      "DT_RowIndex",
+      "abilities",
+      "actions",
+      "color",
+      "created_at",
+      "deleted_at",
+      "description",
+      "id",
+      "level",
+      "name",
+      "permissions",
+      "scope",
+      "title",
+      "translations",
+      "updated_at"
+    ],
+    "actions": [
+      "delete",
+      "edit"
+    ]
+  }
+}

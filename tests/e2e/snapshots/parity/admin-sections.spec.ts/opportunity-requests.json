@@ -1,0 +1,49 @@
+{
+  "status": 200,
+  "columns": [
+    "backend::requests.datatable.id",
+    "backend::requests.datatable.request",
+    "backend::requests.datatable.email",
+    "backend::requests.datatable.phone",
+    "backend::requests.datatable.breef",
+    "backend::requests.datatable.date",
+    "backend::requests.datatable.link"
+  ],
+  "table": {
+    "endpoint": "/en/admin/projects/data_requests",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "rowKeys": [
+      "DT_RowIndex",
+      "actions",
+      "breef",
+      "budget",
+      "created_at",
+      "date",
+      "deleted_at",
+      "description",
+      "disabled_at",
+      "email",
+      "id",
+      "language",
+      "link",
+      "nationality",
+      "native_language",
+      "phone",
+      "residency_address",
+      "sender",
+      "time_from",
+      "time_to",
+      "type_of_residency",
+      "type_of_visit",
+      "updated_at"
+    ],
+    "actions": []
+  }
+}

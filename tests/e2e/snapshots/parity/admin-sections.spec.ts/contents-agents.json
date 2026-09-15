@@ -1,0 +1,59 @@
+{
+  "status": 200,
+  "columns": [
+    "permissions::roles.datatable.id",
+    "backend::cruds.contents.agents.singular",
+    "cms::cruds.contents.languages",
+    "cms::cruds.contents.sort_order.label",
+    "permissions::roles.datatable.actions"
+  ],
+  "table": {
+    "endpoint": "/en/admin/contents/agents/data",
+    "method": "GET",
+    "status": 200,
+    "keys": [
+      "data",
+      "draw",
+      "recordsFiltered",
+      "recordsTotal"
+    ],
+    "recordsTotal": 2,
+    "rows": 2,
+    "rowKeys": [
+      "DT_RowIndex",
+      "about",
+      "actions",
+      "brief",
+      "created_at",
+      "currency_code",
+      "currency_icon",
+      "currency_symbol",
+      "currency_value",
+      "deleted_at",
+      "description",
+      "disabled_at",
+      "id",
+      "image",
+      "keywords",
+      "languages",
+      "likes",
+      "link",
+      "link_trans",
+      "new_title",
+      "seo_description",
+      "slug",
+      "sort_order",
+      "title",
+      "translated_name",
+      "translations",
+      "type",
+      "updated_at",
+      "views"
+    ],
+    "actions": [
+      "delete",
+      "disable",
+      "edit"
+    ]
+  }
+}
