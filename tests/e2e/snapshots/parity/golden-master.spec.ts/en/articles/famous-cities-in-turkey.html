@@ -327,7 +327,7 @@ Contact us
 <div class="header-widget">
 <div class="dropdown dropdown-currencies hidden-sm-down">
 <form action="{origin}/en/set_currency" id="currency-form" method="post" enctype="multipart/form-data">
-<input type="hidden" name="_token" value="{csrf}">
+<input type="hidden" name="_token" value="{csrf}" autocomplete="off">
 <input name="currency" type="hidden">
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary search-btn" data-toggle="modal" data-target="#exampleModalLong">
@@ -756,7 +756,7 @@ Leave this field empty
 </label>
 <input type="text" id="aldar-hp-agent" name="aldar_hp" value="" tabindex="-1" autocomplete="off">
 </div>
-<input type="hidden" name="_token" value="{csrf}">
+<input type="hidden" name="_token" value="{csrf}" autocomplete="off">
 <div class="form-group">
 <input class="form-control" onchange="isValid('fullname')" type="text" name="fullname" placeholder="Name *">
 <p class="validate-form-message" id="fullname">
@@ -1434,7 +1434,7 @@ Leave this field empty
 </label>
 <input type="text" id="aldar-hp-footer" name="aldar_hp" value="" tabindex="-1" autocomplete="off">
 </div>
-<input type="hidden" name="_token" value="{csrf}">
+<input type="hidden" name="_token" value="{csrf}" autocomplete="off">
 <label for="subscribeEmail" class="error">
 </label>
 <div class="email">
