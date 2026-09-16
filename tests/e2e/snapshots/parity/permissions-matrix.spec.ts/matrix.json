@@ -26,8 +26,8 @@
   },
   "/en/admin/users/show": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "404",
+    "parity-superadmin": "404"
   },
   "/en/admin/users/myprofile": {
     "anonymous": "302 login",
@@ -46,8 +46,8 @@
   },
   "/en/admin/users/identity/validate_?name=username&keyword=parity-probe": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "302 back",
+    "parity-superadmin": "302 back"
   },
   "/en/admin/users/get-user-select2": {
     "anonymous": "302 login",
@@ -581,8 +581,8 @@
   },
   "/en/admin/tags/list": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "302 back",
+    "parity-superadmin": "302 back"
   },
   "/en/admin/tags": {
     "anonymous": "302 login",
@@ -711,8 +711,8 @@
   },
   "/en/admin/projects/show": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "404",
+    "parity-superadmin": "404"
   },
   "/en/admin/projects/requests": {
     "anonymous": "302 login",
@@ -771,8 +771,8 @@
   },
   "/en/admin/opportunity/show": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "404",
+    "parity-superadmin": "404"
   },
   "/en/admin/opportunity/requests": {
     "anonymous": "302 login",
@@ -826,8 +826,8 @@
   },
   "/en/admin/roles/show": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "404",
+    "parity-superadmin": "404"
   },
   "/en/admin/roles/3/edit": {
     "anonymous": "302 login",
@@ -836,8 +836,8 @@
   },
   "/en/admin/notification": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "404",
+    "parity-superadmin": "404"
   },
   "/en/admin/notification/config": {
     "anonymous": "302 login",
