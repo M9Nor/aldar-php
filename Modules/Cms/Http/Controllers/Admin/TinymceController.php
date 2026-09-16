@@ -59,7 +59,19 @@ class TinymceController extends CmsController
         }
 
         $filename = Str::random(40) . '.' . self::ALLOWED_MIME_EXTENSIONS[$mime];
-        \Storage::disk('graph')->put( 'tinymce/' . $filename, $binary );
+        try {
+            \Storage::disk('graph')->put( 'tinymce/' . $filename, $binary );
+        } catch (\League\Flysystem\FilesystemException $e) {
+            // The graph disk throws on a failed write (S17): never report success for a file that is not there.
+            report($e);
+
+            return [
+                'success' => false,
+                'type'    => 'danger',
+                'strong'  => __('cms::app.crud_messages.upload_error.title'),
+                'msg'     => __('cms::app.crud_messages.upload_error.description'),
+            ];
+        }
 
         return [
             'success'  => true,

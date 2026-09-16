@@ -20,6 +20,8 @@ class CmsServiceProvider extends ServiceProvider
         $this->app['config']['filesystems.disks.graph'] = [
             'driver' => 'local',
             'root' => public_path('graph/uploads/original'),
+            // A failed write throws instead of returning false (S17).
+            'throw' => true,
         ];
 
         $this->registerTranslations();

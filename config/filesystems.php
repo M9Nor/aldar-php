@@ -53,6 +53,8 @@ return [
             'root' => storage_path('app/public/uploads'),
             'url' => env('APP_URL').'/storage/uploads',
             'visibility' => 'public',
+            // Flysystem 3 returns false on a failed write unless the disk throws (S17).
+            'throw' => true,
         ],
 
         's3' => [
