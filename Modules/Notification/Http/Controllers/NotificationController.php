@@ -67,6 +67,11 @@ class NotificationController extends AdminBaseController
         // Public endpoint: count every attempt per client IP and refuse with a JSON 429 over the limit (S6).
         // Not the throttle middleware: app/Exceptions/Handler.php turns its ThrottleRequestsException,
         // like every HttpException, into a redirect to the login page.
+        // Carries H5's TrustProxies caveat, same as the sibling contact-form limiter: TrustProxies.php
+        // leaves $proxies = null, so behind Hostinger's CDN $request->ip() is REMOTE_ADDR, not the
+        // visitor's address, and every visitor shares one quota until Phase 3 probes how the client IP
+        // reaches PHP and sets $proxies deliberately (a careless '*' would make X-Forwarded-For spoofable
+        // and the limit bypassable instead).
         $throttleKey = 'notification-web-token:' . $request->ip();
         if (RateLimiter::tooManyAttempts($throttleKey, self::WEB_TOKEN_MAX_ATTEMPTS)) {
             return response()->json([

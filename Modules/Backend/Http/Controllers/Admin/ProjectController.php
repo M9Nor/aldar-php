@@ -2108,7 +2108,7 @@ class ProjectController extends CmsController
             return $actions;
         });
         $rawColumns = [];
-        $rawColumns[] = 'breef';
+        // This list has no 'breef' column: data_requests is the endpoint that renders the visitor's message (S5).
         $rawColumns[] = 'actions';
         return $datatables
         ->rawColumns($rawColumns)

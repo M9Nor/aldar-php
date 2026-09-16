@@ -122,6 +122,17 @@ test('only holders of the leads page ability read leads through the data endpoin
     for (const url of urls) {
       expect(await outcome(superadmin, 'GET', url), `parity-superadmin ${url}`).toBe('200');
     }
+    // A 200 alone is not enough: yajra can answer HTTP 200 with a JSON "error" key when a DataTables column
+    // callback throws in debug mode, so this control would still pass on a broken endpoint. Check the
+    // DataTables endpoints' bodies too, except opportunity/data_properties: property_form rows have no slug
+    // for its link column, so that one genuinely errors today (P2-R19, reported and not fixed by this
+    // wave). Asserting it clean would fail on that known, already-ruled bug instead of on an S21 regression,
+    // so it keeps the plain 200 check above and is excluded here.
+    for (const url of urls.filter(u => /\/data_(requests|properties)\?/.test(u) && !u.includes('/opportunity/data_properties'))) {
+      const response = await superadmin.get(url, { headers: { ...AJAX_HEADERS, Referer: REFERER } });
+      const json = JSON.parse(await response.text()) as { error?: string };
+      expect(json.error, `parity-superadmin ${url} body`).toBeUndefined();
+    }
     for (const url of urls) {
       expect(await outcome(admin, 'GET', url), `parity-admin ${url}`).toBe('302 back');
     }
