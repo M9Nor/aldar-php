@@ -20,6 +20,7 @@ The baselines depend on local `.env` settings that are not in `.env.example`. A 
 - `CACHE_DRIVER=file`. The `cache:clear` limiter reset and the file-cache warm-up both rely on the file driver. Laravel 11+ renamed this setting `CACHE_STORE`; a config merge that only renames the key without preserving the `file` value changes caching behaviour.
 - `APP_URL=http://localhost:8080`. `.env.example` has `http://localhost` (no port).
 - `SESSION_DRIVER=file`.
+- `APP_DEBUG=true`. Since Phase 2 (S2), `config/app.php` defaults debug to off when the key is missing, but the baselines were recorded with debug on: yajra answers a DataTables error as HTTP 200 JSON only in debug mode, for example. Check it without printing `.env`: `docker compose exec -T app php artisan about --only=environment | grep -i debug` must show `ENABLED`.
 - The Docker services must stay named `app` and `db`: `scripts/e2e/db-reset.sh` execs into both by name. The `app` image needs the PHP CLI and the GD extension: `support/fixtures.ts`'s `pngFixture`/`jpegFixture` (used by `content-lifecycle.spec.ts` and the security attachment specs) shell into it to render real images with GD.
 
 No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever printed by the suite.

@@ -171,6 +171,7 @@ return [
     |
     */
 
+    // Production sets SESSION_SECURE_COOKIE=true (Phase 3 checklist); the local http stack keeps false (S2).
     'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
