@@ -1581,6 +1581,8 @@ class ProjectController extends CmsController
     public function deletePayment(Request $request)
     {
         $this->data['model'] = PayingMethod::findOrFail($request->payment_id);
+        // The ability of the edit page this delete button sits on (S21).
+        $this->authorize('update', CrudModel::withDisabled()->findOrFail($this->data['model']->project_id));
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();
@@ -1603,6 +1605,8 @@ class ProjectController extends CmsController
     public function deletePrice(Request $request)
     {
         $this->data['model'] = Price::findOrFail($request->price_id);
+        // The ability of the edit page this delete button sits on (S21).
+        $this->authorize('update', CrudModel::withDisabled()->findOrFail($this->data['model']->project_id));
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();
@@ -1953,6 +1957,8 @@ class ProjectController extends CmsController
     }
     public function data_requests(Request $request)
     {
+        // Lead data is for holders of the leads page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $list = ContactUS::query();
         $datatables = DataTables::of($list);
         $datatables
@@ -2012,6 +2018,8 @@ class ProjectController extends CmsController
     }
     public function request_summary(Request $request)
     {
+        // Lead data is for holders of the leads page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model'] = ContactUS::findOrFail($request->model);
 
         $this->data['summary'] = view('backend::admin.summary', $this->data)->render();
@@ -2030,6 +2038,8 @@ class ProjectController extends CmsController
     }
     public function data_properties(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $list = PropertyForm::query();
         $datatables = DataTables::of($list);
         $datatables
@@ -2093,6 +2103,8 @@ class ProjectController extends CmsController
     }
     public function properties_summary(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model'] = PropertyForm::with('attachments')->findOrFail($request->model);
 
         $this->data['summary'] = view('backend::admin.properties.summary', $this->data)->render();
@@ -2105,6 +2117,8 @@ class ProjectController extends CmsController
     }
     public function showDetails(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model']    = PropertyForm::with('attachments')->findOrFail($request->model);
 
         $this->data['filters'] = Category::select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])

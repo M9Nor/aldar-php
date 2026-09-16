@@ -238,6 +238,8 @@ class TagController extends CmsController
     }
     public function save(Request $request)
     {
+        // Saving a keyword creates a tag: the tag create page's ability, before validation (S21).
+        $this->authorize('create', CrudModel::class);
         $this->attributeNames = [
             'attachment' => __('cms::areas.fields.text.label'),
         ];

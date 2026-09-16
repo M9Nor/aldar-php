@@ -124,6 +124,8 @@ class NotificationController extends AdminBaseController
 
     public function getList(Request $request)
     {
+        // The notifications ability (S21).
+        $this->authorize('view', FirebaseNotification::class);
         $User     = auth()->user();
         $Receivers = FirebaseNotificationReceiver::where(function($query)use($User){
             $query->where('to_user_id', $User->id);
@@ -165,6 +167,8 @@ class NotificationController extends AdminBaseController
 
     public function postIndex(Request $request)
     {
+        // The notifications ability (S21).
+        $this->authorize('view', FirebaseNotification::class);
         $this->data['Roles'] = Role::with('translations')->get();
 
         $this->data['DataTable_Q'] = FirebaseNotification::select([

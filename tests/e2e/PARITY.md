@@ -111,6 +111,7 @@ scripts/e2e/db-reset.sh
 Regenerating the inventory (above) only replaces `url-inventory.json` and re-records the golden master. It does not touch these other hardcoded ids and slugs, which name specific rows in `_db-backup/aldar-db-20260914-1704.sql.gz` and will start naming the wrong thing, or a now-missing thing, if the dump changes:
 
 - `parity/admin-urls.ts`: model ids `31` (a user), `251` (an article), `318` (a contract category), `11` (a landing page), `145` (a tag), `98` (an area), `12` (a city), `2` (a country), `49` (a config), `133` (a project), `320` (an opportunity), `3` (a role).
+- `specs/security/admin-authorization.spec.ts`: project id `133`, opportunity id `320`, landing page id `11` and article id `251`. The spec attaches fixture payments, prices, a timeline and an external attachment to them, and deletes them again.
 - `specs/parity/behaviour.spec.ts`: city id `18` (Antalya) and its area `count: 57`; payment category ids `518`/`519`.
 - `specs/parity/visual.spec.ts`: the `rose-marine-butik` property slug, the `istanbul` city slug, and the `realestate-index` article slug.
 - `specs/parity/content-lifecycle.spec.ts`: the "Turkish Citizenship" category picked in the article-create select2.

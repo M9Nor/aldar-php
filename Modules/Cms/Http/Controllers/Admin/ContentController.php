@@ -930,8 +930,9 @@ class ContentController extends CmsController
     public function deleteAttachment(Request $request)
     {
         $this->data['model'] = ExternalAttachments::findOrFail($request->attachment_id);
-        // Check if the authenticated user is allowed to proceed farther.
-        // $this->authorize('enable', [$this->data['model'],$this->data['type']]);
+        // The content edit page's ability, for the attachment's own content and type (S21).
+        $content = CrudModel::withDisabled()->findOrFail($this->data['model']->attachable_id);
+        $this->authorize('update', [$content, $content->type]);
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();
