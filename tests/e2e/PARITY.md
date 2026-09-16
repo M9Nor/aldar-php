@@ -72,12 +72,13 @@ test ! -s storage/logs/deprecations.log && echo 'no deprecations'
 scripts/deploy/probe-release.sh https://staging.aldar-emlak.com
 ```
 
-It sets `PARITY_ALLOWED_HOST` to the URL's own host, so the run is an explicit opt-in for that host and no other, and `SKIP_DB_RESET=1`, since a remote host's database is never reset from here. It runs exactly these specs, chosen because none of them writes, resets a fixture, or signs in as an admin:
+It sets `PARITY_ALLOWED_HOST` to the URL's own host, so the run is an explicit opt-in for that host and no other, and `SKIP_DB_RESET=1`, since a remote host's database is never reset from here. It runs exactly these specs, chosen because none of them writes, resets a fixture, signs in as an admin, calls `requireLocal`, or shells into the app container via `support/docker`:
 
 - `specs/parity/golden-master.spec.ts`
 - `specs/security/headers.spec.ts`
 - `specs/security/module-scripts.spec.ts`
-- `specs/security/images.spec.ts`
+
+`specs/security/images.spec.ts` is deliberately not in this list even though it never writes: some of its tests call `requireLocal` and exec into the app container to read the Glide cache directory, so they would fail (not skip) against a real remote host. `scripts/deploy/verify-release.sh` (Task 6) covers the image checks read-only instead.
 
 Production hostnames (`aldar-emlak.com`, `www.aldar-emlak.com`) are refused outright by `global-setup.ts` before anything else runs, opt-in or not — the probe script cannot be pointed at them. Every other spec that writes data or signs in with the local parity accounts still calls `requireLocal` and refuses to run against any non-local `BASE_URL`, `PARITY_ALLOWED_HOST` included; that guard is unchanged by the remote probe.
 
