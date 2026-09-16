@@ -9,6 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 use Modules\Cms\Http\Controllers\CmsController;
 use Modules\Cms\Entities\UserType;
 use Modules\Cms\Classes\ResponseHandler;
+use Modules\Cms\Classes\PageSize;
 use Illuminate\Support\Str;
 use Modules\Cms\Entities\Category as CrudModel;
 use Modules\Cms\Entities\Content;
@@ -425,7 +426,7 @@ class CategoryController extends CmsController
                 $q->whereTranslationLike('title', "%{$term}%");
             })->orWhere('id',$term);
 
-        $list = $list->paginate($request->items_per_page);
+        $list = $list->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);

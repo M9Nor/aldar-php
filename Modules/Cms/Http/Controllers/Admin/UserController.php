@@ -11,6 +11,7 @@ use Modules\Cms\Http\Controllers\CmsController;
 use Modules\Permissions\Entities\Role;
 use Modules\Cms\Entities\UserType;
 use Modules\Cms\Classes\ResponseHandler;
+use Modules\Cms\Classes\PageSize;
 use Modules\Cms\Rules\Username;
 use App\User as CrudModel;
 use Validator;
@@ -249,7 +250,7 @@ class UserController extends CmsController
             $q->where('username','LIKE', "%{$term}%");
         })->orWhere('id',$term);
 
-        $list = $list->paginate($request->items_per_page);
+        $list = $list->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);

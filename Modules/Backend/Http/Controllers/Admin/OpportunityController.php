@@ -1891,7 +1891,8 @@ class OpportunityController extends CmsController
         // Lead data is for holders of the leads page ability, checked before anything loads (S21).
         $this->authorize('requests', Tag::class);
         $list = ContactUS::query();
-        $datatables = DataTables::of($list);
+        // The leads list offers "All" (length=-1): it stays uncapped (S1); only tags.requests holders reach it (S21).
+        $datatables = DataTables::of($list)->ignoreMaxLength();
         $datatables
         ->addIndexColumn()
         ->filter(function($q) use ($request) {
@@ -1970,7 +1971,8 @@ class OpportunityController extends CmsController
         // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
         $this->authorize('requests', Tag::class);
         $list = PropertyForm::query();
-        $datatables = DataTables::of($list);
+        // The property-forms list offers "All" (length=-1): it stays uncapped (S1); only tags.requests holders reach it (S21).
+        $datatables = DataTables::of($list)->ignoreMaxLength();
         $datatables
         ->addIndexColumn()
         ->filter(function($q) use ($request) {
