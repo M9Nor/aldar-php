@@ -10,10 +10,10 @@ use RecursiveIteratorIterator;
  * S2 production readiness, checked in source. The production .env values themselves (APP_DEBUG=false,
  * SESSION_SECURE_COOKIE=true) are Phase 3 work; the code must default safely and run under --no-dev.
  *
- * The session.serialization move to "json" (also part of S2) is NOT covered here: an audit of every
- * session write found a reachable path that flashes an Eloquent model into the session (see the Task 9
- * report), so the controller ruling ("if you find one, stop and report rather than breaking sessions")
- * applies and that part of the change was withheld pending a decision.
+ * The session.serialization move to "json" (Fix round 1, controller ruling P2-R28) followed an audit of
+ * every session write. The one reachable path that flashed an Eloquent model into the session
+ * (ProjectController/OpportunityController::request_summary and ::properties_summary, and
+ * TagController::save) now passes ->toArray() instead of the model instance; see the Task 9 report.
  */
 class ProductionConfigTest extends TestCase
 {
@@ -27,6 +27,14 @@ class ProductionConfigTest extends TestCase
         $source = file_get_contents($this->root() . '/config/app.php');
 
         $this->assertTrue(str_contains($source, "'debug' => env('APP_DEBUG', false),"), 'config/app.php must default app.debug to false');
+    }
+
+    public function test_sessions_are_json_and_the_secure_flag_comes_from_the_environment(): void
+    {
+        $source = file_get_contents($this->root() . '/config/session.php');
+
+        $this->assertTrue(str_contains($source, "'serialization' => 'json',"), 'config/session.php must serialize sessions as JSON');
+        $this->assertTrue(str_contains($source, "'secure' => env('SESSION_SECURE_COOKIE', false),"), 'config/session.php must read SESSION_SECURE_COOKIE');
     }
 
     public function test_application_code_references_no_require_dev_package(): void

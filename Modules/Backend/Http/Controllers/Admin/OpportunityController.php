@@ -1954,13 +1954,16 @@ class OpportunityController extends CmsController
 
         $this->data['summary'] = view('backend::admin.summary', $this->data)->render();
 
+        // Array, not the model instance: a non-AJAX hit on this GET route flashes this payload into the
+        // session via ResponseHandler, and session values must not hold PHP objects (S2). json_encode()
+        // already serialized the model the same way, so the AJAX JSON response is unchanged.
         return new ResponseHandler([
             'success'   => true,
-            'model'     => $this->data['model'],
+            'model'     => $this->data['model']->toArray(),
             'summary'   => $this->data['summary']
         ]);
     }
-    // 
+    //
     public function properties (Request $request)
     {
         $this->authorize('requests', Tag::class);
@@ -2040,9 +2043,13 @@ class OpportunityController extends CmsController
 
         $this->data['summary'] = view('backend::admin.properties.summary', $this->data)->render();
 
+        // Array, not the model instance: a non-AJAX hit on this GET route flashes this payload into the
+        // session via ResponseHandler, and session values must not hold PHP objects (S2). json_encode()
+        // already serialized the model (and its loaded attachments) the same way, so the AJAX JSON
+        // response is unchanged.
         return new ResponseHandler([
             'success'   => true,
-            'model'     => $this->data['model'],
+            'model'     => $this->data['model']->toArray(),
             'summary'   => $this->data['summary']
         ]);
     }

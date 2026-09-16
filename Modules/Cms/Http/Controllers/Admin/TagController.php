@@ -281,12 +281,15 @@ class TagController extends CmsController
             ], 409);
         }
         $this->data['tag']->t_text = $this->data['tag']->translate(request('locale', app()->getLocale()))->text;
+        // Array, not the model instance: 'save' is a POST route reachable outside the Select2 AJAX call,
+        // and session values must not hold PHP objects (S2). attributesToArray() (Translatable's override,
+        // used by both toArray() and json_encode()) makes this byte-identical to the prior AJAX response.
         return new ResponseHandler([
             'success'       => true,
             'type'          => 'success',
             'title'         => __('cms::messages.save_success.title'),
             'description'   => __('cms::messages.save_success.description'),
-            'tag'           => $this->data['tag']
+            'tag'           => $this->data['tag']->toArray()
         ]);
     }
     public function create(Request $request)
