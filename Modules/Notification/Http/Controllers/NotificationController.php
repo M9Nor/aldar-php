@@ -160,9 +160,9 @@ class NotificationController extends AdminBaseController
 
     public function index(Request $request)
     {
-
-        $this->data['roles'] = Role::with('translations')->get();
-        return view('notification::notifications.index', $this->data);
+        // The page extends a view namespace (admin::) that does not exist, so it could only answer 500, and its
+        // menu entry is commented out. 404 instead (S11); the route name stays for notifications/create.blade.php.
+        abort(404);
     }
 
     public function postIndex(Request $request)

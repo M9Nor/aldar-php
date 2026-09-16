@@ -55,6 +55,10 @@ class TagController extends CmsController
     }
     public function list(Request $request)
     {
+        // The taggable widget always sends a locale. Without one, translate() returned null for tags
+        // missing the current locale and the list answered 500 (S11).
+        $request->validate(['locale' => 'required|string']);
+
         $term   = trim((string) $request->q);
         $tags   = CrudModel::with('translations')->when($request->locale, function($query, $locale) {
             $query->whereHas('translations', function($q) use ($locale) {

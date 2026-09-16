@@ -54,13 +54,25 @@ class UserController extends CmsController
         ]);
     }
 
+    /**
+     * No user detail page exists, but the user summary modal links here: 404 instead of 500 (S11).
+     */
+    public function show()
+    {
+        abort(404);
+    }
+
     public function validateIdentity_(Request $request)
     {
+        // The id of the user being edited is required: the unique rules must ignore that user's own username
+        // and email. This used to read an undefined $this->id and answered 500 (S11).
+        $request->validate(['model' => 'required|integer']);
+
         $validator = Validator::make([
             $request->name => $request->keyword
         ], [
-            'username'  => ['nullable', 'min:4', 'max:191', new Username, 'unique:users,username' .$this->id],
-            'email'     => ['nullable', 'max:191', 'email', 'unique:users,email'  .$this->id]
+            'username'  => ['nullable', 'min:4', 'max:191', new Username, 'unique:users,username,' . $request->model],
+            'email'     => ['nullable', 'max:191', 'email', 'unique:users,email,' . $request->model]
         ]);
 
         return new ResponseHandler([

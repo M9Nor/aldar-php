@@ -414,6 +414,14 @@ class OpportunityController extends CmsController
         ->rawColumns($rawColumns)
         ->make(true);
     }
+    /**
+     * The show route exists but no detail page does: 404 instead of 500 (S11).
+     */
+    public function show()
+    {
+        abort(404);
+    }
+
     public function create(Request $request)
     {
         $this->authorize('create', CrudModel::class);
