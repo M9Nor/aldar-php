@@ -23,6 +23,7 @@ class Encoder extends BaseEncoder
      *
      * @return int The resolved quality.
      */
+    #[\Override]
     public function getQuality(): int
     {
         $default = 90;

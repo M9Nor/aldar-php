@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // currconv.com free currency API, used only by the daily `update_currency` command (S14).
+    'currconv' => [
+        'key' => env('CURRCONV_API_KEY'),
+    ],
+
 ];

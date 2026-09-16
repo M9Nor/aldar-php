@@ -876,6 +876,8 @@ class LandingPageController extends CmsController
     public function deleteTimeline(Request $request)
     {
         $this->data['model'] = Timeline::findOrFail($request->timeline_id);
+        // The landing page edit page's ability (S21).
+        $this->authorize('update', CrudModel::withTrashed()->findOrFail($this->data['model']->landing_id));
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();

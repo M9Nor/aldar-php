@@ -30,7 +30,10 @@ class EnsureStaff
             // HttpException (including abort()'s) into a 302 "session expired" redirect, which
             // would let a disabled/deleted/wrong-role staff member look identical to a denied
             // anonymous one instead of getting a real 403.
-            return response('Forbidden.', 403);
+            // JSON callers get the same {success, message} shape as the 401 branch above (S8).
+            return $request->expectsJson()
+                ? response()->json(['success' => false, 'message' => 'Forbidden.'], 403)
+                : response('Forbidden.', 403);
         }
 
         return $next($request);

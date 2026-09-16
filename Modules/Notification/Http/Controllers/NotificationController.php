@@ -20,6 +20,7 @@ use Modules\Permissions\Entities\Role;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\RateLimiter;
 use Modules\Notification\Http\Controllers\AdminBaseController;
 
 class NotificationController extends AdminBaseController
@@ -38,9 +39,13 @@ class NotificationController extends AdminBaseController
         parent::__construct();
     }
 
+    /** Attempts per client IP per minute on the public postWebToken endpoint (S6). */
+    public const WEB_TOKEN_MAX_ATTEMPTS = 10;
+
     public static $validationsRules = [
         'postWebToken' => [
-            'data_token' => 'required',
+            // notif_tokens.token is varchar(191).
+            'data_token' => 'required|string|max:191',
         ],
     ];
 
@@ -59,6 +64,27 @@ class NotificationController extends AdminBaseController
 
     public function postWebToken(Request $request)
     {
+        // Public endpoint: count every attempt per client IP and refuse with a JSON 429 over the limit (S6).
+        // Not the throttle middleware: app/Exceptions/Handler.php turns its ThrottleRequestsException,
+        // like every HttpException, into a redirect to the login page.
+        // Carries H5's TrustProxies caveat, same as the sibling contact-form limiter: TrustProxies.php
+        // leaves $proxies = null, so behind Hostinger's CDN $request->ip() is REMOTE_ADDR, not the
+        // visitor's address, and every visitor shares one quota until Phase 3 probes how the client IP
+        // reaches PHP and sets $proxies deliberately (a careless '*' would make X-Forwarded-For spoofable
+        // and the limit bypassable instead).
+        $throttleKey = 'notification-web-token:' . $request->ip();
+        if (RateLimiter::tooManyAttempts($throttleKey, self::WEB_TOKEN_MAX_ATTEMPTS)) {
+            return response()->json([
+                'success'             => false,
+                'type'                => 'toastr',
+                'message_type'        => 'error',
+                'message_title'       => __('admin::strings.error.title'),
+                'message_description' => __('admin::strings.error.description'),
+                'errors'              => [],
+            ], 429);
+        }
+        RateLimiter::hit($throttleKey, 60);
+
         $this->data['locale']      = $request->locale ? $request->locale : app()->getLocale();
         $this->data['CurrentUser'] = $request->user();
         $this->data['_VALIDATOR_'] = Validator::make(
@@ -78,20 +104,16 @@ class NotificationController extends AdminBaseController
             });
         }
         catch (Exception $e) {
+            // Logged server-side only: the client never sees exception details (S6).
+            report($e);
+
             return new CrudResponse([
                 'success'             => false,
                 'type'                => 'toastr',
                 'message_type'        => 'error',
                 'message_title'       => __('admin::strings.error.title'),
                 'message_description' => __('admin::strings.error.description'),
-                'errors'              => [
-                    'exception' => [
-                        'message' => $e->getMessage(),
-                        'code'    => $e->getCode(),
-                        'line'    => $e->getLine(),
-                        'file'    => $e->getFile(),
-                    ],
-                ]
+                'errors'              => [],
             ], 500);
         }
 
@@ -107,6 +129,8 @@ class NotificationController extends AdminBaseController
 
     public function getList(Request $request)
     {
+        // The notifications ability (S21).
+        $this->authorize('view', FirebaseNotification::class);
         $User     = auth()->user();
         $Receivers = FirebaseNotificationReceiver::where(function($query)use($User){
             $query->where('to_user_id', $User->id);
@@ -141,13 +165,15 @@ class NotificationController extends AdminBaseController
 
     public function index(Request $request)
     {
-
-        $this->data['roles'] = Role::with('translations')->get();
-        return view('notification::notifications.index', $this->data);
+        // The page extends a view namespace (admin::) that does not exist, so it could only answer 500, and its
+        // menu entry is commented out. 404 instead (S11); the route name stays for notifications/create.blade.php.
+        abort(404);
     }
 
     public function postIndex(Request $request)
     {
+        // The notifications ability (S21).
+        $this->authorize('view', FirebaseNotification::class);
         $this->data['Roles'] = Role::with('translations')->get();
 
         $this->data['DataTable_Q'] = FirebaseNotification::select([

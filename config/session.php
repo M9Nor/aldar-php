@@ -130,9 +130,10 @@ return [
     ),
 
     /*
-    | Laravel 13 option. Kept at "php" so Laravel 7 session files stay readable; Phase 2 moves to "json".
+    | Laravel 13 option. JSON since Phase 2 (S2): no session value holds a PHP object. Switching from "php"
+    | makes every earlier session file unreadable, so every signed-in user is logged out once.
     */
-    'serialization' => 'php',
+    'serialization' => 'json',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,6 +172,7 @@ return [
     |
     */
 
+    // Production sets SESSION_SECURE_COOKIE=true (Phase 3 checklist); the local http stack keeps false (S2).
     'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*

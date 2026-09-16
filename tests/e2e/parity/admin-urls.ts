@@ -66,10 +66,10 @@ export const MATRIX_URLS: string[] = [
   '/en/admin/notification', '/en/admin/notification/config', '/en/admin/notification/create',
 ];
 
-/** Admin GET routes deliberately left out of the matrix, and why. */
-export const MATRIX_EXCLUDED: Record<string, string> = {
-  'GET admin/users/login_as/{model}': 'switches the session to another user',
-  'GET admin/projects/update_prices': 'rewrites project prices',
-  'GET admin/categories/asdwadwadwdaw': 'creates categories and filter pages',
-  'GET admin/clear-cache': 'flushes the cache mid-run; covered by specs/security/maintenance-routes.spec.ts',
-};
+/**
+ * Admin GET routes deliberately left out of the matrix, and why. Empty since Phase 2: the four admin GET routes
+ * that changed state are POST-only (clear-cache, users/login_as/{model}; S7, S10) or removed
+ * (projects/update_prices, categories/asdwadwadwdaw; S10). See specs/security/maintenance-routes.spec.ts and
+ * specs/security/state-changing-gets.spec.ts.
+ */
+export const MATRIX_EXCLUDED: Record<string, string> = {};

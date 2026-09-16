@@ -41,6 +41,13 @@ return [
     'index_column'   => 'DT_RowIndex',
 
     /*
+     * Largest page a request may ask for (S1). 500 is the largest page size the admin tables offer, so a
+     * larger length, or length=-1, gets 500 rows. The lead and property-form lists offer "All" and keep it
+     * with ignoreMaxLength() in their controllers.
+     */
+    'max_length'     => 500,
+
+    /*
      * List of available builders for DataTables.
      * This is where you can register your custom dataTables builder.
      */
@@ -117,7 +124,9 @@ return [
      */
     'json'           => [
         'header'  => [],
-        'options' => 0,
+        // Spam leads hold invalid UTF-8: substitute U+FFFD instead of failing the whole page (S12).
+        // Valid UTF-8 encodes byte for byte as it did with 0.
+        'options' => JSON_INVALID_UTF8_SUBSTITUTE,
     ],
 
 ];

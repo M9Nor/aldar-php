@@ -33,12 +33,19 @@ test('quality, extension and mark parameters create no new variants', async ({ r
 // before sending, so the non-canonical path would never reach the server.
 function rawGet(path: string): Promise<number> {
   const base = new URL(BASE_URL);
-  const client = base.protocol === 'https:' ? https : http;
+  const isHttps = base.protocol === 'https:';
+  const client = isHttps ? https : http;
+  // A fresh agent without keep-alive and `Connection: close` for every call: no socket is ever reused,
+  // so the server can never have half-closed one between two calls (S19).
+  const agent = isHttps ? new https.Agent({ keepAlive: false }) : new http.Agent({ keepAlive: false });
   return new Promise((resolve, reject) => {
-    const req = client.request({ host: base.hostname, port: base.port || undefined, path, method: 'GET' }, (res) => {
-      res.resume();
-      res.on('end', () => resolve(res.statusCode ?? 0));
-    });
+    const req = client.request(
+      { host: base.hostname, port: base.port || undefined, path, method: 'GET', agent, headers: { Connection: 'close' } },
+      (res) => {
+        res.resume();
+        res.on('end', () => resolve(res.statusCode ?? 0));
+      },
+    );
     req.on('error', reject);
     req.end();
   });

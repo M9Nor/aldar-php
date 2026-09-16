@@ -261,7 +261,8 @@
                         name: 'link',
                         orderable  : true,
                         render: function(data, type, row, meta) {
-                            return row.link ? `<a href="${row.link}" target="_blank" rel="noopener">${row.link}</span>` : '';
+                            {{-- The link is the visitor's Referer header: only http(s) becomes a link (S5). --}}
+                            return row.link ? (/^https?:\/\//i.test(row.link) ? `<a href="${row.link}" target="_blank" rel="noopener">${row.link}</span>` : row.link) : '';
                         }
                     },
 

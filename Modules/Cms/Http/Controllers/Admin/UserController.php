@@ -11,6 +11,7 @@ use Modules\Cms\Http\Controllers\CmsController;
 use Modules\Permissions\Entities\Role;
 use Modules\Cms\Entities\UserType;
 use Modules\Cms\Classes\ResponseHandler;
+use Modules\Cms\Classes\PageSize;
 use Modules\Cms\Rules\Username;
 use App\User as CrudModel;
 use Validator;
@@ -54,13 +55,25 @@ class UserController extends CmsController
         ]);
     }
 
+    /**
+     * No user detail page exists, but the user summary modal links here: 404 instead of 500 (S11).
+     */
+    public function show()
+    {
+        abort(404);
+    }
+
     public function validateIdentity_(Request $request)
     {
+        // The id of the user being edited is required: the unique rules must ignore that user's own username
+        // and email. This used to read an undefined $this->id and answered 500 (S11).
+        $request->validate(['model' => 'required|integer']);
+
         $validator = Validator::make([
             $request->name => $request->keyword
         ], [
-            'username'  => ['nullable', 'min:4', 'max:191', new Username, 'unique:users,username' .$this->id],
-            'email'     => ['nullable', 'max:191', 'email', 'unique:users,email'  .$this->id]
+            'username'  => ['nullable', 'min:4', 'max:191', new Username, 'unique:users,username,' . $request->model],
+            'email'     => ['nullable', 'max:191', 'email', 'unique:users,email,' . $request->model]
         ]);
 
         return new ResponseHandler([
@@ -199,6 +212,9 @@ class UserController extends CmsController
                     'url'       => route('UserController@loginAs', ['model' => $model->id]),
                     'id'        => 'login_as_' . $model->id,
                     'action'    => 'loginAs',
+                    // login_as is now a CSRF POST (S10, P2-R14): the dropdown renders a hidden form and submits it
+                    // natively, like the header's login-back link, instead of the plain GET link 'default' renders.
+                    'type'      => 'post',
                     'divider'   => true
                 ];
             }
@@ -234,7 +250,7 @@ class UserController extends CmsController
             $q->where('username','LIKE', "%{$term}%");
         })->orWhere('id',$term);
 
-        $list = $list->paginate($request->items_per_page);
+        $list = $list->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);
@@ -284,7 +300,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('create', CrudModel::class);
 
-        \Log::debug($request->all());
         $rules = [
             'username'      => 'required|string|max:191|unique:users,username',
             'first_name'    => 'nullable|string|max:20',
@@ -414,7 +429,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('update', $this->data['model']);
 
-        \Log::debug($request->all());
 
         $rules = [
             'username'      => 'nullable|string|max:191',
@@ -496,7 +510,6 @@ class UserController extends CmsController
         // Check if the authenticated user is allowed to proceed farther.
         $this->authorize('update', $this->data['model']);
 
-        \Log::debug($request->all());
         $rules = [
             'username'      => 'nullable|string|max:191',
             'first_name'    => 'nullable|string|max:20',

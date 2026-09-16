@@ -113,6 +113,8 @@ class HomeController extends FrontendController
 
     public function clearCache()
     {
+        // Only holders of the aside menu item's ability (tags.requests) may flush the cache (S7).
+        \Illuminate\Support\Facades\Gate::authorize('requests', \Modules\Cms\Entities\Tag::class);
         // Artisan::call('cache:clear');
         // Artisan::call('config:clear');
         Cache::flush();

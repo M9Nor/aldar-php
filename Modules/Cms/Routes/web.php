@@ -22,7 +22,7 @@ Route::group([
     ], function() {
         Route::get('/',                                 'DashboardController@index')->name('DashboardController@index');
         Route::post('update-currency',                  'DashboardController@updateCurrency')->middleware('staff')->name('DashboardController@updateCurrency');
-        Route::get('clear-cache',                       '\Modules\Frontend\Http\Controllers\HomeController@clearCache')->middleware('staff')->name('cache.clear');
+        Route::post('clear-cache',                      '\Modules\Frontend\Http\Controllers\HomeController@clearCache')->middleware('staff')->name('cache.clear');
 
         Route::group(['prefix' => 'users'], function() {
             Route::get('/',                             'UserController@index')->name('UserController@index');
@@ -39,7 +39,7 @@ Route::group([
             Route::post('/mass_destroy',                'UserController@massDestroy')->name('UserController@massDestroy');
             Route::post('/restore',                     'UserController@restore')->name('UserController@restore');
             Route::post('/mass_restore',                'UserController@massRestore')->name('UserController@massRestore');
-            Route::get('/login_as/{model}',             'UserController@loginAs')->name('UserController@loginAs');
+            Route::post('/login_as/{model}',            'UserController@loginAs')->name('UserController@loginAs');
             Route::get('/identity/validate',            'UserController@validateIdentity')->name('UserController@validateIdentity');
             Route::get('/identity/validate_',           'UserController@validateIdentity_')->name('UserController@validateIdentity_');
             Route::get('/get-user-select2',             'UserController@getUsersSelect2')->name('UserController@getUsersSelect2');
@@ -76,7 +76,6 @@ Route::group([
         });
         Route::group(['prefix' => 'categories'], function (){
 
-            Route::get('asdwadwadwdaw',                'CategoryController@addCategoriesAndFilters')->name('CategoryController@addCategoriesAndFilters');
             Route::get('{type}',                       'CategoryController@index')->name('CategoryController@index');
             Route::get('{type}/data',                  'CategoryController@data')->name('CategoryController@data');
             Route::get('{type}/create',                'CategoryController@create')->name('CategoryController@create');

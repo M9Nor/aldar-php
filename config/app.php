@@ -39,7 +39,8 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    // Off unless the environment turns it on: a missing APP_DEBUG must never mean debug output (S2).
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------

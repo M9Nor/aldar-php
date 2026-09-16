@@ -90,6 +90,17 @@
                         </form>
                     `;
                     break;
+                case 'post':
+                    // A hidden CSRF form submitted natively, without a confirmation dialog (S10, P2-R14).
+                    actions += `
+                        <a href="javascript:;" onclick="document.getElementById('action_${action.action}_${row.id}').submit();" id="${action.id}" class="btn  btn-icon btn-icon-lg btn-clean" data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="${action.label}">
+                            <i class="${action.icon}"></i>
+                        </a>
+                        <form id="action_${action.action}_${row.id}" method="POST" action="${action.url}" style="display: none;">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        </form>
+                    `;
+                    break;
                 default:
                     actions += `
                     <a href="${action.url}" id="${action.id}" class="btn  btn-icon btn-icon-lg btn-clean" data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="${action.label}">
@@ -119,6 +130,19 @@
                                 ${dropdownAction.label}
                             </a>
                             <form id="action_${dropdownAction.action}_${row.id}" onsubmit="onFormSubmit(event);" method="POST" action="${dropdownAction.url}" style="display: none;">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </form>
+                        `;
+                        break;
+                    case 'post':
+                        // A hidden CSRF form submitted natively, without a confirmation dialog (S10, P2-R14):
+                        // used by the ROOT-only "login as" item now that login_as is a POST route.
+                        actions += `${dropdownAction.divider ? '<div class="dropdown-divider"></div>' : ''}
+                            <a class="dropdown-item" href="javascript:;" id="${dropdownAction.id}" onclick="document.getElementById('action_${dropdownAction.action}_${row.id}').submit();">
+                                <i class="${dropdownAction.icon} text-${dropdownAction.color}"></i>
+                                ${dropdownAction.label}
+                            </a>
+                            <form id="action_${dropdownAction.action}_${row.id}" method="POST" action="${dropdownAction.url}" style="display: none;">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </form>
                         `;

@@ -169,6 +169,14 @@ class RoleController extends PermissionsController
         ->make(true);
     }
 
+    /**
+     * The show route exists but no detail page does: 404 instead of 500 (S11).
+     */
+    public function show()
+    {
+        abort(404);
+    }
+
     public function create(Request $request)
     {
         // Checks if the authenticated user is allowed to proceed farther.

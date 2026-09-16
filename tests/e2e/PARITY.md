@@ -10,7 +10,7 @@ cd tests/e2e
 npm run parity            # resets the local DB, then 321 tests, about 10 minutes
 ```
 
-**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 368 tests in all (321 parity + 47 chromium, about 14 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
+**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 396 tests in all (321 parity + 75 chromium, about 15 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
 
 ## Environment the baselines assume
 
@@ -20,6 +20,7 @@ The baselines depend on local `.env` settings that are not in `.env.example`. A 
 - `CACHE_DRIVER=file`. The `cache:clear` limiter reset and the file-cache warm-up both rely on the file driver. Laravel 11+ renamed this setting `CACHE_STORE`; a config merge that only renames the key without preserving the `file` value changes caching behaviour.
 - `APP_URL=http://localhost:8080`. `.env.example` has `http://localhost` (no port).
 - `SESSION_DRIVER=file`.
+- `APP_DEBUG=true`. Since Phase 2 (S2), `config/app.php` defaults debug to off when the key is missing, but the baselines were recorded with debug on: yajra answers a DataTables error as HTTP 200 JSON only in debug mode, for example. Check it without printing `.env`: `docker compose exec -T app php artisan about --only=environment | grep -i debug` must show `ENABLED`.
 - The Docker services must stay named `app` and `db`: `scripts/e2e/db-reset.sh` execs into both by name. The `app` image needs the PHP CLI and the GD extension: `support/fixtures.ts`'s `pngFixture`/`jpegFixture` (used by `content-lifecycle.spec.ts` and the security attachment specs) shell into it to render real images with GD.
 
 No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever printed by the suite.
@@ -62,6 +63,10 @@ rm -f storage/logs/deprecations.log
 (cd tests/e2e && npm test)
 test ! -s storage/logs/deprecations.log && echo 'no deprecations'
 ```
+
+## Dependency audit (S4)
+
+`scripts/check-composer-audit.sh` exits 0 only when `composer.lock` has no known security advisory. It exits 1 and lists the advisories otherwise, and exits 2 if the audit report cannot be read. Run it from the repository root with `docker compose exec -T app bash scripts/check-composer-audit.sh`; it needs access to packagist.org. It is not part of `npm test`: Phase 3's deploy runs it after `composer install --no-dev`. Front-end libraries are reported in `docs/security/front-end-libraries.md` and are not upgraded in this project.
 
 ## When a parity test fails after a change
 
@@ -111,12 +116,29 @@ scripts/e2e/db-reset.sh
 Regenerating the inventory (above) only replaces `url-inventory.json` and re-records the golden master. It does not touch these other hardcoded ids and slugs, which name specific rows in `_db-backup/aldar-db-20260914-1704.sql.gz` and will start naming the wrong thing, or a now-missing thing, if the dump changes:
 
 - `parity/admin-urls.ts`: model ids `31` (a user), `251` (an article), `318` (a contract category), `11` (a landing page), `145` (a tag), `98` (an area), `12` (a city), `2` (a country), `49` (a config), `133` (a project), `320` (an opportunity), `3` (a role).
+- `specs/security/admin-authorization.spec.ts`: project id `133`, opportunity id `320`, landing page id `11` and article id `251`. The spec attaches fixture payments, prices, a timeline and an external attachment to them, and deletes them again.
+- `specs/security/write-permissions.spec.ts`: category ids `608` (an `agents` category) and `598` (a `filters` category), project ids `139` (`is_special = 1`) and `133` (`is_special = 0`), and role id `3` (ADMIN).
 - `specs/parity/behaviour.spec.ts`: city id `18` (Antalya) and its area `count: 57`; payment category ids `518`/`519`.
 - `specs/parity/visual.spec.ts`: the `rose-marine-butik` property slug, the `istanbul` city slug, and the `realestate-index` article slug.
 - `specs/parity/content-lifecycle.spec.ts`: the "Turkish Citizenship" category picked in the article-create select2.
 - the `new` landing-page slug (soft-deleted; restored for one test).
 
 After a dump change, re-verify each one still resolves (the admin ids and the behaviour ids/counts against the new dump; the visual and lifecycle slugs by loading their pages), update whichever no longer match, then regenerate the inventory and re-record. The orphan-snapshot test in `inventory.spec.ts` catches golden-master snapshots left behind by URLs the new inventory dropped, but it cannot catch a stale id or slug that still happens to resolve to a different record — that only shows up as an unexpected diff in the affected spec, or not at all if you don't look.
+
+## Rows without a role signal (S13, P2-R7)
+
+The permissions matrix sends GETs only. Nine of its rows gave ADMIN and SUPERADMIN the same outcome on Laravel 7, so they carried no role signal:
+
+| Row | parity-admin / parity-superadmin | Why |
+|---|---|---|
+| `/en/admin/users/summary?model=31` | 302 back / 302 back | A non-AJAX `ResponseHandler` answer redirects back, and `UserController::summary` authorizes nothing (both roles hold `users.view`). |
+| `/en/admin/users/identity/validate?name=username&keyword=parity-probe` | 302 back / 302 back | The same: a `ResponseHandler` answer and no authorization. |
+| `/en/admin/configs/49/edit` | 302 back / 302 back | `ConfigController::edit` returns `back()` before any other code. The real page is `/en/admin/configs/49/edit-config` (200 / 200). |
+| `/en/admin/{projects,opportunity}/request_summary` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | S21 authorizes `tags.requests` before the lookup. |
+| `/en/admin/{projects,opportunity}/properties_summary` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | Same. |
+| `/en/admin/{projects,opportunity}/show_details/0` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | Same. |
+
+Per ruling P2-R7, the first three stay without a role signal: giving them one would need an application change (an authorization call, or a real edit page), which Phase 2 does not make. S21 gave the other six a signal. Write permissions are covered by `specs/security/write-permissions.spec.ts` (S13): ADMIN POST probes that change nothing, with ids that give SUPERADMIN a real answer, checked against a table checksum.
 
 ## Visual baselines
 
@@ -127,11 +149,11 @@ Screenshots depend on the OS font renderer. They are stored per platform (`snaps
 These are baseline facts, not bugs to fix inside a parity change:
 - `/{en,ar}/apartments-for-sale-in-turkey` and `/{en,ar}/shop` return 404: their filter link names a missing category.
 - `/landing-page/new` returns 404 because the row is soft-deleted; the lifecycle spec restores it for one test.
-- Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show` and `opportunity/show`. `projects/data` without DataTables parameters also answered 500 on Laravel 7; on Laravel 13 it answers 200 for staff (accepted difference P1-R19, recorded in the matrix baseline).
+- Admin GET routes that answered 500 for staff on Laravel 7 no longer do (Phase 2, S11). `notification`, `users/show`, `roles/show`, `projects/show` and `opportunity/show` answer 404. `users/identity/validate_` without a `model` id and `tags/list` without a `locale` answer a validation error ("302 back" in the matrix, 422 for AJAX). `projects/data` without DataTables parameters answered 500 on Laravel 7 and answers 200 on Laravel 13 (accepted difference P1-R19).
 - `POST contact-us/store-visit` answers 500: the controller method is commented out.
-- `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config (Phase 2 candidate).
-- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows, and pages whose window holds spam submissions with invalid UTF-8 answer a DataTables `Malformed UTF-8` error, so staff cannot page past them. Laravel 13 behaves the same: walking both lists as `parity-superadmin` at the page's own 50-row length, 4 of the 74 pages answer HTTP 200 with `Malformed UTF-8 characters, possibly incorrectly encoded`. Tracked as S12 for Phase 2.
+- `GET admin/notification/config` answered 200 to anonymous visitors on Laravel 7 and 13. Since Phase 2 (S9) it carries the `staff` middleware: anonymous visitors are sent to login (the matrix records "302 login"), and staff still get the Firebase web client config.
+- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows. On Laravel 7 and 13, pages whose window held spam submissions with invalid UTF-8 answered a DataTables `Malformed UTF-8` error (4 of the 74 pages per list at the page's 50-row length). Since Phase 2 (S12) the lists and the lead summary substitute U+FFFD for invalid bytes, so every lead stays reachable; `specs/security/lead-lists.spec.ts` plants such a lead.
 - `admin/opportunity/properties` loads its table from the projects endpoint `admin/projects/data_properties`.
 - The `store-inner` behaviour test leaves one synthetic `contact_us` row (`parity-inner@aldar.test`) until the next DB reset.
-- Left out of the matrix because they change state on GET: `users/login_as/{model}`, `projects/update_prices`, `categories/asdwadwadwdaw`, `clear-cache` (see `MATRIX_EXCLUDED`).
+- Four admin GET routes changed state on Laravel 7 and were left out of the matrix. Since Phase 2 none is a GET route: `clear-cache` (which now also requires `tags.requests`) and `users/login_as/{model}` are CSRF-protected POST routes (S7, S10), and `projects/update_prices` and `categories/asdwadwadwdaw` are removed (S10). A GET to any of them answers 404. `specs/security/maintenance-routes.spec.ts` and `specs/security/state-changing-gets.spec.ts` cover them.
 - Admin `/en` pages recorded as-is with untranslated module translation keys, for example `permissions::roles.datatable.id` in many admin sections' `columns` arrays and `cms::messages.login_failed.title` in `login-failed.json`. If a Phase 1 change alters how or when translations load, the diff on these keys is the signal to look at, not a snapshot to update blindly.

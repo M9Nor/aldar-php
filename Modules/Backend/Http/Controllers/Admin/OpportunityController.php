@@ -414,6 +414,14 @@ class OpportunityController extends CmsController
         ->rawColumns($rawColumns)
         ->make(true);
     }
+    /**
+     * The show route exists but no detail page does: 404 instead of 500 (S11).
+     */
+    public function show()
+    {
+        abort(404);
+    }
+
     public function create(Request $request)
     {
         $this->authorize('create', CrudModel::class);
@@ -1507,6 +1515,8 @@ class OpportunityController extends CmsController
     public function deletePayment(Request $request)
     {
         $this->data['model'] = PayingMethod::findOrFail($request->payment_id);
+        // The ability of the edit page this delete button sits on (S21).
+        $this->authorize('update', CrudModel::withDisabled()->findOrFail($this->data['model']->project_id));
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();
@@ -1529,6 +1539,8 @@ class OpportunityController extends CmsController
     public function deletePrice(Request $request)
     {
         $this->data['model'] = Price::findOrFail($request->price_id);
+        // The ability of the edit page this delete button sits on (S21).
+        $this->authorize('update', CrudModel::withDisabled()->findOrFail($this->data['model']->project_id));
         try {
             DB::transaction(function() use ($request) {
                 $this->data['model']->delete();
@@ -1876,8 +1888,11 @@ class OpportunityController extends CmsController
     }
     public function data_requests(Request $request)
     {
+        // Lead data is for holders of the leads page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $list = ContactUS::query();
-        $datatables = DataTables::of($list);
+        // The leads list offers "All" (length=-1): it stays uncapped (S1); only tags.requests holders reach it (S21).
+        $datatables = DataTables::of($list)->ignoreMaxLength();
         $datatables
         ->addIndexColumn()
         ->filter(function($q) use ($request) {
@@ -1901,10 +1916,8 @@ class OpportunityController extends CmsController
                 });
             }
         })
-        ->addColumn('link', function($model){
-            $category = $model->category;
-            return route('OpportunityController@single', ['type' => (!is_null($category) ? $category->slug : 'unknown'), 'slug' => $model->slug]);
-        })
+        // No computed 'link' column: contact_us has no slug or category, so route() threw on every page (P1-R39).
+        // Each row keeps its own contact_us.link, as in ProjectController::data_requests.
         ->addColumn('breef', function($model){
             return $model->description;
         })// Adds an incremental first row.
@@ -1927,7 +1940,7 @@ class OpportunityController extends CmsController
             return $actions;
         });
         $rawColumns = [];
-        $rawColumns[] = 'breef';
+        // 'breef' is the visitor's message: it is never raw, so the DataProcessor escapes it (S5).
         $rawColumns[] = 'actions';
         return $datatables
         ->rawColumns($rawColumns)
@@ -1935,17 +1948,22 @@ class OpportunityController extends CmsController
     }
     public function request_summary(Request $request)
     {
+        // Lead data is for holders of the leads page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model'] = ContactUS::findOrFail($request->model);
 
         $this->data['summary'] = view('backend::admin.summary', $this->data)->render();
 
+        // Array, not the model instance: a non-AJAX hit on this GET route flashes this payload into the
+        // session via ResponseHandler, and session values must not hold PHP objects (S2). json_encode()
+        // already serialized the model the same way, so the AJAX JSON response is unchanged.
         return new ResponseHandler([
             'success'   => true,
-            'model'     => $this->data['model'],
+            'model'     => $this->data['model']->toArray(),
             'summary'   => $this->data['summary']
         ]);
     }
-    // 
+    //
     public function properties (Request $request)
     {
         $this->authorize('requests', Tag::class);
@@ -1953,8 +1971,11 @@ class OpportunityController extends CmsController
     }
     public function data_properties(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $list = PropertyForm::query();
-        $datatables = DataTables::of($list);
+        // The property-forms list offers "All" (length=-1): it stays uncapped (S1); only tags.requests holders reach it (S21).
+        $datatables = DataTables::of($list)->ignoreMaxLength();
         $datatables
         ->addIndexColumn()
         ->filter(function($q) use ($request) {
@@ -2008,7 +2029,7 @@ class OpportunityController extends CmsController
             return $actions;
         });
         $rawColumns = [];
-        $rawColumns[] = 'breef';
+        // This list has no 'breef' column: data_requests is the endpoint that renders the visitor's message (S5).
         $rawColumns[] = 'actions';
         return $datatables
         ->rawColumns($rawColumns)
@@ -2016,18 +2037,26 @@ class OpportunityController extends CmsController
     }
     public function properties_summary(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model'] = PropertyForm::with('attachments')->findOrFail($request->model);
 
         $this->data['summary'] = view('backend::admin.properties.summary', $this->data)->render();
 
+        // Array, not the model instance: a non-AJAX hit on this GET route flashes this payload into the
+        // session via ResponseHandler, and session values must not hold PHP objects (S2). json_encode()
+        // already serialized the model (and its loaded attachments) the same way, so the AJAX JSON
+        // response is unchanged.
         return new ResponseHandler([
             'success'   => true,
-            'model'     => $this->data['model'],
+            'model'     => $this->data['model']->toArray(),
             'summary'   => $this->data['summary']
         ]);
     }
     public function showDetails(Request $request)
     {
+        // Property submissions are for holders of the properties page ability, checked before anything loads (S21).
+        $this->authorize('requests', Tag::class);
         $this->data['model']    = PropertyForm::with('attachments')->findOrFail($request->model);
 
         $this->data['filters'] = Category::select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])

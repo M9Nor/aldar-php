@@ -55,6 +55,10 @@ class TagController extends CmsController
     }
     public function list(Request $request)
     {
+        // The taggable widget always sends a locale. Without one, translate() returned null for tags
+        // missing the current locale and the list answered 500 (S11).
+        $request->validate(['locale' => 'required|string']);
+
         $term   = trim((string) $request->q);
         $tags   = CrudModel::with('translations')->when($request->locale, function($query, $locale) {
             $query->whereHas('translations', function($q) use ($locale) {
@@ -238,6 +242,8 @@ class TagController extends CmsController
     }
     public function save(Request $request)
     {
+        // Saving a keyword creates a tag: the tag create page's ability, before validation (S21).
+        $this->authorize('create', CrudModel::class);
         $this->attributeNames = [
             'attachment' => __('cms::areas.fields.text.label'),
         ];
@@ -275,12 +281,15 @@ class TagController extends CmsController
             ], 409);
         }
         $this->data['tag']->t_text = $this->data['tag']->translate(request('locale', app()->getLocale()))->text;
+        // Array, not the model instance: 'save' is a POST route reachable outside the Select2 AJAX call,
+        // and session values must not hold PHP objects (S2). attributesToArray() (Translatable's override,
+        // used by both toArray() and json_encode()) makes this byte-identical to the prior AJAX response.
         return new ResponseHandler([
             'success'       => true,
             'type'          => 'success',
             'title'         => __('cms::messages.save_success.title'),
             'description'   => __('cms::messages.save_success.description'),
-            'tag'           => $this->data['tag']
+            'tag'           => $this->data['tag']->toArray()
         ]);
     }
     public function create(Request $request)

@@ -10,6 +10,7 @@ use Modules\Cms\Entities\City;
 use Modules\Cms\Entities\Area;
 use LaravelLocalization;
 use Modules\Cms\Entities\Content;
+use Modules\Cms\Classes\PageSize;
 
 class CmsController extends Controller
 {
@@ -23,7 +24,7 @@ class CmsController extends Controller
         $list = Country::where(function($q) use ($term) {
             $q->whereTranslationLike('name',"%{$term}%");
         });
-        $list = $list->paginate($request->items_per_page);
+        $list = $list->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);
@@ -47,7 +48,7 @@ class CmsController extends Controller
                 $query->where('country_id',$additional_params['country_id']);
             }
         });
-        $list = $list->select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])->orderBy('sort_order','ASC')->paginate($request->items_per_page);
+        $list = $list->select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])->orderBy('sort_order','ASC')->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);
@@ -75,7 +76,7 @@ class CmsController extends Controller
                 $query->where('id','!=',$additional_params['area_id']);
             }
         });
-        $list = $list->paginate($request->items_per_page);
+        $list = $list->paginate(PageSize::fromRequest($request));
         $result['results'] = [];
         foreach($list as $key => $item){
             $result['results'][$key] = $item->formAjaxArray(true);
@@ -103,7 +104,7 @@ class CmsController extends Controller
                 $q->whereTranslationLike('title', "%{$term}%");
             })->orWhere('id',$term);
 
-        $list = $list->select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])->orderBy('sort_order','ASC')->paginate($request->items_per_page);
+        $list = $list->select(['*', \DB::raw('IF(`sort_order` IS NOT NULL, `sort_order`, 1000000) `sort_order`')])->orderBy('sort_order','ASC')->paginate(PageSize::fromRequest($request));
         
         $result['results'] = [];
         foreach($list as $key => $item){

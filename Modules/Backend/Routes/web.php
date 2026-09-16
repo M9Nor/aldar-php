@@ -37,7 +37,6 @@ Route::group([
             Route::get('/data_properties',          'ProjectController@data_properties')->name('ProjectController@data_properties');
             Route::get('/properties_summary',       'ProjectController@properties_summary')->name('ProjectController@properties_summary');
             Route::get('/show_details/{model}',     'ProjectController@showDetails')->name('ProjectController@showDetails');
-            Route::get('/update_prices',            'ProjectController@updatePrices')->name('ProjectController@updatePrices');
         });
     });
 

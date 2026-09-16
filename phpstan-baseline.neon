@@ -409,6 +409,12 @@ parameters:
 			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
 
 		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
 			identifier: property.notFound
 			count: 1
@@ -440,6 +446,12 @@ parameters:
 
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$project_id\.$#'
 			identifier: property.notFound
 			count: 1
 			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
@@ -699,7 +711,7 @@ parameters:
 		-
 			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
 			identifier: staticMethod.notFound
-			count: 11
+			count: 13
 			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
 
 		-
@@ -805,6 +817,12 @@ parameters:
 			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
 
 		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
 			identifier: property.notFound
 			count: 1
@@ -842,6 +860,12 @@ parameters:
 
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$project_id\.$#'
 			identifier: property.notFound
 			count: 1
 			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
@@ -1119,7 +1143,7 @@ parameters:
 		-
 			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
 			identifier: staticMethod.notFound
-			count: 11
+			count: 13
 			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
 
 		-
@@ -1939,30 +1963,6 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
 
 		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:ar\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$brief\:en\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:ar\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$description\:en\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
 			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$icon_image\.$#'
 			identifier: property.notFound
 			count: 1
@@ -1971,7 +1971,7 @@ parameters:
 		-
 			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$parent_id\.$#'
 			identifier: property.notFound
-			count: 3
+			count: 1
 			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
 
 		-
@@ -1987,57 +1987,9 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
 
 		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:ar\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$title\:en\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
 			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Category\:\:\$type\.$#'
 			identifier: property.notFound
 			count: 1
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:ar\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$brief\:en\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:ar\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$description\:en\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:ar\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Content\:\:\$title\:en\.$#'
-			identifier: property.notFound
-			count: 12
 			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
 
 		-
@@ -2191,6 +2143,12 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
 
 		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$attachable_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
+
+		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\ExternalAttachments\>\|Modules\\Cms\\Entities\\ExternalAttachments\:\:\$description\.$#'
 			identifier: property.notFound
 			count: 1
@@ -2325,7 +2283,7 @@ parameters:
 		-
 			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Content\:\:withDisabled\(\)\.$#'
 			identifier: staticMethod.notFound
-			count: 7
+			count: 8
 			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
 
 		-
@@ -2397,7 +2355,7 @@ parameters:
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Cms\\Entities\\Timeline\>\|Modules\\Cms\\Entities\\Timeline\:\:\$landing_id\.$#'
 			identifier: property.notFound
-			count: 1
+			count: 2
 			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
 
 		-

@@ -9,7 +9,6 @@ use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public $ipAddresses = ['176.33.111.147'];
     /**
      * Register any application services.
      *
@@ -32,16 +31,5 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setLocale(app()->getLocale());
         setlocale(LC_TIME,'ar_BH');
         Schema::defaultStringLength(191);
-
-        if(in_array(request()->ip(), $this->ipAddresses))
-        {
-            config(['app.debug' => true]);
-
-            // Delete this if you aren't using the Laravel Debugbar package.
-            \Debugbar::enable();
-
-            // Uncomment the next line when the configurations are cached in the project your working on.
-            // \Artisan::call('cache:clear');
-        }
     }
 }

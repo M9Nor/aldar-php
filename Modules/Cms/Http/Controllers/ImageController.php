@@ -41,8 +41,14 @@ class ImageController extends Controller
             $server->setDefaults([]);
 
             $name = $server->makeImage($path, []);
-            $file = Storage::get($name);
-            $type = Storage::mimeType($name);
+
+            try {
+                $file = Storage::get($name);
+                $type = Storage::mimeType($name);
+            } catch (FilesystemException $e) {
+                // A missing or racing cache file answers 404, the same as the canonical-path guard (F6).
+                abort(404);
+            }
 
             return \Response::make($file, 200)->header("Content-Type", $type);
         }
@@ -62,8 +68,14 @@ class ImageController extends Controller
         }
 
         $name = $server->makeImage($path, $options);
-        $file = Storage::get($name);
-        $type = Storage::mimeType($name);
+
+        try {
+            $file = Storage::get($name);
+            $type = Storage::mimeType($name);
+        } catch (FilesystemException $e) {
+            // A missing or racing cache file answers 404, the same as the canonical-path guard (F6).
+            abort(404);
+        }
 
         return \Response::make($file, 200)->header("Content-Type", $type);
     }
