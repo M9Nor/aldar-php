@@ -22,6 +22,7 @@ class EloquentDataTable extends BaseEloquentDataTable
     /**
      * Same as Yajra\DataTables\DataTableAbstract::processResults(), with the app's processor.
      */
+    #[\Override]
     protected function processResults($results, $object = false): array
     {
         $processor = new DataProcessor(

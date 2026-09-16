@@ -24,6 +24,7 @@ class DataProcessor extends BaseDataProcessor
     /**
      * Copy of Yajra\DataTables\Processors\DataProcessor::escapeRow() from v9.9.0.
      */
+    #[\Override]
     protected function escapeRow(array $row): array
     {
         $arrayDot = array_filter(Arr::dot($row));

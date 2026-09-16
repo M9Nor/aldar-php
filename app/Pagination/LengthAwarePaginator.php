@@ -21,6 +21,7 @@ class LengthAwarePaginator extends BaseLengthAwarePaginator
      *
      * @return array
      */
+    #[\Override]
     protected function elements()
     {
         $window = UrlWindow::make($this);
