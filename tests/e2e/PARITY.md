@@ -10,7 +10,7 @@ cd tests/e2e
 npm run parity            # resets the local DB, then 321 tests, about 10 minutes
 ```
 
-**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 368 tests in all (321 parity + 47 chromium, about 14 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
+**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 396 tests in all (321 parity + 75 chromium, about 15 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
 
 ## Environment the baselines assume
 
@@ -63,6 +63,10 @@ rm -f storage/logs/deprecations.log
 (cd tests/e2e && npm test)
 test ! -s storage/logs/deprecations.log && echo 'no deprecations'
 ```
+
+## Dependency audit (S4)
+
+`scripts/check-composer-audit.sh` exits 0 only when `composer.lock` has no known security advisory. It exits 1 and lists the advisories otherwise, and exits 2 if the audit report cannot be read. Run it from the repository root with `docker compose exec -T app bash scripts/check-composer-audit.sh`; it needs access to packagist.org. It is not part of `npm test`: Phase 3's deploy runs it after `composer install --no-dev`. Front-end libraries are reported in `docs/security/front-end-libraries.md` and are not upgraded in this project.
 
 ## When a parity test fails after a change
 
