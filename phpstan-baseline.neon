@@ -715,12 +715,6 @@ parameters:
 			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Backend/Http/Controllers/Admin/OpportunityController.php
-
-		-
 			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
 			identifier: larastan.relationExistence
 			count: 3
@@ -1147,12 +1141,6 @@ parameters:
 			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
-
-		-
 			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
 			identifier: larastan.relationExistence
 			count: 3
@@ -1217,252 +1205,6 @@ parameters:
 			identifier: empty.variable
 			count: 1
 			path: Modules/Backend/Http/Controllers/Admin/ProjectController.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$first_pay\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_ar\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_en\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$notes_tr\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$number_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\PayingMethod\>\|Modules\\Backend\\Entities\\PayingMethod\:\:\$project_type_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$balance_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$bathes_number\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$highest_area\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$lowest_area\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$room_number\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Collection\<\(int\|string\), Modules\\Backend\\Entities\\Price\>\|Modules\\Backend\\Entities\\Price\:\:\$salons_number\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
-			identifier: property.notFound
-			count: 12
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$airport\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$area_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_distance\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$city_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$code\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$country_id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$disabled_at\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$hospital\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$keywords\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mall\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$mosque\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$school\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sea\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$slug\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$sort_order\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$turkish_nationality\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Backend\\Entities\\Project\:\:\$university\.$#'
-			identifier: property.notFound
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_id\.$#'
-			identifier: property.notFound
-			count: 8
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$attachable_type\.$#'
-			identifier: property.notFound
-			count: 8
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$description\.$#'
-			identifier: property.notFound
-			count: 8
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$title\.$#'
-			identifier: property.notFound
-			count: 8
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Access to an undefined property Modules\\Cms\\Entities\\Attachment\:\:\$type\.$#'
-			identifier: property.notFound
-			count: 8
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Anonymous function has an unused use \$request\.$#'
-			identifier: closure.unusedUse
-			count: 10
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Modules\\Backend\\Entities\\Project\>\:\:withDisabled\(\)\.$#'
-			identifier: method.notFound
-			count: 2
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Call to an undefined static method Modules\\Backend\\Entities\\Project\:\:withDisabled\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 3
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Variable \$update_payng in empty\(\) always exists and is not falsy\.$#'
-			identifier: empty.variable
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
-
-		-
-			message: '#^Variable \$update_price in empty\(\) always exists and is not falsy\.$#'
-			identifier: empty.variable
-			count: 1
-			path: Modules/Backend/Http/Controllers/Admin/test.php
 
 		-
 			message: '#^Method Modules\\Backend\\Http\\Controllers\\BackendController\:\:destroy\(\) should return Illuminate\\Http\\Response but return statement is missing\.$#'
@@ -1927,12 +1669,6 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/AreaController.php
-
-		-
 			message: '#^Relation ''customFields'' is not found in Modules\\Cms\\Entities\\Area model\.$#'
 			identifier: larastan.relationExistence
 			count: 1
@@ -1948,12 +1684,6 @@ parameters:
 			message: '#^Access to an undefined property Illuminate\\Foundation\\Application\:\:\$ImageManipulator\.$#'
 			identifier: property.notFound
 			count: 1
-			path: Modules/Cms/Http/Controllers/Admin/AttachmentController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
 			path: Modules/Cms/Http/Controllers/Admin/AttachmentController.php
 
 		-
@@ -2002,12 +1732,6 @@ parameters:
 			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Category\:\:withDisabled\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
-			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
 			path: Modules/Cms/Http/Controllers/Admin/CategoryController.php
 
 		-
@@ -2065,12 +1789,6 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/CityController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/CityController.php
-
-		-
 			message: '#^Relation ''customFields'' is not found in Modules\\Cms\\Entities\\City model\.$#'
 			identifier: larastan.relationExistence
 			count: 1
@@ -2122,12 +1840,6 @@ parameters:
 			message: '#^Anonymous function has an unused use \$request\.$#'
 			identifier: closure.unusedUse
 			count: 6
-			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 3
 			path: Modules/Cms/Http/Controllers/Admin/ConfigController.php
 
 		-
@@ -2287,12 +1999,6 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/ContentController.php
-
-		-
 			message: '#^Relation ''tags'' is not found in Modules\\Cms\\Entities\\Content model\.$#'
 			identifier: larastan.relationExistence
 			count: 1
@@ -2320,12 +2026,6 @@ parameters:
 			message: '#^Anonymous function has an unused use \$request\.$#'
 			identifier: closure.unusedUse
 			count: 6
-			path: Modules/Cms/Http/Controllers/Admin/CountryController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
 			path: Modules/Cms/Http/Controllers/Admin/CountryController.php
 
 		-
@@ -2575,12 +2275,6 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/LandingPageController.php
-
-		-
 			message: '#^Called ''pluck'' on Laravel collection, but could have been retrieved as a query\.$#'
 			identifier: larastan.noUnnecessaryCollectionCall
 			count: 2
@@ -2644,12 +2338,6 @@ parameters:
 			message: '#^Call to an undefined static method Modules\\Cms\\Entities\\Tag\:\:isFieldRequired\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
-			path: Modules/Cms/Http/Controllers/Admin/TagController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 3
 			path: Modules/Cms/Http/Controllers/Admin/TagController.php
 
 		-
@@ -2725,21 +2413,9 @@ parameters:
 			path: Modules/Cms/Http/Controllers/Admin/UserController.php
 
 		-
-			message: '#^Access to an undefined property Modules\\Cms\\Http\\Controllers\\Admin\\UserController\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 2
-			path: Modules/Cms/Http/Controllers/Admin/UserController.php
-
-		-
 			message: '#^Anonymous function has an unused use \$request\.$#'
 			identifier: closure.unusedUse
 			count: 6
-			path: Modules/Cms/Http/Controllers/Admin/UserController.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 3
 			path: Modules/Cms/Http/Controllers/Admin/UserController.php
 
 		-
@@ -4006,12 +3682,6 @@ parameters:
 			path: Modules/Frontend/Http/Controllers/PropertyController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Frontend/Http/Controllers/PropertyController.php
-
-		-
 			message: '#^Relation ''allCategories'' is not found in Modules\\Backend\\Entities\\Project model\.$#'
 			identifier: larastan.relationExistence
 			count: 2
@@ -4402,12 +4072,6 @@ parameters:
 			path: Modules/Notification/Http/Controllers/NotificationController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 1
-			path: Modules/Notification/Http/Controllers/NotificationController.php
-
-		-
 			message: '#^Relation ''Data'' is not found in Modules\\Notification\\Entities\\FirebaseNotificationReceiver model\.$#'
 			identifier: larastan.relationExistence
 			count: 1
@@ -4514,6 +4178,12 @@ parameters:
 			identifier: array.duplicateKey
 			count: 1
 			path: Modules/Notification/Resources/lang/en/strings.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 1
+			path: Modules/Permissions/Config/config.php
 
 		-
 			message: '#^Access to an undefined property App\\User\:\:\$password\.$#'
@@ -4630,12 +4300,6 @@ parameters:
 			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
 
 		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 2
-			path: Modules/Permissions/Http/Controllers/Admin/RoleController.php
-
-		-
 			message: '#^Relation ''abilities'' is not found in Modules\\Permissions\\Entities\\AbilityGroup model\.$#'
 			identifier: larastan.relationExistence
 			count: 4
@@ -4676,12 +4340,6 @@ parameters:
 			identifier: parameter.notFound
 			count: 2
 			path: Modules/Permissions/Policies/RolePolicy.php
-
-		-
-			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
-			identifier: larastan.noEnvCallsOutsideOfConfig
-			count: 1
-			path: Modules/Permissions/Providers/BouncerServiceProvider.php
 
 		-
 			message: '#^Call to an undefined static method App\\User\:\:withDisabled\(\)\.$#'
