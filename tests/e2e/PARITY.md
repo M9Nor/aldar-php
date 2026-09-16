@@ -1,16 +1,16 @@
 # Parity suite
 
-Black-box checks that the site behaves the same before and after an upgrade. Baselines were recorded on Laravel 7.3 / PHP 7.4 from `_db-backup/aldar-db-20260914-1704.sql.gz`.
+Black-box checks that the site behaves the same before and after an upgrade. Baselines were recorded on Laravel 7.3 / PHP 7.4 from `_db-backup/aldar-db-20260914-1704.sql.gz`. The suite now runs against Laravel 13 / PHP 8.4; the baselines are still the Laravel 7.3 recordings, apart from the differences accepted in the Phase 1 upgrade PR.
 
 ## Run
 
 ```bash
 docker compose up -d
 cd tests/e2e
-npm run parity            # resets the local DB, then 317 tests, about 7 minutes
+npm run parity            # resets the local DB, then 321 tests, about 10 minutes
 ```
 
-**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
+**The upgrade gate is `npm test`, not `npm run parity`.** `npm test` runs the `parity` project first and then the Phase H `chromium` project (smoke and security specs), 368 tests in all (321 parity + 47 chromium, about 14 minutes), and both must pass. Several Phase 0 requirements live only in the `chromium` project: the `img/{size}/{path}` route including the H4 size whitelist (`specs/security/images.spec.ts`), leads stored for valid `store`/`subscribe` submissions (`specs/smoke/critical-flows.spec.ts`, `specs/security/contact-forms.spec.ts`), and admin login (`specs/smoke/critical-flows.spec.ts`, "admin can log in and reach the dashboard"). A `parity`-only run does not check any of these.
 
 ## Environment the baselines assume
 
@@ -36,12 +36,32 @@ No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever pri
 |---|---|
 | `specs/parity/golden-master.spec.ts` | Normalised server HTML for the 194 URLs in `parity/url-inventory.json` |
 | `specs/parity/behaviour.spec.ts` | Contact validation JSON (ar/en), `store-inner` lead, `set_currency`, `/cookies`, regions and installments JSON, locale and trailing-slash redirects |
+| `specs/parity/admin-table-values.spec.ts` | Row values of four public admin tables (countries, cities, areas, FAQs), all pages, sorted by id |
 | `specs/parity/admin-sections.spec.ts` | Every admin section's status, columns and DataTables shape; failed login; logout; row keys and action kinds over every row of public tables (walked page by page; structureOnly lead, user and form tables use page 1 and record no counts) |
 | `specs/parity/content-lifecycle.spec.ts` | Article create (with image) → front end and `/img` → edit → delete; landing-page render |
 | `specs/parity/permissions-matrix.spec.ts` | 170 admin GET routes × anonymous, ADMIN, SUPERADMIN |
 | `specs/parity/visual.spec.ts` | 8 pages × ar/en × desktop/mobile screenshots (`maxDiffPixelRatio` 0.01) |
 
 Only the `contact endpoints` `describe` block in `behaviour.spec.ts` calls `requireLocal` (it clears the cache limiter and writes leads), so it refuses to run unless `BASE_URL` is the local Docker stack — as do all of `admin-sections.spec.ts`, `content-lifecycle.spec.ts` and `permissions-matrix.spec.ts`, which sign in with the local parity accounts. `behaviour.spec.ts`'s `set_currency`, `/cookies`, regions/installments JSON and redirect tests are not gated: they only set cookies and can run against any host the guards in "Guards" above allow. See "Guards" above for the live-site and allowlist checks that apply to every spec.
+
+## Structural checks
+
+`scripts/upgrade/check-structure.sh` compares routes, key config values and Glide cache paths with `tests/upgrade/*.json` (`routes.json`, `config.json`, `glide-cache-paths.json`), which were recorded on Laravel 7. It prints `structure matches tests/upgrade/` and exits 0 when all three match, and prints a diff and exits 1 otherwise. Run it from the repository root with the Docker stack up; it is not part of `npm test`.
+
+```bash
+scripts/upgrade/check-structure.sh
+```
+
+## Deprecation check
+
+The Phase 1 exit criterion "no PHP deprecation entries are logged during a full parity run" reads `storage/logs/deprecations.log`. It needs `LOG_DEPRECATIONS_CHANNEL=deprecations` in the local `.env` (not in `.env.example`). Without it, `config/logging.php` sends deprecations to the `null` channel, nothing is ever written, and an empty or missing log proves nothing. Check the key without printing `.env`, then run the gate from the repository root:
+
+```bash
+grep -q '^LOG_DEPRECATIONS_CHANNEL=deprecations' .env || echo 'add LOG_DEPRECATIONS_CHANNEL=deprecations to .env first'
+rm -f storage/logs/deprecations.log
+(cd tests/e2e && npm test)
+test ! -s storage/logs/deprecations.log && echo 'no deprecations'
+```
 
 ## When a parity test fails after a change
 
@@ -107,10 +127,10 @@ Screenshots depend on the OS font renderer. They are stored per platform (`snaps
 These are baseline facts, not bugs to fix inside a parity change:
 - `/{en,ar}/apartments-for-sale-in-turkey` and `/{en,ar}/shop` return 404: their filter link names a missing category.
 - `/landing-page/new` returns 404 because the row is soft-deleted; the lifecycle spec restores it for one test.
-- Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show`, `opportunity/show`, and `projects/data` without DataTables parameters.
+- Admin GET routes that answer 500 for staff: `notification`, `users/show`, `users/identity/validate_`, `tags/list`, `roles/show`, `projects/show` and `opportunity/show`. `projects/data` without DataTables parameters also answered 500 on Laravel 7; on Laravel 13 it answers 200 for staff (accepted difference P1-R19, recorded in the matrix baseline).
 - `POST contact-us/store-visit` answers 500: the controller method is commented out.
 - `GET admin/notification/config` answers 200 to anonymous visitors with the Firebase web client config (Phase 2 candidate).
-- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows, and pages whose window holds spam submissions with invalid UTF-8 answer a DataTables `Malformed UTF-8` error, so staff cannot page past them.
+- The admin project and opportunity request lists (`admin/{projects,opportunity}/data_requests`) read the same unfiltered `contact_us` rows, and pages whose window holds spam submissions with invalid UTF-8 answer a DataTables `Malformed UTF-8` error, so staff cannot page past them. Laravel 13 behaves the same: walking both lists as `parity-superadmin` at the page's own 50-row length, 4 of the 74 pages answer HTTP 200 with `Malformed UTF-8 characters, possibly incorrectly encoded`. Tracked as S12 for Phase 2.
 - `admin/opportunity/properties` loads its table from the projects endpoint `admin/projects/data_properties`.
 - The `store-inner` behaviour test leaves one synthetic `contact_us` row (`parity-inner@aldar.test`) until the next DB reset.
 - Left out of the matrix because they change state on GET: `users/login_as/{model}`, `projects/update_prices`, `categories/asdwadwadwdaw`, `clear-cache` (see `MATRIX_EXCLUDED`).

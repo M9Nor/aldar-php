@@ -9,10 +9,10 @@
 	  $subject = "Contact Form FinanceTop Site";
    
     $fields = array();
-    $fields{"firstname"} = "First name";
-    $fields{"phonenumber"} = "Phone Number";
-    $fields{"email"} = "Email";
-    $fields{"message"} = "Message";
+    $fields["firstname"] = "First name";
+    $fields["phonenumber"] = "Phone Number";
+    $fields["email"] = "Email";
+    $fields["message"] = "Message";
 	
 
     $body = "Here is what was sent:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n\n",$b,$_REQUEST[$a]); }

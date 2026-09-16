@@ -225,9 +225,10 @@ class UserController extends CmsController
         ->make(true);
     }
     public function getUsersSelect2(Request $request){
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = CrudModel::where(function($q) use ($term) {
             $q->where('username','LIKE', "%{$term}%");
@@ -239,7 +240,7 @@ class UserController extends CmsController
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
     }
     public function create(Request $request)
@@ -256,7 +257,7 @@ class UserController extends CmsController
         // );
         $this->authorize('create', CrudModel::class);
 
-        $this->data['role'] = strtoupper($request->role);
+        $this->data['role'] = strtoupper((string) $request->role);
 
         if(!$request->role)
         {
@@ -360,7 +361,7 @@ class UserController extends CmsController
     public function myprofile(Request $request)
     {
 
-        $this->data['role'] = strtoupper($request->role);
+        $this->data['role'] = strtoupper((string) $request->role);
 
         if(!$request->role)
         {
@@ -384,7 +385,7 @@ class UserController extends CmsController
     public function edit(Request $request)
     {
 
-        $this->data['role'] = strtoupper($request->role);
+        $this->data['role'] = strtoupper((string) $request->role);
 
         if(!$request->role)
         {

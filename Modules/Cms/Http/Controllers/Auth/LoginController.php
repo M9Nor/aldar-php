@@ -124,6 +124,22 @@ class LoginController extends Controller
     }
 
     /**
+     * Attempt to log the user into the application.
+     *
+     * Kept from laravel/ui v2.0.1 (Laravel 7): "remember" is read with filled().
+     * laravel/ui 4 reads it with boolean(), which treats "0", "false" and "off" as not remembered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return bool
+     */
+    protected function attemptLogin(Request $request)
+    {
+        return $this->guard()->attempt(
+            $this->credentials($request), $request->filled('remember')
+        );
+    }
+
+    /**
      * Get the failed login response instance.
      *
      * @param  \Illuminate\Http\Request  $request

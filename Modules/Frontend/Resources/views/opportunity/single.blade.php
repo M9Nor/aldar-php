@@ -144,7 +144,7 @@
         $lowestPrice = !is_null($priceRange = $model->prices->first()) ? $priceRange->lowest_price : 0;
         $modelLink = route('OpportunityController@single', ['type' => (!is_null($category) ? $category->slug : 'opportunity_classifications'), 'slug' => $model->slug]);
         $addressDetails = (!is_null($city = $model->city) ?  $city->translateOrFirst()->name : '') . ' / ' .  (!is_null($area = $model->area) ?  $area->translateOrFirst()->name : '');
-        $modelDescription = Str::limit($model->translateOrFirst()->details, 100);
+        $modelDescription = Str::limit((string) $model->translateOrFirst()->details, 100);
     @endphp
     <div class="inner-pages">
         <section class="single-proper blog details single-project">

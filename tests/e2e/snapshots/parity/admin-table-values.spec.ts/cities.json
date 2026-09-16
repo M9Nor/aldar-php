@@ -1,0 +1,656 @@
+[
+  {
+    "id": "12",
+    "country_id": "2",
+    "native_name": "istanbul",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "2",
+    "link": null,
+    "new_title": "Istanbul",
+    "name": "Istanbul",
+    "description": "<ul>\r\n<li style=\"text-align: left;\"><span style=\"color: #000000;\">Istanbul or Constantinople previously was the capital of the Byzantine state, then the capital of the Ottoman Empire after the Islamic conquest, and now it is the backbone of economic life in Turkey and one of the most important centers of trade and tourism around the world.</span></li>\r\n<li style=\"text-align: left;\"><span style=\"color: #000000;\">Istanbul is now the largest European city in terms of population, and it is one of the rare cities located in Europe and Asia together, in addition to its civilizational link between East and West by virtue of location and history, all of that and more has made Istanbul one of the most prominent capitals around the world.</span></li>\r\n<li style=\"text-align: left;\"><span style=\"color: #000000;\">Istanbul area: 5,343 km&sup2;, population: 16 million</span></li>\r\n<li style=\"text-align: left;\"><span style=\"color: #000000;\">Istanbul is characterized by the charming Bosphorus Strait, the natural sea lane that separates its European and Asian sides and connects the Sea of ​​Marmara and the Black Sea, and is considered one of the most important and crowded shipping lanes around the world, and it adds an aesthetic dimension and merges with the historical monuments on its sides to become one of the most important centers of famous tourist attractions.</span></li>\r\n</ul>",
+    "image": null,
+    "translations": [
+      {
+        "id": "43",
+        "city_id": "12",
+        "locale": "en",
+        "name": "Istanbul",
+        "description": "&lt;ul&gt;\r\n&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Istanbul or Constantinople previously was the capital of the Byzantine state, then the capital of the Ottoman Empire after the Islamic conquest, and now it is the backbone of economic life in Turkey and one of the most important centers of trade and tourism around the world.&lt;/span&gt;&lt;/li&gt;\r\n&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Istanbul is now the largest European city in terms of population, and it is one of the rare cities located in Europe and Asia together, in addition to its civilizational link between East and West by virtue of location and history, all of that and more has made Istanbul one of the most prominent capitals around the world.&lt;/span&gt;&lt;/li&gt;\r\n&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Istanbul area: 5,343 km&amp;sup2;, population: 16 million&lt;/span&gt;&lt;/li&gt;\r\n&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Istanbul is characterized by the charming Bosphorus Strait, the natural sea lane that separates its European and Asian sides and connects the Sea of ​​Marmara and the Black Sea, and is considered one of the most important and crowded shipping lanes around the world, and it adds an aesthetic dimension and merges with the historical monuments on its sides to become one of the most important centers of famous tourist attractions.&lt;/span&gt;&lt;/li&gt;\r\n&lt;/ul&gt;",
+        "image": null
+      },
+      {
+        "id": "44",
+        "city_id": "12",
+        "locale": "ar",
+        "name": "اسطنبول",
+        "description": "&lt;ul&gt;\r\n&lt;li&gt;&lt;span style=&quot;font-weight: 400; color: #000000;&quot;&gt;اسطنبول أو القسطنطينية سابقًا كانت عاصمة الدولة البيزنطية ثم عاصمة للدولة العثمانية بعد الفتح الإسلامي والآن هي عصب الحياة الاقتصادية في تركيا وأحد أهم مراكز التجارة والسياحة حول العالم.&lt;/span&gt;&lt;/li&gt;\r\n&lt;li&gt;&lt;span style=&quot;font-weight: 400; color: #000000;&quot;&gt;تعتبر اسطنبول الآن أضخم المدن الأوروبية من حيث عدد السكان، وهي من المدن النادرة التي تقع في أوروبا وآسيا معًا، بالإضافة إلى ربطها الحضاري بين الشرق والغرب بحكم الموقع والتاريخ، كل ذلك وأكثر جعل اسطنبول أحد أبرز العواصم حول العالم.&lt;/span&gt;&lt;/li&gt;\r\n&lt;li&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;مساحة اسطنبول: &lt;/span&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &#039;Segoe UI&#039;, Roboto, Oxygen, Ubuntu, Cantarell, &#039;Open Sans&#039;, &#039;Helvetica Neue&#039;, sans-serif;&quot;&gt;5,343 كم&amp;sup2;، و&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &#039;Segoe UI&#039;, Roboto, Oxygen, Ubuntu, Cantarell, &#039;Open Sans&#039;, &#039;Helvetica Neue&#039;, sans-serif; color: #000000;&quot;&gt;عدد السكان: 16 مليون&lt;/span&gt;&lt;/li&gt;\r\n&lt;li&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &#039;Segoe UI&#039;, Roboto, Oxygen, Ubuntu, Cantarell, &#039;Open Sans&#039;, &#039;Helvetica Neue&#039;, sans-serif; color: #000000;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;تتميز اسطنبول بمضيق البسفور الساحر، الممر البحري الطبيعي والذي يفصل بين جانبيها الأوروبي والآسيوي ويصل بين بحر مرمرة والبحر الأسود ويعتبر أحد أهم ممرات النقل البحري الملاحة حول العالم وأكثرها اكتظاظًا، كما أنه يُضيف بُعد جمالي ويندمج مع الآثار التاريخية على جانبيه ليصبح أحد أهم مراكز الجذب السياحي المشهورة.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;\r\n&lt;/ul&gt;",
+        "image": "areas/BYcRHbI2jokUO54Q0wNNyAuafHgODMnl9g4hlmWm.jpeg"
+      },
+      {
+        "id": "45",
+        "city_id": "12",
+        "locale": "fa",
+        "name": "استانبول",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Istanbul",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/12/edit",
+          "action": "edit",
+          "id": "edit_12"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/12",
+          "action": "delete",
+          "id": "delete_12"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "1"
+  },
+  {
+    "id": "13",
+    "country_id": "2",
+    "native_name": "sakarya",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": null,
+    "link": null,
+    "new_title": "Sakarya",
+    "name": "Sakarya",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "46",
+        "city_id": "13",
+        "locale": "en",
+        "name": "Sakarya",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "47",
+        "city_id": "13",
+        "locale": "ar",
+        "name": "سكاريا",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "48",
+        "city_id": "13",
+        "locale": "fa",
+        "name": "سكاريا",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Sakarya",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/13/edit",
+          "action": "edit",
+          "id": "edit_13"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/13",
+          "action": "delete",
+          "id": "delete_13"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "2"
+  },
+  {
+    "id": "14",
+    "country_id": "2",
+    "native_name": "yalova-turkey",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "Yalova",
+    "name": "Yalova",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "49",
+        "city_id": "14",
+        "locale": "en",
+        "name": "Yalova",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "50",
+        "city_id": "14",
+        "locale": "ar",
+        "name": "يلوا",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "51",
+        "city_id": "14",
+        "locale": "fa",
+        "name": "يلوا",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Yalova",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/14/edit",
+          "action": "edit",
+          "id": "edit_14"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/14",
+          "action": "delete",
+          "id": "delete_14"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "3"
+  },
+  {
+    "id": "15",
+    "country_id": "2",
+    "native_name": "izmit-turkey",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "İzmit",
+    "name": "İzmit",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "52",
+        "city_id": "15",
+        "locale": "en",
+        "name": "İzmit",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "53",
+        "city_id": "15",
+        "locale": "ar",
+        "name": "ازميت",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "54",
+        "city_id": "15",
+        "locale": "fa",
+        "name": "ازميت",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "İzmit",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/15/edit",
+          "action": "edit",
+          "id": "edit_15"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/15",
+          "action": "delete",
+          "id": "delete_15"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "4"
+  },
+  {
+    "id": "16",
+    "country_id": "2",
+    "native_name": "bursa-turkey",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "Bursa",
+    "name": "Bursa",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "55",
+        "city_id": "16",
+        "locale": "en",
+        "name": "Bursa",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "56",
+        "city_id": "16",
+        "locale": "ar",
+        "name": "بورصة",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "57",
+        "city_id": "16",
+        "locale": "fa",
+        "name": "بورصة",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Bursa",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/16/edit",
+          "action": "edit",
+          "id": "edit_16"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/16",
+          "action": "delete",
+          "id": "delete_16"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "5"
+  },
+  {
+    "id": "17",
+    "country_id": "2",
+    "native_name": "izmir-turkey",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "İzmir",
+    "name": "İzmir",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "58",
+        "city_id": "17",
+        "locale": "en",
+        "name": "İzmir",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "59",
+        "city_id": "17",
+        "locale": "ar",
+        "name": "ازمير",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "60",
+        "city_id": "17",
+        "locale": "fa",
+        "name": "ازمير",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "İzmir",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/17/edit",
+          "action": "edit",
+          "id": "edit_17"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/17",
+          "action": "delete",
+          "id": "delete_17"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "6"
+  },
+  {
+    "id": "18",
+    "country_id": "2",
+    "native_name": "antalya-turkey",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "Antalya",
+    "name": "Antalya",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "61",
+        "city_id": "18",
+        "locale": "en",
+        "name": "Antalya",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "62",
+        "city_id": "18",
+        "locale": "ar",
+        "name": "انطاليا",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "63",
+        "city_id": "18",
+        "locale": "fa",
+        "name": "انطاليا",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Antalya",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/18/edit",
+          "action": "edit",
+          "id": "edit_18"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/18",
+          "action": "delete",
+          "id": "delete_18"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "7"
+  },
+  {
+    "id": "19",
+    "country_id": "2",
+    "native_name": "trabzon",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": "3",
+    "link": null,
+    "new_title": "Trabzon",
+    "name": "Trabzon",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "64",
+        "city_id": "19",
+        "locale": "en",
+        "name": "Trabzon",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "65",
+        "city_id": "19",
+        "locale": "ar",
+        "name": "طرابزون",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "66",
+        "city_id": "19",
+        "locale": "fa",
+        "name": "طرابزون",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Trabzon",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/19/edit",
+          "action": "edit",
+          "id": "edit_19"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/19",
+          "action": "delete",
+          "id": "delete_19"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "8"
+  },
+  {
+    "id": "20",
+    "country_id": "2",
+    "native_name": "ankara",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": null,
+    "link": null,
+    "new_title": "Ankara",
+    "name": "Ankara",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "67",
+        "city_id": "20",
+        "locale": "en",
+        "name": "Ankara",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "68",
+        "city_id": "20",
+        "locale": "ar",
+        "name": "أنقرة",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Ankara",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/20/edit",
+          "action": "edit",
+          "id": "edit_20"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/20",
+          "action": "delete",
+          "id": "delete_20"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "9"
+  },
+  {
+    "id": "21",
+    "country_id": "2",
+    "native_name": "tekirdag",
+    "zip_code": null,
+    "lat": null,
+    "lng": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "sort_order": null,
+    "link": null,
+    "new_title": "Tekirdağ",
+    "name": "Tekirdağ",
+    "description": null,
+    "image": null,
+    "translations": [
+      {
+        "id": "69",
+        "city_id": "21",
+        "locale": "en",
+        "name": "Tekirdağ",
+        "description": null,
+        "image": null
+      },
+      {
+        "id": "70",
+        "city_id": "21",
+        "locale": "ar",
+        "name": "تكيرداغ",
+        "description": null,
+        "image": null
+      }
+    ],
+    "translated_name": "Tekirdağ",
+    "actions": {
+      "dropdown": [
+        {
+          "label": "cms::global.actions.edit",
+          "color": "primary",
+          "icon": "fa fa-lg fa-fw fa-edit",
+          "url": "{origin}/en/admin/cities/21/edit",
+          "action": "edit",
+          "id": "edit_21"
+        },
+        {
+          "type": "form",
+          "label": "cms::global.actions.delete",
+          "color": "danger",
+          "icon": "fa fa-lg fa-fw fa-trash",
+          "url": "{origin}/en/admin/cities/destroy/21",
+          "action": "delete",
+          "id": "delete_21"
+        }
+      ],
+      "icons": []
+    },
+    "DT_RowIndex": "10"
+  }
+]

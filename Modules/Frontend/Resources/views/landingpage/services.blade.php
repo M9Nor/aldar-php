@@ -20,7 +20,7 @@
                                 <img src="{{$service->getIconImage($service,'75x75', 'services')}}" alt="{{$service->translateOrFirst()->title}}">
                             </div>
                             <h5>{{$service->translateOrFirst()->title}}</h5>
-                            <p style="color: #000">{{ Str::limit($service->translateOrFirst()->brief, 100) }}</p>
+                            <p style="color: #000">{{ Str::limit((string) $service->translateOrFirst()->brief, 100) }}</p>
                         </div>
                     </a>
                 </div>

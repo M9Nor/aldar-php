@@ -4,6 +4,7 @@
     "description": "",
     "keywords": [],
     "order": 2,
+    "priority": 2,
     "providers": [
         "Modules\\Backend\\Providers\\BackendServiceProvider"
     ],

@@ -1,5 +1,5 @@
 @php
-    $description = Str::limit($item->translateOrFirst()->details, 100);
+    $description = Str::limit((string) $item->translateOrFirst()->details, 100);
     $addressDetails = null;
     $createdAt = null;
     $views = null;
@@ -19,7 +19,7 @@
     }
     else
     {
-        $createdAt = \Modules\Cms\Entities\Traits\Helpers::parseDate($item->created_at, 'dS F Y');
+        $createdAt = \Modules\Cms\Classes\DateHelper::parseDate($item->created_at, 'dS F Y');
         $views = round($item->views);
 
         switch ($item->type) {
@@ -69,7 +69,7 @@
                     </div>
                 @endif
                 <div class="news-item-descr big-news">
-                    <p>{{\Illuminate\Support\Str::limit($item->translateOrFirst()->brief, 160)}}</p>
+                    <p>{{\Illuminate\Support\Str::limit((string) $item->translateOrFirst()->brief, 160)}}</p>
                 </div>
                 <div class="news-item-bottom">
                     <a href="{{$route}}" class="news-link">

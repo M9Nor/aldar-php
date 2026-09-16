@@ -105,6 +105,23 @@ class ResetPasswordController extends Controller
     }
 
     /**
+     * Get the password reset validation rules.
+     *
+     * Kept from laravel/ui v2.0.1 (Laravel 7). laravel/ui 4 uses Rules\Password::defaults(),
+     * which adds a "string" check and so rejects or words non-string passwords differently.
+     *
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:8',
+        ];
+    }
+
+    /**
      * Get the response for a successful password reset.
      *
      * @param  \Illuminate\Http\Request  $request

@@ -7,7 +7,6 @@ use Astrotomic\Translatable\Translatable;
 use Modules\Cms\Entities\Traits\TranslatableHelper;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Entities\Traits\Disabable;
-use Modules\Cms\Entities\Tag;
 use Modules\Cms\Entities\Content;
 use Modules\Backend\Entities\Project;
 use Illuminate\Support\Str;

@@ -195,7 +195,7 @@
                                                     'data'        => $mainCategories,
                                                     'selected'    => old(strtolower($model->key), $model->val),
                                                     'value'       => function($data, $key, $value){ return $value->id; },
-                                                    'text'        => function($data, $key, $value){ return html_entity_decode(str_limit(strip_tags($value->translateOrFirst(app()->getLocale())->title), 200)); },
+                                                    'text'        => function($data, $key, $value){ return html_entity_decode(\Illuminate\Support\Str::limit(strip_tags($value->translateOrFirst(app()->getLocale())->title), 200)); },
                                                     'select'      => function($data, $selected, $key, $value){ return $selected == $value->id; },
                                                 ]
                                             ]) --}}

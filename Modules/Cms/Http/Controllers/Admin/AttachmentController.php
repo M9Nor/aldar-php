@@ -15,6 +15,10 @@ use DB;
 
 class AttachmentController extends Controller
 {
+    public $attributeNames;
+
+    public $data = [];
+
     /**
      * Rule strings the admin views send (dropzone components, Content, projects and
      * opportunities media). Anything else from the client falls back to DEFAULT_RULES.

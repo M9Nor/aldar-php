@@ -27,7 +27,7 @@ class CreateAttachmentsTable extends Migration
 
             $table->foreign('uploaded_by')
             ->references('id')->on('users')
-            ->onDelete(\DB::raw('SET NULL'));
+            ->onDelete('set null');
         });
 
         Schema::create('cms_external_attachments', function (Blueprint $table) {

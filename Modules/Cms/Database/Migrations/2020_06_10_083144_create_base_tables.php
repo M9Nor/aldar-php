@@ -103,12 +103,12 @@ class CreateBaseTables extends Migration
             $table->foreign('city_id')
                 ->references('id')
                 ->on('cms_cities')
-                ->onDelete(\DB::raw('SET NULL'));
+                ->onDelete('set null');
 
             $table->foreign('country_id')
                 ->references('id')
                 ->on('cms_countries')
-                ->onDelete(\DB::raw('SET NULL'));
+                ->onDelete('set null');
         });
     }
 

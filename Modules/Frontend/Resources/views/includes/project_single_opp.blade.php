@@ -7,7 +7,7 @@
     $lowestPrice            = !is_null($priceRange = $project->prices->first()) ? $priceRange->lowest_price : 0;
     $projectLink            = route('OpportunityController@single', ['type' => (!is_null($category) ? $category->slug : 'opportunities'), 'slug' => $project->slug]);
     $addressDetails         = (!is_null($city = $project->city) ?  $city->translateOrFirst()->name : '') . ' / ' .  (!is_null($area = $project->area) ?  $area->translateOrFirst()->name : '');
-    $projectDescription     = Str::limit($project->translateOrFirst()->details, 100);
+    $projectDescription     = Str::limit((string) $project->translateOrFirst()->details, 100);
     $projectTitle           = Str::limit($project->translateOrFirst()->title, 110);
 @endphp
 

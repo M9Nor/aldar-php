@@ -130,6 +130,11 @@ return [
     ),
 
     /*
+    | Laravel 13 option. Kept at "php" so Laravel 7 session files stay readable; Phase 2 moves to "json".
+    */
+    'serialization' => 'php',
+
+    /*
     |--------------------------------------------------------------------------
     | Session Cookie Path
     |--------------------------------------------------------------------------

@@ -49,7 +49,7 @@ class CreateProjectsTables extends Migration
             $table->foreign('city_id')
                 ->references('id')
                 ->on('cms_cities')
-                ->onDelete(\DB::raw('SET NULL'));
+                ->onDelete('set null');
            
                 $table->foreign('area_id')
                 ->references('id')->on('cms_areas')
@@ -58,7 +58,7 @@ class CreateProjectsTables extends Migration
             $table->foreign('country_id')
                 ->references('id')
                 ->on('cms_countries')
-                ->onDelete(\DB::raw('SET NULL'));
+                ->onDelete('set null');
 
 
             $table->timestamp('disabled_at')->nullable();

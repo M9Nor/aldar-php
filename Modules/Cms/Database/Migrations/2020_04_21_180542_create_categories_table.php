@@ -30,7 +30,7 @@ class CreateCategoriesTable extends Migration
             $table->foreign('parent_id')
                 ->references('id')
                 ->on('cms_categories')
-                ->onDelete(\DB::raw('SET NULL'));
+                ->onDelete('set null');
         });
 
         Schema::create('cms_categorizables', function (Blueprint $table) {

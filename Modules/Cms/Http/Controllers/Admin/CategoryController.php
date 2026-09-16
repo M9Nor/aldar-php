@@ -605,9 +605,10 @@ class CategoryController extends CmsController
         ]);
     }
     public function getCategoriesSelect2(Request $request){
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = CrudModel::select('cms_categories.*');
         if($request->type != 'all'){
@@ -641,7 +642,7 @@ class CategoryController extends CmsController
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
     }
     public function getChilds(Request $request){

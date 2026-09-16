@@ -18,6 +18,18 @@ class BouncerServiceProvider extends ServiceProvider
         $this->supremeAdmin();
         $this->registerTables();
         $this->registerCustomPermissionModels();
+        $this->runBeforePolicies();
+    }
+
+    /**
+     * Check Bouncer abilities before policies, as Bouncer 1.0.0-rc.8 did on Laravel 7.
+     * Bouncer 1.0 moved its gate check to the "after" slot by default.
+     *
+     * @return void
+     */
+    protected function runBeforePolicies()
+    {
+        Bouncer::runBeforePolicies();
     }
 
     /**

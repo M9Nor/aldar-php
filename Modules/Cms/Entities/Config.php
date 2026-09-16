@@ -7,7 +7,6 @@ use Astrotomic\Translatable\Translatable;
 use Modules\Cms\Entities\Traits\TranslatableHelper;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Entities\Traits\Disabable;
-use Modules\Cms\Entities\Config;
 use Illuminate\Support\Str;
 
 class Config extends Model

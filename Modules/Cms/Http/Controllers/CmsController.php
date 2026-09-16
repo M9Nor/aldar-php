@@ -15,9 +15,10 @@ class CmsController extends Controller
 {
     public function getCountries(Request $request){
 
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = Country::where(function($q) use ($term) {
             $q->whereTranslationLike('name',"%{$term}%");
@@ -28,14 +29,15 @@ class CmsController extends Controller
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
     }
 
     public function getCities(Request $request){
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = City::where(function($q) use ($term) {
             $q->whereTranslationLike('name',"%{$term}%");
@@ -51,15 +53,16 @@ class CmsController extends Controller
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
     }
 
     public function getAreas(Request $request){
 
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = Area::where(function($q) use ($term) {
             $q->whereTranslationLike('name',"%{$term}%");
@@ -78,15 +81,16 @@ class CmsController extends Controller
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
         
     }
 
     public function getContentsSelect2(Request $request){
-        $term = trim($request->search);
-        if(!$request->page){
-            $request->page = 1;
+        $term = trim((string) $request->search);
+        $page = $request->page;
+        if(!$page){
+            $page = 1;
         }
         $list = Content::select('cms_contents.*');
         // dd($request->type);
@@ -106,7 +110,7 @@ class CmsController extends Controller
             $result['results'][$key] = $item->formAjaxArray(true);
         }
         $last_page = $list->lastPage();
-        $result['pagination']['more'] = $request->page >= $last_page ? false : true;
+        $result['pagination']['more'] = $page >= $last_page ? false : true;
         return json_encode($result);
     }
 }

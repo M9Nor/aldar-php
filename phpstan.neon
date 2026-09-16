@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+    level: 2
+    paths:
+        - app
+        - Modules
+    excludePaths:
+        - Modules/*/Resources/views/*
+        - Modules/Cms/Includes/date/I18N/Arabic/Examples/*
+        # P1-R12 / P1-R36: dead Notification entity whose Dimsav\Translatable\Translatable trait is not
+        # installed (fatal on Laravel 7 too). Loading it crashes the analysis, so it is excluded, unchanged.
+        - Modules/Notification/Entities/Config.php
+    reportUnmatchedIgnoredErrors: false

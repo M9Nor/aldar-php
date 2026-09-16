@@ -2,6 +2,7 @@
 
 namespace Modules\Cms\Providers;
 
+use App\Glide\Encoder;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Modules\Cms\Classes\ImageManipulator;
@@ -27,11 +28,55 @@ class ImageServiceProvider extends ServiceProvider
                 'cache'                     => $filesystem->getDriver(),
                 'cache_path_prefix'         => '.cache',
                 'driver'                    => 'gd',
+                // Glide 1.5's default quality (90) for images generated without q (see App\Glide\Encoder).
+                'encoder'                   => new Encoder(),
                 'defaults'                  =>  [
                     'fit'   => 'crop',
                     'fm'    => 'jpg',
                     'q'     => 75
-                ]
+                ],
+                // Glide 3 names cache files with xxh3 over API params only; Glide 1.5 used md5 over all
+                // params. This is Glide 1.5's Server::getCachePath() verbatim, so every image already
+                // cached under .cache keeps its name. Glide binds $this to the Server when calling it,
+                // so the closure must not be static.
+                'cache_path_callable'       => function (string $path, array $params = []): string {
+                    $sourcePath = $this->getSourcePath($path);
+
+                    if ($this->sourcePathPrefix) {
+                        $sourcePath = substr($sourcePath, strlen($this->sourcePathPrefix) + 1);
+                    }
+
+                    // Glide 1.5 getAllParams(): defaults, then presets named in p, then params, unfiltered.
+                    $all = $this->defaults;
+
+                    if (isset($params['p'])) {
+                        foreach (explode(',', (string) $params['p']) as $preset) {
+                            if (isset($this->presets[$preset])) {
+                                $all = array_merge($all, $this->presets[$preset]);
+                            }
+                        }
+                    }
+
+                    $params = array_merge($all, $params);
+                    unset($params['s'], $params['p']);
+                    ksort($params);
+
+                    $md5 = md5($sourcePath.'?'.http_build_query($params));
+
+                    $cachedPath = $this->groupCacheInFolders ? $sourcePath.'/'.$md5 : $md5;
+
+                    if ($this->cachePathPrefix) {
+                        $cachedPath = $this->cachePathPrefix.'/'.$cachedPath;
+                    }
+
+                    if ($this->cacheWithFileExtensions) {
+                        $ext = $params['fm'] ?? pathinfo($path, PATHINFO_EXTENSION);
+                        $ext = ($ext === 'pjpg') ? 'jpg' : $ext;
+                        $cachedPath .= '.'.$ext;
+                    }
+
+                    return $cachedPath;
+                },
                 // 'group_cache_in_folders' =>  // Whether to group cached images in folders
                 // 'watermarks' =>              // Watermarks filesystem
                 // 'watermarks_path_prefix' =>  // Watermarks filesystem path prefix

@@ -696,8 +696,8 @@
   },
   "/en/admin/projects/data": {
     "anonymous": "302 login",
-    "parity-admin": "500",
-    "parity-superadmin": "500"
+    "parity-admin": "200",
+    "parity-superadmin": "200"
   },
   "/en/admin/projects/create": {
     "anonymous": "302 login",

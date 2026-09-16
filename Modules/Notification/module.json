@@ -4,6 +4,7 @@
     "description": "",
     "keywords": [],
     "order": 3,
+    "priority": 3,
     "providers": [
         "Modules\\Notification\\Providers\\NotificationServiceProvider"
     ],

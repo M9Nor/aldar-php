@@ -1,0 +1,38 @@
+{
+    "app.cipher": "AES-256-CBC",
+    "app.fallback_locale": "en",
+    "app.locale": "en",
+    "app.timezone": "Europe/Istanbul",
+    "auth.defaults.guard": "web",
+    "auth.providers.users.model": "App\\User",
+    "cache.default": "file",
+    "cache.prefix": "aldar_cache",
+    "database.default": "mysql",
+    "filesystems.default": "public",
+    "filesystems.disks.graph.root": "{base}/public/graph/uploads/original",
+    "filesystems.disks.public.root": "{base}/storage/app/public/uploads",
+    "hashing.bcrypt.rounds": 10,
+    "hashing.driver": "bcrypt",
+    "laravellocalization.hideDefaultLocaleInURL": false,
+    "laravellocalization.supportedLocales(keys)": [
+        "en",
+        "ar"
+    ],
+    "laravellocalization.useAcceptLanguageHeader": false,
+    "modules.activators.file.statuses-file": "{base}/storage/app/modules_statuses.json",
+    "session.cookie": "aldar_session",
+    "session.domain": null,
+    "session.driver": "file",
+    "session.http_only": true,
+    "session.lifetime": "120",
+    "session.path": "/",
+    "session.same_site": null,
+    "session.secure": false,
+    "session.serialization": "php",
+    "translatable.fallback_locale": "en",
+    "translatable.locales": [
+        "ar",
+        "en",
+        "tr"
+    ]
+}
