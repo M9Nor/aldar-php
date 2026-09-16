@@ -27,7 +27,7 @@ No secret values (`APP_KEY`, DB or mail credentials) are listed here or ever pri
 
 ## Guards
 
-- Global setup refuses to run against anything but `localhost`/`127.0.0.1` (any port), unless `PARITY_ALLOWED_HOST` names the host exactly — an explicit opt-in reserved for a future read-only staging run in Phase 3. `aldar-emlak.com` (and subdomains, and a trailing-dot FQDN) gets its own "live site" message; anything else unlisted gets a generic refusal.
+- Global setup refuses to run against anything but `localhost`/`127.0.0.1` (any port), unless `PARITY_ALLOWED_HOST` names the host exactly — the explicit opt-in a Phase 3 read-only staging run uses (see "Remote probe" below). `aldar-emlak.com` and `www.aldar-emlak.com` get their own "live site" message and cannot be allowed in by any opt-in, PARITY_ALLOWED_HOST included; anything else unlisted gets a generic refusal.
 - Specs that write data or sign in with the local parity accounts (behaviour, admin sections, lifecycle, matrix) additionally call `requireLocal` and refuse to run unless `BASE_URL` is exactly the local Docker stack — `PARITY_ALLOWED_HOST` does not open those up, since a staging run must stay read-only.
 - After a DB reset, on a local run, global setup fetches `${BASE_URL}/en` and fails if the response contains `phpdebugbar` (see "Environment the baselines assume" above).
 
@@ -63,6 +63,23 @@ rm -f storage/logs/deprecations.log
 (cd tests/e2e && npm test)
 test ! -s storage/logs/deprecations.log && echo 'no deprecations'
 ```
+
+## Remote probe (Phase 3)
+
+`scripts/deploy/probe-release.sh <base-url>` runs a read-only slice of the suite against a deployed release, for example a staging host:
+
+```bash
+scripts/deploy/probe-release.sh https://staging.aldar-emlak.com
+```
+
+It sets `PARITY_ALLOWED_HOST` to the URL's own host, so the run is an explicit opt-in for that host and no other, and `SKIP_DB_RESET=1`, since a remote host's database is never reset from here. It runs exactly these specs, chosen because none of them writes, resets a fixture, or signs in as an admin:
+
+- `specs/parity/golden-master.spec.ts`
+- `specs/security/headers.spec.ts`
+- `specs/security/module-scripts.spec.ts`
+- `specs/security/images.spec.ts`
+
+Production hostnames (`aldar-emlak.com`, `www.aldar-emlak.com`) are refused outright by `global-setup.ts` before anything else runs, opt-in or not — the probe script cannot be pointed at them. Every other spec that writes data or signs in with the local parity accounts still calls `requireLocal` and refuses to run against any non-local `BASE_URL`, `PARITY_ALLOWED_HOST` included; that guard is unchanged by the remote probe.
 
 ## Dependency audit (S4)
 

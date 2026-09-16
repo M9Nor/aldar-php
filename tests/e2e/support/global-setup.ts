@@ -10,9 +10,11 @@ function normalizeHost(host: string): string {
 export default async function globalSetup(): Promise<void> {
   const host = normalizeHost(new URL(BASE_URL).hostname);
 
-  // Phase 0 never talks to the live site, not even read-only. Specific message kept because
-  // the existing test expectations grep for "Refusing".
-  if (host === 'aldar-emlak.com' || host.endsWith('.aldar-emlak.com')) {
+  // Phase 0 never talks to the live site, not even read-only, and no opt-in can override that.
+  // Phase 3 probes staging read-only, so only the production hostnames are refused outright.
+  // Specific message kept because the existing test expectations grep for "Refusing".
+  const PRODUCTION_HOSTS = ['aldar-emlak.com', 'www.aldar-emlak.com'];
+  if (PRODUCTION_HOSTS.includes(host)) {
     throw new Error(`Refusing to run against the live site (BASE_URL=${BASE_URL})`);
   }
 
