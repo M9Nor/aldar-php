@@ -113,12 +113,28 @@ Regenerating the inventory (above) only replaces `url-inventory.json` and re-rec
 
 - `parity/admin-urls.ts`: model ids `31` (a user), `251` (an article), `318` (a contract category), `11` (a landing page), `145` (a tag), `98` (an area), `12` (a city), `2` (a country), `49` (a config), `133` (a project), `320` (an opportunity), `3` (a role).
 - `specs/security/admin-authorization.spec.ts`: project id `133`, opportunity id `320`, landing page id `11` and article id `251`. The spec attaches fixture payments, prices, a timeline and an external attachment to them, and deletes them again.
+- `specs/security/write-permissions.spec.ts`: category ids `608` (an `agents` category) and `598` (a `filters` category), project ids `139` (`is_special = 1`) and `133` (`is_special = 0`), and role id `3` (ADMIN).
 - `specs/parity/behaviour.spec.ts`: city id `18` (Antalya) and its area `count: 57`; payment category ids `518`/`519`.
 - `specs/parity/visual.spec.ts`: the `rose-marine-butik` property slug, the `istanbul` city slug, and the `realestate-index` article slug.
 - `specs/parity/content-lifecycle.spec.ts`: the "Turkish Citizenship" category picked in the article-create select2.
 - the `new` landing-page slug (soft-deleted; restored for one test).
 
 After a dump change, re-verify each one still resolves (the admin ids and the behaviour ids/counts against the new dump; the visual and lifecycle slugs by loading their pages), update whichever no longer match, then regenerate the inventory and re-record. The orphan-snapshot test in `inventory.spec.ts` catches golden-master snapshots left behind by URLs the new inventory dropped, but it cannot catch a stale id or slug that still happens to resolve to a different record — that only shows up as an unexpected diff in the affected spec, or not at all if you don't look.
+
+## Rows without a role signal (S13, P2-R7)
+
+The permissions matrix sends GETs only. Nine of its rows gave ADMIN and SUPERADMIN the same outcome on Laravel 7, so they carried no role signal:
+
+| Row | parity-admin / parity-superadmin | Why |
+|---|---|---|
+| `/en/admin/users/summary?model=31` | 302 back / 302 back | A non-AJAX `ResponseHandler` answer redirects back, and `UserController::summary` authorizes nothing (both roles hold `users.view`). |
+| `/en/admin/users/identity/validate?name=username&keyword=parity-probe` | 302 back / 302 back | The same: a `ResponseHandler` answer and no authorization. |
+| `/en/admin/configs/49/edit` | 302 back / 302 back | `ConfigController::edit` returns `back()` before any other code. The real page is `/en/admin/configs/49/edit-config` (200 / 200). |
+| `/en/admin/{projects,opportunity}/request_summary` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | S21 authorizes `tags.requests` before the lookup. |
+| `/en/admin/{projects,opportunity}/properties_summary` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | Same. |
+| `/en/admin/{projects,opportunity}/show_details/0` (2 rows) | 302 back / 404 since S21 (404 / 404 before) | Same. |
+
+Per ruling P2-R7, the first three stay without a role signal: giving them one would need an application change (an authorization call, or a real edit page), which Phase 2 does not make. S21 gave the other six a signal. Write permissions are covered by `specs/security/write-permissions.spec.ts` (S13): ADMIN POST probes that change nothing, with ids that give SUPERADMIN a real answer, checked against a table checksum.
 
 ## Visual baselines
 
