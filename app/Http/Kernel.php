@@ -14,6 +14,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
+        // First, so every response gets the headers, including redirects and rendered exceptions (S3).
+        \App\Http\Middleware\SecurityHeaders::class,
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
