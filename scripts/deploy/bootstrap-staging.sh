@@ -70,17 +70,18 @@ EOF
 fi
 echo "links: $(cd "$RELEASE" && ls -la .env storage public/graph/uploads | grep -c ' -> ')/3"
 
-say "3/7 framework discovery on PHP 8.4"
-(cd "$RELEASE" && "$PHP84" artisan package:discover --ansi </dev/null | tail -3)
-
-say "4/7 safety check: the staging config must point at the staging database only"
-TARGET_DB=$(cd "$RELEASE" && "$PHP84" -r 'require "vendor/autoload.php"; $app = require "bootstrap/app.php"; $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap(); echo config("database.connections.".config("database.default").".database");' </dev/null)
-PROD_DB=$(cd "$PROD" && "$PHP74" -r 'require "vendor/autoload.php"; $app = require "bootstrap/app.php"; $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap(); echo config("database.connections.".config("database.default").".database");' </dev/null)
-[ "$TARGET_DB" = "$STAGING_DB" ] || die "staging config points at an unexpected database"
+say "3/7 safety check: the staging .env must point at the staging database only"
+# The app queries the database while booting, and staging's database is still empty here,
+# so both .env files are read with phpdotenv (from this release) instead of booting Laravel.
+ENVREAD='require getenv("VENDOR"); $e = Dotenv\Dotenv::createArrayBacked(getenv("ENVDIR"))->load(); echo $e[getenv("KEY")] ?? "";'
+TARGET_DB=$(VENDOR="$RELEASE/vendor/autoload.php" ENVDIR="$SHARED" KEY=DB_DATABASE "$PHP84" -r "$ENVREAD" </dev/null)
+PROD_DB=$(VENDOR="$RELEASE/vendor/autoload.php" ENVDIR="$PROD" KEY=DB_DATABASE "$PHP84" -r "$ENVREAD" </dev/null)
+[ "$TARGET_DB" = "$STAGING_DB" ] || die "staging .env points at an unexpected database"
+[ -n "$PROD_DB" ] || die "could not read production's database name"
 [ "$TARGET_DB" != "$PROD_DB" ] || die "staging and production resolve to the same database"
 echo "target database is the staging database, distinct from production"
 
-say "5/7 copy the production database into staging (read-only on production)"
+say "4/7 copy the production database into staging (read-only on production)"
 mkdir -p "$HOME/aldar-backup" && chmod 700 "$HOME/aldar-backup"
 SEED=$HOME/aldar-backup/staging-seed-$STAMP.sql.gz
 (cd "$PROD" && "$PHP74" "$HOME/aldar-backup/db-dump.php" "$PROD" "$SEED" </dev/null)
@@ -88,23 +89,27 @@ IMPORTER=$(mktemp "$HOME/aldar-backup/import-XXXXXX.php")
 chmod 600 "$IMPORTER"
 cat > "$IMPORTER" <<'EOF'
 <?php
-// Imports a gzipped dump into the database of the app in <app-dir>, credentials from Laravel's config.
-[, $appDir, $dump] = $argv;
-require $appDir . '/vendor/autoload.php';
-$app = require $appDir . '/bootstrap/app.php';
-$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-$db = config('database.connections.' . config('database.default'));
-$command = sprintf('set -o pipefail; gunzip -c %s | mysql --default-character-set=utf8mb4 -h %s -u %s %s',
-    escapeshellarg($dump), escapeshellarg($db['host']), escapeshellarg($db['username']), escapeshellarg($db['database']));
-$process = proc_open(['/bin/bash', '-c', $command], [2 => ['pipe', 'w']], $pipes, null, array_merge(getenv(), ['MYSQL_PWD' => $db['password']]));
+// Imports a gzipped dump into the staging database named in <env-dir>/.env, without booting Laravel.
+[, $vendor, $envDir, $dump, $expectedDb] = $argv;
+require $vendor;
+$e = Dotenv\Dotenv::createArrayBacked($envDir)->load();
+if (($e['DB_DATABASE'] ?? '') !== $expectedDb) { fwrite(STDERR, "unexpected target database\n"); exit(1); }
+$command = sprintf('set -o pipefail; gunzip -c %s | mysql --default-character-set=utf8mb4 -h %s -P %s -u %s %s',
+    escapeshellarg($dump), escapeshellarg($e['DB_HOST'] ?? '127.0.0.1'), escapeshellarg($e['DB_PORT'] ?? '3306'),
+    escapeshellarg($e['DB_USERNAME']), escapeshellarg($e['DB_DATABASE']));
+$process = proc_open(['/bin/bash', '-c', $command], [2 => ['pipe', 'w']], $pipes, null, array_merge(getenv(), ['MYSQL_PWD' => $e['DB_PASSWORD'] ?? '']));
 $errors = stream_get_contents($pipes[2]);
 $code = proc_close($process);
 if ($code !== 0) { fwrite(STDERR, $errors); exit($code); }
-$n = (int) Illuminate\Support\Facades\DB::selectOne("SELECT COUNT(*) AS n FROM information_schema.tables WHERE table_schema = DATABASE() AND table_type = 'BASE TABLE'")->n;
+$pdo = new PDO('mysql:host='.($e['DB_HOST'] ?? '127.0.0.1').';port='.($e['DB_PORT'] ?? '3306').';dbname='.$e['DB_DATABASE'], $e['DB_USERNAME'], $e['DB_PASSWORD'] ?? '');
+$n = (int) $pdo->query("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_type = 'BASE TABLE'")->fetchColumn();
 echo "imported tables={$n}\n";
 EOF
-(cd "$RELEASE" && "$PHP84" "$IMPORTER" "$RELEASE" "$SEED" </dev/null)
+"$PHP84" "$IMPORTER" "$RELEASE/vendor/autoload.php" "$SHARED" "$SEED" "$STAGING_DB" </dev/null
 rm -f "$IMPORTER"
+
+say "5/7 framework discovery on PHP 8.4"
+(cd "$RELEASE" && "$PHP84" artisan package:discover --ansi </dev/null | tail -3)
 
 say "6/7 migrations and caches"
 (cd "$RELEASE" && "$PHP84" artisan migrate --force --no-interaction </dev/null | tail -3)
