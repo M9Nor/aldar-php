@@ -721,12 +721,12 @@
   },
   "/en/admin/projects/data_requests": {
     "anonymous": "302 login",
-    "parity-admin": "200",
+    "parity-admin": "302 back",
     "parity-superadmin": "200"
   },
   "/en/admin/projects/request_summary": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/projects/properties": {
@@ -736,17 +736,17 @@
   },
   "/en/admin/projects/data_properties": {
     "anonymous": "302 login",
-    "parity-admin": "200",
+    "parity-admin": "302 back",
     "parity-superadmin": "200"
   },
   "/en/admin/projects/properties_summary": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/projects/show_details/0": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/opportunity": {
@@ -781,12 +781,12 @@
   },
   "/en/admin/opportunity/data_requests": {
     "anonymous": "302 login",
-    "parity-admin": "200",
+    "parity-admin": "302 back",
     "parity-superadmin": "200"
   },
   "/en/admin/opportunity/request_summary": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/opportunity/properties": {
@@ -796,17 +796,17 @@
   },
   "/en/admin/opportunity/data_properties": {
     "anonymous": "302 login",
-    "parity-admin": "200",
+    "parity-admin": "302 back",
     "parity-superadmin": "200"
   },
   "/en/admin/opportunity/properties_summary": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/opportunity/show_details/0": {
     "anonymous": "302 login",
-    "parity-admin": "404",
+    "parity-admin": "302 back",
     "parity-superadmin": "404"
   },
   "/en/admin/roles": {
