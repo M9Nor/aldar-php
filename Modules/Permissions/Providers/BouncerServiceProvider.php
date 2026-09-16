@@ -60,7 +60,7 @@ class BouncerServiceProvider extends ServiceProvider
     public function supremeAdmin()
     {
         // Checks if a specific role is allowed to have full privileges
-        if(env('ENABLE_SUPERPOWERS', true)) Gate::before(function ($user, $ability) {
+        if(config('permissions.superpowers')) Gate::before(function ($user, $ability) {
             if($user->isAn('ROOT'))
             {
                 return true;

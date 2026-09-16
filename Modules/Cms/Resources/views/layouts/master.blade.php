@@ -5,7 +5,7 @@
 		<base href="">
 		<meta charset="utf-8" />
         <title>{{ __('cms::dashboard.website') }} | @yield('title')</title>
-        @if(env('APP_ENV', 'development') == 'development')
+        @if(config('app.env') == 'development')
             {{-- To prevent most search engine web crawlers from indexing a page on your site --}}
             <meta name="robots" content="noindex">
             {{-- To prevent only Google web crawlers from indexing a page --}}

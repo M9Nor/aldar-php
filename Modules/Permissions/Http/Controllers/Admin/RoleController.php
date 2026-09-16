@@ -271,7 +271,7 @@ class RoleController extends PermissionsController
                 'success'       => false,
                 'type'          => 'danger',
                 'title'         => __('cms::messages.update_error.title'),
-                'description'   => env('APP_DEBUG') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.update_error.description')
+                'description'   => config('debug.enabled') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.update_error.description')
             ]);
         }
 
@@ -372,7 +372,7 @@ class RoleController extends PermissionsController
                 'success'       => false,
                 'type'          => 'danger',
                 'title'         => __('cms::messages.save_error.title'),
-                'description'   => env('APP_DEBUG') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.save_error.description')
+                'description'   => config('debug.enabled') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.save_error.description')
             ]);
         }
         return new ResponseHandler([

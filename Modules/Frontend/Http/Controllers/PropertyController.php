@@ -404,7 +404,7 @@ class PropertyController extends FrontendController
         } catch (\Exception $e) {
             return response()->json([
                 'success'           => false,
-                'message'           => env('APP_DEBUG') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.save_error.description')
+                'message'           => config('debug.enabled') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.save_error.description')
             ]);
         }
 
@@ -459,7 +459,7 @@ class PropertyController extends FrontendController
                 'success'       => false,
                 'type'          => 'danger',
                 'title'         => __('cms::messages.update_error.title'),
-                'description'   => env('APP_DEBUG') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.update_error.description')
+                'description'   => config('debug.enabled') ? $e->getMessage() . ' [' . $e->getLine() . ']' : __('cms::messages.update_error.description')
             ], 409);
         }
 
